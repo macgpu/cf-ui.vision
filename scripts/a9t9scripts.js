@@ -1,8 +1,5 @@
 ﻿//Global
-fetch('/api/version').then(function(r){return r.json();}).then(function(d){
-    var el=document.getElementById('site-version');
-    if(el)el.textContent=d.version;
-}).catch(function(){});
+//none
 
 
 //Submit the contact us form
