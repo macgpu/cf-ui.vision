@@ -41,7 +41,10 @@ export async function onRequestPost({ request, env }) {
     }),
   });
 
-  if (!res.ok) return err("Unable to send — please try again later");
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    return err(`Unable to send (${res.status}): ${body.slice(0, 200)}`);
+  }
 
   return Response.redirect(`${base}?success=1`, 303);
 }
