@@ -121,7 +121,7 @@
                 I understand that verifyElementPresent will return the results in the console, but how can I use that information to determine
                 the next action to take.</br>
                 Solution: The internal variable <a href="/rpa/docs#!statusOK">!statusOK</a> has the status of each executed command.
-                Use it together with <a href="/rpa/docs/selenium-ide/if">if/else</a> or <a href="/rpa/docs/selenium-ide/GotoIf">GotoIf</a>. The good thing about the verify... commands is that the execution continues
+                Use it together with <a href="/rpa/docs/selenium-ide/if">if/else</a> or <a href="/rpa/docs/selenium-ide/gotoif">GotoIf</a>. The good thing about the verify... commands is that the execution continues
                 even if an error is logged. With other commands, you can add a <em>store | true | <a href="/rpa/docs#internalvar">!errorignore</a></em> to achieve the same. The screenshot shows the solution:
             </p>
             <p>
