@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "aiComputerUse -> Open-source Demo of Anthropic Claude Computer Use for Windows, Mac and Linux";
+}
+
+
+<div id="content download-content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-download">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>
+                    <span>Computer Use</span> Demo & Insights
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>aiComputerUse | prompt | var1</span>
+            </h3>
+        </div>
+        <div class="span12">
+
+            <p>
+                The <span class="hiblue">aiComputerUse</span> command integrates mouse and keyboard control
+                of <a href="https://ui.vision/blog/computer-use/">Anthropic Claude Computer Use</a> into our Open-Source RPA software. This makes
+                the Ui.Vision browser extension an <em>easy</em> way to demo and use this technology on any Mac, Linux or Windows machine.
+            </p>
+            <h3 id="how">How to use Claude Computer Use</h3>
+            <p>
+                If you are new to Ui.Vision and did not install it yet, get started with this blog post:
+                <a href="https://ui.vision/blog/computer-use-in-browser/">How to Run Anthropic Computer Use in Your Web Browser</a>.
+            </p>
+            <p>
+                The aiComputerUse command is available with V9.3.8. (Soon available:) In addition, a good way to get started with Computer Use prompting is to experiment
+                with the Computer Use "Chat" feature in the Ui.Vision side bar.
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dwao1Y84sD8?si=f1uFidLoSdVANjUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </br>Ui.Vision plays TicTacToe with the help of Anthropic Computer Use.
+            </p>
+            <h3 id="syntax">Syntax</h3>
+            <p>
+                The syntax is easy: <span class="hiblue">aiComputerUse | prompt | var1</span>. The <em>last</em> response of Claude is stored in the variable.
+                See also the <a href="/ai">other AI commands</a>.
+            </p>
+            <p>
+                At the bottom of the AI settings page, you'll find the setting <em>aiComputerUse: Max loops before stopping: 20</em>.
+                This setting limits the number of question/reply pairs between UI.Vision ([u] in the log) and the AI agent ([a] in the log).
+                This limit exists because sometimes the AI agent may persist indefinitely, going deeper and deeper down a rabbit hole.
+                An unlimited number of API calls would quickly drain your API credits.
+                While the default value of 20 is relatively low,
+                you can increase it as needed depending on the tasks you want to automate.
+            </p>
+
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yQku0jzWaXs?si=kPUFAMv4UpMtLLGT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </br>Computer Use Demo 2: The aiComputerUse prompt is "Fill web form with artificial data".
+            </p>
+            <h3 id="hints">Computer Use Chat in the Ui.Vision Side Panel (AI Chat tab)</h3>
+            <p>
+                The side panel has a AI tab. Here you can chat interactively with the Anthropic computer use API. You can use this feature e. g. to develop a good prompt for the aiComputerUse command.
+            </p>
+            <p>
+                The FIND button in the chat window is for debugging. It marks the most recent (last) mentioned x/y position from the chat with a red "X".
+            </p>
+            <p>
+                <img src="~/Content/Images/computer use in browser.webp" alt="Test anthropic computer use in the new AI tab" class="responsive-img">
+                </br>AI chat tab in the browser side panel
+            </p>
+            <h3 id="hints">Computer Use Insights from our Experience</h3>
+            <p>
+                Here are some insights we gained from using Computer Use (CU):
+            </p>
+            <p>
+                - CU was trained to move the mouse before clicking. This is often unncessary. Tell it "No mouse movements, only clicks". This saves time.
+            </p>
+            <p>
+                - Keep the screen (for desktop automation) or browser viewport (for browser automation) as small as possible. The smaller the screenshot area,
+                the faster and cheaper the API response. Smaller screen sizes also improve the accuracy of the returned x,y values.
+            </p>
+            <p>
+                - Shorter prompter work often better than longer prompts. If you ask Claude for prompting help, it will write you long and often much too detailed prompts.
+            </p>
+            <p>
+                Prompts can be as easy as "Fill out this form with random data" or "Search for a flight". To get started, see the new Computer Use demo macros for example prompts that work. Or <a href="https://forum.ocr.space/tag/prompting">search our user forum for the tag "prompting"</a>.
+            </p>
+            <p>
+                - In general, we find that - at least for now - Computer Use works better for browser automation than desktop automation. Google's Project Jarvis team seems to <a href="https://ui.vision/blog/project-jarvis/">have realized this as well</a>.
+            </p>
+
+            <h3 id="vs">What is the difference between aiScreenXY and aiComputerUse</h3>
+
+            <p>
+                The aiScreenXY command is optimized for finding items in screenshots. Compared to aiComputerUse, this is a <em>very</em> narrow task. But unlike aiComputerUse the output of aiScreenXY is very predictable. Plus, aiScreenXY
+                autotomatically stores x,y values in the  ${!ai1} and ${!ai2} variables for further use with XClick and XMove.
+            </p>
+            <p>
+                Last but not least, the cost for using aiPrompt and aiScreenXY is significantly lower than for aiComputerUse. A single "aiScreenXY | Find the blue button" command uses roughly around 1 cent in Anthropic API credits. By contrast, the "<a href="https://www.youtube.com/watch?v=dwao1Y84sD8">aiComputerUse | Play this TicTacToe game | s</a>"  command (in the CU_PlayTicTacToe demo macro) will use up Anthropic API tokens worth ~US$0.30.
+                The exact cost depends how long the game goes and the screenshot size (= size of the browser viewport). For Computer Use automation, we highly recommend to use the
+                smallest screenshot/browser area possible when automating tasks. Not only do smaller screenshots upload faster, smaller screenshots also keep Claude's response time shorter and the API usage cost <em>much</em> lower.
+            </p>
+
+            <p>
+                <img src="~/Content/Images/rpa_ai_demo.jpg" alt="Anthropic Claude and Computer Use Demo macros" class="responsive-img">
+                </br>Test Computer Use and <a href="/ai">other AI commands</a> with the demo macros.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+
+        </div>
+    </div>
+</div>

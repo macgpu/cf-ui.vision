@@ -1,0 +1,314 @@
+﻿@{
+    ViewBag.Title = "XType - Real User Keyboard Event Simulation, Sendkeys";
+}
+
+
+<div id="content download-content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-download">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>XType</span> - Keystroke Simulation</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>XType ("text")</span>
+            </h3>
+        </div>
+        <div class="span12">
+
+
+            <p>
+                The <span class="hiblue">XType</span> command allows you to send real user keyboard events to web page elements and even simulate
+                global keyboard shortcuts such as the famous Ctrl+C/Ctrl+V (copy and paste) or "Alt+F4" (close current window). With XType you can be sure that a
+                web app reacts 100% the same way as if a real human user would type the text.
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/k4DzALV4JyQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <br />The second option in this tutorial uses <span class="hired">
+                    XClick | (image of select box)
+                </span> to find the JQuery select box on the page and <em>give it the focus</em>.
+                Then the macro uses the <span class="hired">XType</span> command with the
+                <span class="hired">${KEY_DOWN}${KEY_DOWN}${KEY_ENTER}</span> key sequence
+                to select an entry. The same sequence send with the classic
+                <a href="/rpa/docs/selenium-ide/sendkeys-type">Selenium-IDE Sendkeys command</a> would fail, as the select box reacts only to native keyboard events.
+            </p>
+
+            <h3 id="vs_type">What is the difference between XType and the Selenium IDE Type and Sendkey commands?</h3>
+
+            <p>
+                The <a href="/rpa/docs/selenium-ide/sendkeys-type">classic Type or Sendkeys command</a> as used by <em>Ui.Vision RPA</em> and
+                any other Selenium IDE or browser automation tool does not simulate real keystrokes.
+                Instead they operate on the Javascript level inside the browser DOM. This the reason why these commands all require a locator to identify a web page element, and then send
+                Javascript events to this element, or sometimes even just set the text property of this element. On simple websites
+                this is often enough and works well. But on modern complex websites (e. g. Google Gmail, Google Spreadsheet, Microsoft Office 365, Facebook, Instagram,...)
+                it is often difficult to find the right element
+                locator in the first place. And even if you found the right locator, it can happen that the website logic swallows the Javascript keystroke
+                event and it never reaches the right target element. In addition, if you want to automate websites with canvas elements (e. g. drawing apps like Sketchpad.io and most online games) it is impossible
+                to find a locator for the classic type/sendkey command.
+                </br></br>
+
+
+                In contrast the <span class="hiblue">XType</span> avoids all these problems by simulating real user keystroke events. This also means there is no need to have a locator. Just like
+                when you type on a real physical keyboard, whatever element has the focus receives the keyboard input. You can use "XClick | (xpath locator)"
+                or "XClick | <em>image</em> of element" to set the focus to the right place, before you send the keystroke sequence with XType.
+            </p>
+
+
+            <p>This sounds great, so why would one use the classic Type or Sendkey command at all?</p>
+
+            <p>
+                Well, XType (just like the other real user commands XClick and XMove) has one drawback: As it simulates real user input, it requires
+                an unlocked user desktop to simulate events, and <a href="/rpa/docs/selenium-ide/bringbrowsertoforeground">the browser window has to be in the foreground</a>.
+                This is the same requirement that you would have
+                for a human operator - no human can type something if the desktop has been locked.
+                So here the classic type/sendkey commands wins:
+                It works just fine with Chrome or Firefox running in the background as everything happens just inside the web browser.
+            </p>
+
+            <p>
+                So we recommend to first test if your text input works with the classic <a href="/rpa/docs/selenium-ide/sendkeys-type">type command</a>,
+                and if not, then use <span class="hiblue">XType</span>. It will work for sure!
+            </p>
+
+            <p>
+                The  <a href="/rpa/docs/xtype">XType</a>,  <a href="/rpa/docs/xclick#xclick">XClick</a> and <a href="/rpa/docs/xclick#xmove">XMove</a>
+                need the <a href="/rpa/x">RealUser Simulation XModule</a> to be installed.
+            </p>
+            <h3>Key Constants and Special Keys</h3>
+
+            <p>
+                Note that unlike the classic <a href="/rpa/docs/selenium-ide/sendkeys-type">type command</a>
+                XType itself does not take a target as input. Instead, it “stupidly” sends keystrokes to whatever element has the focus.
+                Therefore in many cases you must first send an <a href="/rpa/docs/xclick">XClick</a>
+                command to the place where the keystrokes should go, so the right element has the focus.
+                This is the same as if you (as human user) first mouse-click in an input field before you start typing.
+            </p>
+            <p>
+                Typical usage: <span class="hired">XType | text here ${KEY_CTRL+KEY_V} more text here ${KEY_ENTER}</span>
+            </p>
+            <p>
+                <span class="hiblue">Important:</span> You need the <span class="hired">${KEY_XXX}</span> notation only if you explicitly want to simulate keyboard presses. This is typically required
+                to trigger keyboard shortcuts, such as "Ctrl+S". But for normal text input just send the text with <span class="hired">XType | your text here</span>. To test the XType command you can use for example
+                <a href="http://keyboardchecker.com/">http://keyboardchecker.com/</a> (external website).
+            </p>
+            <p>
+                Up to three meta keys are supported, for example  <span class="hired">XType |  ${KEY_CTRL+KEY_ALT+KEY_SHIFT+KEY_F1}</span>
+            </p>
+
+            <p>
+                Possible modifier keys (also called meta keys):
+                <br /><span class="hired">${KEY_CTRL}</span>,
+                <br /><span class="hired">${KEY_ALT}</span> and
+                <br /><span class="hired">${KEY_SHIFT}</span>
+            </p>
+            <p>
+                Special Windows and Mac modifier keys:
+                <br /><span class="hired">${KEY_WIN}</span> (Windows Key)
+                <br /><span class="hired">${KEY_CMD}</span> (Mac Command Key)
+                <br /><span class="hired">${KEY_META}</span> - this key simulates <span class="hired">${KEY_WIN}</span>
+                on Windows and <span class="hired">${KEY_CMD}</span> on a Mac
+            </p>
+            <p>
+                Standard keyboard keys:
+
+                <br />
+                <br /><span class="hired">${KEY_0}</span>...<span class="hired">${KEY_9}</span> (Numbers)
+                <br /><span class="hired">${KEY_A}</span>...<span class="hired">${KEY_Z}</span> (Letters)
+                <br /><span class="hired">${KEY_F1}</span>...<span class="hired">${KEY_F15}</span> (Function keys)
+                <br /><span class="hired">${KEY_Num0}</span>...<span class="hired">${KEY_Num9}</span> (Number keys)
+                <br /><span class="hired">${KEY_SPACE}</span> (Space bar)
+
+            </p>
+
+            <p>
+                Possible special keys:
+
+                <br /><span class="hired">${KEY_ENTER}</span> - this is the most used special key
+                <br />
+                <br /><span class="hired">${KEY_ESC}</span> - simulates the ESCAPE key press
+                <br />
+                <br /><span class="hired">${KEY_TAB}</span>
+                <br /><span class="hired">${KEY_BKSP}</span> = <span class="hired">${KEY_BACKSPACE}</span>
+                <br /><span class="hired">${KEY_DEL}</span> = <span class="hired">${KEY_DELETE}</span>
+                <br />
+                <br /><span class="hired">${KEY_UP}</span>
+                <br /><span class="hired">${KEY_DOWN}</span>
+                <br />
+                <br /><span class="hired">${KEY_RIGHT}</span>
+                <br /><span class="hired">${KEY_LEFT}</span>
+                <br />
+                <br /><span class="hired">${KEY_PGUP}</span> = <span class="hired">${KEY_PAGE_UP}</span>
+                <br /><span class="hired">${KEY_PGDN}</span>= <span class="hired">${KEY_PAGE_DOWN}</span>
+                <br />
+                <br /><span class="hired">${KEY_HOME}</span> - return the cursor to the beginning of the line
+                <br /><span class="hired">${KEY_END}</span> - send the cursor to the end of a document
+            </p>
+
+            <p>
+                <a href="/rpa/docs/selenium-ide/sendkeys-type#escape">JavaScript character escape sequences</a> are not supported with XType,
+                but you can replace them with the special key constants. So instead of
+                "\r\n" use ${KEY_ENTER}.
+            </p>
+
+            <p><em>Do you miss support for certain key sequence?</em> Please tell us about it in the <a href="https://forum.ocr.space/">RPA forum</a> and we will add it with future RPA software updates. 
+            In the meantime you can use the <a href="https://forum.ocr.space/t/i-really-need-spacebar-to-work-with-xtype-or-otherwise-workaround-availabe/4655/2">XRUN sendkeys workaround</a> to simulate it
+            (e. g for <a href="https://forum.ocr.space/t/xtype-cant-emulate-plus-key/6935/">KEY_PLUS</a>).
+
+
+            </p>
+
+
+
+            <h3 id="copypaste">Copy and Paste</h3>
+            <p>
+                Tip: If you need to send a lot of text, store it in the <a href="https://ui.vision/rpa/docs#!clipboard">!clipboard built-in variable</a> and
+                then paste (CTRL+V) the text into the field. This copy and paste method runs faster than sending
+                all the text as simulated keystrokes with XType. Example:
+            </p>
+
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>store</td>
+                            <td>Long text....\nwith line breaks....</td>
+                            <td>!clipboard</td>
+                        </tr>
+                        <tr class="success">
+                            <td>XClick</td>
+                            <td>Locator or Image</td>
+                            <td>(this is used to set the focus on the text box)</td>
+                        </tr>
+                        <tr class="success">
+                            <td>XType</td>
+                            <td>${KEY_CTRL+KEY_A}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <p>Related forum post: <a href="https://forum.ocr.space/t/ui-vision-desktop-select-text-copy-and-paste-from-word-document/6130/4">How to copy and paste text with RPA software</a>.</p>
+
+            <h3>XType Example</h3>
+
+            <p>
+                This example macro sends "Ctrl+S" to open the browser's "Save Page As" dialog. Then it sends a file name and simulates
+                the "Enter" key. => Page saved!
+            </p>
+            <p>
+                We recommend to break up longer text entry sequences in two or more separate XType commands. The reason is that
+                the short internal break between both commands makes the keystroke simulation speed more naturally.
+                And if needed, you can add a PAUSE command between XTypes commands, or <a href="/rpa/docs#replayspeed">slow down the macro replay speed</a>.
+
+                Most applications and websites are not tested and designed
+                for robotic process automation (RPA) speeds. Some work fine at high keystroke speeds, but in other cases characters may "get lost"
+                somewhere in the message queue of the application, browser or operating system.
+                If this happens, add some delays between the XTypes. As a rule of thumb, if you see that some characters are not recognized, slow down the text entry.
+                You should not enter text faster than a human can type.
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>XType</td>
+                            <td>${KEY_CTRL+KEY_S}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>store</td>
+                            <td>false</td>
+                            <td>!stringescape</td>
+                        </tr>
+                        <tr class="success">
+                            <td>XType</td>
+                            <td>New-file-name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pause</td>
+                            <td>100</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>XType</td>
+                            <td>${KEY_ENTER}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>Page saved</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome and  <em>Ui.Vision RPA</em> for Firefox with the <a href="/rpa/x#realuser">RealUser XModule</a> installed.
+            </p>
+
+            <h3>XType Related RPA Forum Posts</h3>
+
+            <p>
+                <ul>
+                    Some selected forum posts that discuss XTYPE:
+                    <li>
+                        -  <a href="https://forum.ocr.space/t/issue-while-entering-text-in-bootstrap-tag-input-field/5230/10">Enter tags</a>
+                    </li>
+                    <li>
+                        - <a href="https://forum.ocr.space/t/i-really-need-spacebar-to-work-with-xtype-or-otherwise/4655/2">Spacebar support</a>
+                    </li>
+                    <li>
+                        - <a href="https://forum.ocr.space/t/deleteallcookies-not-working-on-mac/3709/2">Delete cookies with XType</a>
+                    </li>
+                </ul>
+            </p>
+
+
+
+            <h3>Related Demo Macros</h3>
+            <p>Demo-XType, Demo-XClick</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/form-filling">Selenium IDE form filling tutorial</a>,
+                <a href="/rpa/docs/xclick">XClick</a>,
+                <a href="/rpa/docs/xclick#xmove">XMove</a>,
+                <a href="/rpa/x/">XModules</a> User Manual
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+
+        </div>
+    </div>
+</div>

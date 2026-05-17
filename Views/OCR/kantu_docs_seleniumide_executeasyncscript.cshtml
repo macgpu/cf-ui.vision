@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "executeAsyncScript, execute async script - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>executeAsyncScript</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>executeAsyncScript (JS code, variable) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <h3>executeAsyncScript</h3>
+            <p>
+                The  <span class="hired">executeAsyncScript</span> command executes
+                an async snippet of JavaScript in the context of the currently selected frame or window.
+                The script fragment will be executed as the body of an anonymous function. To store the return value, use the 'return'
+                keyword and provide a variable name in the value input field.
+            </p>
+
+            <p>Update: Ui.Vision RPA V7.0 and higher no longer support <span class="hired">executeAsyncScript</span>. 
+            The reason for this change is the  
+            <a href="https://forum.ocr.space/t/ui-vision-rpa-chrome-extension-migration-from-manifest-v2-to-manifest-v3/8957/">upgrade to the new Chrome manifest V3</a>.
+            </p>
+
+            <h3 id="">What is asynchronous code?</h3>
+
+            <p>
+                In asynchronous programs, you can have two lines of code (L1 followed by L2),
+                where L1 schedules some task to be run in the future, but L2 runs before that task completes.
+            </p>
+
+            <p>
+                Note that asynchronous does not mean the same thing as concurrent or multi-threaded. JavaScript can have asynchronous code, but it is generally single-threaded. This is like a restaurant with a single worker who does all of the waiting and cooking. But if this worker works quickly enough
+                and can switch between tasks efficiently enough,
+                then the restaurant seemingly has multiple workers.
+            </p>
+
+            <h3 id="">What is executeAsyncScript good for?</h3>
+
+            <p>
+                Honestly, we don't know. While asynchronous code in Javascript in general has plenty good uses,
+                we have yet to find any good use case within any Selenium IDE. The
+                <a href="/rpa/docs/selenium-ide/executescript">executeScript</a> command
+                is an essential Selenium IDE command.
+                <em>But the async version adds no additional benefits in our opinion.</em>
+                If you use <em>execute Async Script</em> in a Selenium IDE project,  please let us know how you use it.
+                Maybe we overlook something here. (We offer a free Ui.Vision RPA PRO license for the first real life use case report).
+            </p>
+            <p>
+                <span class="hired">Important</span>: Despite the "async" in the name of the command, the Selenium IDE
+                <span class="hired">waits</span>  for the executeAsyncScript Javascript code to be completed before the IDE moves
+                to the next command.
+                So in the context of the Selenium IDE the executeAsyncScript is still synchronous - that is what makes it useless.
+            </p>
+            <p>
+                We added it because it was easy to add and the original Selenium IDE (SIDE) has it as well. But because
+                we see no use case for it, <em>it is <span class="hired">not</span>  listed in the command drop down</em>.
+                But the command is fully supported and works. If you want to use it, just add in
+                the <a href="/rpa/docs#sourcecodetab">source code view tab</a>.
+            </p>
+
+            <h3 id="sandbox">executeAsyncScript_Sandbox</h3>
+            <p>
+                The  <span class="hired">executeAsyncScript_Sandbox</span> works exactly as
+                executeAsyncScript <em>but</em> runs the Javascript
+                in a sandbox. In other words, the code <span class="hired">runs <em>not</em> in the website</span>.
+                As with <a href="/rpa/docs/selenium-ide/executescript#sandbox">executeScript_Sandbox</a>
+                the advantage of using the sandbox is that the website can not influence or block the Javascript execution. So unless
+                you want to access elements of the website, better use the sandbox.
+            </p>
+
+
+            <h3>executeAsyncScript Example</h3>
+
+
+            <p>
+                The setTimeout function is probably the simplest way to asynchronously schedule code to run in the future.
+                What happens here is that executeAsyncScript waits for the timeout to happen in 500ms, and then it continues.
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr class="success">
+                            <td>executeAsyncScript_Sandbox</td>
+                            <td>return new Promise((r) => {setTimeout(() => {r("hello world")}, 500)})</td>
+                            <td>myvar</td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>${myvar}</td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p><a href="https://github.com/A9T9/RPA/blob/master/test/demomacros/core/DemoStoreEval.json">DemoStoreEval</a></p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/executescript">executeScript</a>,
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>

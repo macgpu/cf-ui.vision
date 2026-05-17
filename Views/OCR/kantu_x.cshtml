@@ -1,0 +1,241 @@
+﻿@{
+    ViewBag.Title = "/rpa/x/Modules add click, type, drag and drop with native events, file access, and Robotic Process Automation (RPA)";
+}
+
+
+<div id="content download-content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-download">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><em>Ui.Vision RPA</em> <span>XModules</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>XModules - Extension Modules for the Ui.Vision RPA software core</span>
+            </h3>
+        </div>
+        <div class="span12">
+
+
+            <p>
+                <span class="hiblue"><em>Ui.Vision</em> eXtension Modules</span> – or short: <span class="hiblue">XModules</span> -
+                are native apps that add powerful new features to the <em>Ui.Vision</em> open-source core.
+                XModules add real mouse click events,
+                keyboard shortcuts simulation and direct file access for macros and CSV files.
+            </p>
+
+            <h3>
+                Download: <i class="fa fa-download"></i> <a href="/rpa/x/download">
+                    <em>Ui.Vision</em> XModules Installer
+                </a>
+            </h3>
+
+            <p>
+                Since the XModules are native apps, there is a separate installer for Windows, Mac and Linux.
+                The modules works with <em>Ui.Vision</em> for Firefox, Edge and Chrome.
+                So if you use <em>Ui.Vision RPA</em> with multiple browsers, you need to install the XModules only <em>once</em>.
+            </p>
+
+
+            <h3 class="headline" id="realuser">
+                RealUser Simulation XModule - Trigger native OS events for click, move, type and drag
+            </h3>
+            <p>
+                The RealUser XModule is a native app for Windows, Mac and Linux.
+                It directly interacts with the operating system to simulate native click,
+                drag and type (sendkey) events. Together with the built-in computer vision,
+                this module takes  web automation to a new level and makes <em>Ui.Vision RPA software</em> the most powerful browser extension for web automation.
+                But most importantly, it makes creating web automation scripts fun again.
+            </p>
+            <p>The RealUser XModule adds three new commands:</p>
+
+
+            <p>
+                <table class="table table-bordered" id="code">
+                    <thead>
+                    <th class="col-md-2">Native OS events</th>
+                    <th class="col-md-7">Comment</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> <a href="/rpa/docs/xclick">XClick</a></td>
+                            <td>
+                                This simulates a real user mouse click, double-click or right-click.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <a href="/rpa/docs/xclick#xmove">XMove</a></td>
+                            <td>
+                                Simulate mouse up, mouse down and mouse over events
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <a href="/rpa/docs/xtype">XType</a></td>
+                            <td>
+                                Send native keyboard events and shortcuts
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </p>
+            <p>
+                Note: XClick, XMove and XType commands are <em>not</em> recorded automatically, you need to add them manually to your macro.
+                So what we typically do ourself is to first record a skeleton macro (OPEN command, plus whatever part of the macro can be recorded with the classic Selenium IDE style commands)
+                and then fill in X-commands manually as required.
+            </p>
+            <p>
+                Some tips for creating macros with real user simulation:
+                <ul>
+                    <li>
+                        <i class="fa fa-lightbulb-o"></i> If the reason for using XClick is that a html-click was not recognized by the website:</br>
+                        You can convert a recorded Click command to XClick just by changing the command. The same selector is used then.
+                    </li></br>
+                    <li>
+                        <i class="fa fa-lightbulb-o"></i> If the reason for using XClick is that a selector can not be found or constructed (e. g. with tricky frames and iframes):</br>
+                        Switch from Click to XClick <em>and replace the selector</em> with an <em>image</em> of the button or link.
+                    </li></br>
+                    <li>
+                        <i class="fa fa-keyboard-o"></i> Type and Sendkey commands can be upgraded to XType by simply changing the command <em>and removing the selector</em>.
+                        </br>XType does not use a selector. It works like a normal keyboard and sends the text to the element that has the focus.
+                        If needed, you can use an XClick command first to make sure the right input box
+                        has the focus.
+                    </li>
+                </ul>
+
+            </p>
+
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IFKUyqDjMyU?rel=0&&cc_load_policy=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </p>
+
+
+            <h3 class="headline" id="fileaccess">
+                File Access XModule - read and write directly to your hard drive
+            </h3>
+
+            <p>
+                The  File Access XModule is a native app for Windows, Mac and Linux.
+                It adds direct file access to the RPA Core, so you can read/write macros, test suites and CSV files directly from the hard drive.
+                Once installed you can change the file storage mode to hard drive storage mode, and this means:
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        <i class="fa fa-hdd-o"></i> Macros are stored on the hard drive ( "/macros" folder)
+                    </li></br>
+                    <li>
+                        <i class="fa fa-hdd-o"></i> Testsuites are stored on the hard drive ( "/testsuites" folder)
+                    </li></br>
+                    <li>
+                        <i class="fa fa-hdd-o"></i> Computer vision input images are stored on the hard drive ( "/images" folder). The images  listed in the Image tab are the images from the "/image" folder.
+                    </li></br>
+                    <li>
+                        <i class="fa fa-hdd-o"></i> <a href="/rpa/docs/selenium-ide/csvread">csvRead</a> and <a href="/rpa/docs/selenium-ide/csvsave">csvSave</a> work directly to/from the hard drive. And the CSV files listed in the CSV tab are the files from the "/csv" folder.
+                    </li>
+                </ul>
+
+            </p>
+
+            </p>
+            <p>
+                Having the files directly on the hard drive makes many tasks easier,
+                for example you can easily check-in/check-out macro files with source control.
+                The same is true for data-driven testing with CSV files as input.
+            </p>
+
+
+            <p>
+                You can easily switch between <a href="#html5storage">"in the browser"</a> and <a href="#harddrive">"on the hard drive"</a> storage modes, as the paragraph below explains.
+            </p>
+
+            <h3 class="headline" id="storage_mode">
+                Storage modes
+            </h3>
+
+            <p>
+                <em>Ui.Vision RPA</em> has two kind of storage modes for macros and data:
+            </p>
+
+            <p id="html5storage">
+                <span class="hiblue">Inside the web browser</span> using <a href="/howto/view-local-storage">HTML5 local storage</a>. This is the default mode of the RPA Core, as it is
+                the only way browser extensions can store information
+            </p>
+            <p id="harddrive">
+                <span class="hiblue"><i class="fa fa-hdd-o"></i> Directly on the hard drive.</span> This method feels much more natural and convenient. It requires the
+                <a href="#fileaccess">XModules native app</a> to be <a href="/rpa/x/download">installed</a>. When the hard-drive storage mode is active,
+                you will notice the hard-drive icon on every <em>Ui.Vision RPA</em> Tab that read and writes information directly to the disk. In hard-drive mode
+                <a href="/rpa/docs/selenium-ide/csvread">csvRead</a> and <a href="/rpa/docs/selenium-ide/csvsave">csvSave</a> read and save directly to files, instead of using the browser local storage.
+            </p>
+
+            <p>
+                The hard drive storage option is great for <em>team collaboration</em>. It works with all source code control system
+                e. g. Git (GitHub) or Perforce. This allows all team members to easily share and version control macros (test cases), images and CSV files.
+                </br>
+
+                And in harddrive mode you can have <em>multiple instances of Chrome, Edge and Firefox share the same macros</em>.
+
+            </p>
+            <p>
+                <img src="~/Content/Images/rpa-hard-drive-storage-mode-800.jpg" alt="Hard-drive storage mode explained" class="responsive-img">
+            </p>
+            <p>
+                After installing the XModules and switching to hard-drive mode don't be surprised that there are no macros in
+                the hard drive list view yet. You first need to export your current macros from inside the browser to the hard drive.
+            </p>
+            <p>
+                <img src="~/Content/Images/rpa-hard-drive-first-time-600.jpg" alt="Copy macros between the two storage modes" class="responsive-img">
+            </p>
+            <p>
+                To transfer existing macros to a new <em>Ui.Vision RPA</em> macros folder
+                you can export all macros, testsuites, images and CSV files at once with
+                the <a href="/rpa/docs#bkup"><em>Ui.Vision RPA</em> HTML5 Local Storage Backup button</a>.
+                Then you can extract the content of this backup archive to your new <em>Ui.Vision RPA</em> folder.<br />
+
+                Alternatively, right-click on any macro and select "Copy to Hard-Drive Storage". This is shown in the screenshot above.
+            </p>
+
+            <h3 class="headline" id="share">
+                How to share macros and other data between <em>Ui.Vision RPA</em> users
+            </h3>
+            <p>
+                Storing macros, test suites, images and <a href="/rpa/docs/selenium-ide/csvread">CSV files</a> directly
+                on the hard drive allows you to  share them between co-workers and manage
+                backups and revisions of the files easily:
+            </p>
+            <p>
+                <img src="~/Content/Images/xfileaccess-shared-folder-repo.webp" alt="Share macros with DropBox, Google Drive, GitHub or any other version control system" class="responsive-img">
+                </br>
+                To share macros with your team, point the <em>Ui.Vision RPA</em> home folder to a shared location, e. g using Dropbox, Google Drive or a
+                version control systems like Git/Github. Alternatively, if your team is in the same local network, you can simply
+                point the <em>Ui.Vision RPA</em> home folder to a shared network drive.
+
+
+            </p>
+
+            <h3 class="headline" id="security">
+                All XModules run 100% local. They <em>never</em> contact the internet</a>
+            </h3>
+            <p>
+                <span class="hiblue">XModules never contact the internet</span>. <em>Ui.Vision RPA</em> and the XModules are designed to fit the highest security
+                and data protection standards for Enterprise use. All processing is done locally
+                on your machine. The XModules <em>only</em> communicate with the <em>Ui.Vision RPA</em> browser extension.
+            </p>
+
+            <p>
+                <span class="hiblue"><em>Ui.Vision</em> does not send any data back to us</span> or any other place. You can easily verify this statement because
+                all internet communication - like loading websites in your browser - is done inside the open-source
+                <em>Ui.Vision RPA</em> core. <a href="https://github.com/A9T9/RPA"><em>Ui.Vision RPA</em> is open-source</a>,
+                which guarantees you the freedom to run, study, share and modify the software.
+
+            </p>
+
+        </div>
+    </div>
+</div>

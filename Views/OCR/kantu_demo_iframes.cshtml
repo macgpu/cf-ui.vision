@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Handling iFrames with Ui.Vision Selenium IDE++";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-demo">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>Demo <span>iFrames</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+        <div class="span12">
+            <p>With the Ui.Vision for Chrome webextension the  Selenium IDE selectFrame command is used to
+                switch between the main page and the page inside the frames/iframe for all HTML/DOM based commands (e. g. CLICK and TYPE). For visual automation with XClick and XTYPE, iframes are nothing special and no additional command is needed, except some little trick for scrolling.
+            </p>
+            <h2>Embedded Google Forms iFrame</h2>
+            <p>iframes are often used for embedding content from other websites.</p>
+            <p>
+            <center>
+                <iframe src=" https://docs.google.com/forms/d/1yfUq-GO9BEssafd6TvHhf0D6QLDVG3q5InwNE2FFFFQ/viewform?embedded=true" width="650" height="350" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+                </center>
+            </p>
+
+
+                    <h2>Youtube iFrame</h2>
+                    <p>Embedded Youtube videos use iframes.</p>
+
+                    <center>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4aNs9BnsodA?rel=0" frameborder="0" allowfullscreen></iframe>
+                    </center>
+            <p>
+
+             <h2>Twitter iFrame</h2>
+            <p>a9t9 tweets inside an iframe.</p>
+            <p>
+                <center>
+                    <a class="twitter-timeline" href="https://twitter.com/A9T9_com" data-widget-id="713327011951992832">Tweets by A9T9_com</a>
+                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+               
+
+                </center>
+            </p>
+
+
+</div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "SeeShell Web Automation Browser";
+}
+
+<div id="content">
+
+    <div class="row">
+
+
+
+
+        @{
+            string info = Request.Params["info"];
+
+            if (info == "updateavailable")
+            {
+                <text>
+                    <div class="span12">
+                        <h3 class="headline">
+                            <span>New <a href="/download">SeeShell Update available</a>: V2.2.1, released on May 29, 2017</span>
+                        </h3>
+                        <p> <span class="hired">SeeShell V2.2.1</span> adds several smaller features and bug fixes, for example the ability to work on local websites (file:/// and localhost URLs).</p>
+                        <p>You can <a href="/download">download the update here</a>. You can simply install this update on top of your existing version, there is no need to uninstall the previous version first.</p>
+                    </div>
+                </text>
+            }
+
+        }
+
+
+
+
+        <div class="col-sm-7">
+
+  
+            <h3 class="headline">
+                <span>Web Automation with the SeeShell Community Edition</span>
+            </h3>
+
+            <p>
+                <span class="hired">New:</span> Kantu Visual Web Automation is now <span class="hired">SeeShell</span> to clearly
+                distinguish it from our Kantu Chrome Extension (Selenium IDE) which does not contain
+                any of the image recognition and machine learning <a href="/seeshell/browser-automation">magic</a> that SeeShell does.
+                </br><em>
+                    Some places in the SeeShell documentation and sample macros still contain the Kantu name.
+                    We will update all samples and docs step by step
+                </em>.
+            </p>
+
+
+            <p>
+              
+                <ul><li>Useful links:</li>
+                    <li><i class="fa fa-square-o"></i> <a href="/rpa/docs#start">Getting Started Guide</a> </li>
+
+                    <li><i class="fa fa-square-o"></i>  <a href="https://www.youtube.com/watch?v=9ywfnBlQFiw">120-seconds SeeShell intro video</a> </li>
+
+                    <li><i class="fa fa-square-o"></i>  <a href="/rpa/docs#ref">SeeShell command reference</a> - alphabetically sorted</li>
+                    <li><i class="fa fa-square-o"></i>  <a href="/howto/taskscheduler">Schedule SeeShell macros</a>, for example to run every 10 minutes in the background</li>
+                    <li> <i class="fa fa-square-o"></i>  <a href="/rpa/docs#cmd">Command line options</a>      </li>
+                    <li><i class="fa fa-square-o"></i>   <a href="/rpa/docs#apiref">API command reference</a>       </li>
+                </ul>
+
+            </p>
+
+            <h3 class="headline">
+                <span>Tech Support</span>
+            </h3>
+
+            <p>If you have any question or suggestion email <em>team@ui.vision</em> or use the  <a href="..\contact">contact form</a>.</p>
+
+            <h3 class="headline">
+                <span>&#x261b; Share SeeShell for Web Automation</span>
+            </h3>
+
+            <p>
+                The more people use SeeShell, the better it becomes over time. Please help making SeeShell better by sharing it on Facebook, Twitter,...
+                - or by linking back to  <span class="hired">https://ui.vision/seeshell/web-automation</span>.
+            </p>
+
+            <h3 class="headline">
+                <span>&#x261b; Upgrade to SeeShell PRO</span>
+            </h3>
+
+            <p>
+                 <span class="hired">No time to create automation scripts?</span> A SeeShell PRO license includes  <span class="hired">3 hours of custom script creation</span> services,
+                so we do the first macros (and, if needed, <a href="/seeshell/api">scripts</a>) to
+                get you started. You just tell us what you want to have automated, and our PRO tech support does it for you.
+            </p>
+
+            <center>
+                <img src="~/Content/Images/kantulogo.webp" alt="Hello!" class="responsive-img">
+            </center>
+            <p></p>
+            <p><em>You can change or disable this start page in the settings of the SeeShell <a href="\kantu\compare">PRO Edition</a></em></p>
+
+        </div>
+
+
+
+        <div class="col-sm-5">
+            <h3 class="headline">
+                <span>SeeShell/A9T9 News</span>
+            </h3>
+            <p>
+                <center>
+                    <a class="twitter-timeline" data-width="350" data-height="888" href="https://twitter.com/A9T9_com">SeeShell Community Edition News (via @@a9t9_com)</a>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </center>
+            </p>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "selectAndWait, select - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>selectAndWait, select</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>select (target, pattern), selectAndWait (target, pattern) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                The purpose of  <span class="hired">select</span> and  <span class="hired">selectAndWait</span>
+                is to select a value from drop down/combo box or list box.
+            </p>
+
+            <p>
+                Option locators provide different ways of specifying a select element (e.g., label=, value=, id=, index=).
+                If no option locator prefix is provided, a match on the label will be attempted. If you use <span class="hired">label=</span> you can also use asterisk *
+                to match only parts of the string. For example instead of <span class="hired">label=RPA software</span> you can use <span class="hired">label=*PA softwar*</span>.
+            </p>
+
+            <p id="selectandwait"> If your page is reloading when you select label from drop down then you need to use "selectAndWait" command. It will select the specified label and then it will wait for page to load successfully.</p>
+
+            <h3>How to automate <em>dynamic</em> dropdown menus and select boxes</h3>
+
+
+            <p>
+                Standard HTML select boxes (like the one on our <a href="/contact">contact form</a>) can be easily recorded and automated with the Selenium IDE-style Select command - just 
+                as is described on this page.  But note that the Selenium IDE Select command fails often at “modern”, "ajax" select boxes that “do something while you type”, 
+                e. g. they present and then narrow down a selection based on the characters that to type.
+                To automate such page elements you need to use XClick and XType. Please see this <a href="https://forum.ocr.space/t/how-to-automate-interactive-dropdown-menus-and-select-boxes/7130/2">RPA forum post: How to automate <em>interactive</em> dropdown menus and select boxes</a>.
+
+            </p>
+
+            <h3>select Example</h3>
+            <p>
+                The example macro below visits the <a href="https://ocr.space">online ocr</a> form and
+                selects several different OCR languages using the label=, label=*..*, value= and index= methods.
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ocr.space/</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>select</td>
+                            <td>id=ocrLanguage</td>
+                            <td>label=ChineseSimplified</td>
+                        </tr>
+                        <tr class="success">
+                            <td>select</td>
+                            <td>id=ocrLanguage</td>
+                            <td>label=*man*</td>
+                        </tr>
+                        <tr class="success">
+                            <td>select</td>
+                            <td>id=ocrLanguage</td>
+                            <td>value=ita</td>
+                        </tr>
+                        <tr class="success">
+                            <td>select</td>
+                            <td>id=ocrLanguage</td>
+                            <td>index=10</td>
+                        </tr>
+                        <tr>
+                            <td>click</td>
+                            <td>id=SearchableAndLayer</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>DemoImplicitWaiting uses select</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/click">click</a>,
+                <a href="/rpa/docs/selenium-ide/addselection-removeSelection">addSelection</a>,
+                <a href="/rpa/docs/selenium-ide/addselection-removeSelection">removeSelection</a>,
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+            <h3>Select Boxes in desktop, Citrix, SAP and mobile apps automation</h3>
+
+            <p>
+                The Selenium IDE select command works only for standard select boxes. It does not work for select boxes in desktop apps. Also, some modern
+                web apps might be have select box-style elements that look like a HTML select box, but technically is custom Javascript
+                (<a href="https://forum.ocr.space/t/how-to-automate-a-custom-select-box-visually-with-ocr/7015">Example</a>). In all these cases
+                you can use <a href="https://forum.ocr.space/t/how-to-automate-a-custom-select-box-visually-with-ocr/7015">visual select box automation</a>.
+            </p>
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Paddle Store for Custom Orders";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-kantuweb">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>Your Custom Order <span>Store</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <p>
+                Welcome to your personal custom order page, powered by Paddle, a UK-based e-commerce company.
+            </p>
+
+            <h2>To place your custom order #31988 use the order button below:</h2>
+            <p>
+                Your custom order #31988:  <a href="#!" class="paddle_button" data-product="861222">Buy Now!</a>
+            </p>
+            <p>
+            Value Added Tax (VAT): By default the Paddle store shows all prices with VAT added (if applicable).
+            If you are a company and have a VAT ID number, you can enter it on the 3rd step of the order process to remove the VAT charge.
+            </p>
+             <p>
+                Use this store page as discussed with tech support. This is for Ui.Vision and OCR.space products and services. On your credit card the
+                purchase will show as "OCR.space".
+            </p>
+
+
+            <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+            <script type="text/javascript">
+                Paddle.Setup({ vendor: 115482 });
+            </script>
+        </div>
+    </div>
+</div>

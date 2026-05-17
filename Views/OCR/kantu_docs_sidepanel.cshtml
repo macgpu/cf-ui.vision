@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Side Panel - UIV Open-Source RPA Software";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Side Panel</span> Features</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Run web browser macros directly in the side panel</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <h3>How to Use the Side Panel:</h3>
+
+            <ol>
+                <li><strong>Opening the Side Panel:</strong> Click the "Open in Side Panel" button in the IDE to open the side panel. If there are any unsaved changes in macros, they will be automatically saved.</li>
+                <li><strong>Returning to the Full IDE:</strong> To switch back to the full IDE view, click the "Open IDE" button found near the bottom of the side panel. This action will close the side panel and open the full IDE.</li>
+                <li>
+                    <strong>Editing Macros in Side Panel Mode:</strong>
+                    <ul>
+                        <li>To edit macros while using the side panel, right-click on any macro and select "Edit (in IDE)". Unlike using the "Open IDE" button, the side panel will remain open.</li>
+                        <li>
+                            To return to the side panel after editing:
+                            <ol type="a">
+                                <li>Save your changes and close the IDE manually, or</li>
+                                <li>Press the "Open in Side Panel" button. This will save any changes and close the IDE automatically, taking you back to the side panel.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p>
+                The <a href="/rpa/docs/firefox">Firefox</a> sidepanel has a technical peculiarity: it can only be opened by clicking the icon in the toolbar.
+                Therefore, if you click the 'Open in Sidepanel' button, you will be prompted to also click the toolbar icon.
+            </p>
+
+            <p>
+                <img src="~/Content/Images/sidepanel-open-small.jpg" alt="Open the RPA side panel" class="responsive-img">
+                </br><em>
+                    In addition to having its own window (IDE), Ui.Vision can run in the Google Chrome Side Panel,  Microsoft Edge Sidebar and
+                    Firefox Sidebar.
+                </em>
+            </p>
+
+            <h3 id="default">How to make the Side Panel the default user interface</h3>
+
+            <p>
+                If you mostly replay (already existing) macros, we recommend that you make the side panel the default Ui.Vision user interface.
+                To do so, check the "Side panel - make default" checkbox in the settings:
+            </p>
+            <p>
+                <img src="~/Content/Images/sidepanel-settings-default.jpg" alt="Make side panel default" class="responsive-img">
+                </br><em>
+                    If set as default, the side panel opens directly when you click the Ui.Vision browser toolbar icon.
+                    A second click on the toolbar icon hides the side panel again.
+                </em>
+            </p>
+
+            <h3 id="settings">What is the difference between Side Panel and IDE?</h3>
+
+            <p>
+                <ul>
+                    <li>(1) Macros work in the Side Panel just as in the IDE. So <span class="hired">there is no difference for replaying</span>.</li>
+                    <li>(2) The side panel allows you to use macros more easily within your browser. It doesn't open a new window.</li>
+                    <li>
+                        (3) <span class="hired">To create macros, you need to use the full IDE</span>. The abbreviation "IDE" stands for "Integrated Development Enviroment".
+                        The side panel does not
+                        have a record button and lacks debugging features (like setting breakpoints, viewing variables, and screenshots).
+                    </li>
+                    <li>(4) To set the side panel as your default, change the settings in the "Replay" tab.</li>
+                    <li>(5) Currently, you can't open the side panel from the command line. It needs a real user click due to the Google side panel API requirements.</li>
+                    <li>(6) If the side panel is open, <a href="/rpa/docs#bookmarks">bookmarklet-triggered macros</a> will play there. If it's closed, the IDE will open to play the macro.</li>
+
+                </ul>
+            </p>
+            <p>
+                <img src="~/Content/Images/sidepanel-settings-small.jpg" alt="Side panel settings. Note especially the LEFT side panel checkbox" class="responsive-img">
+                </br><em>Side panel settings. Note especially the LEFT side panel checkbox (see below for details)</em>
+            </p>
+
+            <h3 id="left">Side Panel Position – Left vs Right</h3>
+
+            <p>
+                You can choose to place the side panel on the left or right side in the Chrome settings. It's up to your preference.
+                Ui.Vision needs to know the side panel's position (left or right) for accurate XClick/XMove commands.
+                Unfortunately, the Chrome/Edge extension API doesn't provide this information.
+                So, if you use the side panel on the left, please mark the checkbox.
+                This is important even when you use the IDE with another side panel on the left.
+            </p>
+            <p>
+                In Ui.Vision for <a href="/rpa/docs/firefox">Firefox</a> the manual setting of the side panel position is not required and ignored.
+
+            </p>
+            <p>
+                <img src="~/Content/Images/sidepanel-left-small.jpg" alt="How to switch between left and right side panel" class="responsive-img">
+                </br><em>How to switch between left and right side panel: Go to SETTINGS > APPEARANCE. This Chrome setting applies to all side panels.</em>
+            </p>
+
+            <h3 id="cmdline">Side Panel and the command line</h3>
+
+            <p>
+                (Only) in Firefox, you can set the sidebar to open by default when the browser is started.
+                To enable this, simply open the sidebar manually once.
+                After that, Firefox will automatically open the side bar whenever the browser is started.
+                This allows you to run macros in the side panel
+                from the <a href="/rpa/docs#cmd">RPA command line</a>.
+            </p>
+            <p>
+                <img src="~/Content/Images/firefoxsidebarapi.gif" alt="Run macro in side panel from command line" class="responsive-img">
+                </br><em>How to run a macro in the side panel from the command line.</em>
+            </p>
+            <p>
+                Running a  macro <em>in the side panel</em> from the command line works <a href="https://forum.ocr.space/t/python-script-call-ui-vision-in-tab-mode-and-not-in-sidepanel-mode/15415/2">only in Firefox</a>. 
+                The reason behind this is that the Chrome/Edge browsers allow only “real users” to open the side bar. 
+                A real user must click the extension icon for the sidebar to open.
+            </p>
+
+            
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+            </a>
+        </div>
+    </div>
+</div>

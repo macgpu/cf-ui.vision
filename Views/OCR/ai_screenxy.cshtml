@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "aiScreenXY - AI RPA Computer Use @ Work";
+}
+
+
+<div id="content download-content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-download">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>aiScreenXY</span> - Find images by text description</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>aiScreenXY | prompt | var1</span>
+            </h3>
+        </div>
+        <div class="span12">
+
+
+            <p>
+                The <span class="hiblue">aiScreenXY</span> command allows you to find the X,Y coordinates of items (icons, buttons, menu items)  by describing them.
+                The returned x,y values are parsed into the ${!ai1} and ${!ai2} variables. You can then use these variables as direct
+                input for the XClick and XMove commands. Ui.Vision takes care of scaling the returned x,y according to your screen settings (Screen DPI). This means that the values inside
+                ${!ai1} and ${!ai2} can differ from the raw x,y returned by Claude.
+            </p>
+            <h3 id="prompting">Example Prompts</h3>
+            <p>
+                To get started, see the new <a href="https://forum.ocr.space/t/first-ui-vision-ai-version/22493">ScreenXY_Browser and ScreenXY_Desktop</a> macros or
+                <a href="https://forum.ocr.space/tag/prompting">search our user forum for the tag "prompting"</a>.
+            </p>
+
+            <h3>What is the difference between aiPrompt and aiScreenXY?</h3>
+
+            <p>
+                The <a href="/ai/screenxy">aiPrompt</a> command is more flexible. It allows you to attach no, one or two images and then ask Claude to execute some prompt on them.
+                You can look for items, run OCR or ask Claude to describe what is in the image.
+                By contrast, the aiScreenXY command is optimized for finding items in screenshots. And aiScreenXY automatically parsed the LLM output and fills the
+                ${!ai1} and ${!ai2} variables with the result
+            </p>
+
+            <p>
+                <img src="~/Content/Images/rpa_ai_demo.jpg" alt="Anthropic Claude and Computer Use Demo macros" class="responsive-img">
+                </br>Test <a href="/ai/computeruse">Computer Use</a> and <a href="/ai">other AI commands</a> with the demo macros.
+                </p>
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+
+        </div>
+    </div>
+</div>

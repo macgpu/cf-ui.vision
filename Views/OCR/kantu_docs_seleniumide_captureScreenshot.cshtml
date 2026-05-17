@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "captureEntirePageScreenshot and captureScreenshot - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>captureScreenshot</span> and <span>captureEntirePageScreenshot</span>  - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>captureScreenshot (name of screenshot) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p><span class="hired">captureEntirePageScreenshot</span> takes a screenshot of the <em>whole</em> web page.</p> 
+            
+
+            <p><span class="hired">captureScreenshot</span> takes a screenshot of the visible website part (viewport).
+            This command has the   side effect of giving the tab that runs the macro the focus. This means it is made the active tab. <em>Ui.Vision RPA</em> does this as
+                Chrome can only take screenshots of the currently active tab.
+            </p>
+
+            <p>To capture the screenshot just of a web element, use <a href="/rpa/docs/selenium-ide/storeimage">storeImage</a>.</p>
+                
+            <p>
+                The screenshot is  saved internally and available in the "Screenshot tab". From there you can "download" it as an image file (PNG) if needed. You can automate
+                this download with the <a href="/rpa/docs/selenium-ide/localstorageexport">LocalStorageExport</a> command. OR: 
+                If you run UIV RPA in  <a href="/rpa/x#harddrive">hard-drive mode</a> the screenshot is directly saved as file in the "/screenshots/" folder below the UIV home directory (as specified in the XModule tab).
+            </p>
+
+            <p>For automatically taking <em>desktop</em> screenshots, use the <a href="/rpa/x/desktop-automation#capturedesktopscreenshot">captureDesktopScreenshot</a> command.</p>
+
+                <h3>captureEntirePageScreenshot Example</h3>
+
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>captureEntirePageScreenshot</td>
+                            <td>my_screenshot_name.png</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>captureScreenshot works in the <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>.<br />
+            captureEntirePageScreenshot works in the <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a> and <a href="/howto/getseleniumide/">Firefox IDE Classic</a>. 
+
+            </p>
+
+            <h3>Related Demo Macros</h3>
+                <p>DemoTakeScreenshot includes both commands. Demo-Autofill includes captureScreenshot</p>
+                <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+                <h3>See also</h3>
+                <p><a href="/rpa/docs/selenium-ide/click">click</a>,
+
+                    <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+    <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+</p>
+
+
+                <h3>Anything wrong or missing on this page? Suggestions?</h3>
+                <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+</div>
+    </div>
+</div>

@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "What's new with SeeShell Automation";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-kantudesk">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>SeeShell <span>Release Notes</span></h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div id="start" class="span12">
+
+            <h2 id="3335">What's new with V3.3.0.6, released November 6, 2018 - <a href="/download">Download now</a></h2>
+            <p>
+                <ul>
+                    <li>
+                        - Updated: [Browser] Chromium engine
+                    </li>
+                    <li>
+                        - Fixed: Several smaller issues.
+                    </li>
+                </ul>
+            </p>
+
+
+            <h2 id="333">What's new with V3.3.0.3, released October 3, 2018 - <a href="/download">Download now</a></h2>
+            <p>This release adds tab management support, updates the Chromium browser to the latest version and fixes several smaller issues.</p>
+            <p>
+                <ul>
+                    <li>
+                        - Added: [Browser] New <a href="https://ui.vision/seeshell/docs#tab">TAB</a> command to <a href="https://ui.vision/seeshell/docs#tab">open, switch and close tabs</a>. 
+</li>
+                    <li>
+                        - Added: Option to record and view a sequence of screenshots - see what SeeShell saw during the replay. This can be very useful for debugging macro issues.
+                    </li>
+                    <li>
+                        - Added: [Desktop] New icon to pin desktop UI to the front.
+                    </li>
+                    <li>
+                        - Improved: <a href="https://ui.vision/seeshell/docs#setvariable">setVariable</a> variable names are now case-insensitive (typical Windows behavior)
+</li>
+                    <li>
+                        - Fixed: Temporary JSON and image files are now correctly deleted (see related <a href="         https://forum.ocr.space/t/duplicate-json-files-appearing-in-seeshell-browser/530">forum post</a>)
+
+                    </li>
+                    <li>
+                        - Fixed: <a href="https://ui.vision/seeshell/docs#screenshot">Screenshot</a> command variable parsing 
+</li>
+                    <li>
+                        - Fixed: [Desktop] <a href="https://ui.vision/seeshell/docs#csv">${COL1} CSV reading</a> did not work in SeeShell Desktop Automation (see related <a href="https://forum.ocr.space/t/csv-read-problem/417/7">forum post</a>)
+</li>
+                    <li>
+                        - Changed: When you stop a recording, the "Save macro" dialog appears now automatically. So no more Save button needed.
+                    </li>
+                    <li>
+                        - Updated: Update to latest Google Chromium engine
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <img src="~/Content/Images/seeshell-view-sequence.webp" alt="Debug help: View the sequence of screenshots that SeeShell saw/used during macro replay" class="responsive-img">
+           </br> You can now view the sequence of screenshots that SeeShell saw/used during macro replay. If SeeShell had to wait for an image to appear, then what is stored is the last screenshot
+                (the one used by SeeShell to make a decision).
+            </p>
+
+
+            <h2 id="321">What's new with V3.2.1.2, released September 13, 2018 - <a href="/download">Download now</a></h2>
+            <p>This hotfix solves a regression issue with the SeeShell Browser <a href="/seeshell/api">API</a>. This is not the upcoming September update, which will be available later this month.</p>
+            <p>
+                <ul>
+                    <li>
+                        - Fixed: [API] Fixes the "browser refresh issue" when using the <a href="https://ui.vision/seeshell/docs#play">API Play command</a>, as reported in the forum <a href="https://forum.ocr.space/t/duplicate-json-files-appearing-in-seeshell-browser/530/6">here</a>
+            and <a href="https://forum.ocr.space/t/seeshell-scripting-with-c/470">here</a>.                  
+                     </li>
+                </ul>
+            </p>
+
+            <h2 id="320">What's new with V3.2.0.9, released August 13, 2018</h2>
+            <p>
+
+                <span class="hired">Breaking change for SeeShell Browser - new file extension:</span> As part of the move to a unified editor
+                SeeShell and the SeeShell Browser both use  the ".see" file extension now. If you still have old macros with the *.kmacro file 
+                extension, just rename it to *.see and the macros will work as before. No changes in the macro itself are required.
+                </li>
+
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        - Added: [Editor] <span class="hired">Unified SeeShell Editor</span> for <a href="/seeshell/desktop-automation">desktop automation</a> and <a href="/seeshell/web-automation">web automation</a> (SeeShell Browser). You can toggle between both modes with the switch
+    at top right corner. Except a special commands like Open or Proxy that abviously only make sense in a browser, you can run the same image-driven automation scripts in desktop or inside Chromium by just toggling the switch.
+
+<li>
+                        - Added: [Editor]  "Comment out/" feature in (Right-click => Comment out) to temporary disable commands
+                    </li>
+                    <li>
+                        - Added: [Editor]  "Delayed Screenshot" - especially useful to take screenshots of items that only show at mouse over events
+                    </li>
+                    <li>
+                        - Improved: [Editor] <span class="hired">Plenty of UI and UX improvements</span>
+                    </li>
+                    <li>
+                        - Updated: [SeeShell Browser] The built-in Chromium browser was updated. It corresponds now to Chrome V65.
+                    </li>
+                    <li>
+                        - Fixed: [SeeShell Browser] File download issue fixed
+                    </li>
+                    <li>
+                        - Removed: Rightclick and DoubleClick commands. They had been deprecated for a while.
+                        <a href="/seeshell/docs#click">Click->RightClick</a> and <a href="/seeshell/docs#click">Click->DoubleClick</a> replace them. 
+                    </li>
+                    <li>
+                        - Fixed: Several smaller issues and tweakss
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                <img src="~/Content/Images/editor-switch.webp" alt="Switch between Desktop and Inside Chromium Browser mode in the SeeShell Editor" class="responsive-img">
+            </p>
+
+
+            <h2 id="310">What's new with V3.1.6, released July 16, 2018</h2>
+            <p>
+                <ul>
+                    <li>
+                        - Added: HiDPI screen support
+                    </li>
+                </ul>
+            </p>
+
+
+            <h2 id="303">What's new with V3.0.0, released July 1, 2018</h2>
+            <p>
+                <ul>
+                    <li>
+                        - Added: <a href="/seeshell/desktop-automation">Visual Windows Desktop Automation (RPA)</a> support - SeeShell comes in two flavors now: SeeShell for 
+                        <a href="/seeshell/desktop-automation">Desktop Automation</a>
+                        and the SeeShell Browser for <a href="/seeshell/web-automation">Web Automation</a> (formerly KantuX)
+                    </li>
+                    <li>
+                        - Added: Move and MoveRelative commands. Simulate mouse up, mouse down and mouse over.
+                    </li>
+                    <li>
+                        - Click command now supports right-click, double-click
+                    </li>
+                    <li>
+                        - Drag & Drop support
+                    </li>
+                    <li>
+                        - Added: Editor uses the <a href="/seeshell/api">Scripting API</a> to provide "Run, "Run from here", "Run this line" options
+                        and image search test button. 
+                    </li>
+                    <li>
+                        - Added: Editor has Json source view tab, and image view tab in addition to the visual macro building tab.
+                    </li>
+
+                </ul>
+            </p>
+
+
+            <a href="#start" style="float:right">Top</a>
+
+
+        </div>
+    </div>
+</div>
