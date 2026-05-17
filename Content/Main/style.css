@@ -205,9 +205,8 @@ blockquote {
 .button-section .btn:hover {
     background: linear-gradient(135deg, #005E7C, #0097c4);
     border-color: #005E7C;
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 94, 124, 0.35);
-    transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+    transition: background 0.2s, box-shadow 0.2s;
 }
 
 .btn.button-trial a {
@@ -711,6 +710,8 @@ h3.line {
 
 /* Bootstrap 3 responsive grid (col-sm-* / col-md-*) */
 [class*="col-"] { position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; box-sizing: border-box; }
+/* Never float table cells — float breaks table layout */
+table [class*="col-"] { float: none !important; position: static; }
 @media (min-width: 768px) {
     .col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,
     .col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12 { float: left; }
