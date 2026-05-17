@@ -1,13 +1,11 @@
 
-var ww = document.body.clientWidth;
-
 $(document).ready(function() {
 	$(".nav li a").each(function() {
 		if ($(this).next().length > 0) {
 			$(this).addClass("parent");
 		};
 	})
-	
+
 	$(".toggleMenu").click(function(e) {
 		e.preventDefault();
 		$(this).toggleClass("active");
@@ -17,11 +15,11 @@ $(document).ready(function() {
 })
 
 $(window).bind('resize orientationchange', function() {
-	ww = document.body.clientWidth;
 	adjustMenu();
 });
 
 var adjustMenu = function() {
+	var ww = document.body.clientWidth;
 	if (ww < 768) {
 		$(".toggleMenu").css("display", "inline-block");
 		if (!$(".toggleMenu").hasClass("active")) {
