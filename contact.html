@@ -276,9 +276,21 @@
             var div    = document.getElementById('sucOrErrMesgDiv');
             var msg    = document.getElementById('sucOrErrMessage');
 
+            // Save subject to sessionStorage before form submit so we can show it after redirect
+            var form = document.getElementById('ocrContactForm');
+            if (form) {
+                form.addEventListener('submit', function () {
+                    var subjectEl = document.getElementById('Subject');
+                    if (subjectEl) sessionStorage.setItem('contactSubject', subjectEl.value);
+                });
+            }
+
             if (params.get('success') === '1') {
                 div.classList.add('alert-success');
-                msg.textContent = 'Your message was sent! You will get a reply within one day.';
+                var subject = sessionStorage.getItem('contactSubject') || '';
+                sessionStorage.removeItem('contactSubject');
+                var subjectPart = subject ? ' with the subject <strong>' + subject.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</strong>' : '';
+                msg.innerHTML = 'Your message' + subjectPart + ' was sent! You will get a reply within one day.';
                 banner.style.display = '';
             } else if (params.get('error')) {
                 div.classList.add('alert-danger');
