@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="List of all supported commands, and user-extensions.js - Classic Firefox IDE">
+    <title>List of all supported commands, and user-extensions.js - Classic Firefox IDE</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>Complete list of <span>Selenium IDE</span> commands - Classic Firefox IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Complete list of Selenium IDE Commands in the classic/old Firefox IDE</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>The old Firefox IDE supports a gigantic lists of commands, many of them rarely used or not at all. Simply adding this zoo of commands to a new IDE does not help the web testing community.
+            In the new IDE we only want to support <a href="/rpa/docs/selenium-ide/">commands that are truly useful and used</a>. Kantu's built-in
+                <a href="/rpa/docs/selenium-ide#flowcontrol">flow control</a> and 
+                    webdriver-like 
+                <a href="/rpa/docs/selenium-ide#implicitwaiting">implicit waiting</a>
+
+                    make many old commands redundant. But if we missed an important old Selenium IDE command,
+                    please <a href="/contact">contact us</a> and tell us which one and why.
+
+</p>
+
+            <p>
+                <img src="/Content/Images/Selenium-IDE-Old.webp" alt="Selenium IDE 2.9.1" class="responsive-img">
+            </p>
+
+
+            <h3>Classic Firefox Selenium IDE - List of all commands:</h3>
+            <p>
+                addLocationStrategy,<br /> 
+                addLocationStrategyAndWait,<br /> 
+                addScript,<br /> 
+                addScriptAndWait,<br /> 
+                addSelection,<br /> 
+                addSelectionAndWait,<br /> 
+                allowNativeXpath,<br />
+                allowNativeXpathAndWait,<br /> 
+                altKeyDown,<br /> 
+                altKeyDownAndWait,<br /> 
+                altKeyUp,<br /> 
+                altKeyUpAndWait,<br /> 
+                answerOnNextPrompt,<br /> 
+                <a href="/rpa/docs/selenium-ide/storeTitle">assertAlert</a>,<br /> 
+                assertAlertNotPresent,<br /> 
+                assertAlertPresent,<br /> 
+                assertAllButtons,<br /> 
+                assertAllFields,<br /> 
+                assertAllLinks,<br /> 
+                assertAllWindowIds,<br /> 
+                assertAllWindowNames,<br /> 
+                assertAllWindowTitles,<br /> 
+                assertAttribute,<br /> 
+                assertAttributeFromAllWindows,<br /> 
+                assertBodyText,<br /> assertChecked,<br /> assertConfirmation,<br /> assertConfirmationNotPresent,<br /> assertConfirmationPresent,<br /> assertCookie,<br /> assertCookieByName,<br />
+                assertCookieNotPresent,<br /> assertCookiePresent,<br /> assertCursorPosition,<br /> assertEditable,<br /> assertElementHeight,<br /> assertElementIndex,<br /> assertElementNotPresent,
+                <br /> assertElementPositionLeft,<br /> assertElementPositionTop,<br /> assertElementPresent,<br /> assertElementWidth,<br /> assertEval,<br /> assertExpression,<br /> assertHtmlSource,<br /> assertLocation,
+                <br /> assertMouseSpeed,<br /> assertNotAlert,<br /> assertNotAllButtons,<br /> assertNotAllFields,<br /> assertNotAllLinks,<br /> assertNotAllWindowIds,<br /> assertNotAllWindowNames,<br /> assertNotAllWindowTitles,
+                <br /> assertNotAttribute,<br /> assertNotAttributeFromAllWindows,<br /> assertNotBodyText,<br /> assertNotChecked,<br /> assertNotConfirmation,<br /> assertNotCookie,
+                <br /> assertNotCookieByName,<br /> assertNotCursorPosition,<br /> assertNotEditable,<br /> assertNotElementHeight,<br /> assertNotElementIndex,<br /> assertNotElementPositionLeft,<br /> assertNotElementPositionTop,
+                <br /> assertNotElementWidth,<br /> assertNotEval,<br /> assertNotExpression,<br /> assertNotHtmlSource,<br /> assertNotLocation,<br /> assertNotMouseSpeed,<br /> assertNotOrdered,
+                <br /> assertNotPrompt,<br /> assertNotSelectOptions,<br /> assertNotSelectedId,<br /> assertNotSelectedIds,<br /> assertNotSelectedIndex,<br /> assertNotSelectedIndexes,
+                <br /> assertNotSelectedLabel,<br /> assertNotSelectedLabels,<br /> assertNotSelectedValue,<br /> assertNotSelectedValues,<br /> assertNotSomethingSelected,<br /> assertNotSpeed,<br /> assertNotTable,
+                <br /> assertNotText,<br /> assertNotTitle,<br /> assertNotValue,<br /> assertNotVisible,<br /> assertNotWhetherThisFrameMatchFrameExpression,<br /> assertNotWhetherThisWindowMatchWindowExpression,
+                <br /> assertNotXpathCount,<br /> assertOrdered,<br /> assertPrompt,<br /> assertPromptNotPresent,<br /> assertPromptPresent,<br /> assertSelectOptions,<br /> assertSelectedId,<br /> assertSelectedIds,
+                <br /> assertSelectedIndex,<br /> assertSelectedIndexes,<br /> assertSelectedLabel,<br /> assertSelectedLabels,<br /> assertSelectedValue,<br /> assertSelectedValues,<br /> assertSomethingSelected,<br /> assertSpeed,
+                <br /> assertTable,<br /> assertText,<br /> assertTextNotPresent,
+                
+                <br /> <a href="/rpa/docs/selenium-ide/assertText-verifyText#verifyTextPresent">assertTextPresent</a>,
+
+
+
+    <br /> assertTitle,<br /> assertValue,<br /> assertVisible,<br /> assertWhetherThisFrameMatchFrameExpression,
+    <br /> assertWhetherThisWindowMatchWindowExpression,<br /> assertXpathCount,<br /> assignId,<br /> assignIdAndWait,<br /> break,<br /> captureEntirePageScreenshot,<br /> captureEntirePageScreenshotAndWait,
+    <br /> check,<br /> checkAndWait,<br /> chooseCancelOnNextConfirmation,<br /> chooseOkOnNextConfirmation,<br /> chooseOkOnNextConfirmationAndWait,<br /> click,<br /> clickAndWait,<br /> clickAt,
+    <br /> clickAtAndWait,<br /> close,<br /> contextMenu,<br /> contextMenuAndWait,<br /> contextMenuAt,<br /> contextMenuAtAndWait,<br /> controlKeyDown,<br /> controlKeyDownAndWait,<br /> controlKeyUp,
+    <br /> controlKeyUpAndWait,<br /> createCookie,<br /> createCookieAndWait,
+    <br /> <a href="/rpa/docs/selenium-ide/deleteAllVisibleCookies">deleteAllVisibleCookies</a>,
+
+    <br /> deleteAllVisibleCookiesAndWait,<br /> deleteCookie,<br /> deleteCookieAndWait,
+    <br /> deselectPopUp,<br /> deselectPopUpAndWait,<br /> doubleClick,<br /> doubleClickAndWait,<br /> doubleClickAt,<br /> doubleClickAtAndWait,<br /> dragAndDrop,<br /> dragAndDropAndWait,
+    <br /> dragAndDropToObject,<br /> dragAndDropToObjectAndWait,<br /> dragdrop,<br /> dragdropAndWait,<br /> echo,<br /> fireEvent,<br />
+    fireEventAndWait,<br /> focus,<br /> focusAndWait,<br /> goBack,<br /> goBackAndWait,<br /> highlight,<br /> highlightAndWait,<br />
+    ignoreAttributesWithoutValue,<br /> ignoreAttributesWithoutValueAndWait,<br /> keyDown,<br /> keyDownAndWait,<br /> keyPress,<br />
+    keyPressAndWait,<br /> keyUp,<br /> keyUpAndWait,<br /> metaKeyDown,<br /> metaKeyDownAndWait,<br /> metaKeyUp,<br />
+    metaKeyUpAndWait,<br /> mouseDown,<br /> mouseDownAndWait,<br /> mouseDownAt,<br /> mouseDownAtAndWait,<br /> mouseDownRight,<br />
+    mouseDownRightAndWait,<br /> mouseDownRightAt,<br /> mouseDownRightAtAndWait,<br /> mouseMove,<br /> mouseMoveAndWait,<br /> mouseMoveAt,<br />
+    mouseMoveAtAndWait,<br /> mouseOut,<br /> mouseOutAndWait,<br /> mouseOver,<br /> mouseOverAndWait,<br /> mouseUp,<br /> mouseUpAndWait,<br />
+    mouseUpAt,<br /> mouseUpAtAndWait,<br /> mouseUpRight,<br /> mouseUpRightAndWait,<br /> mouseUpRightAt,<br /> mouseUpRightAtAndWait,<br />
+    <a href="/rpa/docs/selenium-ide/open">open</a> ,
+    <br /> openWindow,<br /> openWindowAndWait,<br />
+    <a href="/rpa/docs/selenium-ide/pause">pause</a> ,
+
+
+    <br /> refresh,<br /> refreshAndWait,<br /> removeAllSelections,<br />
+    removeAllSelectionsAndWait,<br /> removeScript,<br /> removeScriptAndWait,<br /> removeSelection,<br /> removeSelectionAndWait,<br />
+    rollup,<br /> rollupAndWait,<br /> runScript,<br /> runScriptAndWait,<br /> select,<br /> selectAndWait,<br />
+    selectFrame,<br /> selectPopUp,<br /> selectPopUpAndWait,<br /> selectWindow,<br /> sendKeys,<br /> setBrowserLogLevel,<br />
+    setBrowserLogLevelAndWait,<br /> setCursorPosition,<br /> setCursorPositionAndWait,<br /> setMouseSpeed,<br /> setMouseSpeedAndWait,<br />
+    setSpeed,<br /> setSpeedAndWait,<br /> setTimeout,<br /> shiftKeyDown,<br /> shiftKeyDownAndWait,<br /> shiftKeyUp,<br /> shiftKeyUpAndWait,<br />
+    store,<br /> storeAlert,<br /> storeAlertPresent,<br /> storeAllButtons,<br /> storeAllFields,<br /> storeAllLinks,<br /> storeAllWindowIds,<br />
+    storeAllWindowNames,<br /> storeAllWindowTitles,<br /> storeAttribute,<br /> storeAttributeFromAllWindows,<br /> storeBodyText,<br /> storeChecked,
+    <br /> storeConfirmation,<br /> storeConfirmationPresent,<br /> storeCookie,<br /> storeCookieByName,<br /> storeCookiePresent,<br />
+    storeCursorPosition,<br /> storeEditable,<br /> storeElementHeight,<br /> storeElementIndex,<br /> storeElementPositionLeft,<br />
+    storeElementPositionTop,<br /> storeElementPresent,<br /> storeElementWidth,<br />
+    <a href="/rpa/docs/selenium-ide/storeEval">storeEval</a>,
+
+
+
+    <br /> storeExpression,<br /> storeHtmlSource,<br />
+
+    <a href="/rpa/docs/selenium-ide/storeLocation">storeLocation</a>,<br />
+
+
+    storeMouseSpeed,<br /> storeOrdered,<br /> storePrompt,<br /> storePromptPresent,<br /> storeSelectOptions,<br /> storeSelectedId,<br /> storeSelectedIds,<br /> storeSelectedIndex,<br /> storeSelectedIndexes,<br /> storeSelectedLabel,<br /> storeSelectedLabels,<br /> storeSelectedValue,<br /> storeSelectedValues,<br /> storeSomethingSelected,<br />
+    storeSpeed,<br /> storeTable,<br />
+
+    <a href="/rpa/docs/selenium-ide/storeText">storeText</a>,
+
+
+
+    <br /><a href="/rpa/docs/selenium-ide/storeText#storeTextPresent">storeTextPresent</a>,<br />
+
+    <a href="/rpa/docs/selenium-ide/storeTitle">storeTitle</a>, <br />
+    <a href="/rpa/docs/selenium-ide/storeValue">storeValue</a>,<br />
+
+
+
+
+    storeVisible,<br /> storeWhetherThisFrameMatchFrameExpression,<br /> storeWhetherThisWindowMatchWindowExpression,<br /> storeXpathCount,<br /> submit,<br /> submitAndWait,<br /> type,<br /> typeAndWait,<br />
+
+    typeKeys,<br /> typeKeysAndWait,<br /> uncheck,<br />
+
+
+
+    uncheckAndWait,<br />
+    useXpathLibrary,<br />
+    useXpathLibraryAndWait,<br />
+    verifyAlert,<br />
+
+    verifyAlertNotPresent
+
+    ,<br />verifyAlertPresent
+    ,<br />verifyAllButtons
+    ,<br />
+    verifyAllFields
+    ,<br />
+    verifyAllLinks
+    ,<br />
+    verifyAllWindowIds
+    ,<br />verifyAllWindowNames
+    ,<br />verifyAllWindowTitles
+    ,<br />verifyAttribute
+    ,<br />verifyAttributeFromAllWindows
+    ,<br />verifyBodyText
+    ,<br />verifyChecked
+    ,<br />verifyConfirmation
+    ,<br />verifyConfirmationNotPresent
+    ,<br />verifyConfirmationPresent
+    ,<br />verifyCookie
+    ,<br />verifyCookieByName
+    ,<br />verifyCookieNotPresent
+    ,<br />verifyCookiePresent
+    ,<br />verifyCursorPosition
+    ,<br />verifyEditable
+    ,<br />verifyElementHeight
+    ,<br />verifyElementIndex
+    ,<br />verifyElementNotPresent
+    ,<br />verifyElementPositionLeft
+    ,<br />verifyElementPositionTop
+    ,<br />verifyElementPresent
+    ,<br />verifyElementWidth
+    ,<br />verifyEval
+    ,<br />verifyExpression
+    ,<br />verifyHtmlSource
+    ,<br />verifyLocation
+    ,<br />verifyMouseSpeed
+    ,<br />verifyNotAlert
+    ,<br />verifyNotAllButtons
+    ,<br />verifyNotAllFields
+    ,<br />verifyNotAllLinks
+    ,<br />verifyNotAllWindowIds
+    ,<br />verifyNotAllWindowNames
+    ,<br />verifyNotAllWindowTitles
+    ,<br />verifyNotAttribute
+    ,<br />verifyNotAttributeFromAllWindows
+    ,<br />verifyNotBodyText
+    ,<br />verifyNotChecked
+    ,<br />verifyNotConfirmation
+    ,<br />verifyNotCookie
+    ,<br />verifyNotCookieByName
+    ,<br />verifyNotCursorPosition
+    ,<br />verifyNotEditable
+    ,<br />verifyNotElementHeight
+    ,<br />verifyNotElementIndex
+    ,<br />verifyNotElementPositionLeft
+    ,<br />verifyNotElementPositionTop
+    ,<br />verifyNotElementWidth
+    ,<br />verifyNotEval
+    ,<br />verifyNotExpression
+    ,<br />verifyNotHtmlSource
+    ,<br />verifyNotLocation
+    ,<br />verifyNotMouseSpeed
+    ,<br />verifyNotOrdered
+    ,<br />verifyNotPrompt,
+    <br />verifyNotSelectOptions
+    ,<br />verifyNotSelectedId
+    ,<br />verifyNotSelectedIds
+    ,<br />verifyNotSelectedIndex
+    ,<br />verifyNotSelectedIndexes
+    ,<br />verifyNotSelectedLabel
+    ,<br />verifyNotSelectedLabels
+    ,<br />verifyNotSelectedValue
+    ,<br />verifyNotSelectedValues
+    ,<br />verifyNotSomethingSelected
+    ,<br />verifyNotSpeed
+    ,<br />verifyNotTable
+    ,<br />verifyNotText
+    ,<br />verifyNotTitle
+    ,<br />verifyNotValue
+    ,<br />verifyNotVisible
+    ,<br />verifyNotWhetherThisFrameMatchFrameExpression
+    ,<br />verifyNotWhetherThisWindowMatchWindowExpression
+    ,<br />verifyNotXpathCount
+    ,<br />verifyOrdered,<br />verifyPrompt
+    ,<br />verifyPromptNotPresent
+    ,<br />verifyPromptPresent
+    ,<br />verifySelectOptions
+    ,<br />verifySelectedId
+    ,<br />verifySelectedIds
+    ,<br />verifySelectedIndex
+    ,<br />verifySelectedLabel
+    ,<br />verifySelectedLabels
+    ,<br />verifySelectedValue
+    ,<br />verifySelectedValues
+    ,<br />verifySomethingSelected
+    ,<br />verifySpeed
+    ,<br />verifyTable
+    ,<br />verifyText
+    ,<br />verifyTextNotPresent
+
+    ,<br /><a href="/rpa/docs/selenium-ide/assertText-verifyText#verifyTextPresent">verifyTextPresent</a>
+
+
+    ,<br />verifyTitle
+    ,<br />verifyValue
+    ,<br />verifyVisible
+    ,<br />verifyWhetherThisFrameMatchFrameExpression
+    ,<br />verifyWhetherThisWindowMatchWindowExpression
+    ,<br />verifyXpathCount
+    ,<br />waitForAlert
+    ,<br />waitForAlertNotPresent
+    ,<br />waitForAlertPresent
+    ,<br />waitForAllButtons
+    ,<br />waitForAllFields
+    ,<br />waitForAllLinks
+    ,<br />waitForAllWindowIds
+    ,<br />waitForAllWindowNames
+    ,<br />waitForAllWindowTitles
+    ,<br />waitForAttribute
+    ,<br />waitForAttributeFromAllWindows
+    ,<br />waitForBodyText
+    ,<br />waitForChecked
+    ,<br />waitForCondition
+    ,<br />waitForConfirmation
+    ,<br />waitForConfirmationNotPresent
+    ,<br />waitForConfirmationPresent
+    ,<br />waitForCookie
+    ,<br />waitForCookieByName
+    ,<br />waitForCookieNotPresent
+    ,<br />waitForCookiePresent
+    ,<br />waitForCursorPosition
+    ,<br />waitForEditable
+    ,<br />waitForElementHeight
+    ,<br />waitForElementIndex
+    ,<br />waitForElementNotPresent
+    ,<br />waitForElementPositionLeft
+    ,<br />waitForElementPositionTop
+    ,<br />waitForElementPresent
+    ,<br />waitForElementWidth
+    ,<br />waitForEval
+    ,<br />waitForExpression
+    ,<br />waitForFrameToLoad
+    ,<br />waitForHtmlSource
+    ,<br />waitForLocation
+    ,<br />waitForMouseSpeed
+    ,<br />waitForNotAlert
+    ,<br />waitForNotAllButtons
+    ,<br />waitForNotAllFields
+    ,<br />waitForNotAllLinks
+    ,<br />waitForNotAllWindowIds
+    ,<br />waitForNotAllWindowNames
+    ,<br />waitForNotAllWindowTitles
+    ,<br />waitForNotAttribute
+    ,<br />waitForNotAttributeFromAllWindows
+    ,<br />waitForNotBodyText
+    ,<br />waitForNotChecked
+    ,<br />waitForNotConfirmation
+    ,<br />waitForNotCookie
+    ,<br />waitForNotCookieByName
+    ,<br />waitForNotCursorPosition
+    ,<br />waitForNotEditable
+    ,<br />waitForNotElementHeight
+    ,<br />waitForNotElementIndex
+    ,<br />waitForNotElementPositionLeft
+    ,<br />waitForNotElementPositionTop
+    ,<br />waitForNotElementWidth
+    ,<br />waitForNotEval
+    ,<br />waitForNotExpression
+    ,<br />waitForNotHtmlSource
+    ,<br />waitForNotLocation
+    ,<br />waitForNotMouseSpeed
+    ,<br />waitForNotOrdered
+    ,<br />waitForNotPrompt
+    ,<br />waitForNotSelectOptions
+    ,<br />waitForNotSelectedId
+    ,<br />waitForNotSelectedIds
+    ,<br />waitForNotSelectedIndex
+    ,<br />waitForNotSelectedIndexes
+    ,<br />waitForNotSelectedLabel
+    ,<br />waitForNotSelectedLabels
+    ,<br />waitForNotSelectedValue
+    ,<br />
+
+    windowFocus   ,<br />
+    windowFocusAndWait   ,<br />
+    windowMaximize   ,<br />
+    windowMaximizeAndWait
+
+</p>
+
+            <p>
+                <img src="/Content/Images/seleniumide-alloldcommands.webp" alt="Classic Selenium IDE commands..." class="responsive-img">
+            </p>
+
+            <h3 id="user-extensions.js">Even more commands with user-extensions.js </h3>
+            <p>By default, the classic Selenium IDE looked for a file called "user-extensions.js", and loads javascript code 
+            found in that file. user-extensions.js provided a convenient location for adding extensions to Selenium, like new actions, 
+            checks and locator-strategies. For example you can add a new command like this
+             <span class="hired">Selenium.prototype.doStoreRandom = function(locator){random = Math.floor(Math.random()*11);
+                this.doType(loacator, random);
+                }</span>.
+</p>
+            <p>The new <em>Ui.Vision RPA</em> IDE does not support extensions yet (If you need this feature, please <a href="/contact">contact us</a>.). Note that 
+                for many functions the <a href="/rpa/docs/selenium-ide/storeEval">storeEval</a> command provides a good, easy-to-use alternative.
+            For example, creating random numbers is easily done with  <span class="hired">storeEval | Math.floor(Math.random()*11) | YourRandomNumber</span>.
+</p>
+
+
+                <h3>See also</h3>
+            </p>
+    <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+</p>
+
+
+                <h3>Anything wrong or missing on this page? Suggestions?</h3>
+                <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+</div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>

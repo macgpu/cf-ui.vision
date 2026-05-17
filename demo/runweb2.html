@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Demo Embed RPA software scripts into a website">
+    <title>Demo Embed RPA software scripts into a website</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-kantuweb">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>BETA TEST PAGE How to distribute Macros via  Website:</span> Test Page</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+
+            <h1>Run embedded <em>Ui.Vision RPA</em> macros</h1>
+
+            <p>
+                Embedded <em>Ui.Vision RPA</em> macros are a great way to distribute macros to users, for example to help them with certain tasks
+                on your website. This website contains three embedded macros. You can use your browser's "View page source" function to inspect this website - and you will see the embedded macros. The macro code is exactly the same as you
+                can find on the <a href="/rpa/docs#sourcecodetab">source code tab</a>.
+            </p>
+            <p>
+                To run these macros, you first have to <a href="#allow">allow it</a>. (If you don't allow to run embedded macros, <em>Ui.Vision RPA</em> will show a dialog with an error message).
+            </p>
+
+            <h2>Input box to display some results</h2>
+            <p>
+                <input type="text" size="70" id="sometext"><br>
+            </p>
+            <form>
+                <select id="tesla">
+                    <option value="buy">Select your next Tesla</option>
+                    <option value="s">Model S</option>
+                    <option value="3">Model 3</option>
+                    <option value="x">Model X</option>
+                    <option value="y">Model Y</option>
+                </select>
+            </form>
+
+            <h2>Get Checkbox status with storeChecked</h2>
+            <form action="">
+                <input type="checkbox" name="vehicle" value="bike" checked="checked">↑ I have a bike
+                <input type="checkbox" name="vehicle" value="boat"> ↑ I have a boat
+                <input type="checkbox" name="vehicle" value="car">↑ I have a car
+            </form>
+
+
+
+            <input id="b1" type="button" value="TEST Fill out boxes!" onclick="RunMacro1();" />
+            ^Does not work as it closes the page.
+            </br>
+            </br>
+
+
+            <input id="b2" type="button" value="Run Macro (Fill out Google Form, runs in NEW tab)" onclick="RunMacro2();" />
+            ^This is the same macro as the first one, but now it contains the <span class="hired">closeRPA: 0</span> flag
+            in the <a href="#code">Javascript</a> for this call,
+            so <em>Ui.Vision RPA</em> stays open after the macro run is completed.
+            Also, the macro runs in a new tab because  we use  the <span class="hired">selectWindow | TAB=OPEN | https://docs....</span> command
+            to open page.
+            </br>
+            </br>
+
+            <input id="b3" type="button" value="Run Macro (Download a file)" onclick="RunMacro3();" />
+            ^This macro goes to 7zip.org and downloads the software. (7zip is not related to ui.vision in any way).
+            </br>
+            </br>
+
+            <input id="b4" type="button" value="Run Macro (Run visual UI Test)" onclick="RunMacro4();" />
+            ^This macro goes runs the embedded version of the DemoVisualUITest demo macro (Visual UI testing with image recognition).
+            The remote image feature requires Ui.Vision RPA V5.5.3 and higher.
+            </br>
+            </br>
+
+            <h2 id="allow">Allow embedded macros to run</h2>
+            <p>
+                In order to run macros that are embedded in a website you have to first allow it (step 1 in the screenshot below). The default
+                setting is OFF (do not run embedded macros). Once you allow such macros in general, you will see a dialog box
+                asking for permission to run such macros. If you want to avoid this warning dialog for certain websites (for example your own internal website), then you can add
+                this website to the website whitelist (step 2 in the screenshot below):
+            </p>
+
+            <p>
+                <img src="/Content/Images/kantu-whitelist.webp" alt="Kantu URL Whitelist" class="responsive-img">
+            </p>
+
+            <h2 id="code">"Steal" the Javascript snippets directly from this page</h2>
+            <p>
+                You can copy and reuse the Javascript that sends the <em>Ui.Vision RPA</em> macro from the page to the RPA software. The code is directly on this page. In the browser, right-click
+                and select "View page source" to view it.
+            </p>
+
+            <p>
+                <img src="/Content/Images/run-macro-code.webp" alt="Embedded macros javascript code" class="responsive-img">
+                </br>The only part that needs to be changed is the macro JSON code. You can also give each macro a different name.  Macros with the same name get simply overwritten,
+                so <em>Ui.Vision RPA</em> runs always the latest version that is on the page.
+            </p>
+            <p>For more information see <a href="/rpa/docs#embed">How to create and run embedded macros</a>.</p>
+        </div>
+    </div>
+</div>
+
+<!--- hello, you found the macro source code :-) -->
+<!--- in this code "direct: true" does the same as &direct=1 via the command line -->
+<script>
+
+    function RunMacro1() {
+        // Embedded Ui.Vision RPA Macros V3.61, License: MIT License (Open-Source), (c) 2020 a9t9
+        //This code snippet checks if Ui.Vision RPA is installed, and if yes, tells the RPA software to import and run the macro.
+        //In Ui.Vision RPA itself the user can allow/not allow to run embedded web macros (OFF by default)
+        //To run web macros from specific websites without warning prompt, they URLs of certain websites can be whitelisted
+        //For more details please see https://ui.vision/docs#embed
+
+        (function (detail) {
+            var isExtensionLoaded = function () {
+                var $root = document.documentElement
+                return !!$root && !!$root.getAttribute('data-kantu')
+            }
+            var openExternal = function (url) {
+                const $el = document.createElement('a')
+                $el.setAttribute('target', '_blank')
+                $el.setAttribute('href', url)
+                $el.style.position = 'absolute'
+                $el.style.top = '-9999px'
+                $el.style.left = '-9999px'
+                document.body.appendChild($el)
+                $el.click()
+                setTimeout(() => {
+                    $el.remove()
+                }, 200)
+            }
+            var openWebsite = function () {
+                openExternal('https://ui.vision/')
+            }
+            if (!isExtensionLoaded()) {
+                if (confirm('Ui.Vision RPA is not installed yet. Do you want to download it now?')) {
+                    return openWebsite()
+                }
+            } else {
+                return window.dispatchEvent(new CustomEvent('kantuSaveAndRunMacro', { detail: detail }))
+            }
+        })
+            ({
+                direct: 1, //If the website URL is whitelisted, run the macro without prompt
+                json: {
+                    //Macro JSON code here. You can copy and paste the code directly from the source tab, https://ui.vision/docs#sourcecodetab
+                    "Name": "EmbeddedMacro_FillOutGoogleForm",
+                    "CreationDate": "2019-11-25",
+                    "Commands": [
+ {
+      "Command": "type",
+      "Target": "id=sometext",
+      "Value": "123"
+    },
+    {
+      "Command": "select",
+      "Target": "id=tesla",
+      "Value": "label=Model 3"
+    },
+    {
+      "Command": "check",
+      "Target": "xpath=//*[@@id=\"content\"]/div[2]/div/form[2]/input[3]",
+      "Value": ""
+    }
+                    ]
+                }
+            })
+    }
+
+    // Macro 2 -----------------------------------------------------------------------------
+    function RunMacro2() {
+        // Embedded Ui.Vision RPA Macros V3.61, License: MIT License (Open-Source), (c) 2020 a9t9
+        //This code snippet checks if Ui.Vision RPA is installed, and if yes, tells the RPA software to import and run the macro.
+        //In Ui.Vision RPA itself the user can allow/not allow to run embedded web macros (OFF by default)
+        //To run web macros from specific websites without warning prompt, they URLs of certain websites can be whitelisted
+        //For more details please see https://ui.vision/docs#embed
+
+        (function (detail) {
+            var isExtensionLoaded = function () {
+                var $root = document.documentElement
+                return !!$root && !!$root.getAttribute('data-kantu')
+            }
+            var openExternal = function (url) {
+                const $el = document.createElement('a')
+                $el.setAttribute('target', '_blank')
+                $el.setAttribute('href', url)
+                $el.style.position = 'absolute'
+                $el.style.top = '-9999px'
+                $el.style.left = '-9999px'
+                document.body.appendChild($el)
+                $el.click()
+                setTimeout(() => {
+                    $el.remove()
+                }, 200)
+            }
+            var openWebsite = function () {
+                openExternal('https://ui.vision/')
+            }
+            if (!isExtensionLoaded()) {
+                if (confirm('Ui.Vision RPA is not installed yet. Do you want to download it now?')) {
+                    return openWebsite()
+                }
+            } else {
+                return window.dispatchEvent(new CustomEvent('kantuSaveAndRunMacro', { detail: detail }))
+            }
+        })
+            ({
+                direct: 1, //If the website URL is whitelisted, run the macro without prompt
+                closeRPA: 0, //keep the Ui.Vision RPA UI open after the macro has completed
+                continueInLastUsedTab: 0,
+                json: {
+                    //Macro JSON code here. You can copy and paste the code directly from the source tab, https://ui.vision/docs#sourcecodetab
+                    "Name": "EmbeddedMacro_FillOutGoogleForm",
+                    "CreationDate": "2020-02-19",
+                    "Commands": [
+                        {
+                            "Command": "bringBrowserToForeground",
+                            "Target": "",
+                            "Value": ""
+                        },
+                        {
+                            "Command": "selectWindow",
+                            "Target": "TAB=OPEN",
+                            "Value": "https://docs.google.com/forms/d/11UBhaBf-clTy_EiI6TjlxaAinhae3rvPaPqS14epAfA/viewform?edit_requested=true"
+                        },
+                        {
+                            "Command": "type",
+                            "Target": "name=entry.933434489",
+                            "Value": "Second data set."
+                        },
+                        {
+                            "Command": "type",
+                            "Target": "name=entry.1382578664",
+                            "Value": "office.of.bill.gates@ui.vision"
+                        },
+                        {
+                            "Command": "type",
+                            "Target": "name=entry.336178899",
+                            "Value": "This is the 2nd data set. Embedded macros like this can be easily autogenerated. The macro source code is standard JSON."
+                        },
+                        {
+                            "Command": "clickAndWait",
+                            "Target": "xpath=//*[@@id=\"mG61Hd\"]/div/div/div[3]/div[1]/div/div/span/span",
+                            "Value": ""
+                        }
+                    ]
+                }
+            })
+    }
+
+    // Macro 3 ------------------------------------------------------------------------------------------------
+
+    function RunMacro3() {
+        // Embedded Ui.Vision RPA Macros V3.61, License: MIT License (Open-Source), (c) 2020 a9t9
+        //This code snippet checks if Ui.Vision RPA is installed, and if yes, tells the RPA software to import and run the macro.
+        //In Ui.Vision RPA itself the user can allow/not allow to run embedded web macros (OFF by default)
+        //To run web macros from specific websites without warning prompt, they URLs of certain websites can be whitelisted
+        //For more details please see https://ui.vision/docs#embed
+
+        (function (detail) {
+            var isExtensionLoaded = function () {
+                var $root = document.documentElement
+                return !!$root && !!$root.getAttribute('data-kantu')
+            }
+            var openExternal = function (url) {
+                const $el = document.createElement('a')
+                $el.setAttribute('target', '_blank')
+                $el.setAttribute('href', url)
+                $el.style.position = 'absolute'
+                $el.style.top = '-9999px'
+                $el.style.left = '-9999px'
+                document.body.appendChild($el)
+                $el.click()
+                setTimeout(() => {
+                    $el.remove()
+                }, 200)
+            }
+            var openWebsite = function () {
+                openExternal('https://ui.vision/')
+            }
+            if (!isExtensionLoaded()) {
+                if (confirm('Ui.Vision RPA is not installed yet. Do you want to download it now?')) {
+                    return openWebsite()
+                }
+            } else {
+                return window.dispatchEvent(new CustomEvent('kantuSaveAndRunMacro', { detail: detail }))
+            }
+        })
+            ({
+                direct: 1, //If the website URL is whitelisted, run the macro without prompt
+                closeRPA: 1, //close Ui.Vision RPA UI after the macro has completed
+                //Macro JSON code here. You can copy and paste the code directly from the source tab, https://ui.vision/docs#sourcecodetab
+                json: {
+                    "Name": "EmbeddedMacro_7zDownload",
+                    "CreationDate": "2019-11-18",
+                    "Commands": [
+                        {
+                            "Command": "open",
+                            "Target": "http://www.7zip.org/download.html",
+                            "Value": ""
+                        },
+                        {
+                            "Command": "click",
+                            "Target": "/html/body/table/tbody/tr/td[2]/p[1]",
+                            "Value": ""
+                        },
+                        {
+                            "Command": "click",
+                            "Target": "link=Download@POS=5",
+                            "Value": ""
+                        }
+
+                    ]
+                }
+            })
+    }
+// ^^^ --- embedded Ui.Vision RPA macros above
+
+// Macro 4 ------------------------------------------------------------------------------------------------
+
+    function RunMacro4() {
+        // Embedded Ui.Vision RPA Macros V3.61, License: MIT License (Open-Source), (c) 2020 a9t9
+        //This code snippet checks if Ui.Vision RPA is installed, and if yes, tells the RPA software to import and run the macro.
+        //In Ui.Vision RPA itself the user can allow/not allow to run embedded web macros (OFF by default)
+        //To run web macros from specific websites without warning prompt, they URLs of certain websites can be whitelisted
+        //For more details please see https://ui.vision/docs#embed
+
+        (function (detail) {
+            var isExtensionLoaded = function () {
+                var $root = document.documentElement
+                return !!$root && !!$root.getAttribute('data-kantu')
+            }
+            var openExternal = function (url) {
+                const $el = document.createElement('a')
+                $el.setAttribute('target', '_blank')
+                $el.setAttribute('href', url)
+                $el.style.position = 'absolute'
+                $el.style.top = '-9999px'
+                $el.style.left = '-9999px'
+                document.body.appendChild($el)
+                $el.click()
+                setTimeout(() => {
+                    $el.remove()
+                }, 200)
+            }
+            var openWebsite = function () {
+                openExternal('https://ui.vision/')
+            }
+            if (!isExtensionLoaded()) {
+                if (confirm('Ui.Vision RPA is not installed yet. Do you want to download it now?')) {
+                    return openWebsite()
+                }
+            } else {
+                return window.dispatchEvent(new CustomEvent('kantuSaveAndRunMacro', { detail: detail }))
+            }
+        })
+            ({
+                direct: 1, //If the website URL is whitelisted, run the macro without prompt
+                closeRPA: 1, //close Ui.Vision RPA UI after the macro has completed
+                //Macro JSON code here. You can copy and paste the code directly from the source tab, https://ui.vision/docs#sourcecodetab
+                json: {
+                    "Name": "EmbeddedMacro_DemoVisualUITest",
+                    "CreationDate": "2020-03-22",
+                    "Commands": [
+    {
+      "Command": "open",
+      "Target": "https://ui.vision/",
+      "Value": ""
+    },
+    {
+      "Command": "setWindowSize",
+      "Target": "1024x768",
+      "Value": ""
+    },
+    {
+      "Command": "visualVerify",
+      "Target": "e_uitest_logo_wide_dpi_96.png@0.70[http://dl.a9t9.com/ui.vision-uitest/uitest_logo_wide_dpi_96.png]",
+      "Value": ""
+    },
+    {
+      "Command": "visualAssert",
+      "Target": "e_uitest_youtube_dpi_96.png[http://dl.a9t9.com/ui.vision-uitest/uitest_youtube_dpi_96.png]",
+      "Value": ""
+    },
+    {
+      "Command": "visualVerify",
+      "Target": "e_uitest_share_dpi_96.png@0.70[http://dl.a9t9.com/ui.vision-uitest/uitest_share_dpi_96.png]",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Resize to iPhone6 screen size",
+      "Value": ""
+    },
+    {
+      "Command": "setWindowSize",
+      "Target": "375x768",
+      "Value": ""
+    },
+    {
+      "Command": "visualVerify",
+      "Target": "e_uitest_logo_mobile_dpi_96.png[http://dl.a9t9.com/ui.vision-uitest/uitest_logo_mobile_dpi_96.png]",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Missing menu is critical, so we use ASSERT (instead of just VERIFY)",
+      "Value": ""
+    },
+    {
+      "Command": "visualAssert",
+      "Target": "e_uitest_hamburger_dpi_96.png[http://dl.a9t9.com/ui.vision-uitest/uitest_hamburger_dpi_96.png]",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Check that Share buttons do not show",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "At this point, page is surely loaded => reduce wait for (normally missing) image",
+      "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "2",
+      "Value": "!timeout_wait"
+    },
+    {
+      "Command": "visualSearch",
+      "Target": "e_uitest_share_dpi_96.png@0.70[http://dl.a9t9.com/ui.vision-uitest/uitest_share_dpi_96.png]",
+      "Value": "count"
+    },
+    {
+      "Command": "if",
+      "Target": "${count} > 0",
+      "Value": ""
+    },
+    {
+      "Command": "throwError",
+      "Target": "Share buttons should NOT show on mobile phones",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Restore default wait (not really needed here, since macro stops now anyway)",
+      "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait"
+    },
+    {
+      "Command": "comment",
+      "Target": "Done, enlarge browser again",
+      "Value": ""
+    },
+    {
+      "Command": "setWindowSize",
+      "Target": "1024x768",
+      "Value": ""
+    }
+                    ]
+                }
+            })
+    }
+// ^^^ --- embedded Ui.Vision RPA macros above
+</script>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>

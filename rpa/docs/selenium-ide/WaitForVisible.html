@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="waitForVisible (and waitForNOTVisible), assertVisible, assertNotVisible - Selenium IDE Commands Tutorial">
+    <title>waitForVisible (and waitForNOTVisible), assertVisible, assertNotVisible - Selenium IDE Commands Tutorial</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>waitForVisible</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>waitForVisible (locator) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                The  <span class="hired">waitForVisible</span> tells the IDE to wait for an element to exist <em>and</em>
+                be visible. This command will wait till element visible on the page. Once command will visible on page, the <em>Ui.Vision RPA</em> selenium IDE will go for executing next command.
+            </p>
+
+            <p>Test page: <a href="https://ui.vision/demo/waitforvisible">Wait for element to become visible</a>. </p>
+
+            <p>
+                <span class="hired">waitForVisible</span> combined with <a href="/rpa/docs#!statusok">!statusOK</a> can be used to recreate the
+                <span class="hired">assertVisible</span>/<span class="hired">verifyVisible</span>
+                and <span class="hired">assertNOTVisible</span>/<span class="hired">verifyNOTVisible</span> commands
+                of the  <a href="/rpa/docs/selenium-ide/oldfirefoxide">old Firefox Selenium IDE</a>.
+            </p>
+
+            <h3>Alternative "Wait for Visible" method</h3>
+
+            <p>Another option to check for visibility are the <em>visual</em> GUI testing commands <a href="/rpa/docs/visual-ui-testing#visualassert">visualAssert and visualVerify</a>.
+                These commands <a href="https://forum.ocr.space/t/wait-for-button-and-for-second-page-load/7027/2">wait for an image to appear</a>.
+                Since the  visual "wait for visible" solution  does not rely on any HTML internals, it works with even the most complex web apps and desktop apps.
+            </p>
+
+            <h3>waitForVisible Example</h3>
+
+            <p>
+                The macro below is a  basic example. You find a more detailed example in the DemoImplicitWaiting demo macro that gets installed with the RPA software!
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/demo/waitforvisible</td>
+                            <td><br /></td>
+                        </tr>
+                        <tr class="success">
+                            <td>waitForVisible</td>
+                            <td>css=#div1 > h1</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>The text is now visible</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3 id="not">waitForNotVisible Example</h3>
+
+            <p>
+                The inverse version of waitForVisible would the waitForNotVisible of the <a href="/rpa/docs/selenium-ide/oldfirefoxide">classic Firefox Selenium IDE</a>.
+                It will wait for invisibility of the element on the page. This is very rarely used command and can be simulated easily with existing commands. Just like with assertVisible
+                mentioned above,  we decided to not support it with <em>Ui.Vision RPA software</em> to keep things lean.
+            </p>
+            <p>
+                You can recreate waitForNotVisible with the while / end loop. The loop checks the result of WaitForVisible via
+                the !statusOK internal variable. When the element is (still) visible the !statusOK is TRUE and the while loop continues.
+                But once the element is hidden (and after waiting for it until !timeout_wait) then
+                <a href="/rpa/docs#!statusok">!statusOK</a> is FALSE and the while loop breaks and the macro continues.
+                You need to set <a href="/rpa/docs#!errorignore">!errorIgnore</a> = TRUE so the macro does not stop at the "element not visible" error.
+                The screencast below shows the macro in action.
+            </p>
+
+            <p>
+            
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vShteg2IwAI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tr>
+                        <td>open</td>
+                        <td>https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp</td>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                        <td>store</td>
+                        <td>true</td>
+                        <td>!errorignore</td>
+                    </tr>
+                    <tr class="success">
+                        <td>while</td>
+                        <td>${!statusOK}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>waitForVisible</td>
+                        <td>id=myDIV</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>end</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>echo</td>
+                        <td>The text is now hidden!</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>store</td>
+                        <td>false</td>
+                        <td>!errorignore</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>ClickandWait is part of almost every demo macro-</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/click">clickAndWait</a>,
+
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>

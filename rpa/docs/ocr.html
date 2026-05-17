@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="RPA with Text Recognition (OCR)">
+    <title>RPA with Text Recognition (OCR)</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Text Recognition (OCR)</span> Features</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Text Recognition (OCR)</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <h3>How to Use Text Recognition (OCR):</h3>
+
+            <p>
+                Ui.Vision includes two different <span class="hired">local OCR</span> engines. OCR is used for the XClickTEXT/XClickTEXTRelative command
+                and for <a href="/rpa/x/desktop-automation/screen-scraping">screen scraping</a> with OCRExtract/OCRSearch. A Javascript OCR engine and the XModule OCR engine. In both cases, absolutely no data is sent to the cloud. All OCR processing
+                is done locally on your machine.
+            </p>
+
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/stiv-8gAHDo?si=EfZQ3tbeLlKMwL-_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <br />Local OCR with the Javascript OCR engine. See also <a href="https://forum.ocr.space/t/how-to-use-xclicktext-and-xclicktextrelative/15110/">How to use XClickText and XClickTextRelative?</a>
+            </p>
+
+                <h3 id="ocr-local">Difference between Javascript OCR and XModule OCR</h3>
+
+            <p>Both solutions work 100% local. After a fresh installation, the default is the local Javascript OCR.</p>
+
+            <p>
+                The advantage of using Javascript OCR is:
+                <ul>
+                    <li>
+                        - Works on Windows, Mac and Linux (by contrast XModule OCR supports Windows and Mac only)
+                    </li>
+                    <li>
+                        - Good OCR results, especially on black text on white backgrounds (e. g. typical website, receipts, PDF)
+                    </li>
+                    <li id="ocr-request">
+                        - New OCR languages can be added on short notice. You can request new OCR languages in our RPA forum. <a href="https://ui.vision/rpa/x/pricing">Enterprise RPA</a> users can request new languages directly from tech support.
+                    </li>
+                </ul>
+            </p>The engine code for this OCR Engine is 98. So you can select it with <span class="hired">store | 98 | !OCREngine</span>.
+            </p>
+            <p>
+                The advantage of using XModule OCR is:
+                <ul>
+                    <li>
+                        - Better OCR results. Especially for numbers and for text on complicated backgrounds (images, videos, games) this OCR engine is often better.  This might be especially important
+                        for OCR <a href="https://ui.vision/rpa/x/desktop-automation/screen-scraping">screen scraping</a>.
+                    </li>
+                    <li>
+                        - Faster. The larger the OCR area, the larger the OCR input area, the larger the performance advantage.
+                    </li>
+                </ul>
+
+            </p>
+            <p>
+                The engine code for this OCR Engine is 99. So you can select it with <span class="hired">store | 99 | !OCREngine</span>.
+            </p>
+
+            <h3 id="free-ocr-api">Text processing with Cloud OCR</h3>
+
+            <p>Before you can use Cloud OCR you need to enter an api key. You can get an OCR api key for <span class="hired">free</span> here: <a href="https://ocr.space/ocrapi">Get Free OCR API</a>.
+            Once you receive the api key, enter it on the Ui.Vision "OCR" tab
+    and press "Test" to store it. If you need to change api keys, just enter the new key and press "Test" again. This will overwrite the old api key and store the new one instead.
+</p>
+            <p>
+                You can test the cloud OCR quality here: <a href="https://ocr.space/">Online Ocr</a>.The advantage of using Cloud OCR is:
+                <ul>
+                    <li>
+                        - Works in Windows, Mac and Linux.
+                    </li>
+                    <li>
+                        - High quality Cloud OCR. The text recognition is done on powerful machines in remote datacenters with a <a href="https://ocr.space/privacypolicy">very strict privacy policy</a>.
+                    </li>
+                    <li>
+                        Support for OCR.Space PRO/PRO PDF endpoints is built-in: If you have a commercial
+                        <a href="https://ocr.space/ocrapi">OCR API</a> PRO or PRO PDF api key, you can use this api key.
+                        Ui.Vision detects the use of a PRO api key, and automatically uses the faster and redundant OCR.Space PRO endpoints.
+                    </li>
+
+
+                </ul>
+
+            </p>
+<p>
+                The engine codes for Cloud OCR Engine are 1 and 2. This selects the OCR Engines 1 or 2 from OCR.Space. You can select it with <span class="hired">store | 1 (or 2) | !OCREngine</span>.
+            </p>
+
+                <h3>Wildcards for text matching</h3>
+                <p>
+                    You can use the <span class="hired">*</span> and <span class="hired">?</span> wildcards with any text matching command: XClickText, XClickTextRelative, XMoveText, XMoveTextRelative,
+                    OCRSearch, OCRExtract and OCRExtractRelative. The * wildcard character matches zero or more characters. The ? wildcard character matches any single character.
+                </p>
+
+                <h3>Anything wrong or missing on this page? Suggestions?</h3>
+<p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Web Scraping with Selenium IDE Commands - Tutorial">
+    <title>Web Scraping with Selenium IDE Commands - Tutorial</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Web Scraping</span> with Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>How to extract data from a website</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                This page explains how to do web scraping with Selenium IDE commands. Web scraping works if the data is inside the HTML of a website.
+                If you want to extract data from a PDF, image or video you need to use <a href="/rpa/x/desktop-automation/screen-scraping">visual screen scraping</a> instead.
+            </p>
+
+            <h3>How to generate a good XPath for web scraping</h3>
+
+
+            <p>
+                The easiest method is to first record a CLICK on the element that you want to extract. This works even if the element is not a link, but e. g.
+                a table entry. This generates a CLICK command a few suggested locators (XPath). Press the "Down" arrow in the IDE to see the full list of suggested, possible locators.
+                Once you have decided on a good locator, then simply change the CLICK command to e. g. STORETEXT or STOREATTRIBUTE: </br>
+                <img src="/Content/Images/web_scraping_locators.png" alt="How to generate a good XPath for web scraping" class="responsive-img">
+            </p>
+
+            <h3>When to use what command?</h3>
+
+            <p>The table belows shows the best command for each type of data extraction. Click the recommended command for more information and example code.</p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-5">Data to extract is in...</th>
+                    <th class="col-md-2">Command to use</th>
+                    <th class="col-md-5">Comment</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Visible website text, for example text in a table just like this one, or a price on website</td>
+                            <td><a href="/rpa/docs/selenium-ide/storetext">storeText</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Text in input fields (input box, text area, select drop down,...)</td>
+                            <td><a href="/rpa/docs/selenium-ide/storevalue">storeValue</a></td>
+                            <td>Do not confuse this command with <a href="/rpa/docs/selenium-ide/storeeval">storeEval</a>, which is not for web scraping.</td>
+                        </tr>
+                        <tr>
+                            <td>Get the status of a checkbox or radiobutton</td>
+                            <td><a href="/rpa/docs/selenium-ide/storechecked">storeChecked</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>URL "behind" an image</td>
+                            <td><a href="/rpa/docs/selenium-ide/storeattribute">storeAttribute@@href</a></td>
+                            <td>
+                                storeAttribute | xpath=...@@href extracts the link of any element - if it has one! If that fails, consider
+                                <a href="https://forum.ocr.space/t/trying-to-extract-a-link/7392/2">browser automation</a> to copy the link
+                                to the <a href="/rpa/docs#!clipboard">${!clipboard} variable</a>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ALT text "behind" an image</td>
+                            <td><a href="/rpa/docs/selenium-ide/storeattribute">storeAttribute@@alt</a></td>
+                            <td>
+                                The storeAttribute command can be used to get any attribute the HTML element has. For example, use @@alt to get the "Alt" text of an image.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Page title</td>
+                            <td><a href="/rpa/docs/selenium-ide/storetitle">storeTitle</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Table content: Row/Column/Cell</td>
+                            <td><a href="/rpa/docs/selenium-ide/storetext">storeText</a> with <a href="/rpa/docs/selenium-ide/locators#xpath">XPath locator</a></td>
+                            <td>See <a href="https://forum.ocr.space/t/add-a-relative-command-to-detect-relative-element/5384/4">TABLE Web Scraping</a> or <a href="https://forum.ocr.space/t/problem-with-storetext-it-prints-all-tables-data-into-1-single-block/6587/3">automate browser addon</a></td>
+                        </tr>
+                        <tr>
+                            <td>Data from a list e. g. search results</td>
+                            <td>Loop over <a href="/rpa/docs/selenium-ide/storetext">storeText</a></td>
+                            <td>See <a href="https://forum.ocr.space/t/how-to-web-scrape-search-results/7030/2">How to web scrape search results</a></td>
+                        </tr>
+                        <tr>
+                            <td>Save complete web page source code</td>
+                            <td><a href="/rpa/docs/xtype">XType | ${KEY_CTRL+KEY_S}</a>*</td>
+                            <td>On Mac it is ${KEY_CMD+KEY_S}. </td>
+                        </tr>
+                        <tr>
+                            <td>Save complete web page with images</td>
+                            <td><a href="/rpa/docs/xtype">XType | ${KEY_CTLR+KEY_S}</a>*</td>
+                            <td>See Forum post: <a href="https://forum.ocr.space/t/how-to-sourceextract-the-entire-html-code/123/4">How to save the entire HTML code</a></td>
+                        </tr>
+                        <tr>
+                            <td>Take screenshot of website</td>
+                            <td><a href="/rpa/docs/selenium-ide/capturescreenshot">captureEntirePageScreenshot</a>*</td>
+                            <td>This saves the complete website as image.</td>
+                        </tr>
+                        <tr>
+                            <td>Take screenshot of a web page <em>element</em></td>
+                            <td><a href="/rpa/docs/selenium-ide/storeimage">storeImage</a>*</td>
+                            <td>The element can be an image or any other web page HTML tag</td>
+                        </tr>
+                        <tr>
+                            <td>Download an image from a website</td>
+                            <td><a href="/rpa/docs/selenium-ide/saveitem">saveItem</a>*</td>
+                            <td>Retrieve the image directly from the browser cache.</td>
+                        </tr>
+                        <tr>
+                            <td>Text found only website source code</td>
+                            <td><a href="/rpa/docs/selenium-ide/sourceextract-sourcesearch">sourceExtract</a>*</td>
+                            <td>e. g. Google Analytics ID. For text inside page comments or Javascript, this is the only option</td>
+                        </tr>
+                        <tr>
+                            <td>Extract complete website HTML with</td> 
+                            <td><a href="https://forum.ocr.space/t/how-to-sourceextract-the-entire-html-code/123/10">executeScript to get entire HTML code</a></td>
+                            <td>Useful if you want to extract the complete HTML source code of the website, e. g. as input for aiPrompt</td>
+                        </tr>
+                        <tr>
+                            <td>JSON data displayed in web browser</td>
+                            <td><a href="/rpa/docs/selenium-ide/storeText#json">storeText | css=Pre | json</a></td>
+                            <td>
+                                A web api (e. g. <a href="https://ocr.space/ocrapi">OCR Api</a>) displays JSON in the browser,  not HTML. storeText
+                                with locator "css=Pre" can be used to extract it (Example: <a href="https://forum.ocr.space/t/store-json-replacement-migrating-from-side-selenium-ide-to-ui-vision/11696/2">JSON scraping RPA</a>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PDF, Image, Video, Canvas</td>
+                            <td><a href="/rpa/x/desktop-automation/screen-scraping#ocrextractrelative">OCRExtractRelative</a> and 
+                            <a href="/rpa/x/desktop-automation/screen-scraping#ocrextractbytextrelative"> OCRExtractByTextRelative</a>
+                               </td>
+                            <td>
+                                This screen scraping command works everywhere because it works visually.
+                                The disadvantage is that it is slower than the pure HTML-based commands like storeText.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Text from <em>outside</em> the web page</td>
+                            <td><a href="/rpa/x/desktop-automation/screen-scraping#ocrextractrelative">OCRExtractRelative</a> 
+                            and <a href="/rpa/x/desktop-automation/screen-scraping#ocrextractbytextrelative"> OCRExtractByTextRelative</a></td>
+                            <td>If you run these commands in <a href="/rpa/x/desktop-automation">desktop mode</a> you can read data from any desktop app.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+
+            <p>(*) These commands are only available in the <em>Ui.Vision RPA</em> Selenium IDE. They are not part of the classic Selenium IDE.</p>
+
+
+            <h3>See also</h3>
+            <p>
+                <ul>
+
+                    <li>
+                        -  <a href="/rpa/x/desktop-automation/screen-scraping">Screen scraping</a> (scraping/data extraction with computer vision, OCR)
+                    </li>
+                    <li>
+                        - <a href="/ai">Text parsing with AI and LLM</a>
+                    </li>
+                    <li>
+                        - <a href="/rpa/docs/selenium-ide/form-filling">Form filling with Selenium IDE</a> (the opposite of web scraping)
+                    </li>
+                    <li>
+                        -  <a href="/rpa/docs/selenium-ide/form-filling#fileupload">File uploads with Selenium IDE</a>
+                    </li>
+                    <li>
+                        -  <a href="/rpa/docs/selenium-ide/locators">Best Selenium IDE Locator Strategy</a>
+                    </li>
+                    <li>
+                        - <a href="/rpa/docs/">RPA Software</a> User Manual.
+                    </li>
+
+                </ul>
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>

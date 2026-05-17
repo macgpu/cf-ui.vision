@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="sendKeys and Type - Selenium IDE Commands Tutorial">
+    <title>sendKeys and Type - Selenium IDE Commands Tutorial</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>sendKeys and Type</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>sendkeys (target, text) and type (target, text) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <h3>TYPE Command</h3>
+
+            <p>
+                <span class="hired">TYPE</span> sets the value of an input field,
+                as though you typed it in. Can also be used to set the value of combo boxes, check boxes, etc.
+                In these cases, value should be the value of the option selected, not the visible text.
+                Chrome only: If a file path is given it will be <a href="/rpa/docs/selenium-ide/form-filling#fileupload">uploaded to the input (for type=file)</a>.
+                XPath locators <em>are</em> supported, too.
+
+            </p>
+
+
+            <h3 id="escape">JavaScript character escape sequences (e. g. "\n")</h3>
+
+            <p>
+                If the internal variable  <span class="hired">!StringEscape</span>  is set to true (this is the default), then escape sequences like "\r\n" (new line)
+                or "\t" (tab)  are interpreted as escape sequence. If <a href="/rpa/docs#!stringescape">store | false | !stringescape</a> is used, then they are interpreted
+                literally. Setting it to false can be useful, for example, for sending file paths like "c:\test\note.txt" (note the \n and \t in this string!).
+                This <a href="https://forum.ocr.space/t/how-to-create-line-breaks-in-a-variable/5165/2?u=admin">RPA forum post</a> has more details.
+            </p>
+            <p>
+                <ul>
+                    List of Javascript escape sequences:
+                    <li><strong>Horizontal Tab</strong> is replaced with <strong>\t</strong></li>
+                    <li><strong>Vertical Tab</strong> is replaced with <strong>\v</strong></li>
+                    <li><strong>Nul char</strong> is replaced with <strong>\0</strong></li>
+                    <li><strong>Backspace</strong> is replaced with <strong>\b</strong></li>
+                    <li><strong>Form feed</strong> is replaced with <strong>\f</strong></li>
+                    <li><strong>Newline</strong> is replaced with <strong>\n</strong></li>
+                    <li><strong>Carriage return</strong> is replaced with <strong>\r</strong></li>
+                    <li><strong>Single quote</strong> is replaced with <strong>\'</strong></li>
+                    <li><strong>Double quote</strong> is replaced with <strong>\"</strong></li>
+                    <li><strong>Backslash</strong> is replaced with <strong>\\</strong></li>
+                </ul>
+            </p>
+        
+            <h3>SENDKEYS Command</h3>
+
+            <p>
+                The  <span class="hired">sendKeys</span> command simulates keystroke events on the specified element, as though you typed the value key-by-key. This simulates a real user typing every character in the specified string; it is also bound by the limitations of a real user, like not being able to type into a invisible or read only elements. This is useful for dynamic UI widgets (like auto-completing combo boxes) that require explicit key events. Unlike the simple "type" command,
+                which forces the specified value into the page directly, this command will not replace the existing content.
+            </p>
+            <p>
+                So the  <span class="hired">sendKeys</span> command  works like the  <span class="hired">type</span> command in the selenium IDE
+                but there are 2 more functions in the "sendKeys" command which are not available in "type" command.
+                Theoretically  the "sendKeys" command is  useful in auto complete text boxes or combo boxes which require explicit key events (but in reality you
+                should better use XTYPE, see the comments below).
+            </p>
+            <p>
+                Sendkeys can send the <span class="hired">${KEY_ENTER}</span> key event. This means it will <em>kind of</em> work same as
+                user pressing ENTER using the keyboard. Note that we say "<em>kind of</em> work same" because all Selenium IDE commands
+                operate on the Javascript level inside the browser's DOM.
+                They do not generate <a href="https://ui.vision/x#realuser">native OS events</a>.
+                So <span class="hired">if "sendkeys" fails, use <a href="/rpa/docs/xtype">XType</a></span>. For more information
+                see <a href="/rpa/docs/xtype#vs_type">XType vs Sendkey</a>.
+            </p>
+
+            <h3>If Sendkeys does not work for you, use XType!</h3>
+
+            <p>
+                As mentioned above, the only special key supported by our implementation of Sendkey is <span class="hired">${KEY_ENTER}</span>.
+                The original Selenium IDE also supports events like
+                <span class="hired">KEY_DOWN</span> (Navigation Down), but they almost never work. That is why we do not officially support them.
+                Instead we added XTYPE:  With the <a href="/rpa/docs/xtype">XType command</a>
+                <em>Ui.Vision RPA</em> can <span class="hiblue">
+                    simulate native keyboard events
+                </span>. In other words,
+                XType is a much more powerful "sendkeys" command than the Javascript based Type and Sendkeys Selenium IDE commands described on this page.
+                So if Type and Sendkeys do not work for you, make sure
+                to try XType - it <em>will</em> work. See also <a href="/rpa/docs/xtype#vs_type">XType vs (Selenium IDE) Type/Sendkey</a>.
+                </br></br>Important: For <a href="/rpa/x/desktop-automation">desktop automation</a> you must use XTYPE. The Sendkey and Type commands always work only inside a web page.
+            </p>
+
+
+
+
+            <h3>Difference between "type" and "sendKeys" command- Example</h3>
+
+            <p>
+                The examples fills in the Google search box with type, and then does a sendKey with KEY_ENTER to start the search.
+                If you would add ${KEY_ENTER} to the TYPE command,
+                it would just fill in the special character in the input box, but <em>not</em> execute it.
+
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://google.com/</td>
+                            <td><br /></td>
+                        </tr>
+                        <tr class="success">
+                            <td>Type</td>
+                            <td>id=lst-ib</td>
+                            <td>Solar Cells Web Automation</td>
+                        </tr>
+                        <tr>
+                            <td>sendkeys</td>
+                            <td>id=lst-ib</td>
+                            <td>${KEY_ENTER}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+
+            <p>
+                If you are upgrading to RPA from the original Selenium IDE:
+                Note that the "TypeAndWait" command is no longer needed, just as any other <a href="/rpa/docs/selenium-ide/waitforpagetoload">WaitForPageToLoad</a> command.
+                <em>Ui.Vision RPA</em> for Chrome uses <a href="/rpa/docs/selenium-ide/#implicitwaiting">implicit waiting</a>, just like webDriver.
+            </p>
+
+            <p id="focus">
+                Note that the "Focus" command is no longer needed.  With Kantu, the type, sendkey and click commands automatically set the focus
+                on the element they fill out or click on. Just noate that the browser window in which you replay must be brought to foreground to make focus work. This is not
+                a restriction of Kantu, but this is how the focus works: Only windows that are in the foreground can have the focus.
+                You can use the <a href="bringbrowsertoforeground">BringBrowserToForeground</a> command to make
+                sure the right tab is in the foreground.
+            </p>
+
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>Demo-Autofill, Demo-Frame</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/form-filling">Selenium IDE form filling tutorial</a>, <a href="/rpa/docs/selenium-ide/storetext">storeText</a>,
+
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>

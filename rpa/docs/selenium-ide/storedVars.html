@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="storedVars, Arrays - Selenium IDE Arrays Tutorial">
+    <title>storedVars, Arrays - Selenium IDE Arrays Tutorial</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>storedVars, Arrays</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>storedVars... - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                Ui.Vision Selenium IDE++ (Kantu) <a href="/rpa/home/whatsnew">V5.0</a>: The storeEval command and with it storedVars are deprecated.
+                Please use the new    <a href="/rpa/docs/selenium-ide/executescript">executeScript</a>. 
+                <em>Old macros with storeEval and storedVars continue  to work without any change</em>.   
+                With <a href="/rpa/docs/selenium-ide/executescript">executeScript</a> storedVars is no longer needed to manage variables and arrays,
+                since you can access variables and arrays directly now:
+
+            <p>
+                Example:
+                </br></br><span class="hired">storeEval | storedVars['T1'].toUpperCase() | var</span>
+                </br></br>becomes
+                </br></br><span class="hired">executeScript | ${T1}.toUpperCase() | var</span>
+            </p>
+            <h3>Arrays in Selenium IDE</h3>
+            <p>Arrays in Selenium IDE are Javascript arrays. 
+                <a href="https://forum.ocr.space/t/arrays-in-ui-vision-selenium-ide/3695/5">To create a Javascript array use the executeScript_Sandbox command (see forum post)</a>.
+            </p>
+
+
+
+
+
+            <h3>--- Old storedVars documentation ---</h3>
+            <p>
+                <span class="hired">storedVars</span> gives you access to the stored variables within a JavaScript snippet.
+                Inside <a href="/rpa/docs/selenium-ide/storeeval">storeEval</a> you can access
+                the <em>value</em> of a variable with the  <span class="hired">${T1}</span> notation.
+                But if you want to <em>use the variable itself</em> (e. g. as in  <span class="hired">storedVars['T1'].toUpperCase()</span>), then use the storedVars notation.
+                StoredVars in the <em>Ui.Vision RPA</em> Selenium IDE works the same as in the Firefox IDE, even so internally the implementation is different.
+            </p>
+
+            <h3>storedVars Screencast</h3>
+            <p>
+                This video shows a real life use case of storedVars to <a href="https://forum.ocr.space/t/query-can-kantu-macro-use-to-capture-website-info/232/4">access values from an array</a>. In the demo we store the names of the breadcrumbs (A,B,...) in the array, and then loop over the array to access each page:
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yGnwgUT_sLc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </p>
+
+            <h3>storedVars Example</h3>
+            <p>The result of this macro is that CCC will contain 75  and T2 will contain "SELENIUM IDE" all in caps.</p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
+                            <td><br /></td>
+                        </tr>
+                        <tr>
+                            <td>store</td>
+                            <td>AAA</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>store</td>
+                            <td>BBB</td>
+                            <td>25</td>
+                        </tr>
+                        <tr class="success">
+                            <td>storeEval</td>
+                            <td>storedVars['AAA']-storedVars['BBB']</td>
+                            <td>CCC</td>
+                        </tr>
+                        <tr>
+                            <td>store</td>
+                            <td>SeLeniUM iDE</td>
+                            <td>T1</td>
+                        </tr>
+                        <tr class="success">
+                            <td>storeEval</td>
+                            <td>storedVars['T1'].toUpperCase()</td>
+                            <td>T2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>DemoStoreEval</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/storeeval">storeEval</a>, <a href="/rpa/docs/selenium-ide/store">store</a>,
+
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>

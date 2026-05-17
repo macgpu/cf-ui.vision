@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="storeAttribute, store Attribute - Selenium IDE Commands Tutorial">
+    <title>storeAttribute, store Attribute - Selenium IDE Commands Tutorial</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/Content/Main/base.css" rel="stylesheet" />
+    <link href="/Content/Main/elements.css" rel="stylesheet" />
+    <link href="/Content/Main/grid.css" rel="stylesheet" />
+    <link href="/Content/Main/layout.css" rel="stylesheet" />
+    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ocr.space/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ocr.space">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+﻿
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>storeAttribute</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>storeAttribute (locator@@attribute, variable) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                The  <span class="hired">storeAttribute</span> stores the attribute value of specified element into a given variable.
+                You can store any attribute's value using the "storeAttribute" command.
+
+                The input is the usual locator for the element  followed by an @@ sign and then the name of the attribute
+                in target column of selenium IDE. For example  <span class="hired">css=img.responsive-img@src</span> Here "css=img.responsive-img" is element's locator 
+                and "src" is attribute name which we want to store (in this case this is the link).
+
+            <p>
+                storeAttribute does not work with input boxes. But for this, you can use
+                <em><a href="/rpa/docs/selenium-ide/executescript">executeScript</a> | window.document.getElementsByName('Phone')[0].value; | value</em> as replacement. This does the same as storeValue in the old IDE.
+            </p>
+            <p>
+                Note that for all <span class="hired">store...</span> commands <em>no</em> error is trigged if the locator is not found.
+    Instead, the text <span class="hired">#LNF</span> is stored in the variable. "#LNF" stands for "Locator not found".
+            </p>
+
+            <p>
+                Related forum post(s):  <a href="https://forum.ocr.space/t/get-the-label-and-link-of-a-button-with-a-certain-id/7243/4">What attributes can be used with store Attribute?</a>, <a href="https://forum.ocr.space/t/how-to-copy-and-paste-mp3-hyperlink/1763/">How to copy and paste mp3 hyperlink </a> 
+                and <a href="https://forum.ocr.space/t/extraction-from-web-page-and-saving-in-csv-element-not-found-suggestion/2715/6">Extraction from web page and saving in csv element </a>.
+                
+            </p>
+
+            <p>For more information about data extraction in general see <a href="/rpa/docs/selenium-ide/web-scraping">Web Scraping with Selenium IDE</a>.</p>
+
+            <h3>storeAttribute Example</h3>
+            <p>The example extracts the link and the ALT text from an image.</p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/rpa/docs/selenium-ide/executescript</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>storeAttribute</td>
+                            <td>css=img.responsive-img@@src</td>
+                            <td>myimagelink</td>
+                        </tr>
+                        <tr class="success">
+                            <td>storeAttribute</td>
+                            <td>css=img.responsive-img@@alt</td>
+                            <td>myimagetext</td>
+                        </tr>
+                        <tr class="success">
+                            <td>storeAttribute</td>
+                            <td>linkText=flow control commands@@href</td>
+                            <td>mytextlink</td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>The image links to ${myimagelink} and its ALT text is ${myalttext}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>DemoExtract</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/storeeval">storeEval</a>, <a href="/rpa/docs/selenium-ide/storetext">storeText</a>,
+                <a href="/rpa/docs/selenium-ide/storetitle">storetitle</a>,
+
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ocr.space/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ocr.space/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ocr.space/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ocr.space">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Basic/bootstrap.min.js"></script>
+    <script src="/Scripts/a9t9scripts.js"></script>
+    <script src="/Scripts/Layout/plugins.js"></script>
+    <script src="/Scripts/Layout/script.js"></script>
+    
+</body>
+</html>
