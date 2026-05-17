@@ -41,10 +41,9 @@ var adjustMenu = function() {
 		$(".nav").show();
 		$(".nav li").removeClass("hover");
 		$(".nav li a").unbind('click');
-		$(".nav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
-		 	// must be attached to li so that mouseleave is not triggered when hover over submenu
-		 	$(this).toggleClass('hover');
-		});
+		$(".nav li").unbind('mouseenter mouseleave')
+			.bind('mouseenter', function() { $(this).addClass('hover'); })
+			.bind('mouseleave', function() { $(this).removeClass('hover'); });
 	}
 }
 
