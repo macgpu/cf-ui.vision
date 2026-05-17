@@ -8,8 +8,11 @@ export async function onRequestPost({ request, env }) {
   const subject  = (formData.get("Subject")      ?? "").trim();
   const message  = (formData.get("Message")      ?? "").trim();
 
-  const base = new URL(request.url).origin + "/contact";
-  const err  = (msg) => Response.redirect(`${base}?error=${encodeURIComponent(msg)}`, 303);
+  const isFetch = request.headers.get("X-Fetch") === "1";
+  const base    = new URL(request.url).origin + "/contact";
+  const err     = (msg) => isFetch
+    ? new Response(JSON.stringify({ error: msg }), { status: 422, headers: { "Content-Type": "application/json" } })
+    : Response.redirect(`${base}?error=${encodeURIComponent(msg)}`, 303);
 
   if (!name)                                      return err("Your contact name is required");
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
@@ -46,5 +49,6 @@ export async function onRequestPost({ request, env }) {
     return err(`Unable to send (${res.status}): ${body.slice(0, 200)}`);
   }
 
+  if (isFetch) return new Response(JSON.stringify({ success: true }), { headers: { "Content-Type": "application/json" } });
   return Response.redirect(`${base}?success=1`, 303);
 }
