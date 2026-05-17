@@ -67,13 +67,13 @@ a {
 
         .nav > li > a {
             display: block;
+            border-top: 2px solid transparent;
         }
 
             .nav > li > a:hover {
                 color: #fff;
                 background-color: #005E7C;
-                border-top: 2px solid #005E7C;
-                margin-top: -2px;
+                border-top-color: #005E7C;
                 text-decoration: none !important;
             }
 
