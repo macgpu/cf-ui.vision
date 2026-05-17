@@ -194,6 +194,7 @@ blockquote {
 
 .btn.btn-primary.button-download {
     background: #2a7ae2;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
 }
 
 .button-download a {
@@ -202,7 +203,11 @@ blockquote {
 }
 
 .button-section .btn:hover {
-    background: #313131;
+    background: linear-gradient(135deg, #005E7C, #0097c4);
+    border-color: #005E7C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 94, 124, 0.35);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
 }
 
 .btn.button-trial a {
