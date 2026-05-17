@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RPA 2019: AutoHotKey (AHK) vs AutoIT</title>
+    <meta name="description" content="News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/blog/rpa.favicon32.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="/blog/css/main.css" />
+    <link rel="canonical" href="https://ui.vision/blog/ahk-vs-autoit/">
+    <link rel="alternate" type="application/rss+xml" title="Our Open-Source RPA Blog Feed" href="https://ui.vision/blog/feed.xml">
+</head>
+<body>
+    <nav id="top" class="site-navigation">
+        <div class="inner">
+            <button id="menu-toggle" aria-expanded="false">Menu</button>
+
+            <div class="nav-menu">
+              
+                <div class="head-banner">
+  <span><a href="https://ui.vision/">Open-Source RPA</a> <span style="color: #00FF00">for</span>
+  <a href="https://ui.vision/rpa/">Browser Automation</a>,
+  <a href="https://ui.vision/rpa/x/desktop-automation">Desktop Automation</a> 
+  <span style="color: #00FF00">& AI</span>
+  <a href="https://ui.vision/ai/computeruse">Computer Use</a> 
+  </span>
+</div>
+
+              
+              <ul class="menu">
+              
+              </ul>
+            </div><!-- .nav-menu -->
+            <a class="subscribe-button fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">Subscribe</span></a>
+        </div><!-- .inner -->
+    </nav><!-- .site-navigation -->
+    <header class="site-header">
+        <div class="inner">
+            <h1 class="site-title"><a class="logo-text" href="/blog/">Our Open-Source RPA Blog</a></h1>
+            <p class="site-description">Open-Source Robotic Process Automation (RPA)</p>
+        </div><!-- .inner -->
+    </header>
+    <div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header">
+                    <div class="entry-header-wrap">
+                        
+                        <div class="post-thumbnail">
+                            <img src="/blog/images/posts/ahk-vs-autoit.jpg" alt="RPA 2019: AutoHotKey (AHK) vs AutoIT">
+                        </div><!-- .post-thumbnail -->
+                        
+                        <h1 class="entry-title">RPA 2019: AutoHotKey (AHK) vs AutoIT</h1>
+                    </div><!-- .entry-header-wrap -->
+                    <div class="entry-meta">
+                      <time class="published" datetime="2019-03-13">March 13, 2019</time>
+                    </div><!-- .entry-meta -->
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <p>What is the difference between the AutoHotkey and AutoIT? Both are similar Windows automation tools. Historically AutoHotkey was even a clone (“fork”) of AutoIT. It was created after the AutoIT team refused to add better keyboard shortcut support (“Hotkeys”). But the AutoIT developers did not like that AHK copied code from AutoIT. To avoid this, they made AutoIT closed source. From this point on the tools diverged in their feature set, syntax and user community.</p>
+
+<!--more-->
+
+<h2 id="autohotkey-ahk-vs-autoit">AutoHotKey (AHK) vs AutoIT</h2>
+
+<p>The table below compares the key features of these two well-known Windows automation tools.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th style="text-align: center">AutoHotKey</th>
+      <th style="text-align: center">AutoIT</th>
+      <th style="text-align: center">Kantu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Supported Platforms</td>
+      <td style="text-align: center">Win only</td>
+      <td style="text-align: center">Win only</td>
+      <td style="text-align: center">Win, Mac, Linux</td>
+    </tr>
+    <tr>
+      <td>Open-Source</td>
+      <td style="text-align: center"><span style="color:green"><strong>yes</strong></span></td>
+      <td style="text-align: center"><span style="color:red"><strong>no</strong></span></td>
+      <td style="text-align: center"><span style="color:green"><strong>yes</strong></span></td>
+    </tr>
+    <tr>
+      <td><a href="#security">Security Rating</a></td>
+      <td style="text-align: center">Very Good</td>
+      <td style="text-align: center">Good</td>
+      <td style="text-align: center">Very Good</td>
+    </tr>
+    <tr>
+      <td>Openness</td>
+      <td style="text-align: center">Very high</td>
+      <td style="text-align: center">Very high</td>
+      <td style="text-align: center">Very high</td>
+    </tr>
+    <tr>
+      <td><a href="#desktop-automation">Desktop Automation</a></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td>Image Recognition</td>
+      <td style="text-align: center">Only very basic</td>
+      <td style="text-align: center">Only very basic</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td>Text Recognition (OCR)</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td>Keyboard Shortcuts</td>
+      <td style="text-align: center">Yes (best)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes (via other extensions)</td>
+    </tr>
+    <tr>
+      <td><a href="#web-automation">Web Automation</a></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td>Supported Browser</td>
+      <td style="text-align: center">IE</td>
+      <td style="text-align: center">IE</td>
+      <td style="text-align: center">Chrome, Firefox</td>
+    </tr>
+    <tr>
+      <td>Browser Recorder</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td><a href="https://ui.vision/docs/selenium-ide/web-scraping">Web Scraping</a></td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td><a href="https://ui.vision/docs/selenium-ide">Selenium IDE compatible</a></td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td><a href="#scripting">Scripting</a></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td><a href="#scripting">Script language</a></td>
+      <td style="text-align: center">AHK Script</td>
+      <td style="text-align: center">AutoIt Script (Basic)</td>
+      <td style="text-align: center"><em>Many</em> (API)</td>
+    </tr>
+    <tr>
+      <td>Advanced Scheduling</td>
+      <td style="text-align: center">With external tools</td>
+      <td style="text-align: center">With external tools</td>
+      <td style="text-align: center">With external tools</td>
+    </tr>
+    <tr>
+      <td>COM-automation support</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes (best)</td>
+      <td style="text-align: center">No, but command line API</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As third option the table includes Kantu, a computer-vision and AI powered lightweight RPA tool. It works visually and its supports Mac and Linux, too. Some use it as “AutoHotKey for Mac” and as “AutoHotKey for Linux”, even so technically
+it is quite different.</p>
+
+<h3 id="security">Security</h3>
+
+<p>AutoIT is a trustworthy project. But their code is closed source.
+So you must trust the developers that they do not send of critical corporate information to outside
+servers. By contrast, the AHK and Kantu core is open-source, so you can easily check that no information is send anywhere. We require a software to be Open-Source to be eligible for a very good security rating.</p>
+
+<h3 id="desktop-automation">Desktop Automation</h3>
+
+<p>Desktop automation is sometimes also called “RDA” (Robotic Desktop Automation). This section
+rates the usefulness of the tool to automate tasks on the users desktop. Note that UIPath and Blue Prism can only automate tasks on a Windows desktop, whereas Kantu works on Mac and Linux desktops as well.</p>
+
+<h3 id="web-automation">Web Automation</h3>
+
+<p>Web automation means Browser Automation. It is the ability to automate tasks directly in the web browser. Typical tasks include form filling, data up- and download and <a href="https://ui.vision/docs/selenium-ide/web-scraping">web scraping</a>, the extraction from information from websites. For web automation Kantu brings two key advantages to the table. First it has easy-to-learn Selenium-compatible commands. And second, it supports modern browsers. AutoIT and AHK only support the old Internet Explorer (IE) browser. That is a problem, as many modern websites no longer work in IE.</p>
+
+<h3 id="scripting">Scripting</h3>
+
+<p>All automation tools have one thing in common: Unless the task or test to automate is very basic, 
+you must expect to have to “script” or “program” part of the solution. AutoIT and AHK are by design scripting languages. The app was no real user interface except an editor. Kantu exposes a command line API that allows you to use it with any programming or scripting language, for example (in alphabetic order) C#, Java, Node.JS, PowerShell, Python, VB.NET, VBS and to combine it with other tools like AutoHotKey.</p>
+
+<p>AutoHotkey is very popular in the gaming community. So if your goal is to automate games, AHK is better than AutoIT because of the community.</p>
+
+<h2 id="autoit-and-ahk-ide">AutoIT and AHK IDE</h2>
+
+<p>Short answer: There is no IDE (Integrated Development Environment) for AHK and AutoIT. You can create these scripts any text editor:</p>
+
+<figure class="full-width caption">
+    <img src="/blog/images/posts/ahk-vs-autoit-ahk.jpg" alt="" />
+    
+</figure>
+
+<p>Longer answer:  AutoIT and AHK are scripting languages and the IDE is a essentially an editor. This is the same as you find it in more famous, proper scripting languages like PowerShell or Python.</p>
+
+<figure class="full-width caption">
+    <img src="/blog/images/posts/ahk-vs-autoit-autogui.png" alt="" />
+    
+</figure>
+
+<p>But with AHK you can also use AutoGUI. It is an IDE for AutoHotkey which combines a script editor with a GUI designer, debugger and tools.</p>
+
+<figure class="full-width caption">
+    <img src="/blog/images/posts/ahk-vs-autoit-autoit.jpg" alt="" />
+    
+</figure>
+
+<p>Same for AutoIT. The IDE is an editor.</p>
+
+<figure class="full-width caption">
+    <img src="/blog/images/posts/kantu-screenshot-800.png" alt="" />
+    
+</figure>
+
+<p>The Kantu IDE can also be described as editor. Its design is similar to the Selenium IDE. Kantu focuses on computer-vision and AI powered automation. For everything else, Kantu can be combined with <em>any</em> scripting or programming language like Powershell or Python.</p>
+
+<p>A key differences between Kantu and AutoIT/AHK is that Kantu can not only do desktop automation but has good web automation support, too. Thus if you need to automate a task inside a web browser, the choice is clear, use Kantu.</p>
+
+<h2 id="what-about-autoitahk-for-mac-and-linux">What about AutoIT/AHK for Mac and Linux?</h2>
+
+<p>AHK and AutoIT are 100% Windows tools. There is no Mac or Linux version available or planned. So if you want your automation to work on these popular platforms, Kantu is your best (and only) option.</p>
+
+<h2 id="rpa-market-overview">RPA Market Overview</h2>
+
+<p>For more RPA Market Overview blog posts please see</p>
+
+<ul>
+  <li><a href="/blog/ahk-vs-autoit/">AutoHotKey vs AutoIT</a> (this post)</li>
+  <li><a href="/blog/uipath-vs-blue-prism/">UIPath vs Blue Prism</a></li>
+  <li><a href="/blog/uipath-vs-automation-anywhere/">UIPath vs Automation Anywhere</a></li>
+  <li><a href="/blog/sikuli-vs-ahk/">Sikuli vs AutoHotKey</a></li>
+  <li><a href="/blog/selenium-ide-2018/">Selenium IDE vs Katalon vs Kantu</a></li>
+</ul>
+
+
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=RPA%202019:%20AutoHotKey%20(AHK)%20vs%20AutoIT&amp;url=https://ui.vision/ahk-vs-autoit/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/ahk-vs-autoit/&amp;t=RPA%202019:%20AutoHotKey%20(AHK)%20vs%20AutoIT"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/ahk-vs-autoit/"><span class="screen-reader-text">Google+</span></a>
+                    </div><!-- .share-post -->
+                    
+                    <div class="tag-links">
+                        Tags: <a href="/blog/tags/index.html#Macro+Recorder" title="Pages tagged Macro Recorder" rel="tag">Macro Recorder</a><a href="/blog/tags/index.html#Windows+Automation" title="Pages tagged Windows Automation" rel="tag">Windows Automation</a><a href="/blog/tags/index.html#RPA" title="Pages tagged RPA" rel="tag">RPA</a><a href="/blog/tags/index.html#Robotic+Process+Automation" title="Pages tagged Robotic Process Automation" rel="tag">Robotic Process Automation</a><a href="/blog/tags/index.html#Market+Overview" title="Pages tagged Market Overview" rel="tag">Market Overview</a>
+                    </div>
+                    
+                </footer><!-- .entry-footer -->
+            </article><!-- .post -->
+            <nav class="post-navigation">
+                <h2 class="screen-reader-text">Post navigation</h2>
+                
+                <div class="nav-previous">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/uipath-vs-blue-prism/" class="nav-thumb" style="background-image: url(/images/posts/uipath-vs-blueprism.jpg)"></a>
+                        
+                        <div class="nav-before">Previous</div>
+                        <div class="nav-title"><a href="/blog/uipath-vs-blue-prism/">RPA 2019: UIPath vs Blue Prism</a></div>
+                        <div class="nav-date">January 22, 2019</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-previous -->
+                
+                
+                <div class="nav-next">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/sikuli-vs-ahk/" class="nav-thumb" style="background-image: url(/images/posts/sikuli-vs-ahk.jpg)"></a>
+                        
+                        <div class="nav-before">Next</div>
+                        <div class="nav-title"><a href="/blog/sikuli-vs-ahk/">RPA 2019: Sikuli vs AutoHotKey (AHK)</a></div>
+                        <div class="nav-date">March 24, 2019</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-next -->
+                
+            </nav><!-- .post-navigation -->
+            
+        </main><!-- .site-main -->
+        <aside class="sidebar">
+    
+
+    
+
+    <section class="widget widget-recent-posts">
+        <h2 class="widget-title">Latest Posts</h2>
+        <ul class="recent-posts">
+            
+            <li class="recent-item"><a href="/blog/computer-use-in-browser/">Run Anthropic Computer Use in Your Web Browser</a> <span>December 5, 2025</span></li>
+            
+            <li class="recent-item"><a href="/blog/project-jarvis/">Project Jarvis - Google's new AI Chrome Extension?</a> <span>December 2, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-use/">Anthropic Computer Use – First Impressions, Test and Pricing</a> <span>November 4, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-vision-industry-2024/">Computer vision industry gathers in the Länd</a> <span>September 19, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/imacros-download-checksum/">Is iMacros no longer available?</a> <span>January 25, 2024</span></li>
+            
+        </ul><!-- .recent-posts -->
+    </section><!-- .widget-recent-posts -->
+
+    
+
+</aside><!-- .sidebar -->
+
+    </div><!-- .inner -->
+</div><!-- .site-content -->
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="social-links">
+            
+            
+            
+            
+            <a href="https://github.com/a9t9" class="fa-github-alt square fill-horizontal"><span class="screen-reader-text">GitHub</span></a>
+            
+            
+            
+            
+            
+            
+            
+            <a class="fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">RSS</span></a>
+        </div><!-- .social-links -->
+        <div class="site-info">
+            &copy; <a href="/blog/">Our Open-Source RPA Blog</a> all rights reserved.
+        </div><!-- .site-info -->
+    </div><!-- .inner -->
+</footer><!-- .site-footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/blog/js/plugins.js"></script>
+    <script type="text/javascript" src="/blog/js/custom.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86195842-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-86195842-1');
+    </script>
+
+
+
+<!-- für a9t9.com --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5855c2ceffd367d9"></script> 
+</body>
+</html>

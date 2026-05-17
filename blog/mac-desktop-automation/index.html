@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mac Desktop Automation</title>
+    <meta name="description" content="News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/blog/rpa.favicon32.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="/blog/css/main.css" />
+    <link rel="canonical" href="https://ui.vision/blog/mac-desktop-automation/">
+    <link rel="alternate" type="application/rss+xml" title="Our Open-Source RPA Blog Feed" href="https://ui.vision/blog/feed.xml">
+</head>
+<body>
+    <nav id="top" class="site-navigation">
+        <div class="inner">
+            <button id="menu-toggle" aria-expanded="false">Menu</button>
+
+            <div class="nav-menu">
+              
+                <div class="head-banner">
+  <span><a href="https://ui.vision/">Open-Source RPA</a> <span style="color: #00FF00">for</span>
+  <a href="https://ui.vision/rpa/">Browser Automation</a>,
+  <a href="https://ui.vision/rpa/x/desktop-automation">Desktop Automation</a> 
+  <span style="color: #00FF00">& AI</span>
+  <a href="https://ui.vision/ai/computeruse">Computer Use</a> 
+  </span>
+</div>
+
+              
+              <ul class="menu">
+              
+              </ul>
+            </div><!-- .nav-menu -->
+            <a class="subscribe-button fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">Subscribe</span></a>
+        </div><!-- .inner -->
+    </nav><!-- .site-navigation -->
+    <header class="site-header">
+        <div class="inner">
+            <h1 class="site-title"><a class="logo-text" href="/blog/">Our Open-Source RPA Blog</a></h1>
+            <p class="site-description">Open-Source Robotic Process Automation (RPA)</p>
+        </div><!-- .inner -->
+    </header>
+    <div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header">
+                    <div class="entry-header-wrap">
+                        
+                        <div class="post-thumbnail">
+                            <img src="/blog/images/posts/mac-desktop-automation.png" alt="Mac Desktop Automation">
+                        </div><!-- .post-thumbnail -->
+                        
+                        <h1 class="entry-title">Mac Desktop Automation</h1>
+                    </div><!-- .entry-header-wrap -->
+                    <div class="entry-meta">
+                      <time class="published" datetime="2021-06-20">June 20, 2021</time>
+                    </div><!-- .entry-meta -->
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <p>Let’s state the obvious: repetitive tasks are boring. You don’t want to sit in front of your Mac, open one hundred PDF invoices and retype the order number into a spreadsheet? Would it not be easier if you could click one button and got the job done for you?</p>
+
+<p>To goal of this blog post is to give a short and concise overview of all available <a href="https://ui.vision/rpa/x/desktop-automation">Mac desktop automation</a> tools. 
+We separate this overview in</p>
+
+<ul>
+  <li>Mac command line tools (suited for developers)</li>
+  <li>Mac Keyboard Macro tools</li>
+  <li>Mac RPA software (Robotic Process Automation)</li>
+</ul>
+
+<!--more-->
+
+<h2 id="mac-command-line-automation-tools">Mac Command Line Automation Tools</h2>
+
+<h3 id="applescript">AppleScript</h3>
+
+<p>AppleScript is a scripting language created by Apple and it is built in to OS X. It allows users to directly control scriptable Macintosh applications, as well as parts of macOS itself. You can create scripts—sets of written instructions—to automate repetitive tasks, combine features from multiple scriptable applications, and create complex workflows.</p>
+
+<p>As the name suggests, this a tool for developers, roughly similar to Powershell for Windows or bash files on Linux. Bash files can be used, on a Mac, too, of course, but they are even more complicated.</p>
+
+<h3 id="hammerspoon">Hammerspoon</h3>
+
+<p>This is another command line tool for Mac automation. At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. So, you need to learn the Lua scripting language in order to use it.</p>
+
+<h3 id="appium-for-mac">Appium for Mac</h3>
+
+<p>Appium comes from the software quality assurance world. Iits main goal is to help with automated testing of desktop applications.</p>
+
+<h3 id="cliclick">CliClick</h3>
+
+<p>If you are looking for a simple autoclicker tool for Mac, this is the best one we know. 
+For example <a href="https://forum.ui.vision/t/xtype-key-cmd-key-up-not-working-on-mac-workaround-available/5171/3">in this RPA forum post</a> CliClick is 
+used to click the space key on the keyboard.</p>
+
+<h2 id="mac-keyboard-macro-tools">Mac Keyboard Macro tools</h2>
+
+<h3 id="macos-built-in-automator">macOS built-in Automator</h3>
+
+<p>Yes, macOS has had a built-in automation solution for a long time. It’s aptly called Automator.
+Automator allows you to create workflows, where you can add individual actions. With Automator you use a graphical user interface (GUI) to create workflows—a number of actions grouped together to reduce repetitive tasks.<br />
+For example, it’s simple to create an Automator workflow that takes any number of photos and resizes them to a specific size.</p>
+
+<h3 id="keyboard-maestro">Keyboard Maestro</h3>
+<p>Keyboard Maestro is a powerful third-party Mac automation app. With it you string together actions to form macros. There is very little about OS X that Keyboard Maestro cannot control. It is the Mac equivalent of the Windows Macro Recorder.</p>
+
+<p>It is almost as powerful as AppleScript but a lot simpler to use. That said, although it uses a GUI, there is still a learning curve. It struggles to automate functions within apps rather than between them. (Typ: For automating task within an app, use RPA software below)</p>
+
+<h3 id="alfred">Alfred</h3>
+
+<p>Alfred is an app designed to save you time with Mac shortcuts and convenient custom actions. You can use it in a variety of ways. For example, you can access Alfred’s clipboard memory so you don’t copy and paste the same material over and over, or set up custom workflows to automate some of your most repetitive tasks.</p>
+
+<h3 id="textexpander">TextExpander</h3>
+
+<p>TextExpander has one purposes and it does it exceptionally well: it takes a short string of text and expands it into a much longer string. For example, you can have a snippet such that when you enter .eml it expands out to your full email address.
+Completely focused on text expansion rather than trying to handle many different automation functions. It is very easy to use. The drawback is, obviously,  that it can only be used for text expansion.</p>
+
+<h2 id="rpa-software">RPA software</h2>
+<p>RPA software is the newest and most modern automation approach to Mac automation. It can “see”. It uses image recognition and OCR to automate desktop tasks.
+ Thus it can automate what you see on a computer monitor. So, for example, unlike all the other tools listed on this page,
+ RPA software can read data from an invoice or from a video, and then make a decision based on this value.</p>
+
+<p>The selection of RPA software for the Mac is small. All of the dinosaur brands like UIPath, Microsoft Flow or AutomationAnywhere are available 
+for Windows only. However, there is our <a href="https://ui.vision">UI Vision</a> <a href="https://ui.vision/rpa">RPA software</a>  – it is a cross-platform tool
+that runs natively on the MacOS and can do <a href="https://ui.vision/rpa/x/desktop-automation">Mac desktop automation</a> just as well as Windows and 
+<a href="https://ui.vision/blog/linux-desktop-automation">Linux desktop automation</a>.</p>
+
+
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Mac%20Desktop%20Automation&amp;url=https://ui.vision/mac-desktop-automation/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/mac-desktop-automation/&amp;t=Mac%20Desktop%20Automation"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/mac-desktop-automation/"><span class="screen-reader-text">Google+</span></a>
+                    </div><!-- .share-post -->
+                    
+                    <div class="tag-links">
+                        Tags: <a href="/blog/tags/index.html#Mac" title="Pages tagged Mac" rel="tag">Mac</a><a href="/blog/tags/index.html#Desktop+Automation" title="Pages tagged Desktop Automation" rel="tag">Desktop Automation</a><a href="/blog/tags/index.html#RPA" title="Pages tagged RPA" rel="tag">RPA</a>
+                    </div>
+                    
+                </footer><!-- .entry-footer -->
+            </article><!-- .post -->
+            <nav class="post-navigation">
+                <h2 class="screen-reader-text">Post navigation</h2>
+                
+                <div class="nav-previous">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/linux-desktop-automation/" class="nav-thumb" style="background-image: url(/images/posts/linux-desktop-automation.jpg)"></a>
+                        
+                        <div class="nav-before">Previous</div>
+                        <div class="nav-title"><a href="/blog/linux-desktop-automation/">Linux Desktop Automation</a></div>
+                        <div class="nav-date">May 21, 2021</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-previous -->
+                
+                
+                <div class="nav-next">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/rpa-v8/" class="nav-thumb" style="background-image: url(/images/posts/rpa-ocr-v8.jpg)"></a>
+                        
+                        <div class="nav-before">Next</div>
+                        <div class="nav-title"><a href="/blog/rpa-v8/">RPA Software V8 released</a></div>
+                        <div class="nav-date">August 22, 2022</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-next -->
+                
+            </nav><!-- .post-navigation -->
+            
+        </main><!-- .site-main -->
+        <aside class="sidebar">
+    
+
+    
+
+    <section class="widget widget-recent-posts">
+        <h2 class="widget-title">Latest Posts</h2>
+        <ul class="recent-posts">
+            
+            <li class="recent-item"><a href="/blog/computer-use-in-browser/">Run Anthropic Computer Use in Your Web Browser</a> <span>December 5, 2025</span></li>
+            
+            <li class="recent-item"><a href="/blog/project-jarvis/">Project Jarvis - Google's new AI Chrome Extension?</a> <span>December 2, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-use/">Anthropic Computer Use – First Impressions, Test and Pricing</a> <span>November 4, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-vision-industry-2024/">Computer vision industry gathers in the Länd</a> <span>September 19, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/imacros-download-checksum/">Is iMacros no longer available?</a> <span>January 25, 2024</span></li>
+            
+        </ul><!-- .recent-posts -->
+    </section><!-- .widget-recent-posts -->
+
+    
+
+</aside><!-- .sidebar -->
+
+    </div><!-- .inner -->
+</div><!-- .site-content -->
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="social-links">
+            
+            
+            
+            
+            <a href="https://github.com/a9t9" class="fa-github-alt square fill-horizontal"><span class="screen-reader-text">GitHub</span></a>
+            
+            
+            
+            
+            
+            
+            
+            <a class="fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">RSS</span></a>
+        </div><!-- .social-links -->
+        <div class="site-info">
+            &copy; <a href="/blog/">Our Open-Source RPA Blog</a> all rights reserved.
+        </div><!-- .site-info -->
+    </div><!-- .inner -->
+</footer><!-- .site-footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/blog/js/plugins.js"></script>
+    <script type="text/javascript" src="/blog/js/custom.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86195842-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-86195842-1');
+    </script>
+
+
+
+<!-- für a9t9.com --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5855c2ceffd367d9"></script> 
+</body>
+</html>

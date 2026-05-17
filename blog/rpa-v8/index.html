@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RPA Software V8 released</title>
+    <meta name="description" content="News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/blog/rpa.favicon32.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="/blog/css/main.css" />
+    <link rel="canonical" href="https://ui.vision/blog/rpa-v8/">
+    <link rel="alternate" type="application/rss+xml" title="Our Open-Source RPA Blog Feed" href="https://ui.vision/blog/feed.xml">
+</head>
+<body>
+    <nav id="top" class="site-navigation">
+        <div class="inner">
+            <button id="menu-toggle" aria-expanded="false">Menu</button>
+
+            <div class="nav-menu">
+              
+                <div class="head-banner">
+  <span><a href="https://ui.vision/">Open-Source RPA</a> <span style="color: #00FF00">for</span>
+  <a href="https://ui.vision/rpa/">Browser Automation</a>,
+  <a href="https://ui.vision/rpa/x/desktop-automation">Desktop Automation</a> 
+  <span style="color: #00FF00">& AI</span>
+  <a href="https://ui.vision/ai/computeruse">Computer Use</a> 
+  </span>
+</div>
+
+              
+              <ul class="menu">
+              
+              </ul>
+            </div><!-- .nav-menu -->
+            <a class="subscribe-button fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">Subscribe</span></a>
+        </div><!-- .inner -->
+    </nav><!-- .site-navigation -->
+    <header class="site-header">
+        <div class="inner">
+            <h1 class="site-title"><a class="logo-text" href="/blog/">Our Open-Source RPA Blog</a></h1>
+            <p class="site-description">Open-Source Robotic Process Automation (RPA)</p>
+        </div><!-- .inner -->
+    </header>
+    <div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header">
+                    <div class="entry-header-wrap">
+                        
+                        <div class="post-thumbnail">
+                            <img src="/blog/images/posts/rpa-ocr-v8.jpg" alt="RPA Software V8 released">
+                        </div><!-- .post-thumbnail -->
+                        
+                        <h1 class="entry-title">RPA Software V8 released</h1>
+                    </div><!-- .entry-header-wrap -->
+                    <div class="entry-meta">
+                      <time class="published" datetime="2022-08-22">August 22, 2022</time>
+                    </div><!-- .entry-meta -->
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <p>The RPA software release V8 includes two major parts:</p>
+
+<h2 id="updated-open-source-rpa-core">Updated Open-Source RPA Core</h2>
+
+<p>We have updated and rewritten large parts of the UI Vision RPA core to add “Chrome Manifest V3” support.
+Technical details aside,  what this means is that the new RPA version supports the latest Chrome and Edge extension standards, and is future proof. Google will “turn off” all older “Manifest V2” extensions in early 2023, but you can now rest assurred that Ui Vision  Selenium IDE++ will keep on automating, clicking and typing.</p>
+
+<h2 id="new-xmodule-with-local-ocr-support">New XModule with local OCR support</h2>
+
+<p>The latest UI.Vision XModule brings integrated OCR support. This <a href="https://ui.vision/rpa/x/desktop-automation/screen-scraping#xmodule-ocr">RPA OCR runs 100% local</a>. It is fast and works on offline machines without Internet connection. XModules local OCR is currently available for Windows and Mac. Linux local OCR support is planned.</p>
+
+<p>Try it out! This feature will change the way you automate.</p>
+
+<!--more-->
+
+<p>Example: Often you want to click a certain word a complex website. Sounds simple, or? But with most other tools you have learn how to deal with <a href="https://forum.ui.vision/t/how-to-get-the-selenium-ide-commands-to-work-with-dynamic-ids/44">changing element IDs and changing XPath</a>. Some other tools allow you also click based on x/y coordinates, and a few support visual automation with image search like UI Vision does. But no other tool has direct support for clicking on <em>text</em>. So instead of</p>
+
+<p><code class="highlighter-rouge">Click | xpath=//*[@id="step1_form"]/div/div/div/div/select</code></p>
+
+<p>You can simply write</p>
+
+<p><code class="highlighter-rouge">Xclick | ocr=Login</code></p>
+
+<p>=&gt; <a href="https://ui.vision/rpa">Web automation</a> &amp; <a href="https://ui.vision/rpa/docs/visual-ui-testing">web testing</a> was never easier.</p>
+
+
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=RPA%20Software%20V8%20released&amp;url=https://ui.vision/rpa-v8/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/rpa-v8/&amp;t=RPA%20Software%20V8%20released"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/rpa-v8/"><span class="screen-reader-text">Google+</span></a>
+                    </div><!-- .share-post -->
+                    
+                    <div class="tag-links">
+                        Tags: <a href="/blog/tags/index.html#RPA" title="Pages tagged RPA" rel="tag">RPA</a><a href="/blog/tags/index.html#Selenium+IDE" title="Pages tagged Selenium IDE" rel="tag">Selenium IDE</a>
+                    </div>
+                    
+                </footer><!-- .entry-footer -->
+            </article><!-- .post -->
+            <nav class="post-navigation">
+                <h2 class="screen-reader-text">Post navigation</h2>
+                
+                <div class="nav-previous">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/mac-desktop-automation/" class="nav-thumb" style="background-image: url(/images/posts/mac-desktop-automation.png)"></a>
+                        
+                        <div class="nav-before">Previous</div>
+                        <div class="nav-title"><a href="/blog/mac-desktop-automation/">Mac Desktop Automation</a></div>
+                        <div class="nav-date">June 20, 2021</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-previous -->
+                
+                
+                <div class="nav-next">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/rpa-sustainability/" class="nav-thumb" style="background-image: url(/images/posts/rpa-sustainability.jpg)"></a>
+                        
+                        <div class="nav-before">Next</div>
+                        <div class="nav-title"><a href="/blog/rpa-sustainability/">RPA as sustainability tool</a></div>
+                        <div class="nav-date">October 7, 2022</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-next -->
+                
+            </nav><!-- .post-navigation -->
+            
+        </main><!-- .site-main -->
+        <aside class="sidebar">
+    
+
+    
+
+    <section class="widget widget-recent-posts">
+        <h2 class="widget-title">Latest Posts</h2>
+        <ul class="recent-posts">
+            
+            <li class="recent-item"><a href="/blog/computer-use-in-browser/">Run Anthropic Computer Use in Your Web Browser</a> <span>December 5, 2025</span></li>
+            
+            <li class="recent-item"><a href="/blog/project-jarvis/">Project Jarvis - Google's new AI Chrome Extension?</a> <span>December 2, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-use/">Anthropic Computer Use – First Impressions, Test and Pricing</a> <span>November 4, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-vision-industry-2024/">Computer vision industry gathers in the Länd</a> <span>September 19, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/imacros-download-checksum/">Is iMacros no longer available?</a> <span>January 25, 2024</span></li>
+            
+        </ul><!-- .recent-posts -->
+    </section><!-- .widget-recent-posts -->
+
+    
+
+</aside><!-- .sidebar -->
+
+    </div><!-- .inner -->
+</div><!-- .site-content -->
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="social-links">
+            
+            
+            
+            
+            <a href="https://github.com/a9t9" class="fa-github-alt square fill-horizontal"><span class="screen-reader-text">GitHub</span></a>
+            
+            
+            
+            
+            
+            
+            
+            <a class="fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">RSS</span></a>
+        </div><!-- .social-links -->
+        <div class="site-info">
+            &copy; <a href="/blog/">Our Open-Source RPA Blog</a> all rights reserved.
+        </div><!-- .site-info -->
+    </div><!-- .inner -->
+</footer><!-- .site-footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/blog/js/plugins.js"></script>
+    <script type="text/javascript" src="/blog/js/custom.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86195842-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-86195842-1');
+    </script>
+
+
+
+<!-- für a9t9.com --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5855c2ceffd367d9"></script> 
+</body>
+</html>

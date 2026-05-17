@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Our Open-Source RPA Blog</title>
+        <description>News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).</description>
+        <link>https://ui.vision/blog/</link>
+        <atom:link href="https://ui.vision/blog/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Fri, 24 Apr 2026 21:51:43 +0200</pubDate>
+        <lastBuildDate>Fri, 24 Apr 2026 21:51:43 +0200</lastBuildDate>
+        <generator>Jekyll v3.1.6</generator>
+        
+            <item>
+                <title>Run Anthropic Computer Use in Your Web Browser</title>
+                <description>&lt;p&gt;We’ve integrated Anthropic Computer Use into the Ui.Vision browser extension. This gives everyone the option to use/demo Anthropic Computer Use directly in their browser - no Docker required. You only need to install the open-source Ui.Vision browser extension for Chrome, Edge, or Firefox.&lt;/p&gt;
+
+&lt;h1 id=&quot;step-by-step-instructions&quot;&gt;Step-by-Step Instructions&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ui.vision/rpa&quot;&gt;Install the Ui.Vision browser extension&lt;/a&gt; for Chrome, Edge, or Firefox&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ui.vision/rpa/x/download&quot;&gt;Install the XModule native app&lt;/a&gt; (available for Windows, Mac, and Linux). This app allows the browser extension to simulate mouse clicks and keyboard typing&lt;/li&gt;
+  &lt;li&gt;Enter your &lt;a href=&quot;https://ui.vision/rpa/ai&quot;&gt;Anthropic API key&lt;/a&gt; into the Ui.Vision extension. &lt;strong&gt;That’s all - you’re ready to go!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;full-width caption&quot;&gt;
+    &lt;img src=&quot;/blog/images/posts/rpa-anthropic-api-key.webp&quot; alt=&quot;&quot; /&gt;
+    
+&lt;/figure&gt;
+
+&lt;h1 id=&quot;computer-use-tutorial&quot;&gt;Computer Use Tutorial&lt;/h1&gt;
+
+&lt;p&gt;To get started, we recommend trying one of the &lt;a href=&quot;https://ui.vision/ai/computeruse&quot;&gt;pre-made Computer Use macros&lt;/a&gt;. You’ll find them at the top of the macro list in Ui.Vision. Macros that use Computer Use start with “CU_”.&lt;/p&gt;
+
+&lt;p&gt;Computer Use (inside Ui.Vision) playing TicTacToe in the browser:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dwao1Y84sD8?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;(Soon:) If you want to have a chat-like conversation with Claude Computer Use, open the sidebar and select the AI tab. Then start prompting.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;desktop-automation&quot;&gt;Desktop Automation&lt;/h1&gt;
+
+&lt;p&gt;Since Ui.Vision can handle both browser and desktop automation, you can also demo Anthropic Claude Computer Use directly on your desktop. To do so, go to the Ui.Vision settings and switch from browser automation to desktop automation.&lt;/p&gt;
+
+&lt;h1 id=&quot;anthropic-computer-use-pricing&quot;&gt;Anthropic Computer Use Pricing&lt;/h1&gt;
+
+&lt;p&gt;The Ui.Vision browser extension is open-source and free for everyone to use. The only costs involved are the Anthropic API credits. For example, running the PlayTicTacToe demo macro will cost approximately $0.30 in API usage credits.&lt;/p&gt;
+
+&lt;h1 id=&quot;computer-use-insights-from-our-experience&quot;&gt;Computer Use Insights from Our Experience&lt;/h1&gt;
+
+&lt;p&gt;Here are some insights we’ve gained from using Computer Use:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Computer Use appears to be trained to move the mouse before clicking. However, this is often unnecessary. Tell it “No mouse movements, only clicks.” This simple tweak can &lt;strong&gt;halve&lt;/strong&gt; the automation time and API cost!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Keep the browser viewport (for browser automation) or the desktop screen size (for desktop automation) as small as possible. The smaller the screenshot area, the faster and cheaper the API response. Smaller screen sizes also improve the accuracy of the returned x,y values.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Shorter prompts often work better than longer ones. Ironically, if you ask Claude for prompting help, it will write long and often overly detailed prompts.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Prompts can be as simple as “Fill out this form with random data” or “Search for a flight.” To get started, check out the new Computer Use demo macros for example prompts that work well.&lt;/p&gt;
+
+&lt;p&gt;In general, we’ve found that - at least for now - Computer Use works better for browser automation than desktop automation. &lt;a href=&quot;https://ui.vision/blog/project-jarvis/&quot;&gt;Google’s Project Jarvis&lt;/a&gt; team seems to have reached the same conclusion.&lt;/p&gt;
+
+</description>
+                <pubDate>Fri, 05 Dec 2025 00:00:00 +0100</pubDate>
+                <link>https://ui.vision/blog/computer-use-in-browser/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/computer-use-in-browser/</guid>
+                
+                <category>AI</category>
+                
+                <category>Anthropic</category>
+                
+                <category>Claude</category>
+                
+                <category>Computer Use</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Project Jarvis - Google&#39;s new AI Chrome Extension?</title>
+                <description>&lt;p&gt;Update Dec 5, 2024: We integrated &lt;a href=&quot;https://ui.vision/blog/computer-use-in-browser/&quot;&gt;Anthropic Computer Use into Ui.Vision&lt;/a&gt;. So if you want to control your browser with AI, you can do it with Ui.Vision already now.&lt;/p&gt;
+
+&lt;p&gt;–&lt;/p&gt;
+
+&lt;p&gt;Rumours have it, that Google may release “Project Jarvis” (its reported codename) Chrome extension this month. It would perform tasks like research gathering, product purchasing, and flight booking.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The website &lt;a href=&quot;https://www.theinformation.com/articles/google-preps-ai-that-takes-over-computers&quot;&gt;The Information&lt;/a&gt; leaked this information in October, just a week after Anthropic announced its Computer Use API. One could imagine that this “leak” was on purpose. Just as another &lt;a href=&quot;https://www.androidpolice.com/google-jarvis-ai-extension-accidentally-leaked/&quot;&gt;“leak”&lt;/a&gt; a week later: A Chrome Web Store page described Jarvis as “a helpful companion that surfs the web for you” – and then disappeared again.&lt;/p&gt;
+
+&lt;p&gt;Powered by a future version of Google’s Gemini, Jarvis reportedly works exclusively with Chrome. The tool aims to automate everyday web tasks by taking screenshots, interpreting them, and performing actions like clicking buttons or entering text. Current iterations reportedly take “a few seconds” between actions -  very similar in performance to Anthropic’s Computer Use.&lt;/p&gt;
+
+&lt;p&gt;Based on our experience with &lt;a href=&quot;https://ui.vision/blog/computer-use/&quot;&gt;AI browser automation&lt;/a&gt; (“Project Ui.Vision”), a proof of concept seems more likely than a full release this month. While Anthropic’s Computer Use and Google’s Project Jarvis show promise, they’re not yet ready for typical users. No way that such a Jarvis tool can &lt;em&gt;reliably&lt;/em&gt; execute a task like “book me the lowest carbon emissions flight from New York to Boston, and I want an aisle seat” from start to finish. However, the already available technology fits well in power user tools, which is why we’re incorporating Computer Use into the open-source Ui.Vision &lt;a href=&quot;https://ui.vision/blog/&quot;&gt;RPA software&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Google team appears to have learned from Anthropic’s Computer Use launch. Our tests show that Anthropic’s Computer (October 2024 release) performs better with browser automation than desktop automation, likely because websites have more consistent usage patterns than desktop apps. Most website automation is basically some kind of form filling. In addition. web applications show no variation between operating systems (Mac, Linux, Windows).&lt;/p&gt;
+
+&lt;h1 id=&quot;project-jarvis-vs-anthropic-computer-use&quot;&gt;Project Jarvis vs. Anthropic Computer Use&lt;/h1&gt;
+
+&lt;p&gt;Current score: 1-0 for Anthropic, as Google Gemini 2.0/Project Jarvis hasn’t entered the competition yet.&lt;/p&gt;
+
+</description>
+                <pubDate>Mon, 02 Dec 2024 00:00:00 +0100</pubDate>
+                <link>https://ui.vision/blog/project-jarvis/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/project-jarvis/</guid>
+                
+                <category>AI</category>
+                
+                <category>Gemini</category>
+                
+                <category>Anthropic</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Anthropic Computer Use – First Impressions, Test and Pricing</title>
+                <description>&lt;p&gt;Anthropic just announced an exciting new capability for their AI assistant: Claude computer use, which allows it to interact with your computer by looking at your screen and controlling your mouse and keyboard.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-use-claude-computer-use&quot;&gt;How to use Claude computer use&lt;/h1&gt;
+&lt;p&gt;Using Claude computer use is surprisingly straightforward: the system works by letting Claude see your screen through screenshots and then giving you instructions about what to do next.&lt;/p&gt;
+
+&lt;p&gt;Getting started is made easy with the Claude computer use demo, which Anthropic has provided on GitHub. While there isn’t yet an official Claude computer use tutorial, the Docker demo environment is helpful. The Claude computer use Docker setup is the quickest way to begin.&lt;/p&gt;
+
+&lt;p&gt;We tested the Anthropic Claude computer use features with tasks like opening a web browser, installing software, and editing computer code. So how good is it?
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;computer-use-security&quot;&gt;Computer use security&lt;/h1&gt;
+&lt;p&gt;What makes this particularly impressive is Claude’s ability to “precisely” (kind of, see our test video below) identify where to click on the screen. Previous AI models struggled even with giving a ballpark estimate of x/y coordinates of items in a screenshot.&lt;/p&gt;
+
+&lt;p&gt;However, Anthropic is being appropriately cautious about security risks, particularly warning about potential misuse through malicious websites that might try to override Claude’s normal behavior. Mouse clicks themselves are not the key risk here. The main risk is - according to our test - the fact that Claude can also run shell commands. Shell commands can do more harm more quickly than most mouse clicks. Especially because you can monitor Claude’s mouse clicks visually, but the shell commands are executed in the background.&lt;/p&gt;
+
+&lt;h1 id=&quot;computer-use-test&quot;&gt;Computer use test&lt;/h1&gt;
+&lt;p&gt;So what did we test and how did Claude Computer Use work:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open Browser (ok)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install Browser extension (ok)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add extension icon to browser toolbar (failed, wrong approach)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select macro and run it (ok)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Code edit (failed: Knew what to do, but fat fingered the edit)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Notepad edit test (ok, fat fingered edit but found workaround)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The video below shows the test and their results:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qxRX5r7fNp8?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Just as a ballpark number for the Computer use pricing: Doing the above test sequence cost us around two US$ in Anthropic API usage credits.&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+&lt;p&gt;Anthropic Computer use is the first meaningful progress in the RPA software space in years.&lt;/p&gt;
+
+&lt;p&gt;We would not recommend Anthropic Computer use for any kind of production use (yet). Computer use is still slow and error prone. But the use of LLM (Large Language Models) finally moves the needle to true RPA (Robotic Process Automation).&lt;/p&gt;
+
+&lt;p&gt;For years, we at the UI.Vision &lt;a href=&quot;https://ui.vision/&quot;&gt;open-source RPA software&lt;/a&gt; team argued that visual computer automation is the future. It is great that we found a strong (informal) ally with Claude and Anthropic.&lt;/p&gt;
+</description>
+                <pubDate>Mon, 04 Nov 2024 00:00:00 +0100</pubDate>
+                <link>https://ui.vision/blog/computer-use/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/computer-use/</guid>
+                
+                <category>AI</category>
+                
+                <category>Claude</category>
+                
+                <category>Anthropic</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Computer vision industry gathers in the Länd</title>
+                <description>&lt;p&gt;Vision, the trade fair for machine vision, returns to in &lt;a href=&quot;https://www.thelaend.de/en/&quot;&gt;the Länd&lt;/a&gt; from 8-10 October, 2024.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Held every two years in Stuttgart, Germany, the event plays host to the complete range of computer vision technology, with the conference programme designed to help visitors find out about all innovations in machine-vision and RPA technologies, both current and in-development for the future. The exhibition floor, meanwhile, will be home to exhibitors from all over the world, showcasing the latest systems and components for integrators.&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;2024 &amp;gt; 2022&lt;/h1&gt;
+
+&lt;p&gt;Despite an admittedly challenging year for the industry, the event looks set to be bigger and better than ever. Earlier this year, Florian Niethammer, Manager of Exhibitions and Events at Messe Stuttgart revealed at a Vision/VDMA round table event in Stuttgart that the Vision show had already surpassed the exhibitor numbers experienced in 2022, with 385 exhibiting companies, which he described as “a pleasing development path with the Vision show.” The 2022 event itself saw a rise in visitor number over the previous iteration, with some 6,505 visitors walking through the doors.&lt;/p&gt;
+
+&lt;p&gt;Mr. Niethammer said that the organisers have been receiving more enquiries and expressions of interest every day, and he expected to break the 400 exhibitor mark and achieve a growth of at least 10% in exhibitor numbers by October. At the time of going to press, that number stands at 468. He believes that this reflects the positive expectations of the industry, despite some difficult market conditions. He said: “We see that, despite consolidation and merger and acquisition activities in the market, the imaging and machine vision field is still a very attractive field for many new companies to enter. Thus, we have accomplished around 25% of new companies that will exhibit for the very first time.”&lt;/p&gt;
+</description>
+                <pubDate>Thu, 19 Sep 2024 00:00:00 +0200</pubDate>
+                <link>https://ui.vision/blog/computer-vision-industry-2024/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/computer-vision-industry-2024/</guid>
+                
+                <category>Computer Vision</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Is iMacros no longer available?</title>
+                <description>&lt;p&gt;In 2022, &lt;a href=&quot;https://ui.vision/blog/imacros-alternatives/&quot;&gt;we told&lt;/a&gt; our readers on our &lt;a href=&quot;https://ui.vision/blog/&quot;&gt;automation blog&lt;/a&gt; that iMacros, once the most used web automation tool in the world, would soon stop being available. Now, in January 2024, we see that the company owning iMacros has not only stopped updating and supporting it (which we expected) but also completely removed it from the Chrome and Firefox web stores.&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;This means you can no longer download iMacros from the Chrome and Firefox stores.&lt;/p&gt;
+
+&lt;p&gt;Those who read our 2022 post about iMacros should be okay because we suggested downloading the latest versions of iMacros for Firefox XPI and the matching version of Firefox browser.&lt;/p&gt;
+
+&lt;p&gt;Trying to download it now is late, but not too late. So, how can you still get iMacros?&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-download-imacros&quot;&gt;How to download iMacros?&lt;/h1&gt;
+
+&lt;p&gt;The best version of iMacros was &lt;strong&gt;iMacros for Firefox V8.9.7&lt;/strong&gt;. If you continue to use iMacros, get and keep this version. You can still find the “iMacros for Firefox V8.9.7 XPI” installer on some not-so-trustworthy sites and GitHub repositories. As always, be careful with downloads from unknown sources. When we checked for this blog post, we did &lt;em&gt;not&lt;/em&gt; find any malicious iMacros XPI files. But better be safe than sorry. So for your safety, here is the information to check for:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The original “imacros_for_firefox-8.9.7-fx.xpi” file size is &lt;strong&gt;356,330 bytes&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The MD5 checksum (a kind of digital fingerprint) of this iMacros installer is &lt;strong&gt;10722343b9e0b98fc753cd2aeb0e23f5&lt;/strong&gt;. We highly suggest &lt;a href=&quot;https://emn178.github.io/online-tools/md5_checksum.html&quot;&gt;checking this checksum&lt;/a&gt; (&amp;lt;- not our tool, just a link) before installing the file. If the checksum matches, it means the file is okay:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;full-width caption&quot;&gt;
+    &lt;img src=&quot;/blog/images/posts/imacros-md5-checksum.jpg&quot; alt=&quot;&quot; /&gt;
+    
+&lt;/figure&gt;
+
+&lt;h1 id=&quot;best-imacros-alternative&quot;&gt;Best iMacros alternative?&lt;/h1&gt;
+
+&lt;p&gt;The best thing to do is to switch to a good, &lt;a href=&quot;https://ui.vision/rpa/migrate/imacros&quot;&gt;open-source alternative to iMacros&lt;/a&gt;. Look at our list of &lt;a href=&quot;https://ui.vision/blog/imacros-alternatives/&quot;&gt;alternatives to iMacros&lt;/a&gt; from 2022, which is still up-to-date.&lt;/p&gt;
+</description>
+                <pubDate>Thu, 25 Jan 2024 00:00:00 +0100</pubDate>
+                <link>https://ui.vision/blog/imacros-download-checksum/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/imacros-download-checksum/</guid>
+                
+                <category>iMacros</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>RPA saves Hospital over 50,000 man-hours</title>
+                <description>&lt;p&gt;Singapore General Hospital, Singapore’s flagship hospital, has been exploring robotic process automation.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile many &lt;a href=&quot;https://ui.vision&quot;&gt;RPA automation&lt;/a&gt; use cases have been successfully implemented, saving 52,500 man-hours and gaining almost $2 million in productivity, the hospital said in a statement.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;A most recent use case is the RPA for patient-reported outcome measures collection at the SGH Physiotherapy Department – the first such use case in Singapore. Following a trial between March and December last year, the technology was able to save about 1,350 hours of manual calculations and documentation.&lt;/p&gt;
+
+&lt;p&gt;SGH launched its first RPA use case in contact centre operations. Since then, it has explored the use of RPA in extracting and processing information from an online form for Medication Delivery Service, as well as automatic billing of patients for laboratory tests performed at Specialist Outpatient Clinics.&lt;/p&gt;
+
+&lt;p&gt;“While RPA enhances our processes back-end, it may also benefit our patients depending on the use case. SGH]will continue to look into wider adoption of RPA to take on repetitive manual tasks, and augment clinical workflows. By doing so, staff can focus on more complex work that requires thought process,” said Mr Chan, assistant manager of the Artificial Intelligence and Automation Unit and the RPA lead at SGH.&lt;/p&gt;
+
+</description>
+                <pubDate>Tue, 14 Nov 2023 00:00:00 +0100</pubDate>
+                <link>https://ui.vision/blog/rpa-hospital-50000/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/rpa-hospital-50000/</guid>
+                
+                <category>RPA</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Aleph Alpha vs ChatGPT</title>
+                <description>&lt;p&gt;The company, founded in 2019 by a former Apple manager, is considered one of the biggest hopefuls for an independent European “artificial intelligence”. &lt;em&gt;According to the company&lt;/em&gt;, the “Luminous” program can compete with ChatGPT from market leader Open AI. The results of a standardized performance comparison published in February 2023 had shown this, the company claims. So how good is it?&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;One of the few public-facing Aleph Alpha projects is Lumi the &lt;del&gt;chat client&lt;/del&gt; “digital citizen assistant” at the City of Heidelberg’s &lt;a href=&quot;https://www.heidelberg.de/hd,Lde/HD.html&quot;&gt;website&lt;/a&gt;. While certainly no ChatGPT, you can ask it about local high schools, holidays or on which day the trash cans are emptied.&lt;/p&gt;
+
+&lt;figure class=&quot;full-width caption&quot;&gt;
+    &lt;img src=&quot;/blog/images/posts/aleph-alpha-lumi-heidelberg.jpg&quot; alt=&quot;&quot; /&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;In our non-scientific quick test Lumi’s answers were somewhat underwhelming. Lumi is certainly better than the average help chat robot - and in a time before ChatGPT that would have been impressive.&lt;/p&gt;
+
+&lt;figure class=&quot;full-width caption&quot;&gt;
+    &lt;img src=&quot;/blog/images/posts/aleph-alpha-lumi-test.jpg&quot; alt=&quot;&quot; /&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Rumor on the German-language internet (e. g. this &lt;a href=&quot;https://omr.com/de/daily/sven-schmidt-aleph-alpha-sap/&quot;&gt;podcast&lt;/a&gt;) has it that software manufacturer SAP is considering an investment in Heidelberg-based AI start-up Aleph Alpha. The decision is likely to be made soon. SAP wants to participate in the second round of financing now underway, the talk is of an amount below 100 million euros. When asked, the Walldorf-based company would not comment on this, nor would Aleph Alpha founder Jonas Andrulis.&lt;/p&gt;
+
+&lt;p&gt;Aleph Alpha had successfully completed a funding round of around €23 million in &lt;a href=&quot;https://www.uvcpartners.com/blog/aleph-alpha-secures-eu23-million-series-a-funding&quot;&gt;2021&lt;/a&gt;. This had been used to increase the number of employees to around 50, build a fast AI data center in Bayreuth and launch reference projects.&lt;/p&gt;
+
+</description>
+                <pubDate>Mon, 17 Apr 2023 00:00:00 +0200</pubDate>
+                <link>https://ui.vision/blog/aleph-alpha-vs-chatgpt/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/aleph-alpha-vs-chatgpt/</guid>
+                
+                <category>ChatGPT</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Best iMacros Alternatives</title>
+                <description>&lt;p&gt;(Last updated: January 2024)&lt;/p&gt;
+
+&lt;p&gt;iMacros, a popular web automation tool, is being discontinued by its new owner. This is sad news, as iMacros was the grandfather of all web automation tools. It literally invented this category.&lt;/p&gt;
+
+&lt;p&gt;Now, looking to the future, what are the best alternatives to iMacros? Many current iMacros users have contacted us for advice, and so we have decided to summarize our thoughts on the situation in this blog post. While there are many web automation tools available, there are only a few that we can recommend as true iMacros alternatives.&lt;/p&gt;
+
+&lt;p&gt;Here is our list of the best iMacros alternatives. Please note that this is &lt;em&gt;not a ranking&lt;/em&gt;; the best replacement for iMacros will depend on your specific needs and use case.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;imacros-alternative-google-puppeteer&quot;&gt;iMacros Alternative: Google Puppeteer&lt;/h2&gt;
+
+&lt;p&gt;Google Puppeteer is a library developed by Google that provides a high-level API to control Chrome or Chromium over the DevTools Protocol. It is essentially a headless browser, meaning that it allows you to control a web browser programmatically without the need for a graphical user interface.&lt;/p&gt;
+
+&lt;figure class=&quot;full-width caption&quot;&gt;
+    &lt;img src=&quot;/blog/images/posts/puppeteer.png&quot; alt=&quot;&quot; /&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Puppeteer can be used to automate tasks that would normally be performed manually in a web browser, such as clicking links, filling out forms, and scrolling pages. It can also be used to capture screenshots, create PDFs, and perform other types of web scraping and testing.&lt;/p&gt;
+
+&lt;p&gt;The drawback of Google Puppeteer is that it is a “framework” and, as such, it requires programming skills to automate tasks. This means that every iMacros macro would become a standalone program with Puppeteer. If that works for you, Puppeteer is a powerful alternative. However, it is a completely different approach to web automation. Additionally, Puppeteer does not support real-user simulation commands like IMAGESEARCH and DirectScreen. It can only automate at the &lt;a href=&quot;https://ui.vision/rpa/docs/selenium-ide/locators#xpath&quot;&gt;XPath locator&lt;/a&gt; level.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PRO:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the use of a framework is acceptable, this is the best framework to replace iMacros.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;iMacros Scripting Interface commands are replaced by Puppeteer API calls.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open-Source&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONTRA:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Since it is a framework, it requires significant programming skills&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;No support for real-user simulation (iMacros commands like IMAGESEARCH or DS).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;No Record &amp;amp; Replay feature&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;imacros-alternative-bunker-down-with-firefox&quot;&gt;iMacros Alternative: Bunker down with Firefox&lt;/h2&gt;
+
+&lt;p&gt;iMacros as iMacros alternative? Yes, hear us out: While iMacros for &lt;strong&gt;Google Chrome&lt;/strong&gt; will likely stop working at some point in 2023, the Mozilla Firefox team is way behind in its transition to Manifest V3. So there is a good chance that you can get another 2-3 years of usage out of the current iMacros for &lt;strong&gt;Firefox&lt;/strong&gt; version. But keep in mind that there is no guarantee for this, and one Firefox update gone wrong could kill the iMacros extension by mistake. If that happens, there will be nobody around to fix and update iMacros.&lt;/p&gt;
+
+&lt;figure class=&quot;full-width caption&quot;&gt;
+    &lt;img src=&quot;/blog/images/posts/imacros-firefox-manifest2.png&quot; alt=&quot;&quot; /&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;If you choose to continue using iMacros, we strongly recommend that you &lt;strong&gt;download the latest version of both &lt;a href=&quot;https://ui.vision/blog/imacros-download-checksum/&quot;&gt;iMacros&lt;/a&gt; and Firefox&lt;/strong&gt;. Do this as soon as possible. January 2024 update: iMacros is no longer available in the Chrome and Firefox stores, and you need to &lt;a href=&quot;https://ui.vision/blog/imacros-download-checksum/&quot;&gt;do a Google search to find iMacros&lt;/a&gt;. Disabling automatic Firefox browser updates can help extend the lifespan of iMacros, but it is important to note that doing so may pose a security risk, depending on your specific needs. Additionally, newer websites may eventually stop functioning correctly on older versions of Firefox.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PRO:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Staying with iMacros means no need to spend time on conversion&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Free (but not open source)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONTRA:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Eventually, even iMacros for &lt;em&gt;Firefox&lt;/em&gt; will stop working&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Using an older Firefox browser can be a security risk&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The iMacros support forum will likely close at some point in 2023.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;imacros-alternative-uivision-rpa&quot;&gt;iMacros Alternative: UI.Vision RPA&lt;/h2&gt;
+
+&lt;p&gt;Our UI.Vision RPA software is a free, open-source browser extension that allows you to automate tasks in the web browser. It is available for use with Chrome, Firefox, and Edge on Windows, macOS, and Linux platforms.&lt;/p&gt;
+
+&lt;p&gt;UI.Vision RPA provides a visual interface for creating and editing automation scripts, known as “macros,” which can be used to automate repetitive tasks in the web browser. These macros can be triggered manually or automatically using a schedule, and they can be run in multiple browser tabs or windows at the same time.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/yzVc13QdGxw?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;UI.Vision RPA supports a wide range of actions, including clicking elements, filling out forms, scrolling pages, and extracting data from web pages. It also includes features for debugging and testing automation scripts, as well as a command line interface (similar to the iMacros Scripting interface) for integration with other tools and services.&lt;/p&gt;
+
+&lt;p&gt;If this sounds similar to what iMacros does, it’s because it is. There is even an &lt;a href=&quot;https://ui.vision/rpa/migrate/imacros&quot;&gt;iMacros Alternative&lt;/a&gt; page with iMacros migration hints. In many ways, you can &lt;strong&gt;think of UI.Vision as the next generation of iMacros&lt;/strong&gt;. As such, it is probably the best all-around iMacros alternative.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PRO:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Overall concept very similar to iMacros&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Free and Open-Source&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://ui.vision/rpa/migrate/imacros#service&quot;&gt;Free conversion help&lt;/a&gt; in the UI.Vision &lt;a href=&quot;https://forum.ui.vision/tag/imacros-migration&quot;&gt;RPA forum&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;iMacros “DirectScreen” and IMAGESEARCH commands have equivalent &lt;a href=&quot;https://ui.vision/rpa/docs/xclick&quot;&gt;real-user simulation&lt;/a&gt; commands.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONTRA:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;User interface (UX) different from iMacros, so a learning curve is required despite overall similarity&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Macro source code is stored in JSON format instead of iMacros plain text format&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-about-other-tools&quot;&gt;What about other tools?&lt;/h2&gt;
+
+&lt;p&gt;There are plenty of automation frameworks, most of which are designed for web testing: Cucumber, Selenium, Selenium IDE, Watir, Silk Test, Telerik Test Studio, Power Automation, HP UFT (aka QTP), Katalon. These are good tools for their core use case, but they are &lt;em&gt;not&lt;/em&gt; good iMacros alternatives:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If they are a framework, they require programming skills. If using a framework is ok for you, the Puppeteer framework (see our list above) is the better iMacros alternative.&lt;/li&gt;
+  &lt;li&gt;If they are a software, they are designed for web testing use, and not for web automation or web scraping.&lt;/li&gt;
+  &lt;li&gt;All tools except iMacros and UI.Vision rely on the use of &lt;a href=&quot;https://ui.vision/rpa/docs/selenium-ide/locators#xpath&quot;&gt;XPath locators&lt;/a&gt; to automate the web. In our opinion, Computer vision and text recognition is the future of web automation. The locator approach is outdated and over time, less and less websites can be automated with locators alone.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By the way: The three iMacros alternatives that we recommend are all free. This also saves you the time of searching for iMacros cracks, iMacros free license keys, or iMacros serial keys. You get the power of the iMacros full version for free.&lt;/p&gt;
+
+&lt;p&gt;Did we miss a good iMacros alternative? If so, please let us know.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-imacros-migration-path-do-we-recommend&quot;&gt;What iMacros migration path do we recommend?&lt;/h2&gt;
+
+&lt;p&gt;We recommend this step-by-step approach:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Don’t panic! :-)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Leave iMacros for &lt;em&gt;Chrome&lt;/em&gt; as soon as possible. It can break anytime.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Keep your old macros running in iMacros for &lt;em&gt;Firefox&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create all new web automation tasks directly in the open-source UI.Vision &lt;a href=&quot;https://ui.vision/&quot;&gt;RPA software&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Whenever you need to modify an existing iMacros macro, migrate it to the UI.Vision &lt;a href=&quot;https://ui.vision/&quot;&gt;RPA software&lt;/a&gt; at the same time.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+                <pubDate>Mon, 12 Dec 2022 00:00:00 +0100</pubDate>
+                <link>https://ui.vision/blog/imacros-alternatives/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/imacros-alternatives/</guid>
+                
+                <category>iMacros</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>RPA as sustainability tool</title>
+                <description>&lt;p&gt;Sustainability has become a strategic priority in modern organizations. The sustainability keyword is present in regulatory filings, in annual reports and even on organizational charts. In fact, the latest Gartner Insights Sustainable Business Survey found that executives involved with sustainability strategy and initiatives plan to increase their sustainability investments over the next years. Often it serves only as “green washing” but there are some real benefits as well:&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;from-traditional-it-to-rpa&quot;&gt;From Traditional IT to RPA&lt;/h2&gt;
+
+&lt;p&gt;Traditional IT sustainability use cases have included low-emissions hardware, cost-efficient power and cooling, smaller data centers, cloud migration and decommissioned equipment recycling, to name a few. Now, &lt;a href=&quot;https://ui.vision&quot;&gt;robotic process automation (RPA)&lt;/a&gt;, which uses software robots to carry out simple, structured and repetitive business processes such as data entry, has emerged as a vital and strategic catalyst for sustainability.&lt;/p&gt;
+
+&lt;p&gt;RPA can automate or partially automate processes that traditionally rely on paper consumption and incur printing costs. For instance, by integrating &lt;a href=&quot;https://ocr.space&quot;&gt;optical character recognition&lt;/a&gt;, sometimes known as text recognition, with RPA, users can extract and repurpose data from scanned documents, images and image-only PDFs and &lt;a href=&quot;https://ocr.space/searchablepdf&quot;&gt;convert documents to searchable PDF&lt;/a&gt;. This allows them to easil access and edit the original document, while eliminating the need for manual data entry and extra printouts.&lt;/p&gt;
+
+&lt;h2 id=&quot;save-time&quot;&gt;Save time&lt;/h2&gt;
+
+&lt;p&gt;RPA automates routine IT processes such as manual data entry. And deploying a software-as-a-service solution eliminates the need for expensive infrastructure and maintenance investments such as servers.&lt;/p&gt;
+
+&lt;h2 id=&quot;redistribute-resources&quot;&gt;Redistribute resources.&lt;/h2&gt;
+
+&lt;p&gt;Saved resources—human time and materials—can be revamped and applied to a business’ higher level, strategic priorities.&lt;/p&gt;
+
+&lt;h2 id=&quot;uncover-new-insights&quot;&gt;Uncover new insights.&lt;/h2&gt;
+
+&lt;p&gt;Leveraging data from process mining and RPA infused with AI enables new patterns to surface, highlighting opportunities for further automation. Companies can then act on those insights, thus sparking a virtuous cycle of efficiency and innovation.&lt;/p&gt;
+
+&lt;h2 id=&quot;decrease-monotonous-tasks&quot;&gt;Decrease monotonous tasks.&lt;/h2&gt;
+
+&lt;p&gt;RPA frees employees from tasks that add little value to engage in more meaningful, higher value activities, fostering a culture of creativity and innovation.&lt;/p&gt;
+
+&lt;h2 id=&quot;increases-competitiveness&quot;&gt;Increases competitiveness.&lt;/h2&gt;
+
+&lt;p&gt;RPA helps best-in-class organizations use data to make better decisions, improve their customer experience and become providers that others want to do business with.&lt;/p&gt;
+
+</description>
+                <pubDate>Fri, 07 Oct 2022 00:00:00 +0200</pubDate>
+                <link>https://ui.vision/blog/rpa-sustainability/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/rpa-sustainability/</guid>
+                
+                <category>RPA</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>RPA Software V8 released</title>
+                <description>&lt;p&gt;The RPA software release V8 includes two major parts:&lt;/p&gt;
+
+&lt;h2 id=&quot;updated-open-source-rpa-core&quot;&gt;Updated Open-Source RPA Core&lt;/h2&gt;
+
+&lt;p&gt;We have updated and rewritten large parts of the UI Vision RPA core to add “Chrome Manifest V3” support.
+Technical details aside,  what this means is that the new RPA version supports the latest Chrome and Edge extension standards, and is future proof. Google will “turn off” all older “Manifest V2” extensions in early 2023, but you can now rest assurred that Ui Vision  Selenium IDE++ will keep on automating, clicking and typing.&lt;/p&gt;
+
+&lt;h2 id=&quot;new-xmodule-with-local-ocr-support&quot;&gt;New XModule with local OCR support&lt;/h2&gt;
+
+&lt;p&gt;The latest UI.Vision XModule brings integrated OCR support. This &lt;a href=&quot;https://ui.vision/rpa/x/desktop-automation/screen-scraping#xmodule-ocr&quot;&gt;RPA OCR runs 100% local&lt;/a&gt;. It is fast and works on offline machines without Internet connection. XModules local OCR is currently available for Windows and Mac. Linux local OCR support is planned.&lt;/p&gt;
+
+&lt;p&gt;Try it out! This feature will change the way you automate.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Example: Often you want to click a certain word a complex website. Sounds simple, or? But with most other tools you have learn how to deal with &lt;a href=&quot;https://forum.ui.vision/t/how-to-get-the-selenium-ide-commands-to-work-with-dynamic-ids/44&quot;&gt;changing element IDs and changing XPath&lt;/a&gt;. Some other tools allow you also click based on x/y coordinates, and a few support visual automation with image search like UI Vision does. But no other tool has direct support for clicking on &lt;em&gt;text&lt;/em&gt;. So instead of&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Click | xpath=//*[@id=&quot;step1_form&quot;]/div/div/div/div/select&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can simply write&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Xclick | ocr=Login&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;=&amp;gt; &lt;a href=&quot;https://ui.vision/rpa&quot;&gt;Web automation&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://ui.vision/rpa/docs/visual-ui-testing&quot;&gt;web testing&lt;/a&gt; was never easier.&lt;/p&gt;
+
+</description>
+                <pubDate>Mon, 22 Aug 2022 00:00:00 +0200</pubDate>
+                <link>https://ui.vision/blog/rpa-v8/</link>
+                <guid isPermaLink="true">https://ui.vision/blog/rpa-v8/</guid>
+                
+                <category>RPA</category>
+                
+                <category>Selenium IDE</category>
+                
+                
+            </item>
+        
+    </channel>
+</rss>

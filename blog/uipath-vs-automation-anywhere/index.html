@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RPA 2020: UIPath vs Automation Anywhere</title>
+    <meta name="description" content="News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/blog/rpa.favicon32.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="/blog/css/main.css" />
+    <link rel="canonical" href="https://ui.vision/blog/uipath-vs-automation-anywhere/">
+    <link rel="alternate" type="application/rss+xml" title="Our Open-Source RPA Blog Feed" href="https://ui.vision/blog/feed.xml">
+</head>
+<body>
+    <nav id="top" class="site-navigation">
+        <div class="inner">
+            <button id="menu-toggle" aria-expanded="false">Menu</button>
+
+            <div class="nav-menu">
+              
+                <div class="head-banner">
+  <span><a href="https://ui.vision/">Open-Source RPA</a> <span style="color: #00FF00">for</span>
+  <a href="https://ui.vision/rpa/">Browser Automation</a>,
+  <a href="https://ui.vision/rpa/x/desktop-automation">Desktop Automation</a> 
+  <span style="color: #00FF00">& AI</span>
+  <a href="https://ui.vision/ai/computeruse">Computer Use</a> 
+  </span>
+</div>
+
+              
+              <ul class="menu">
+              
+              </ul>
+            </div><!-- .nav-menu -->
+            <a class="subscribe-button fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">Subscribe</span></a>
+        </div><!-- .inner -->
+    </nav><!-- .site-navigation -->
+    <header class="site-header">
+        <div class="inner">
+            <h1 class="site-title"><a class="logo-text" href="/blog/">Our Open-Source RPA Blog</a></h1>
+            <p class="site-description">Open-Source Robotic Process Automation (RPA)</p>
+        </div><!-- .inner -->
+    </header>
+    <div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header">
+                    <div class="entry-header-wrap">
+                        
+                        <div class="post-thumbnail">
+                            <img src="/blog/images/posts/uipath-vs-automation-anywhere.jpg" alt="RPA 2020: UIPath vs Automation Anywhere">
+                        </div><!-- .post-thumbnail -->
+                        
+                        <h1 class="entry-title">RPA 2020: UIPath vs Automation Anywhere</h1>
+                    </div><!-- .entry-header-wrap -->
+                    <div class="entry-meta">
+                      <time class="published" datetime="2020-01-18">January 18, 2020</time>
+                    </div><!-- .entry-meta -->
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <p>There are many Robotic Process Automation (RPA) tools in the market now, some with huge price tags and some so complicated that they need their own “RPA University”. But the main aim of RPA is simple: To let the bot do the tasks which are easy, repetitive and documented – so that by using these rules a bot (macro) is able to complete the task.</p>
+
+<p>In this post we compare UIPath with Automation Anywhere (AA) and UI.Vision RPA.</p>
+
+<!--more-->
+
+<h2 id="uipath-vs-automation-anywhere">UIPath vs Automation Anywhere</h2>
+
+<p>The table below compares the key features of the two well-known Robotic Process Automation (RPA) tools. As third option it includes the specs of UI.Vision RPA, the popular lightweight and open-source alternative to the big name RPA tools.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th style="text-align: center">UIPath</th>
+      <th style="text-align: center">Automation Anywhere</th>
+      <th style="text-align: center">UI.Vision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#enterprise-pricing">Enterprise Pricing</a></td>
+      <td style="text-align: center"><em>Very</em> expensive</td>
+      <td style="text-align: center"><em>Very</em> expensive</td>
+      <td style="text-align: center">$499-$2499</td>
+    </tr>
+    <tr>
+      <td>Free Version available</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes?</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td>Supported Platforms</td>
+      <td style="text-align: center">Win only</td>
+      <td style="text-align: center">Win only</td>
+      <td style="text-align: center">Win, Mac, Linux</td>
+    </tr>
+    <tr>
+      <td>Open-Source</td>
+      <td style="text-align: center"><span style="color:red"><strong>no</strong></span></td>
+      <td style="text-align: center"><span style="color:red"><strong>no</strong></span></td>
+      <td style="text-align: center"><span style="color:green"><strong>yes</strong></span></td>
+    </tr>
+    <tr>
+      <td><a href="#security">Security Rating</a></td>
+      <td style="text-align: center">Good</td>
+      <td style="text-align: center">Good</td>
+      <td style="text-align: center">Very Good</td>
+    </tr>
+    <tr>
+      <td>Openness</td>
+      <td style="text-align: center">Medium (Open forums)</td>
+      <td style="text-align: center">Low (Forum not very active)</td>
+      <td style="text-align: center">Very high (Open-Source, Forums)</td>
+    </tr>
+    <tr>
+      <td><a href="#desktop-automation">Desktop Automation</a></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td>Image Recognition</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td>Text Recognition (OCR)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td>Citrix Automation</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td><a href="#web-automation">Web Automation</a></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td>Supported Browser</td>
+      <td style="text-align: center">IE, Chrome, Firefox</td>
+      <td style="text-align: center">IE, Chrome, Firefox</td>
+      <td style="text-align: center">Chrome, Firefox, Edge</td>
+    </tr>
+    <tr>
+      <td>Browser Recorder</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td>Selenium IDE compatible</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td><a href="#scripting">Scripting</a></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td><a href="#scripting">Script language</a></td>
+      <td style="text-align: center">VB</td>
+      <td style="text-align: center">C#</td>
+      <td style="text-align: center"><em>Many</em> (API)</td>
+    </tr>
+    <tr>
+      <td>Advanced Scheduling</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">With external tools</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In addition to comparing UIPath and Automation Anywhere, the table above contains the UI.Vision RPA software specs, a popular lightweight alternative to the big name RPA tools.</p>
+
+<p>At a9t9 we work in the computer vision, AI and usability space, so this is where we focus our comparison.</p>
+
+<h3 id="enterprise-pricing">Enterprise Pricing</h3>
+
+<p>UIPath and Automation Anywhere both do not mention their Enterprise pricing on their websites. You need to ask their sales team for a quote. UIPath is rumored to have a 450 million revenue with 2000 customers, so this means each customer pays in average 225,000 US$ per year for its license (source: TechCrunch reporting on 2019/3/22). The UI.Vision RPA Enterprise Edition has a public price list that starts at US$ 499, which is roughly 500(!) times less.</p>
+
+<p>UIPath and UI.Vision RPA offer a free version of their tools with some limitations, but still very useful. The UI.Vision Web Automation Core is completely free to use, without any limitations.</p>
+
+<h3 id="security">Security</h3>
+
+<p>Both UIPath and Automation Anywhere are well-known trustworthy companies. But their code is closed source.
+So you must trust these companies that they do not send of critical corporate information to outside
+servers. By contrast, the UI.Vision RPA core is open-source, so you can easily check that no information is send anywhere. We require a software to be Open-Source to be eligible for a very good security rating.</p>
+
+<h3 id="desktop-automation">Desktop Automation</h3>
+
+<p>Desktop automation and Citrix automation is sometimes also called “RDA” (Robotic Desktop Automation). This section
+rates the usefulness of the tool to automate tasks on the users desktop. Note that UIPath and Blue Prism can only automate tasks on a Windows desktop, whereas UI.Vision’s desktop automation works on Mac and Linux desktops as well.</p>
+
+<p>For desktop automation to work, you need to keep the desktop unlocked. This is true for all RPA software tools. The best way to do this securely is to run the automation in an unlocked virtual machine (VM) inside a locked server. For the virtual machine, we recommend to use a Linux machine, since Linux VMs are <em>much</em> smaller and faster then a comparable Windows VM. And there are no license issues with Linux. Using a Linux VM for desktop automation is only possible with the UI.Vision RPA tool. UIPath and Automation Anywhere can not utilize Linux VMs, as they are Windows only tools.</p>
+
+<h3 id="web-automation">Web Automation</h3>
+
+<p>Web automation means Browser Automation. It is the ability to automate tasks directly in the web browser. Typical tasks include form filling, data up- and download and <a href="https://ui.vision/docs/selenium-ide/web-scraping">web scraping</a>, the extraction from information from websites. For web automation UI.Vision RPA brings a key advantage to the table by having Selenium-compatible commands. So if you know Selenium, you will be right at home with UI.Vision RPA. And in the other direction, if you know how to automate tasks with UI.Vision RPA, you are trained for the Selenium IDE at the same time.</p>
+
+<h3 id="scripting">Scripting</h3>
+
+<p>All automation tools have one thing in common: Unless the task or test to automate is very basic, 
+you must expect to have to “script” or “program” part of the solution. UIPath uses an proprietary visual languge. In addition it supports the VB.NET language, a language that is rarely used otherwise. Blue Prism uses the more popular C#. And
+UI.Vision exposes a command line API that allows you to use it with any programming or scripting language, for example (in alphabetic order) C#, Java, Node.JS, PowerShell, Python, VB.NET, VBS and to combine it with other tools like AutoHotKey.</p>
+
+<h2 id="uipath-and-automation-anywhere-ide">UIPath and Automation Anywhere IDE</h2>
+
+<p>The UIPath tools allow the user to “draw” a workflow within a flow chart editor. This is helpful for beginners and marketed as “no coding” solution. Here is how this looks:</p>
+
+<figure class="full-width caption">
+    <img src="/blog/images/posts/uipath-vs-blueprism-uipath.png" alt="" />
+    
+</figure>
+
+<p>UIPath has a modern-looking UI but “Programming by flowchart” was pioneered by LabView decades ago. Visual programming remained a niche solution since “flow chart source code” becomes very difficult to debug and maintain as your scripts grows. And sharing code snippets is difficult, as you can not copy and paste “flowcharts” easily e. g. in a forum. These are two of the many reasons why it remained a niche.</p>
+
+<figure class="full-width caption">
+    <img src="/blog/images/posts/uipath-vs-aa-aa.png" alt="" />
+    
+</figure>
+
+<p>The Automation Anywhere UI has no flow chart options. It is a rather complex user interface, but with many powerful options and is developer friendly.</p>
+
+<figure class="full-width caption">
+    <img src="/blog/images/posts/kantu-screenshot-800.png" alt="" />
+    
+</figure>
+
+<p>By contrast, the UI.Vision tool uses the classic text based approach, similar to other known tools like the Selenium IDE. UI.Vision focuses on computer-vision and AI powered automation. For everything else, UI.Vision can be combined with <em>any</em> scripting or programming language like Powershell or Python. For example, for Office automation you are better of using the standard Microsoft VBA scripting, instead of the proprietary Word and Excel components of UIPath.</p>
+
+<h2 id="rpa-market-overview">RPA Market Overview</h2>
+
+<p>For more RPA Market Overview blog posts please see</p>
+
+<ul>
+  <li><a href="/blog/uipath-vs-automation-anywhere/">UIPath vs Automation Anywhere</a> (this post)</li>
+  <li><a href="/blog/uipath-pricing/">UIPath Pricing</a></li>
+  <li><a href="/blog/uipath-vs-blue-prism/">UIPath vs Blue Prism</a></li>
+  <li><a href="/blog/ahk-vs-autoit/">AutoHotKey vs AutoIT</a></li>
+  <li><a href="/blog/sikuli-vs-ahk/">Sikuli vs AutoHotKey</a></li>
+  <li><a href="/blog/selenium-ide-2018/">Selenium IDE vs Katalon vs UI.Vision</a></li>
+</ul>
+
+<p>Planned future reviews: Cognizant, Contextor (acquired by SAP), Kofax, Kryon Systems, NICE Systems, Pegasystems and WorkFusion.</p>
+
+
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=RPA%202020:%20UIPath%20vs%20Automation%20Anywhere&amp;url=https://ui.vision/uipath-vs-automation-anywhere/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/uipath-vs-automation-anywhere/&amp;t=RPA%202020:%20UIPath%20vs%20Automation%20Anywhere"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/uipath-vs-automation-anywhere/"><span class="screen-reader-text">Google+</span></a>
+                    </div><!-- .share-post -->
+                    
+                    <div class="tag-links">
+                        Tags: <a href="/blog/tags/index.html#RPA" title="Pages tagged RPA" rel="tag">RPA</a><a href="/blog/tags/index.html#Robotic+Process+Automation" title="Pages tagged Robotic Process Automation" rel="tag">Robotic Process Automation</a><a href="/blog/tags/index.html#Market+Overview" title="Pages tagged Market Overview" rel="tag">Market Overview</a>
+                    </div>
+                    
+                </footer><!-- .entry-footer -->
+            </article><!-- .post -->
+            <nav class="post-navigation">
+                <h2 class="screen-reader-text">Post navigation</h2>
+                
+                <div class="nav-previous">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/aa-announced-series-b/" class="nav-thumb" style="background-image: url(/images/posts/vc-rpa-news.jpg)"></a>
+                        
+                        <div class="nav-before">Previous</div>
+                        <div class="nav-title"><a href="/blog/aa-announced-series-b/">Automation Anywhere raised $290 million in series B funding</a></div>
+                        <div class="nav-date">November 21, 2019</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-previous -->
+                
+                
+                <div class="nav-next">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/robotic-process-automation-ppt/" class="nav-thumb" style="background-image: url(/images/posts/rpa-software-ppt.jpg)"></a>
+                        
+                        <div class="nav-before">Next</div>
+                        <div class="nav-title"><a href="/blog/robotic-process-automation-ppt/">Robotic Process Automation PPT </a></div>
+                        <div class="nav-date">April 28, 2020</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-next -->
+                
+            </nav><!-- .post-navigation -->
+            
+        </main><!-- .site-main -->
+        <aside class="sidebar">
+    
+
+    
+
+    <section class="widget widget-recent-posts">
+        <h2 class="widget-title">Latest Posts</h2>
+        <ul class="recent-posts">
+            
+            <li class="recent-item"><a href="/blog/computer-use-in-browser/">Run Anthropic Computer Use in Your Web Browser</a> <span>December 5, 2025</span></li>
+            
+            <li class="recent-item"><a href="/blog/project-jarvis/">Project Jarvis - Google's new AI Chrome Extension?</a> <span>December 2, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-use/">Anthropic Computer Use – First Impressions, Test and Pricing</a> <span>November 4, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-vision-industry-2024/">Computer vision industry gathers in the Länd</a> <span>September 19, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/imacros-download-checksum/">Is iMacros no longer available?</a> <span>January 25, 2024</span></li>
+            
+        </ul><!-- .recent-posts -->
+    </section><!-- .widget-recent-posts -->
+
+    
+
+</aside><!-- .sidebar -->
+
+    </div><!-- .inner -->
+</div><!-- .site-content -->
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="social-links">
+            
+            
+            
+            
+            <a href="https://github.com/a9t9" class="fa-github-alt square fill-horizontal"><span class="screen-reader-text">GitHub</span></a>
+            
+            
+            
+            
+            
+            
+            
+            <a class="fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">RSS</span></a>
+        </div><!-- .social-links -->
+        <div class="site-info">
+            &copy; <a href="/blog/">Our Open-Source RPA Blog</a> all rights reserved.
+        </div><!-- .site-info -->
+    </div><!-- .inner -->
+</footer><!-- .site-footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/blog/js/plugins.js"></script>
+    <script type="text/javascript" src="/blog/js/custom.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86195842-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-86195842-1');
+    </script>
+
+
+
+<!-- für a9t9.com --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5855c2ceffd367d9"></script> 
+</body>
+</html>

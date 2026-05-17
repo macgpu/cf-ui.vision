@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Selenium IDE rises like a phoenix from the ashes</title>
+    <meta name="description" content="News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/blog/rpa.favicon32.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="/blog/css/main.css" />
+    <link rel="canonical" href="https://ui.vision/blog/selenium-ide-2018/">
+    <link rel="alternate" type="application/rss+xml" title="Our Open-Source RPA Blog Feed" href="https://ui.vision/blog/feed.xml">
+</head>
+<body>
+    <nav id="top" class="site-navigation">
+        <div class="inner">
+            <button id="menu-toggle" aria-expanded="false">Menu</button>
+
+            <div class="nav-menu">
+              
+                <div class="head-banner">
+  <span><a href="https://ui.vision/">Open-Source RPA</a> <span style="color: #00FF00">for</span>
+  <a href="https://ui.vision/rpa/">Browser Automation</a>,
+  <a href="https://ui.vision/rpa/x/desktop-automation">Desktop Automation</a> 
+  <span style="color: #00FF00">& AI</span>
+  <a href="https://ui.vision/ai/computeruse">Computer Use</a> 
+  </span>
+</div>
+
+              
+              <ul class="menu">
+              
+              </ul>
+            </div><!-- .nav-menu -->
+            <a class="subscribe-button fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">Subscribe</span></a>
+        </div><!-- .inner -->
+    </nav><!-- .site-navigation -->
+    <header class="site-header">
+        <div class="inner">
+            <h1 class="site-title"><a class="logo-text" href="/blog/">Our Open-Source RPA Blog</a></h1>
+            <p class="site-description">Open-Source Robotic Process Automation (RPA)</p>
+        </div><!-- .inner -->
+    </header>
+    <div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header">
+                    <div class="entry-header-wrap">
+                        
+                        <div class="post-thumbnail">
+                            <img src="/blog/images/posts/rise-like-a-phoenix.jpg" alt="Selenium IDE rises like a phoenix from the ashes">
+                        </div><!-- .post-thumbnail -->
+                        
+                        <h1 class="entry-title">Selenium IDE rises like a phoenix from the ashes</h1>
+                    </div><!-- .entry-header-wrap -->
+                    <div class="entry-meta">
+                      <time class="published" datetime="2018-02-02">February 2, 2018</time>
+                    </div><!-- .entry-meta -->
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <p><strong>UPDATE May 2020</strong>: It seems the (Applitools sponsored) Selenium IDE is no longer maintained? While we have no insider knowledge, users tell us that tickets in the official Github repo remain unanswered.</p>
+
+<p><strong>UPDATE April 2019</strong>: We have updated the text and the <a href="#selenium-ide-market-overview">Selenium IDEs comparison table</a> for 2019.</p>
+
+<p>2018 <del>will be</del> <em>was</em> the year when the Selenium IDE <del>rises</del> <em>has risen</em> like a phoenix from the ashes… of the legacy Firefox add-ons.</p>
+
+<p>It all started in early August 2017 when we <a href="https://ui.vision/blog/selenium-ide-chrome/">lauchned the Kantu Selenium IDE</a> to implement a <strong>modern</strong> Selenium IDE for Chrome. Then in late August a computer science group from a Taiwanese University released the Sideex IDE for Chrome. And in September the Selenium core team announced that they as well will implement an update of the original Selenium IDE for Firefox, which - you might remember - stopped  working last year as the new Firefox Quantum extension system no longer supports legacy addons. And just before the year ended a company called Katalon released yet another Selenium IDE, an expanded and rebranded version of Sideex.</p>
+
+<p>So which Selenium IDE to use? Short answer: It depends. Longer answer: See our overview table below.</p>
+
+<!--more-->
+
+<h3 id="selenium-ide-market-overview">Selenium IDE Market Overview</h3>
+
+<p>The table below lists the key features of the most popular new Selenium IDEs and iMacros, another popular web automation addon. We abbreviated the classic <strong>S</strong>elenium <strong>IDE</strong> with “SIDE” in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th style="text-align: center">SIDE</th>
+      <th style="text-align: center">Kantu</th>
+      <th style="text-align: center">Katalon</th>
+      <th style="text-align: center">Sideex</th>
+      <th style="text-align: center">iMacros</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://ui.vision/docs/webextensions/selenium-ide">Record Selenium Commands</a></td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td>Chrome Version</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+    </tr>
+    <tr>
+      <td>Firefox Version</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">?</td>
+    </tr>
+    <tr>
+      <td><strong>Open-Source</strong></td>
+      <td style="text-align: center"><span style="color:green"><strong>yes</strong></span></td>
+      <td style="text-align: center"><span style="color:green"><strong>yes</strong></span></td>
+      <td style="text-align: center"><span style="color:red"><strong>no</strong></span></td>
+      <td style="text-align: center"><span style="color:green"><strong>yes</strong></span></td>
+      <td style="text-align: center"><span style="color:red"><strong>no</strong></span></td>
+    </tr>
+    <tr>
+      <td><a href="https://ui.vision/docs/webextensions/selenium-ide#flowcontrol">Flow Control (if/else/…)</a></td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td>Code Export</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td>File Download</td>
+      <td style="text-align: center">partial</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">partial</td>
+      <td style="text-align: center">partial</td>
+      <td style="text-align: center">yes</td>
+    </tr>
+    <tr>
+      <td><a href="https://ui.vision/docs/webextensions#fileupload">File Upload</a></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">yes</td>
+    </tr>
+    <tr>
+      <td><a href="https://ui.vision/docs/webextensions/selenium-ide/csvread">Data-driven (Read CSV)</a></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td><a href="/kantu/docs/selenium-ide/web-scraping">Web Scraping</a></td>
+      <td style="text-align: center">partial</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">partial</td>
+      <td style="text-align: center">partial</td>
+      <td style="text-align: center">yes</td>
+    </tr>
+    <tr>
+      <td><a href="https://ui.vision/docs/webextensions/selenium-ide/capturescreenshot">Full-Page Screenshots</a></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td><a href="#ai-powered-visual-testing">AI powered visual testing</a></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td><a href="https://ui.vision/x/desktop-automation">Desktop Automation</a></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">yes</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td>Install Link</td>
+      <td style="text-align: center"><a href="https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd?hl=en">SIDE</a></td>
+      <td style="text-align: center"><a href="https://chrome.google.com/webstore/detail/kantu-browser-automation/gcbalfbdmfieckjlnblleoemohcganoc?hl=en">Kantu</a></td>
+      <td style="text-align: center"><a href="https://chrome.google.com/webstore/detail/katalon-recorder-selenium/ljdobmomdgdljniojadhoplhkpialdid">Katalon</a></td>
+      <td style="text-align: center"><a href="https://chrome.google.com/webstore/detail/sideex-smart-record-play/nefadabeoagfkgmkgegmjgdhegbllple?hl=en">Sideex</a></td>
+      <td style="text-align: center"><a href="https://chrome.google.com/webstore/detail/imacros-for-chrome/cplklnmnlbnpmjogncfgfijoopmnlemp?hl=en">iMacros</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong><em>And the best new Selenium IDE is…?</em></strong></p>
+
+<p>The long answer is also “it depends”. There is no “best Selenium IDE” for every use case. But with the table above in mind we can summarize the situation like this:</p>
+
+<p>For basic recording and replay all Selenium IDEs work ok.</p>
+
+<p>If code-export for Web Driver is important for you, then the Katalon IDE is your only option at the moment (<del>February 2018</del> … and still in April 2019!). Code export is the ability to create some Java/C# code snippets for use with webDriver. This should not be confused with the ability export the recorded test cases in HTML or JSON format to reuse in other tools (for example as input for one of the synthetic web performance monitoring services). This is something <em>all</em> IDEs can do.</p>
+
+<p>If you need to import data from CSV files (data-driven testing), test file uploads or extract information from websites, then use the Kantu Web Automation extension. It is the only Selenium-IDE compatible extension that can automate these tasks. Because of this, Kantu is also the best <a href="https://ui.vision/web-automation/chrome#imacros">alternative for iMacros for Firefox</a>. iMacros was the most popular web automation browser extension in the last decade, but it - being a legacy Firefox add-on - stopped working in August 2017, just like the <a href="https://ui.vision/howto/getseleniumide">original Firefox Selenium IDE</a>.</p>
+
+<p>Partial file download support in the table above means that all extensions can trigger a file download but only Kantu and iMacros have an “OnDownload” command that allows you to wait for a download to complete (e. g. to measure the download time) and that allows you to rename the downloaded file.</p>
+
+<h2 id="ai-powered-visual-testing">AI powered visual testing</h2>
+
+<p>Only Kantu has <a href="https://ui.vision/docs/visual-ui-testing">visual testing</a> features built-in. With SIDE, the alternative is to use the commercial Applitools addon. It connects SIDE to a cloud-based service to run visual regression tests.</p>
+
+<p>Visual UI testing with Kantu:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u2A0KHC7xwY?rel=0" frameborder="0" allowfullscreen=""></iframe>
+
+<p>Did we miss a key feature when comparing the different Selenium IDEs? If so, please let us know in the comments below.</p>
+
+<h2 id="more-market-overview">More Market Overview</h2>
+
+<p>For more market Overview blog posts please see</p>
+
+<ul>
+  <li><a href="/blog/selenium-ide-2018/">Selenium IDE vs Katalon vs Kantu</a> (this post)</li>
+  <li><a href="/blog/sikuli-vs-ahk/">Sikuli vs AutoHotKey</a></li>
+  <li><a href="/blog/uipath-vs-blue-prism/">UIPath vs Blue Prism</a></li>
+  <li><a href="/blog/uipath-vs-automation-anywhere/">UIPath vs Automation Anywhere</a></li>
+  <li><a href="/blog/ahk-vs-autoit/">AutoHotKey vs AutoIT</a></li>
+</ul>
+
+
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Selenium%20IDE%20rises%20like%20a%20phoenix%20from%20the%20ashes&amp;url=https://ui.vision/selenium-ide-2018/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/selenium-ide-2018/&amp;t=Selenium%20IDE%20rises%20like%20a%20phoenix%20from%20the%20ashes"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/selenium-ide-2018/"><span class="screen-reader-text">Google+</span></a>
+                    </div><!-- .share-post -->
+                    
+                    <div class="tag-links">
+                        Tags: <a href="/blog/tags/index.html#Selenium+IDE" title="Pages tagged Selenium IDE" rel="tag">Selenium IDE</a><a href="/blog/tags/index.html#Web+Testing" title="Pages tagged Web Testing" rel="tag">Web Testing</a><a href="/blog/tags/index.html#Web+Automation" title="Pages tagged Web Automation" rel="tag">Web Automation</a><a href="/blog/tags/index.html#Data+Extraction" title="Pages tagged Data Extraction" rel="tag">Data Extraction</a><a href="/blog/tags/index.html#File+Upload" title="Pages tagged File Upload" rel="tag">File Upload</a><a href="/blog/tags/index.html#Browser+Extensions" title="Pages tagged Browser Extensions" rel="tag">Browser Extensions</a>
+                    </div>
+                    
+                </footer><!-- .entry-footer -->
+            </article><!-- .post -->
+            <nav class="post-navigation">
+                <h2 class="screen-reader-text">Post navigation</h2>
+                
+                <div class="nav-previous">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/screencasting/" class="nav-thumb" style="background-image: url(/images/posts/screencasting.png)"></a>
+                        
+                        <div class="nav-before">Previous</div>
+                        <div class="nav-title"><a href="/blog/screencasting/">Tools we use: Easy and Free Screen recording tools</a></div>
+                        <div class="nav-date">November 20, 2017</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-previous -->
+                
+                
+                <div class="nav-next">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/kantu-for-firefox/" class="nav-thumb" style="background-image: url(/images/posts/kantu640400.png)"></a>
+                        
+                        <div class="nav-before">Next</div>
+                        <div class="nav-title"><a href="/blog/kantu-for-firefox/">Kantu for Firefox released</a></div>
+                        <div class="nav-date">May 1, 2018</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-next -->
+                
+            </nav><!-- .post-navigation -->
+            
+        </main><!-- .site-main -->
+        <aside class="sidebar">
+    
+
+    
+
+    <section class="widget widget-recent-posts">
+        <h2 class="widget-title">Latest Posts</h2>
+        <ul class="recent-posts">
+            
+            <li class="recent-item"><a href="/blog/computer-use-in-browser/">Run Anthropic Computer Use in Your Web Browser</a> <span>December 5, 2025</span></li>
+            
+            <li class="recent-item"><a href="/blog/project-jarvis/">Project Jarvis - Google's new AI Chrome Extension?</a> <span>December 2, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-use/">Anthropic Computer Use – First Impressions, Test and Pricing</a> <span>November 4, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-vision-industry-2024/">Computer vision industry gathers in the Länd</a> <span>September 19, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/imacros-download-checksum/">Is iMacros no longer available?</a> <span>January 25, 2024</span></li>
+            
+        </ul><!-- .recent-posts -->
+    </section><!-- .widget-recent-posts -->
+
+    
+
+</aside><!-- .sidebar -->
+
+    </div><!-- .inner -->
+</div><!-- .site-content -->
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="social-links">
+            
+            
+            
+            
+            <a href="https://github.com/a9t9" class="fa-github-alt square fill-horizontal"><span class="screen-reader-text">GitHub</span></a>
+            
+            
+            
+            
+            
+            
+            
+            <a class="fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">RSS</span></a>
+        </div><!-- .social-links -->
+        <div class="site-info">
+            &copy; <a href="/blog/">Our Open-Source RPA Blog</a> all rights reserved.
+        </div><!-- .site-info -->
+    </div><!-- .inner -->
+</footer><!-- .site-footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/blog/js/plugins.js"></script>
+    <script type="text/javascript" src="/blog/js/custom.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86195842-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-86195842-1');
+    </script>
+
+
+
+<!-- für a9t9.com --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5855c2ceffd367d9"></script> 
+</body>
+</html>

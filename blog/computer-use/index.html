@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Anthropic Computer Use – First Impressions, Test and Pricing</title>
+    <meta name="description" content="News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/blog/rpa.favicon32.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="/blog/css/main.css" />
+    <link rel="canonical" href="https://ui.vision/blog/computer-use/">
+    <link rel="alternate" type="application/rss+xml" title="Our Open-Source RPA Blog Feed" href="https://ui.vision/blog/feed.xml">
+</head>
+<body>
+    <nav id="top" class="site-navigation">
+        <div class="inner">
+            <button id="menu-toggle" aria-expanded="false">Menu</button>
+
+            <div class="nav-menu">
+              
+                <div class="head-banner">
+  <span><a href="https://ui.vision/">Open-Source RPA</a> <span style="color: #00FF00">for</span>
+  <a href="https://ui.vision/rpa/">Browser Automation</a>,
+  <a href="https://ui.vision/rpa/x/desktop-automation">Desktop Automation</a> 
+  <span style="color: #00FF00">& AI</span>
+  <a href="https://ui.vision/ai/computeruse">Computer Use</a> 
+  </span>
+</div>
+
+              
+              <ul class="menu">
+              
+              </ul>
+            </div><!-- .nav-menu -->
+            <a class="subscribe-button fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">Subscribe</span></a>
+        </div><!-- .inner -->
+    </nav><!-- .site-navigation -->
+    <header class="site-header">
+        <div class="inner">
+            <h1 class="site-title"><a class="logo-text" href="/blog/">Our Open-Source RPA Blog</a></h1>
+            <p class="site-description">Open-Source Robotic Process Automation (RPA)</p>
+        </div><!-- .inner -->
+    </header>
+    <div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header">
+                    <div class="entry-header-wrap">
+                        
+                        <div class="post-thumbnail">
+                            <img src="/blog/images/posts/computer-use.jpg" alt="Anthropic Computer Use – First Impressions, Test and Pricing">
+                        </div><!-- .post-thumbnail -->
+                        
+                        <h1 class="entry-title">Anthropic Computer Use – First Impressions, Test and Pricing</h1>
+                    </div><!-- .entry-header-wrap -->
+                    <div class="entry-meta">
+                      <time class="published" datetime="2024-11-04">November 4, 2024</time>
+                    </div><!-- .entry-meta -->
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <p>Anthropic just announced an exciting new capability for their AI assistant: Claude computer use, which allows it to interact with your computer by looking at your screen and controlling your mouse and keyboard.</p>
+
+<h1 id="how-to-use-claude-computer-use">How to use Claude computer use</h1>
+<p>Using Claude computer use is surprisingly straightforward: the system works by letting Claude see your screen through screenshots and then giving you instructions about what to do next.</p>
+
+<p>Getting started is made easy with the Claude computer use demo, which Anthropic has provided on GitHub. While there isn’t yet an official Claude computer use tutorial, the Docker demo environment is helpful. The Claude computer use Docker setup is the quickest way to begin.</p>
+
+<p>We tested the Anthropic Claude computer use features with tasks like opening a web browser, installing software, and editing computer code. So how good is it?
+<!--more--></p>
+
+<h1 id="computer-use-security">Computer use security</h1>
+<p>What makes this particularly impressive is Claude’s ability to “precisely” (kind of, see our test video below) identify where to click on the screen. Previous AI models struggled even with giving a ballpark estimate of x/y coordinates of items in a screenshot.</p>
+
+<p>However, Anthropic is being appropriately cautious about security risks, particularly warning about potential misuse through malicious websites that might try to override Claude’s normal behavior. Mouse clicks themselves are not the key risk here. The main risk is - according to our test - the fact that Claude can also run shell commands. Shell commands can do more harm more quickly than most mouse clicks. Especially because you can monitor Claude’s mouse clicks visually, but the shell commands are executed in the background.</p>
+
+<h1 id="computer-use-test">Computer use test</h1>
+<p>So what did we test and how did Claude Computer Use work:</p>
+
+<ul>
+  <li>
+    <p>Open Browser (ok)</p>
+  </li>
+  <li>
+    <p>Install Browser extension (ok)</p>
+  </li>
+  <li>
+    <p>Add extension icon to browser toolbar (failed, wrong approach)</p>
+  </li>
+  <li>
+    <p>Select macro and run it (ok)</p>
+  </li>
+  <li>
+    <p>Code edit (failed: Knew what to do, but fat fingered the edit)</p>
+  </li>
+  <li>
+    <p>Notepad edit test (ok, fat fingered edit but found workaround)</p>
+  </li>
+</ul>
+
+<p>The video below shows the test and their results:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qxRX5r7fNp8?rel=0" frameborder="0" allowfullscreen=""></iframe>
+
+<p>Just as a ballpark number for the Computer use pricing: Doing the above test sequence cost us around two US$ in Anthropic API usage credits.</p>
+
+<h1 id="summary">Summary</h1>
+<p>Anthropic Computer use is the first meaningful progress in the RPA software space in years.</p>
+
+<p>We would not recommend Anthropic Computer use for any kind of production use (yet). Computer use is still slow and error prone. But the use of LLM (Large Language Models) finally moves the needle to true RPA (Robotic Process Automation).</p>
+
+<p>For years, we at the UI.Vision <a href="https://ui.vision/">open-source RPA software</a> team argued that visual computer automation is the future. It is great that we found a strong (informal) ally with Claude and Anthropic.</p>
+
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Anthropic%20Computer%20Use%20%E2%80%93%20First%20Impressions,%20Test%20and%20Pricing&amp;url=https://ui.vision/computer-use/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/computer-use/&amp;t=Anthropic%20Computer%20Use%20%E2%80%93%20First%20Impressions,%20Test%20and%20Pricing"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/computer-use/"><span class="screen-reader-text">Google+</span></a>
+                    </div><!-- .share-post -->
+                    
+                    <div class="tag-links">
+                        Tags: <a href="/blog/tags/index.html#AI" title="Pages tagged AI" rel="tag">AI</a><a href="/blog/tags/index.html#Claude" title="Pages tagged Claude" rel="tag">Claude</a><a href="/blog/tags/index.html#Anthropic" title="Pages tagged Anthropic" rel="tag">Anthropic</a>
+                    </div>
+                    
+                </footer><!-- .entry-footer -->
+            </article><!-- .post -->
+            <nav class="post-navigation">
+                <h2 class="screen-reader-text">Post navigation</h2>
+                
+                <div class="nav-previous">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/computer-vision-industry-2024/" class="nav-thumb" style="background-image: url(/images/posts/computer-vision-2024.jpg)"></a>
+                        
+                        <div class="nav-before">Previous</div>
+                        <div class="nav-title"><a href="/blog/computer-vision-industry-2024/">Computer vision industry gathers in the Länd</a></div>
+                        <div class="nav-date">September 19, 2024</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-previous -->
+                
+                
+                <div class="nav-next">
+                    <div class="nav-inside">
+                        
+                        <a href="/blog/project-jarvis/" class="nav-thumb" style="background-image: url(/images/posts/project-jarvis.jpg)"></a>
+                        
+                        <div class="nav-before">Next</div>
+                        <div class="nav-title"><a href="/blog/project-jarvis/">Project Jarvis - Google's new AI Chrome Extension?</a></div>
+                        <div class="nav-date">December 2, 2024</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-next -->
+                
+            </nav><!-- .post-navigation -->
+            
+        </main><!-- .site-main -->
+        <aside class="sidebar">
+    
+
+    
+
+    <section class="widget widget-recent-posts">
+        <h2 class="widget-title">Latest Posts</h2>
+        <ul class="recent-posts">
+            
+            <li class="recent-item"><a href="/blog/computer-use-in-browser/">Run Anthropic Computer Use in Your Web Browser</a> <span>December 5, 2025</span></li>
+            
+            <li class="recent-item"><a href="/blog/project-jarvis/">Project Jarvis - Google's new AI Chrome Extension?</a> <span>December 2, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-use/">Anthropic Computer Use – First Impressions, Test and Pricing</a> <span>November 4, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/computer-vision-industry-2024/">Computer vision industry gathers in the Länd</a> <span>September 19, 2024</span></li>
+            
+            <li class="recent-item"><a href="/blog/imacros-download-checksum/">Is iMacros no longer available?</a> <span>January 25, 2024</span></li>
+            
+        </ul><!-- .recent-posts -->
+    </section><!-- .widget-recent-posts -->
+
+    
+
+</aside><!-- .sidebar -->
+
+    </div><!-- .inner -->
+</div><!-- .site-content -->
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="social-links">
+            
+            
+            
+            
+            <a href="https://github.com/a9t9" class="fa-github-alt square fill-horizontal"><span class="screen-reader-text">GitHub</span></a>
+            
+            
+            
+            
+            
+            
+            
+            <a class="fa-feed square fill-horizontal" href="/blog/feed.xml"><span class="screen-reader-text">RSS</span></a>
+        </div><!-- .social-links -->
+        <div class="site-info">
+            &copy; <a href="/blog/">Our Open-Source RPA Blog</a> all rights reserved.
+        </div><!-- .site-info -->
+    </div><!-- .inner -->
+</footer><!-- .site-footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/blog/js/plugins.js"></script>
+    <script type="text/javascript" src="/blog/js/custom.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86195842-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-86195842-1');
+    </script>
+
+
+
+<!-- für a9t9.com --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5855c2ceffd367d9"></script> 
+</body>
+</html>
