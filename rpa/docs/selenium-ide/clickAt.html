@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="clickAt - Selenium IDE Commands Tutorial">
-    <title>clickAt - Selenium IDE Commands Tutorial</title>
+    <meta name="description" content="clickat - Selenium IDE Commands Tutorial">
+    <title>clickat - Selenium IDE Commands Tutorial</title>
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -77,7 +77,7 @@
     <div id="page-header" class="page-extension">
         <div class="row">
             <div class="span12 whitebg">
-                <h1><span>clickAt</span> - Selenium IDE</h1>
+                <h1><span>clickat</span> - Selenium IDE</h1>
             </div>
         </div>
     </div>
@@ -85,26 +85,26 @@
     <div class="row">
         <div class="span12">
             <h3 class="headline">
-                <span> clickAt(locator, coordString) - Selenium IDE command</span>
+                <span> clickat(locator, coordString) - Selenium IDE command</span>
             </h3>
         </div> 
 
         <div class="span12">
 
             <p>
-                <span class="hired">clickAt</span> has a locator and "coordString", which specifies the x,y position (i.e. 10,20)
+                <span class="hired">clickat</span> has a locator and "coordString", which specifies the x,y position (i.e. 10,20)
                 of the mouse event <em>inside the element</em> returned by the locator.
             </p>
             <p>ClickAt becomes useful for clicks inside some more complex elements, e. g. to draw on a canvas like in the screenshot below:</p>
             <p>
-                <img src="/Content/Images/clickat-example.webp" alt="Click inside a canvas element with clickAt" class="responsive-img">
+                <img src="/Content/Images/clickat-example.webp" alt="Click inside a canvas element with clickat" class="responsive-img">
             </p>
             <p id="switch">
                 By default, the Selenium IDE records <a href="/rpa/docs/selenium-ide/click">click</a> commands.
                 To record clickAT commands, change the recording mode in settings > recording tab.
             </p>
             <p>
-                <img src="/Content/Images/clickat-recording.webp" alt="Click inside a canvas element with clickAt" class="responsive-img">
+                <img src="/Content/Images/clickat-recording.webp" alt="Click inside a canvas element with clickat" class="responsive-img">
             </p>
             <p>
                 ClickAt is very useful for <a href="/rpa/docs/visual-ui-testing">visual UI testing</a> and it can be combined with
@@ -122,7 +122,7 @@
                 </br></br>Important: For <a href="/rpa/x/desktop-automation">desktop automation</a> you must use XClick. The Click and ClickAt commands always work only inside a web page.
             </p>
 
-            <h3>clickAt Example</h3>
+            <h3>clickat Example</h3>
 
             <p>
                 <table class="table table-bordered">
@@ -139,7 +139,7 @@
                             <td><br /></td>
                         </tr>
                         <tr class="success">
-                            <td>clickAt</td>
+                            <td>clickat</td>
                             <td>css=....</td>
                             <td>10,20</td>
                         </tr>
@@ -153,8 +153,8 @@
             </p>
 
             <p>
-                The outdated clickAtAndWait command is not supported in the <a href="/">new IDE</a>, as it is not needed. The same effect can be achieved combining ClickAt with
-                <a href="/rpa/docs/selenium-ide/waitForPageToLoad">waitForPageToLoad</a>.
+                The outdated clickatAndWait command is not supported in the <a href="/">new IDE</a>, as it is not needed. The same effect can be achieved combining ClickAt with
+                <a href="/rpa/docs/selenium-ide/waitforpagetoload">waitforpagetoload</a>.
             </p>
 
             <h3>Related Demo Macros</h3>

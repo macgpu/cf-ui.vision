@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -142,7 +142,7 @@
                 The real-user commands XClick and XMove have one drawback: As they simulate real user input, they require
                 an unlocked user desktop to simulate events, and the browser window has to be in the foreground.
                 This is just the same requirement that you would have
-                for a real human operator - no human can click on something if the desktop has been locked. Here the classic click/clickAt commands wins:
+                for a real human operator - no human can click on something if the desktop has been locked. Here the classic click/clickat commands wins:
                 They work just fine with the browser in the background and/or hidden, as everything happens just inside the web browser.
             </p>
             <p>
@@ -171,7 +171,7 @@
 
             <h3 id="iframe">How to click on elements inside an iFrame?</h3>
             <p>
-                The standard selenium IDE way to trigger clicks inside an iframe is to first use <a href="/rpa/docs/selenium-ide/selectFrame">selectFrame</a> to switch to the right frame
+                The standard selenium IDE way to trigger clicks inside an iframe is to first use <a href="/rpa/docs/selenium-ide/selectframe">selectframe</a> to switch to the right frame
                 and <em>then</em> send a <a href="/rpa/docs/selenium-ide/click">click event</a> to the element.
                 However, finding the right iframe number and the right locator can be tricky. And to make things even more complex, <em>
                     on some websites the iframe order

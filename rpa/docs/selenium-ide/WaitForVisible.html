@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -153,7 +153,7 @@
                 mentioned above,  we decided to not support it with <em>Ui.Vision RPA software</em> to keep things lean.
             </p>
             <p>
-                You can recreate waitForNotVisible with the while / end loop. The loop checks the result of WaitForVisible via
+                You can recreate waitForNotVisible with the while / end loop. The loop checks the result of waitforvisible via
                 the !statusOK internal variable. When the element is (still) visible the !statusOK is TRUE and the while loop continues.
                 But once the element is hidden (and after waiting for it until !timeout_wait) then
                 <a href="/rpa/docs#!statusok">!statusOK</a> is FALSE and the while loop breaks and the macro continues.

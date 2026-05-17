@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="storedVars, Arrays - Selenium IDE Arrays Tutorial">
-    <title>storedVars, Arrays - Selenium IDE Arrays Tutorial</title>
+    <meta name="description" content="storedvars, Arrays - Selenium IDE Arrays Tutorial">
+    <title>storedvars, Arrays - Selenium IDE Arrays Tutorial</title>
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -77,7 +77,7 @@
     <div id="page-header" class="page-extension">
         <div class="row">
             <div class="span12 whitebg">
-                <h1><span>storedVars, Arrays</span> - Selenium IDE</h1>
+                <h1><span>storedvars, Arrays</span> - Selenium IDE</h1>
             </div>
         </div>
     </div>
@@ -85,22 +85,22 @@
     <div class="row">
         <div class="span12">
             <h3 class="headline">
-                <span>storedVars... - Selenium IDE command</span>
+                <span>storedvars... - Selenium IDE command</span>
             </h3>
         </div> 
 
         <div class="span12">
 
             <p>
-                Ui.Vision Selenium IDE++ (Kantu) <a href="/rpa/home/whatsnew">V5.0</a>: The storeEval command and with it storedVars are deprecated.
+                Ui.Vision Selenium IDE++ (Kantu) <a href="/rpa/home/whatsnew">V5.0</a>: The storeeval command and with it storedvars are deprecated.
                 Please use the new    <a href="/rpa/docs/selenium-ide/executescript">executeScript</a>. 
-                <em>Old macros with storeEval and storedVars continue  to work without any change</em>.   
-                With <a href="/rpa/docs/selenium-ide/executescript">executeScript</a> storedVars is no longer needed to manage variables and arrays,
+                <em>Old macros with storeeval and storedvars continue  to work without any change</em>.   
+                With <a href="/rpa/docs/selenium-ide/executescript">executeScript</a> storedvars is no longer needed to manage variables and arrays,
                 since you can access variables and arrays directly now:
 
             <p>
                 Example:
-                </br></br><span class="hired">storeEval | storedVars['T1'].toUpperCase() | var</span>
+                </br></br><span class="hired">storeeval | storedvars['T1'].toUpperCase() | var</span>
                 </br></br>becomes
                 </br></br><span class="hired">executeScript | ${T1}.toUpperCase() | var</span>
             </p>
@@ -113,25 +113,25 @@
 
 
 
-            <h3>--- Old storedVars documentation ---</h3>
+            <h3>--- Old storedvars documentation ---</h3>
             <p>
-                <span class="hired">storedVars</span> gives you access to the stored variables within a JavaScript snippet.
-                Inside <a href="/rpa/docs/selenium-ide/storeeval">storeEval</a> you can access
+                <span class="hired">storedvars</span> gives you access to the stored variables within a JavaScript snippet.
+                Inside <a href="/rpa/docs/selenium-ide/storeeval">storeeval</a> you can access
                 the <em>value</em> of a variable with the  <span class="hired">${T1}</span> notation.
-                But if you want to <em>use the variable itself</em> (e. g. as in  <span class="hired">storedVars['T1'].toUpperCase()</span>), then use the storedVars notation.
+                But if you want to <em>use the variable itself</em> (e. g. as in  <span class="hired">storedvars['T1'].toUpperCase()</span>), then use the storedvars notation.
                 StoredVars in the <em>Ui.Vision RPA</em> Selenium IDE works the same as in the Firefox IDE, even so internally the implementation is different.
             </p>
 
-            <h3>storedVars Screencast</h3>
+            <h3>storedvars Screencast</h3>
             <p>
-                This video shows a real life use case of storedVars to <a href="https://forum.ocr.space/t/query-can-kantu-macro-use-to-capture-website-info/232/4">access values from an array</a>. In the demo we store the names of the breadcrumbs (A,B,...) in the array, and then loop over the array to access each page:
+                This video shows a real life use case of storedvars to <a href="https://forum.ocr.space/t/query-can-kantu-macro-use-to-capture-website-info/232/4">access values from an array</a>. In the demo we store the names of the breadcrumbs (A,B,...) in the array, and then loop over the array to access each page:
             </p>
             <p>
                 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yGnwgUT_sLc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             </p>
 
-            <h3>storedVars Example</h3>
+            <h3>storedvars Example</h3>
             <p>The result of this macro is that CCC will contain 75  and T2 will contain "SELENIUM IDE" all in caps.</p>
             <p>
                 <table class="table table-bordered">
@@ -158,8 +158,8 @@
                             <td>25</td>
                         </tr>
                         <tr class="success">
-                            <td>storeEval</td>
-                            <td>storedVars['AAA']-storedVars['BBB']</td>
+                            <td>storeeval</td>
+                            <td>storedvars['AAA']-storedvars['BBB']</td>
                             <td>CCC</td>
                         </tr>
                         <tr>
@@ -168,8 +168,8 @@
                             <td>T1</td>
                         </tr>
                         <tr class="success">
-                            <td>storeEval</td>
-                            <td>storedVars['T1'].toUpperCase()</td>
+                            <td>storeeval</td>
+                            <td>storedvars['T1'].toUpperCase()</td>
                             <td>T2</td>
                         </tr>
                     </tbody>
@@ -188,7 +188,7 @@
 
             <h3>See also</h3>
             <p>
-                <a href="/rpa/docs/selenium-ide/storeeval">storeEval</a>, <a href="/rpa/docs/selenium-ide/store">store</a>,
+                <a href="/rpa/docs/selenium-ide/storeeval">storeeval</a>, <a href="/rpa/docs/selenium-ide/store">store</a>,
 
                 <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
 

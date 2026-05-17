@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="csvSave - Daten-driven Testing">
-    <title>csvSave - Daten-driven Testing</title>
+    <meta name="description" content="csvsave - Daten-driven Testing">
+    <title>csvsave - Daten-driven Testing</title>
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -77,7 +77,7 @@
     <div id="page-header" class="page-extension">
         <div class="row">
             <div class="span12 whitebg">
-                <h1><span>csvSave</span> - <em>Ui.Vision RPA</em> Selenium IDE</h1>
+                <h1><span>csvsave</span> - <em>Ui.Vision RPA</em> Selenium IDE</h1>
             </div>
         </div>
     </div>
@@ -85,23 +85,23 @@
     <div class="row">
         <div class="span12">
             <h3 class="headline">
-                <span>csvSave (file name) - Selenium IDE command</span>
+                <span>csvsave (file name) - Selenium IDE command</span>
             </h3>
         </div> 
 
         <div class="span12">
 
             <p>
-                The purpose of  <span class="hired">csvSave</span> is to store (persist) the value of <a href="/rpa/docs#internalvar">!csvLine</a> to a CSV file. The file is stored in the browser local storage.
+                The purpose of  <span class="hired">csvsave</span> is to store (persist) the value of <a href="/rpa/docs#internalvar">!csvLine</a> to a CSV file. The file is stored in the browser local storage.
                 You can view, export and delete it on the CSV management tab.
-                If you call csvSave a second time (or in a second macro run) the data gets <em>appended</em> to the CSV file.
+                If you call csvsave a second time (or in a second macro run) the data gets <em>appended</em> to the CSV file.
             </p>
 
             <p>
-                <img src="/Content/Images/csvline.webp" alt="csvSave and !csvline explained" class="responsive-img">
+                <img src="/Content/Images/csvline.webp" alt="csvsave and !csvline explained" class="responsive-img">
             </p>
             <p>
-                Note that when pushing data into !csvLine, you need to store every value separately. Because once csvSave is called, every value that is stored
+                Note that when pushing data into !csvLine, you need to store every value separately. Because once csvsave is called, every value that is stored
                 in the !csvLine internal array will get wrapped with “…” automatically (if needed)
                 before saving (see the <a href="https://forum.ocr.space/t/why-store-csvline-inserts-double-quotes-no-matter-what/574/4">related forum post</a>).
             </p>
@@ -110,8 +110,8 @@
 
 
             <p>
-                Important: <em>csvSave and <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a> operate on different CSV files.</em> You can use both in your macro at the same time, but any value added
-                with !csvLine will only modify the file used for csvSave. The data loaded with csvRead is read-only and can only be
+                Important: <em>csvsave and <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a> operate on different CSV files.</em> You can use both in your macro at the same time, but any value added
+                with !csvLine will only modify the file used for csvsave. The data loaded with csvRead is read-only and can only be
                 accessed via the read-only ${!COLx} variables. But you can easily to "re-use" some of the loaded data for the output log file. Just add
                 it to the output CSV file with  <span class="hired">store | ${COl1} | !csvLine</span>. In this example, we add the value from the first
                 column of the input CSV file to the output CSV file.
@@ -132,21 +132,21 @@
                 "uivision/datasources" folder.
             </p>
 
-            <h3 id="array">csvSaveArray - persist array data as CSV</h3>
+            <h3 id="array">csvsaveArray - persist array data as CSV</h3>
 
             <p>
-                <span class="hired">csvSaveArray | arrayname | csvfile.csv</span> allows you to save the content of an array as CSV file.
-                csvSaveArray stores a 2-dimensional Javascript array as CSV file.  Remember that an array index starts with 0 not 1. To read (import) the content of the CSV, use <a href="/rpa/docs/selenium-ide/csvread#array">csvReadArray</a>.
+                <span class="hired">csvsaveArray | arrayname | csvfile.csv</span> allows you to save the content of an array as CSV file.
+                csvsaveArray stores a 2-dimensional Javascript array as CSV file.  Remember that an array index starts with 0 not 1. To read (import) the content of the CSV, use <a href="/rpa/docs/selenium-ide/csvread#array">csvReadArray</a>.
             </p>
             <p>
-                csvSaveArray example: See the <em>DemoCsvReadArray</em> demo macro that is installed with Ui.Vision RPA. At the beginning this macro 
-                uses csvSaveArray to create a CSV file  that is then used as input for csvReadArray.
+                csvsaveArray example: See the <em>DemoCsvReadArray</em> demo macro that is installed with Ui.Vision RPA. At the beginning this macro 
+                uses csvsaveArray to create a CSV file  that is then used as input for csvReadArray.
             </p>
 
             <p>For a common array use case see this 
             <a href="https://forum.ocr.space/t/how-to-mark-a-row-in-a-csv-line-as-processed/7129">RPA forum post: How to mark a row in a CSV line as processed? </a></p>
 
-            <h3>csvSave Example</h3>
+            <h3>csvsave Example</h3>
             <p>This short example below extracts two values from the website and stores them in a CSV file called "exchangerate.csv".</p>
             <p>
                 <table class="table table-bordered">
@@ -163,17 +163,17 @@
                             <td></td>
                         </tr>
                         <tr class="success">
-                            <td>storeText</td>
+                            <td>storetext</td>
                             <td>id=USD</td>
                             <td>!csvLine</td>
                         </tr>
                         <tr class="success">
-                            <td>storeText</td>
+                            <td>storetext</td>
                             <td>id=EURO</td>
                             <td>!csvLine</td>
                         </tr>
                         <tr class="success">
-                            <td>csvSave</td>
+                            <td>csvsave</td>
                             <td>exchangerate.csv</td>
                             <td></td>
                         </tr>
@@ -196,7 +196,7 @@
 
             <h3>See also</h3>
             <p>
-                <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a>, <a href="/rpa/docs/selenium-ide/storeeval">storeEval</a>,
+                <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a>, <a href="/rpa/docs/selenium-ide/storeeval">storeeval</a>,
 
                 <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
                 <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.

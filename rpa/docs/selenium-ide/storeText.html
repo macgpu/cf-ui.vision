@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="storeText - Selenium IDE Commands Tutorial">
-    <title>storeText - Selenium IDE Commands Tutorial</title>
+    <meta name="description" content="storetext - Selenium IDE Commands Tutorial">
+    <title>storetext - Selenium IDE Commands Tutorial</title>
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -77,7 +77,7 @@
     <div id="page-header" class="page-extension">
         <div class="row">
             <div class="span12 whitebg">
-                <h1><span>storeText</span> - Selenium IDE</h1>
+                <h1><span>storetext</span> - Selenium IDE</h1>
             </div>
         </div>
     </div>
@@ -85,14 +85,14 @@
     <div class="row">
         <div class="span12">
             <h3 class="headline">
-                <span>storeText (target, pattern) - Selenium IDE command</span>
+                <span>storetext (target, pattern) - Selenium IDE command</span>
             </h3>
         </div> 
 
         <div class="span12">
 
             <p>
-                The  <span class="hired">storeText</span> command in the Selenium IDE software testing tool
+                The  <span class="hired">storetext</span> command in the Selenium IDE software testing tool
                 is useful to store the text value of page element in to variable for future use. So it the recommended command for web scraping information from HTML text and
                 tables. Update V5.3.3: If the locator is not found, <em>no</em> error is trigged.
                 Instead, the text <span class="hired">#LNF</span> is stored in the variable. "#LNF" stands for "Locator not found".
@@ -100,8 +100,8 @@
             </p><p>
                 Note that for input boxes, select boxes, checkboxes, radiobuttons
                 or textareas the <a href="/rpa/docs/selenium-ide/storevalue">text that you see is technically the field value</a>.
-                So storeText does not work on these elements by design, it returns "". Instead,
-                use <a href="/rpa/docs/selenium-ide/storevalue">storeValue</a> to extract text from input elements.
+                So storetext does not work on these elements by design, it returns "". Instead,
+                use <a href="/rpa/docs/selenium-ide/storevalue">storevalue</a> to extract text from input elements.
             </p>
             <p>
                 If you need the extract text from the HTML source code directly use <a href="/rpa/docs/selenium-ide/sourceextract-sourcesearch">sourceExtract</a>.
@@ -112,17 +112,17 @@
 
             <p>
                 A web api (e. g. <a href="https://ocr.space/ocrapi">OCR Api</a>) displays JSON in the browser, not HTML.
-                Ui.Vision has no special "store Json" command, but that is not needed. You can simply use <span class="hired">storeText</span>
+                Ui.Vision has no special "store Json" command, but that is not needed. You can simply use <span class="hired">storetext</span>
                 with locator <span class="hired">css=Pre</span> to extract the JSON. To access a certain JSON element parse this raw JSON data with
                 executeScript_Sandbox with "JSON.parse". => We have a demo macro here: <a href="https://forum.ocr.space/t/store-json-replacement-migrating-from-side-selenium-ide-to-ui-vision/11696/2">JSON scraping with RPA</a>.
             </p>
-            <h3>Screencast: Web scraping with storeText:</h3>
+            <h3>Screencast: Web scraping with storetext:</h3>
 
             <p>Jump to the end of the video to see the extracted data in the CSV file. The related forum post is <a href="https://forum.ocr.space/t/query-can-kantu-macro-use-to-capture-website-info/232/2">Web scraping with Kantu</a>. </p>
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SfYZ1xiuPxk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-            <h3>storeText Example</h3>
+            <h3>storetext Example</h3>
 
             <p>
                 <table class="table table-bordered">
@@ -139,7 +139,7 @@
                             <td></td>
                         </tr>
                         <tr class="success">
-                            <td>storeText</td>
+                            <td>storetext</td>
                             <td>//*[@@id="content"]/div[2]/div/h2[1]</td>
                             <td>name</td>
                         </tr>
@@ -161,18 +161,18 @@
             <p>DemoStoreEval</p>
             <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
 
-            <h3 id="storeTextPresent">Related commands: storeTextPresent, verifyTextPresent</h3>
+            <h3 id="storetextPresent">Related commands: storetextPresent, verifyTextPresent</h3>
             <p>
-                The "storeTextPresent" command is not for storing value of any target element, but could be used to verify that
-                specified target text is available on the page or not. The <em>Ui.Vision RPA</em> IDE does not support storeTextPresent
+                The "storetextPresent" command is not for storing value of any target element, but could be used to verify that
+                specified target text is available on the page or not. The <em>Ui.Vision RPA</em> IDE does not support storetextPresent
                 (and <a href="/rpa/docs/selenium-ide/assertText-verifyText#verifyTextPresent">verifyTextPresent</a>) because we want to help reduce
                 the <a href="/rpa/docs/selenium-ide/oldfirefoxide">zoo</a> of previous IDE commands.
             </p>
 
             <p>
-                In the modern <em>Ui.Vision RPA</em> IDE storeTextPresent and verifyTextPresent can be easily recreated with storeText plus
+                In the modern <em>Ui.Vision RPA</em> IDE storetextPresent and verifyTextPresent can be easily recreated with storetext plus
                 <a href="/rpa/docs/selenium-ide/if">if (${var} == "text to check")</a>.
-                The table below shows an example: It "simulates" storeTextPresent by using storeText and then checks the variable if the text is correct. If not, it throws an error.
+                The table below shows an example: It "simulates" storetextPresent by using storetext and then checks the variable if the text is correct. If not, it throws an error.
             </p>
             <p>
                 <table class="table table-bordered">
@@ -189,7 +189,7 @@
                             <td></td>
                         </tr>
                         <tr class="success">
-                            <td>storeText</td>
+                            <td>storetext</td>
                             <td>css=#content > div.row > div > h2:nth-child(4)</td>
                             <td>myvar</td>
                         </tr>
@@ -222,7 +222,7 @@
 
                 <a href="https://ui.vision/rpa/docs/selenium-ide/click#changingid">Wildcards in Selenium IDE locators</a>,
 
-                <a href="/rpa/docs/selenium-ide/storetitle">storeTitle</a>,
+                <a href="/rpa/docs/selenium-ide/storetitle">storetitle</a>,
 
                 <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
 

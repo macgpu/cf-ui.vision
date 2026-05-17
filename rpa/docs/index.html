@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -251,7 +251,7 @@
                         <a href="/rpa/docs/selenium-ide/csvRead#array">csvReadArray</a>
 
                         commands give you access the data inside CSV files, and the
-                        <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> and <a href="/rpa/docs/selenium-ide/csvSave#array">csvSaveArray</a>
+                        <a href="/rpa/docs/selenium-ide/csvsave">csvsave</a> and <a href="/rpa/docs/selenium-ide/csvsave#array">csvsaveArray</a>
                         commands allow you to write test results or extracted values to a CSV file.
 
                     </p>
@@ -341,7 +341,7 @@
                             </li>
                             <li id="!csvline">
                                 <span class="hired">!csvLine</span> (read/write) - storing values to this variable <em>appends</em> them to the line used
-                                by <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a>.  Use store | NULL | !csvLine to overwrite (not append) the current values.
+                                by <a href="/rpa/docs/selenium-ide/csvsave">csvsave</a>.  Use store | NULL | !csvLine to overwrite (not append) the current values.
                                 <br />
                                 <br />
                             </li>
@@ -402,7 +402,7 @@
                             <li id="!statusok">
                                 <span class="hired">!statusOK</span> (read/write) - contains the status of the macro execution. Once an error happens
                                 !statusOK is set to FALSE. <br /><br />Typically this variable is used to get the result of the  VERIFY... commands and
-                                the storeText / storeValue / storeChecked / storeAttribute
+                                the storetext / storevalue / storeChecked / storeAttribute
                                 <a href="/rpa/docs/selenium-ide/web-scraping">web scraping commands</a>, which do not stop at an error. If you want to use it with other commands
                                 then remember to <a href="#!errorignore">set !ErrorIgnore  to true</a> so the macro execution continues after an error.
 
@@ -510,16 +510,16 @@
 
                             <li id="!url">
                                 <span class="hired">!URL</span> (read only) - contains current browser URL that you see in the address bar. Previously,
-                                the <a href="/rpa/docs/selenium-ide/storeTitle">storeLocation</a> command was needed for this.
+                                the <a href="/rpa/docs/selenium-ide/storetitle">storeLocation</a> command was needed for this.
 
                                 <br />
                                 <br />
                             </li>
                             <li id="!waitforvisible">
-                                <span class="hired">!WaitForVisible</span> - by default the <a href="/rpa/docs/selenium-ide#implicitwaiting">implicit waiting</a>
+                                <span class="hired">!waitforvisible</span> - by default the <a href="/rpa/docs/selenium-ide#implicitwaiting">implicit waiting</a>
                                 waits for an element to appear <em>and</em> become
                                 visible. If you do not want to wait for the element be visible (typically because it never becomes visible) use
-                                <span class="hired">store | false | !WaitForVisible</span>. Then waiting
+                                <span class="hired">store | false | !waitforvisible</span>. Then waiting
                                 for visible is turned off for all following commands until you set it again to true.
                                 <br />
                                 <br />
@@ -555,7 +555,7 @@
                         Then <em>Ui.Vision RPA</em> waits for the result (= web element) to appear. Once the element is found and the macro execution
                         continues we measure the time again by reading the
                         current value of !RUNTIME. The difference is the runtime performance of this step. In a next step you can, for example, write the value of
-                        "TimeForThisStep" to a CSV file with the <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> feature.
+                        "TimeForThisStep" to a CSV file with the <a href="/rpa/docs/selenium-ide/csvsave">csvsave</a> feature.
                     </p>
 
                     <h2 id="performance">Performance Monitoring/Testing</h2>
@@ -566,7 +566,7 @@
                         Then <em>Ui.Vision RPA</em> waits for the result (= web element) to appear. Once the element is found and the macro execution
                         continues we measure the time again by reading the
                         current value of !RUNTIME. The difference is the runtime performance of this step. In a next step you can, for example, write the value of
-                        "TimeForThisStep" to a CSV file with the <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> feature.
+                        "TimeForThisStep" to a CSV file with the <a href="/rpa/docs/selenium-ide/csvsave">csvsave</a> feature.
                     </p>
                     <table class="table table-bordered" cellpadding="1" cellspacing="1" border="1">
                         <tbody>
@@ -596,7 +596,7 @@
                                 <td>Log the current macro runtime</td>
                             </tr>
                             <tr class="info">
-                                <td>storeEval</td>
+                                <td>storeeval</td>
                                 <td>${!EndTime}-${!StartTime}</td>
                                 <td>TimeforThisStep</td>
                                 <td>Calculate the runtime of the "yellow" step,</br>which is the difference between start and end time.</td>
@@ -1088,7 +1088,7 @@
                     "Global..." are shared . Global variables keep their value even after the macro has been stopped. Their content is only lost once <em>Ui.Vision RPA</em> is closed.
                     </p><p>
                         If you want your data to  survive a closing of Kantu, then store ("persist") it in a CSV file with
-                        <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> and
+                        <a href="/rpa/docs/selenium-ide/csvsave">csvsave</a> and
                         <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a>:<br>
 
                         <img src="/Content/Images/csvglobalvar.webp" alt="Use global variables or CSV files to persist data" class="responsive-img">

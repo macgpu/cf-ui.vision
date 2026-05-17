@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -650,7 +650,7 @@
                         - Improved: SELECT and FIND button are now disabled when a command is selected that can not use them.
                     </li>
                     <li>
-                        - Improved: "selectWindow | TAB=OPEN" can now work on a <a href="https://forum.ocr.space/t/selectwindow-tab-open-allowed-from-blank-tab-or-internal-browser-page/5580">blank start page</a>
+                        - Improved: "selectwindow | TAB=OPEN" can now work on a <a href="https://forum.ocr.space/t/selectwindow-tab-open-allowed-from-blank-tab-or-internal-browser-page/5580">blank start page</a>
                     </li>
                     <li>
                         - Improved: <a href="https://forum.ocr.space/t/echo-log-show-only-echo/5497">If the LOG mode is set to ECHO, **ignored** warnings are not shown.</a>
@@ -783,7 +783,7 @@
                         - Added: New command: <a href="/rpa/docs/selenium-ide/csvread#array">csvReadArray</a>
                     </li>
                     <li>
-                        - Added: New command: <a href="/rpa/docs/selenium-ide/csvsave#array">csvSaveArray</a>
+                        - Added: New command: <a href="/rpa/docs/selenium-ide/csvsave#array">csvsaveArray</a>
                     </li>
                     <li>
                         - Added: New command:
@@ -889,7 +889,7 @@
                         - Fixed: <a href="https://forum.ocr.space/t/v5-3-7-closebrowser-1-not-working/4113">Close browser issue</a>
                     </li>
                     <li>
-                        - Changed: storeText / storeValue / storeChecked / storeAttribute changed behavior: Now, if the locator can
+                        - Changed: storetext / storevalue / storeChecked / storeAttribute changed behavior: Now, if the locator can
                         not be found, no error is triggered <em>but a warning is logged and !statusOK is set to "false"</em>. In addition, the variable gets filled with "#LNF" which stands for "Locator not found".
                         This way the variable is defined even if no data is on the page (<a href="https://forum.ocr.space/t/extraction-from-web-page-and-saving-in-csv-element-not-found-suggestion/2715/4">forum discussion here</a>).
                     </li>
@@ -934,7 +934,7 @@
                         - Changed: We renamed Kantu lt for fresh installs. (If needed you can enable it in Settings > Selenium tab).
                     </li>
                     <li>
-                        - Improved: storeText / storeValue / storeChecked / storeAttribute changed behavior: Now, if the locator can
+                        - Improved: storetext / storevalue / storeChecked / storeAttribute changed behavior: Now, if the locator can
                         not be found, no error is triggered. Instead the variable gets filled with "#LNF" which stands for "Locator not found".
                         This way the variable is defined even if no data is on the page (<a href="https://forum.ocr.space/t/extraction-from-web-page-and-saving-in-csv-element-not-found-suggestion/2715/4">forum discussion here</a>).
                     </li>
@@ -1052,11 +1052,11 @@
                     </li>
                     <li>
                         - Added:  <a href="/rpa/docs/selenium-ide/executescript">executeScript and executeScript_Sandbox</a>
-                        (See also: <a href="/rpa/docs/selenium-ide/storeeval#executescript">What is the difference between executeScript and storeEval</a>)
+                        (See also: <a href="/rpa/docs/selenium-ide/storeeval#executescript">What is the difference between executeScript and storeeval</a>)
                     </li>
                     <li>
                         - Added: If, GotoIf and While => the updated flow-control commands use
-                        <a href="/rpa/docs/selenium-ide/executescript#sandbox">executeScript_Sandbox</a> internally instead of storeEval.
+                        <a href="/rpa/docs/selenium-ide/executescript#sandbox">executeScript_Sandbox</a> internally instead of storeeval.
                         This means that the expression is no longer evaluated in the context
                         of the website. This solves a design issue of the original Selenium IDE, see this post about
                         <a href="https://forum.ocr.space/t/chrome-content-security-policy-error-when-executing-storeeval/64/2">content security policy (CSP)</a>.
@@ -1065,7 +1065,7 @@
                         - Improved: Replaced the "You must save the macro before replay" dialog with auto-save (so no more dialog needed)
                     </li>
                     <li>
-                        - Fixed:  <a href="https://forum.ocr.space/t/issue-557-verifytext-returns-actual-text-of-when-there-is-text-in-the-target/2595/5">storeText and verifyText table web scraping issue</a>
+                        - Fixed:  <a href="https://forum.ocr.space/t/issue-557-verifytext-returns-actual-text-of-when-there-is-text-in-the-target/2595/5">storetext and verifyText table web scraping issue</a>
                     </li>
 
                     <li>
@@ -1564,7 +1564,7 @@
                     <li>
                         - Added: In hard drive storage mode (requires <a href="/rpa/x#fileaccess">FileAccess XModule</a>)
                         <a href="/rpa/docs/selenium-ide/csvread">csvRead</a> and
-                        <a href="/rpa/docs/selenium-ide/csvsave">csvSave</a> operate directly on the hard drive.
+                        <a href="/rpa/docs/selenium-ide/csvsave">csvsave</a> operate directly on the hard drive.
                     </li>
                 </ul>
             </p>
@@ -1758,8 +1758,8 @@
             <h2 id="282">What's new with V2.8.2, released April 29, 2018</h2>
 
             <p>
-                This release adds five new commands. The new <a href="/rpa/docs/selenium-ide/sourceExtract-sourceSearch">sourceExtract</a> and
-                <a href="/rpa/docs/selenium-ide/sourceExtract-sourceSearch">sourceSearch</a> commands
+                This release adds five new commands. The new <a href="/rpa/docs/selenium-ide/sourceextract-sourcesearch">sourceExtract</a> and
+                <a href="/rpa/docs/selenium-ide/sourceextract-sourcesearch">sourceSearch</a> commands
                 allow you inspect and scrape from <span class="hired">page HTML source code</span>.
             </p>
 
@@ -1768,11 +1768,11 @@
             <p>
                 <ul>
                     <li>
-                        - Added: <a href="/rpa/docs/selenium-ide/sourceExtract-sourceSearch">sourceSearch</a> searches for strings
+                        - Added: <a href="/rpa/docs/selenium-ide/sourceextract-sourcesearch">sourceSearch</a> searches for strings
                         in the page source code and returns the number of matches (or 0 if no match is found). Full support for regular expressions, including groups.
                     </li>
                     <li>
-                        - Added: <a href="/rpa/docs/selenium-ide/sourceExtract-sourceSearch">sourceExtract</a> extract strings
+                        - Added: <a href="/rpa/docs/selenium-ide/sourceextract-sourcesearch">sourceExtract</a> extract strings
                         from the page source code. Full support for regular expressions, including groups. Returns #nomatchfound if no match is found.
                     </li>
                     <li>
@@ -1787,7 +1787,7 @@
                         <a href="/rpa/docs#bookmarks">bookmarks</a>.
                     </li>
                     <li>
-                        - Added: <a href="/rpa/docs/selenium-ide/waitforvisible">WaitForVisible</a>
+                        - Added: <a href="/rpa/docs/selenium-ide/waitforvisible">waitforvisible</a>
                     </li>
                     <li>
                         - Added: <a href="/rpa/docs/selenium-ide/echo">echo | text | #shownotification</a> triggers a notification dialog ;-)
@@ -1977,7 +1977,7 @@
                     </li>
 
                     <li>
-                        - <a href="/rpa/docs/selenium-ide/storeValue">StoreValue</a> and its siblings
+                        - <a href="/rpa/docs/selenium-ide/storevalue">StoreValue</a> and its siblings
                         <a href="/rpa/docs/selenium-ide/assertValue-verifyValue">assertValue</a> and
                         <a href="/rpa/docs/selenium-ide/assertValue-verifyValue">verifyValue</a>
                         - extract and test the value of an element
@@ -1986,7 +1986,7 @@
                     <li>
                         - <a href="/kantu#fileupload">File upload</a> support
                     </li>
-                    <li>- <a href="/rpa/docs/selenium-ide/captureScreenshot">CaptureEntirePageScreenshot</a> - captures a screenshot the complete website</li>
+                    <li>- <a href="/rpa/docs/selenium-ide/capturescreenshot">CaptureEntirePageScreenshot</a> - captures a screenshot the complete website</li>
                     <li>
                         - <a href="/kantu#bkup">Backup Reminder</a> - This new security feature reminds you every
                         <em>x</em> days to backup your macros, testsuites and data. You should use it! But if need be, it can be disabled in the settings.
@@ -2053,15 +2053,15 @@
                         <a href="/rpa/docs/selenium-ide/while">while/endWhile</a> looping
                     </li>
                     <li>-  <span class="hired">Data-driven testing</span>: Read data from CSV files with <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a>, and the ${!COL1}, ${!COL2},... internal variables to access the data.</li>
-                    <li>- Initial data extraction and  <span class="hired">web scraping</span> support with <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a>: Store data in a CSV file</li>
+                    <li>- Initial data extraction and  <span class="hired">web scraping</span> support with <a href="/rpa/docs/selenium-ide/csvsave">csvsave</a>: Store data in a CSV file</li>
                     <li>- <a href="/kantu#csv">CSV tab</a> for importing, exporting, viewing and deleting CSV files</li>
-                    <li>- <a href="/rpa/docs/selenium-ide/deleteallcookies">deleteAllCookies</a> - does what the name suggests :)</li>
+                    <li>- <a href="/rpa/docs/selenium-ide/deleteallcookies">deleteallcookies</a> - does what the name suggests :)</li>
                     <li>- <a href="/rpa/docs/selenium-ide/Refresh">Refresh</a> - reload the current page</li>
-                    <li>- <a href="/rpa/docs/selenium-ide/assertElementPresent-verifyElementPresent">assertElementPresent</a> and its verify... sibling</li>
+                    <li>- <a href="/rpa/docs/selenium-ide/assertelementpresent-verifyelementpresent">assertElementPresent</a> and its verify... sibling</li>
                     <li>- Source code editor now with line numbers and syntax highlighting</li>
                     <li>- New internal variable: <a href="/rpa/docs#internalvar">!MACRONAME</a> - name of current macro</li>
                     <li>- Performance testing: Macro runtime is measured and available in <a href="/rpa/docs#internalvar">!RUNTIME</a> internal var at any point of the macro run. </li>
-                    <li>- selectWindows <a href="/rpa/docs/selenium-ide/selectWindow#CLOSEALLOTHER">TAB=CLOSEALLOTHER</a> - closes all open tabs except the current one. Along with deleteAllCookies a useful command to “clean up” at the start of a test.</li>
+                    <li>- selectwindows <a href="/rpa/docs/selenium-ide/selectwindow#CLOSEALLOTHER">TAB=CLOSEALLOTHER</a> - closes all open tabs except the current one. Along with deleteallcookies a useful command to “clean up” at the start of a test.</li>
                     <li>- The (+) button no longer just adds an empty new line, but duplicates the existing line.</li>
                 </ul>
             </p>
@@ -2087,12 +2087,12 @@
                     <li>
                         - New commands include often requested
                         <a href="/rpa/docs/selenium-ide/assertText-verifyText">assert and verify statements</a>, tab handling
-                        with <a href="/rpa/docs/selenium-ide/selectWindow">selectWindow</a>,
-                        Javascript execution with <a href="/rpa/docs/selenium-ide/storeEval">storeEval</a> and many more.
+                        with <a href="/rpa/docs/selenium-ide/selectwindow">selectwindow</a>,
+                        Javascript execution with <a href="/rpa/docs/selenium-ide/storeeval">storeeval</a> and many more.
                     </li>
                     <li>- Selenium Editor now resizable, plus easy access to JSON source code</li>
                     <li>- Export All - save all macros at once as ZIP file, great for <a href="/kantu#bkup">regular backups</a> of your test cases</li>
-                    <li>- <a href="/rpa/docs/selenium-ide/captureScreenshot">captureScreenshot</a> and a new tab to display and manage screenshots</li>
+                    <li>- <a href="/rpa/docs/selenium-ide/capturescreenshot">capturescreenshot</a> and a new tab to display and manage screenshots</li>
                     <li>- <a href="/kantu#pos">link@POS</a>: Easily manage and loop over links with the same name</li>
                     <li>- Autocomplete in Selenium IDE command dropdown</li>
                     <li>- <em>Base URL</em> input box removed (Open command displays full URL now)</li>
