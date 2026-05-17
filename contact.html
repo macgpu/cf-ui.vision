@@ -276,26 +276,55 @@
             var div    = document.getElementById('sucOrErrMesgDiv');
             var msg    = document.getElementById('sucOrErrMessage');
 
-            // Save subject to sessionStorage before form submit so we can show it after redirect
-            var form = document.getElementById('ocrContactForm');
-            if (form) {
-                form.addEventListener('submit', function () {
-                    var subjectEl = document.getElementById('Subject');
-                    if (subjectEl) sessionStorage.setItem('contactSubject', subjectEl.value);
-                });
+            function showError(text) {
+                div.className = 'alert alert-dismissible alert-danger';
+                msg.innerHTML = '<strong>Please correct the following error:</strong><br>' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                banner.style.display = '';
+                banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
 
+            // Success page (after redirect)
             if (params.get('success') === '1') {
-                div.classList.add('alert-success');
+                div.className = 'alert alert-dismissible alert-success';
                 var subject = sessionStorage.getItem('contactSubject') || '';
                 sessionStorage.removeItem('contactSubject');
                 var subjectPart = subject ? ' with the subject <strong>' + subject.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</strong>' : '';
                 msg.innerHTML = 'Your message' + subjectPart + ' was sent! You will get a reply within one day.';
                 banner.style.display = '';
-            } else if (params.get('error')) {
-                div.classList.add('alert-danger');
-                msg.innerHTML = '<strong>Please correct the following error:</strong><br>' + params.get('error');
-                banner.style.display = '';
+            }
+
+            // Submit via fetch so errors show inline without clearing the form
+            var form = document.getElementById('ocrContactForm');
+            if (form) {
+                form.addEventListener('submit', function (ev) {
+                    ev.preventDefault();
+
+                    var subjectEl = document.getElementById('Subject');
+                    if (subjectEl) sessionStorage.setItem('contactSubject', subjectEl.value);
+
+                    var btn = form.querySelector('button[type="submit"]');
+                    var origLabel = btn.textContent;
+                    btn.disabled = true;
+                    btn.textContent = 'Sending…';
+
+                    fetch('/contact', { method: 'POST', body: new FormData(form), redirect: 'follow' })
+                        .then(function (res) {
+                            var finalUrl = new URL(res.url);
+                            var errParam = finalUrl.searchParams.get('error');
+                            if (errParam) {
+                                showError(errParam);
+                                btn.disabled = false;
+                                btn.textContent = origLabel;
+                            } else {
+                                window.location.href = res.url || '/contact?success=1';
+                            }
+                        })
+                        .catch(function () {
+                            showError('Could not send message — please try again.');
+                            btn.disabled = false;
+                            btn.textContent = origLabel;
+                        });
+                });
             }
         })();
     </script>
