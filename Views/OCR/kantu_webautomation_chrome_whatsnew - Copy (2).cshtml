@@ -1,0 +1,406 @@
+﻿@{
+    ViewBag.Title = "What's new with Kantu Browser Automation Selenium IDE Light, Change Log, Revision History";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Kantu for Chrome</span> Upgrade Completed</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div id="start" class="span12">
+
+            <p>
+                Need an older Kantu version? => New: Get it from the <a href="/kantu/web-automation/chrome/archive">Kantu Extension Archive</a>. We
+                <a href="https://a9t9.us11.list-manage.com/subscribe?u=ce17e59f5b68a2fd3542801fd&id=e9fe3bc413">beta test</a>
+                each production release, but with the amazing variety of use cases for Kantu there is always a chance that a rare regression bug escaped our QA tests.
+                For this reason we keep an <a href="/kantu/web-automation/chrome/archive">archive of older Kantu versions</a> so that you can temporarily downgrade
+                and  are quickly up and running again. But please don't forget to report the issue to us so that we can fix it.
+            </p>
+
+
+            <h2 id="285">What's new with V2.8.5, released April 30, 2018</h2>
+
+            <p>
+                <ul>
+                    <li>
+                        - Fixed: <a href="/kantu/docs/webextensions/selenium-ide/sendkeys-type">TYPE</a> command regression bug (introduced by our new support for "blur" events)
+                    </li>
+
+                </ul>
+            </p>
+
+
+            <h2 id="282">What's new with V2.8.2, released April 29, 2018</h2>
+
+            <p>This release adds five new commands. The new <a href="/kantu/docs/webextensions/selenium-ide/sourceExtract-sourceSearch">sourceExtract</a> and 
+            <a href="/kantu/docs/webextensions/selenium-ide/sourceExtract-sourceSearch">sourceSearch</a> commands 
+            allow you inspect and scrape from <span class="hired">page HTML source code</span>.</p>
+  
+
+
+            <p>
+                <ul>
+                    <li>
+                        - Added: <a href="/kantu/docs/webextensions/selenium-ide/sourceExtract-sourceSearch">sourceSearch</a> searches for strings
+                        in the page source code and returns the number of matches (or 0 if no match is found). Full support for regular expressions, including groups.
+                    </li>
+                    <li>
+                        - Added: <a href="/kantu/docs/webextensions/selenium-ide/sourceExtract-sourceSearch">sourceExtract</a> extract strings 
+                        from the page source code. Full support for regular expressions, including groups. Returns #nomatchfound if no match is found.
+                    </li>
+                    <li>
+                        - Added: <a href="/kantu/docs/webextensions/selenium-ide#onerror">onError</a> | #Restart  - restarts the macro if an error occurred. Useful for stress testing and endless loops.
+                    </li>
+                    <li>
+                        - Added: <a href="/kantu/docs/webextensions/selenium-ide#onerror">onError</a> | #goto | label  - jumps to "label" if an error happened.
+                    </li>
+                    <li>
+                        - Changed: Kantu brings the Chrome Window now in the foreground. If you don't like this: 
+                          We will have a switch to control this behavior soon. We made "Bring to foreground" the default as it works well with
+                      <a href="/kantu/docs/webextensions#bookmarks">bookmarks</a>.  
+                          </li>
+                    <li>
+                        - Added: <a href="/kantu/docs/webextensions/selenium-ide/waitforvisible">WaitForVisible</a> 
+                    </li>
+                    <li>
+                        - Added: <a href="/kantu/docs/webextensions/selenium-ide/echo">echo | text | #shownotification</a> triggers a notification dialog ;-)
+                    </li>
+                    <li>
+                        -  Fixed: Smaller bugs and tweaks
+                    </li>
+                </ul>
+            </p>
+
+            <h2>Do you want to get the next Kantu version before others? => <a href="https://a9t9.us11.list-manage.com/subscribe?u=ce17e59f5b68a2fd3542801fd&id=e9fe3bc413">Sign-up to our beta list</a>:</h2>
+
+            <p>
+                <center>
+
+                    <a href="https://a9t9.us11.list-manage.com/subscribe?u=ce17e59f5b68a2fd3542801fd&id=e9fe3bc413"> <img src="~/Content/Images/joinbeta.jpg" alt="Join our Kantu Beta Tester List!" class="responsive-img"></a>
+                </center>
+            </p>
+
+
+
+            <h2>What's new with V2.7.3, released April 23, 2018</h2>
+
+            <p>
+                <ul>
+                    <li>
+                        -  Improved: <a href="/kantu/docs/webextensions/selenium-ide/sendkeys-type">Sendkey</a> command
+                    </li>
+                    <li>
+                        -  Fixed: A bug introduced with 2.70 that prevented recording in some situations
+                    </li>
+                    <li>
+                        -  KNOWN ISSUE: This update breaks existing <a href="/kantu/docs/webextensions#bookmarks">bookmarks</a>                      . This will be fixed with a new update in a few days. Meanwhile, if needed, you can request an  older version from us.
+                    </li>
+                </ul>
+            </p>
+
+
+               <h2 id="271">What's new with V2.7.1, released April 10, 2018</h2>
+
+            <p>A key feature of this update is the enhanced <a href="/kantu/docs/webextensions#cmd">command line support</a>, 
+            which includes <a href="/kantu/docs/webextensions#globalvar">global variables</a>, status log and the ability to start 
+            <a href="/kantu/docs/webextensions#testsuites">test suites</a> from the command line and bookmarks. 
+            And the new "Variable tab" and breakpoints speed up macro creation.</p>
+            
+
+            <p>
+                <ul>
+                    <li>-  Added: <a href="/kantu/docs/webextensions#cmd">Command line</a> and 
+                        <a href="/kantu/docs/webextensions#bookmarks">bookmark</a> support for running
+                        <a href="/kantu/docs/webextensions#testsuites">test suites</a>. On the test suite right-click menu you find now "Add to bookmarks" and "Create HTML autorun page". Unlike with the macro autorun page, the test suite data itself is not embedded in the html page. Instead, it contains the name of the test suite.
+                    </li>
+                    <li>-  Added: Command line “&close=1” parameter to close Chrome after the macro or test suite is run.
+                    </li>
+                    <li>-  Added: Command line &savelog=logname.txt parameter to save the log file.   The calling script (e. g. Python or Powershell) can check for the existence of this file to make sure the
+                        macro run completed) and then
+                        parse the log file to retrieve the status. The first line of the log file is the status (error or success, and the error message, if any). Example batch file line: <br />
+                        <span class="hired">
+                            "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+                            "file:///D:/mytestcases/DemoAutofill1.html?direct=1&close=1&savelog=log1.txt"</span>
+</li>
+                    <li>-  Added: Support for <a href="/kantu/docs/webextensions#globalvar">Global Variables</a> that can be shared between macros
+                    </li>
+                    <li>-  Added: Option to record <a href="/kantu/docs/webextensions/selenium-ide/clickat">clickat</a> commands
+                    </li>
+                    <li>-  Added: Search box for macros - very useful if you have many test cases.
+                    </li>
+                    <li>-  Added: Breakpoints (right-click on a line to set or remove a breakpoint)
+                    </li>
+                    <li>-  Added: Variable tab to show the values of user-created and internal variables
+                    </li>
+                    <img src="~/Content/Images/selenium-ide-variables-tab.png" alt="Variable tab to show the values of user-created and internal variables" class="responsive-img">
+
+
+                    <li>- Added: internal variable <a href="/kantu/docs/webextensions/selenium-ide/csvRead#!csvreadmaxrow">!csvReadMaxRow</a>
+contains the number of lines in a CSV file.
+                    </li>
+
+                    <li>- Added: internal variable !StatusOK  => similar to !LastCommandOK but it does not get reset by a “good” command.
+                        If set to error, it remains like this. But you can use store | true | !StatusOK to manually reset it. 
+                    </li>
+
+                    <li>- Added: "No log" option for the "Logs" tab (saves macro runtime)
+                    </li>
+                    <li>- Added: In the replay settings you can now decide what to do if an error happens during a loop: 
+                        [x] Continue next loop  (default) or  [ ] Stop (= like in older versions)
+                    </li>
+                    <li>
+                        - Changed: <a href="/kantu/docs/webextensions/#!errorignore">Ignored errors</a> are displayed in orange and have an [ignored] flag.
+</li>
+
+                </ul>
+            </p>
+
+
+
+            <h2>Change list for previous Kantu releases:</h2>
+
+
+            <h2 id="260">What's new with V2.6.0, released February 28, 2018</h2>
+
+            <p>This is a maintenance release.</p>
+            <p>
+                <ul>
+                    <li>
+                        -  Updated: Demo macros
+                    </li>
+                    <li>
+                        - Improved: Performance
+                    </li>
+                    <li>
+                        -  Fixed: Replay speed setting ignored
+                    </li>
+                </ul>
+            </p>
+
+
+            <h2>What's new with V2.5.5, released February 26, 2018</h2>
+
+            <p>
+                <ul>
+                    <li>-  Added: <a href="/kantu/docs/webextensions/#ondownload">OnDownload</a> command allows you rename downloads and to 
+                  <a href="/kantu/docs/webextensions#!timeout_download">wait</a> 
+                    for the download to complete before continuing with the next command. </li>
+
+                    <li>- Added: <a href="/kantu/docs/webextensions/selenium-ide/#throwerror">ThrowError</a> command signals the occurrence of an exception during macro execution. This is the same concept as " Throw" in other programming languages such as C#.
+                      </li>
+                    <li>
+                        -  Improved: <a href="/kantu/docs/webextensions/#cmd">Finer permissions for command line</a>: Running macros from bookmarks and from <em>local</em> websites is now enabled by default while running embedded macros from regular websites continues to be disabled by default.
+                    </li>
+                    <li>
+                        -  Improved: Performance! The Kantu UI is now much more responsive, especially when dealing with large macros. We also limited the number of lines in the log file to 500.
+                    </li>
+                    <li>
+                        - Renamed: "Test Cases" are now called (web) "macros".
+                    </li>
+                    <li>- Fixed: Several bug fixes and smaller improvements (thanks for the feedback!)</li>
+                </ul>
+            </p>
+
+
+            <h2>What's new with V2.5.0, released February 8, 2018</h2>
+
+            <p>
+                <ul>
+                    <li>-  <a href="/kantu/docs/webextensions/#bookmarks">Run from bookmark</a> (Beta) - Use bookmarks as shortcuts to your favorite macros:   </li>
+                    <img src="~/Content/Images/addbookmark.jpg"  alt="Add web macro shortcut to bookmarks bar" class="responsive-img">         
+                    
+                    <li>-  <a href="/kantu/docs/webextensions/#cmd">Run from command line</a> (Beta) - Export the macro as html and then load the page in the browser. The macro autostarts and runs. 
+                    This requires that the "Run from command line" feature is enabled. You find it in (gear icon) > Replay/Record tab:   </li>
+
+
+                    <img src="~/Content/Images/selenium-ide-command-line-gif.gif"  alt="Run Selenium IDE from the command line" class="responsive-img">
+                        
+                
+                    <li>- More productivity with colors: <a href="/kantu/docs/webextensions/selenium-ide/echo">Echo</a> supports now the <a href="https://en.wikipedia.org/wiki/Web_colors#HTML_color_names">16 named colors</a>, and in the log file you have the new option to only
+                    show ECHO output. </li>
+                    <li>- Option to <a href="/kantu/docs/webextensions/#encryption">encyrpt passwords</a> (Beta) </li>
+                    <li>- storeCheck command added</li>
+                    <li>- IPC timeout issue fixed. Timeouts are now controlled by <a href="/kantu/docs/webextensions#!timeout_macro">!timeout_macro</a>    </li>  
+                </ul>
+            </p>
+
+
+
+            <h2>What's new with V2.3.0, released January 25, 2018</h2>
+
+            <p>
+                <ul>
+                    <li>
+                        -  More <a href="/kantu/docs/webextensions/selenium-ide#flowcontrol">conditional branching</a> with
+                        <a href="/kantu/docs/webextensions/selenium-ide/if">If-Else-EndIf</a>.
+                    </li>
+
+                    <li>
+                        - <a href="/kantu/docs/webextensions/selenium-ide/storeValue">StoreValue</a> and its siblings
+                        <a href="/kantu/docs/webextensions/selenium-ide/assertValue-verifyValue">assertValue</a> and
+                        <a href="/kantu/docs/webextensions/selenium-ide/assertValue-verifyValue">verifyValue</a>
+                        - extract and test the value of an element
+                    </li>
+
+                    <li>
+                        - <a href="/kantu/web-automation/chrome#fileupload">File upload</a> support
+                    </li>
+                    <li>- <a href="/kantu/docs/webextensions/selenium-ide/captureScreenshot">CaptureEntirePageScreenshot</a> - captures a screenshot the complete website</li>
+                    <li>
+                        - <a href="/kantu/web-automation/chrome#bkup">Backup Reminder</a> - This new security feature reminds you every
+                        <em>x</em> days to backup your macros, testsuites and data. You should use it! But if need be, it can be disabled in the settings.
+                    </li>
+
+                    <li>- Resizable sidebar / editor / log area sections</li>
+                    <img src="~/Content/Images/ide-resize.jpg"  alt="Resize the UI as you need it" class="responsive-img">
+                  
+                    <li>- Improved UI with right-click options for test cases</li>
+                    
+                    <img src="~/Content/Images/ide-macrorightclick.jpg"  alt="Right-click menu for test cases" class="responsive-img">
+
+    
+                    <li>- <a href="/kantu/docs/webextensions#internalvar">!csvReadLineNumber</a> and
+                        <a href="/kantu/docs/webextensions#internalvar">!csvReadStatus</a> for reading CSV data</li>
+
+                    <li>
+                        - <a href="/kantu/docs/webextensions#internalvar">!clipboard </a> read from and write data to the clipboard. 
+                    </li>
+                    
+                    <li>- CSV file editor</li>
+
+                    <li>- <a href="/kantu/docs/webextensions#internalvar">!timeout_macro</a> to control the overall run time of a test case. Very useful for performance testing.
+                    </li>
+
+
+                    <li>- Step through button</li>
+
+                </ul>
+            </p>
+
+
+
+            <h2>What's new with V2.2.1, released December 20, 2017</h2>
+            <p>
+                <ul>
+                    <li>
+                        -  <span class="hired">Test Suites</span> support arrived - see the new <a href="/kantu/web-automation/chrome#testsuites">Test Suites tab</a>:
+
+                    </li>
+
+                    <img src="~/Content/Images/seleniumidetestsuites.jpg"  alt="Kantu for Chrome Selenium IDE Test Suites Tab" class="responsive-img">
+                   
+                    <li>- Fixed a base URL issue when importing/exporting test cases to/from the <a href="/kantu/docs/webextensions/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>. 
+                    The <em>Export as HTML</em> and <em>Import from HTML</em> menu items are designed to move test cases to and from the classic Firefox Selenium IDE. It this does not work in a specific case, please report it as a bug.</li>
+                    <li>- Several bug fixes (thanks for the feedback!)</li>
+                </ul>
+            </p>
+
+
+            <h2>What's new with V2.0.2, released November 24, 2017</h2>
+
+            <p>
+                <ul>
+                    <li>-  <span class="hired">Flow control</span>: <a href="/kantu/docs/webextensions/selenium-ide#flowcontrol">Conditional branching</a> with 
+                         <a href="/kantu/docs/webextensions/selenium-ide/gotoif">gotoIf</a>,
+                        <a href="/kantu/docs/webextensions/selenium-ide/gotolabel">gotoLabel</a> jumps and
+                        <a href="/kantu/docs/webextensions/selenium-ide/while">while/endWhile</a> looping
+                    </li>             
+                    <li>-  <span class="hired">Data-driven testing</span>: Read data from CSV files with <a href="/kantu/docs/webextensions/selenium-ide/csvRead">csvRead</a>, and the ${!COL1}, ${!COL2},... internal variables to access the data.</li>
+                    <li>- Initial data extraction and  <span class="hired">web scraping</span> support with <a href="/kantu/docs/webextensions/selenium-ide/csvSave">csvSave</a>: Store data in a CSV file</li>
+                    <li>- <a href="/kantu/web-automation/chrome#csv">CSV tab</a> for importing, exporting, viewing and deleting CSV files</li>
+                    <li>- <a href="/kantu/docs/webextensions/selenium-ide/deleteallcookies">deleteAllCookies</a> - does what the name suggests :)</li>
+                    <li>- <a href="/kantu/docs/webextensions/selenium-ide/Refresh">Refresh</a> - reload the current page</li>
+                    <li>- <a href="/kantu/docs/webextensions/selenium-ide/assertElementPresent-verifyElementPresent">assertElementPresent</a> and its verify... sibling</li>
+                    <li>- Source code editor now with line numbers and syntax highlighting</li>
+                    <li>- New internal variable: <a href="/kantu/docs/webextensions#internalvar">!MACRONAME</a> - name of current macro</li>
+                    <li>- Performance testing: Macro runtime is measured and available in <a href="/kantu/docs/webextensions#internalvar">!RUNTIME</a> internal var at any point of the macro run. </li>
+                    <li>- selectWindows <a href="/kantu/docs/webextensions/selenium-ide/selectWindow#CLOSEALLOTHER">TAB=CLOSEALLOTHER</a> - closes all open tabs except the current one. Along with deleteAllCookies a useful command to “clean up” at the start of a test.</li>
+                    <li>- The (+) button no longer just adds an empty new line, but duplicates the existing line.</li>
+                </ul>
+            </p>
+
+            <h2>What's new with V0.9.1, released October 19, 2017</h2>
+
+            <p>
+                <ul>
+                    <li>- <a href="/kantu/docs/webextensions/selenium-ide/storeAttribute">storeAttribute</a> command added, useful for data extraction</li>
+                    <li>- Macro replay starts now always in active tab (before it used the tab where last macro had been run, which could be confusing)</li>
+                    <li>- Selenium Editor UI tweaks</li>
+                </ul>
+            </p>
+
+            <h2>What's new with V0.9.0, released October 16, 2017:</h2>
+
+            <p>
+  
+                <ul>
+                    <li>
+                        -  <span class="hired">Many new</span> <a href="/kantu/docs/webextensions/selenium-ide/">Selenium IDE commands</a> available (<= Click this link for the complete list)
+                    </li>
+                    <li>- New commands include often requested 
+                        <a href="/kantu/docs/webextensions/selenium-ide/assertText-verifyText">assert and verify statements</a>, tab handling
+                        with <a href="/kantu/docs/webextensions/selenium-ide/selectWindow">selectWindow</a>,         
+                    Javascript execution with <a href="/kantu/docs/webextensions/selenium-ide/storeEval">storeEval</a> and many more.</li>
+                    <li>- Selenium Editor now resizable, plus easy access to JSON source code</li>
+                    <li>- Export All - save all macros at once as ZIP file, great for <a href="/kantu/web-automation/chrome#bkup">regular backups</a> of your test cases</li>
+                    <li>- <a href="/kantu/docs/webextensions/selenium-ide/captureScreenshot">captureScreenshot</a> and a new tab to display and manage screenshots</li>
+                    <li>- <a href="/kantu/web-automation/chrome#pos">link@POS</a>: Easily manage and loop over links with the same name</li>
+                    <li>- Autocomplete in Selenium IDE command dropdown</li>
+                    <li>- <em>Base URL</em> input box removed (Open command displays full URL now)</li>
+                </ul>
+            </p>
+
+            <p> <span class="hired">Need a specific feature added?</span>, is your favorite Selenium IDE command still missing?, or is your most annoying bug still not fixed? 
+            => <a href="/contact">Let us know!</a> We can only add features and fix bugs that are reported to us.</p>
+    
+            <h2>More Information</h2>
+            <p>
+                Record and replay web macros with this free and open-source Chrome extension for web browser automation. The extension is an easy to use web macro recorder for web developers, web testers
+                and especially for general web automation and form filling.
+            </p>
+            <p>
+                <ul class="list-group">
+                    <li><i class="fa fa-forward"></i> <a href="/kantu/web-automation/chrome">Selenium IDE</a> main page</li>
+                    <li><i class="fa fa-forward"></i> <a href="/kantu/docs/webextensions/selenium-ide/">Selenium IDE commands</a> - all supported commands, with examples</li>
+                    <li><i class="fa fa-forward"></i> <a href="/kantu/web-automation/chrome#docs">Docs</a></li>
+                    <li><i class="fa fa-forward"></i> <a href="/kantu/web-automation/chrome#faq">FAQ</a> - Why did we create the extension, and how does it compare to our <a href="/kantu/web-testing">visual testing</a> app?</li>
+                    <li><i class="fa fa-forward"></i> Contact us: <a href="/contact">team AT a9t9.com</a> or <a href="https://github.com/A9T9/Kantu-for-Chrome">open a ticket</a></li>
+</ul>
+            </p>
+
+            <h2 id="macros">More Example Macros (Test cases)</h2>
+
+            <p>
+                The Kantu <a href="https://github.com/A9T9/Kantu-for-Chrome/tree/master/testmacros">Selenium IDE github</a> page contains 
+                the  <span class="hired">/testmacros</span> folder with plenty of test macros. You can download and import all macros/selenium IDE scripts at once.
+                For this, use the "Gear icon => Import HTML" or "Gear icon => Import JSON" feature and then select all the macros/scripts that you want to import. 
+                We call the test cases often <em>macros</em> - this is the same. One term is from the web testing world, the other term is from the automation and scripting world. 
+            </p>
+
+            <p>
+                <img src="~/Content/Images/importexport.png"  alt="Import many macros at once! - and do not forget to BACKUP (export all) your macros once in while" class="responsive-img">
+            </p>
+
+
+            <h2 id="try">Try also: <a href="/kantu/web-automation/">Screenshot-driven web automation</a></h2>
+            <p>
+                <img alt="Kantu Screenshot Script Snippet" src="~/Content/Images/webtesting.gif" />
+            </p>
+            <p>Are you on Windows? Then also try our  <span class="hired">free, screenshot-driven</span> visual <a href="/kantu/web-automation/">Kantu Web Automation</a> software.              
+            </p>
+            <p>Are you on Mac or Linux? <a href="/download/#desktop">Mac and Linux versions of our visual automation software are planned.</a></p>
+
+
+            <a href="#start" style="float:right">Top</a>
+
+
+</div>
+    </div>
+</div>

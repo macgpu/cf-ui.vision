@@ -1,0 +1,1111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E2E2CAA9-67F5-40F5-AA8E-F0091E322AE4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OCRReaderMVCWeb</RootNamespace>
+    <AssemblyName>OCRReaderMVCWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\OCRController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactViewModel.cs" />
+    <Compile Include="Models\Filters\HandleAndLogErrorAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fontawesome\css\font-awesome.css" />
+    <Content Include="Content\fontawesome\css\font-awesome.min.css" />
+    <Content Include="Content\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Images\30freetrial.png" />
+    <Content Include="Content\Images\a9t9favicon32.png" />
+    <Content Include="Content\Images\a9t9icon120.png" />
+    <Content Include="Content\Images\a9t9logo.png" />
+    <Content Include="Content\Images\addbookmark.jpg" />
+    <Content Include="Content\Images\addtobookmark.png" />
+    <Content Include="Content\Images\allowaccesstofileurls.jpg" />
+    <Content Include="Content\Images\applescript-cmd.png" />
+    <Content Include="Content\Images\as400-rpa-2.png" />
+    <Content Include="Content\Images\as400-rpa-3.png" />
+    <Content Include="Content\Images\as400-rpa.png" />
+    <Content Include="Content\Images\automate - Copy.jpg" />
+    <Content Include="Content\Images\automate.jpg" />
+    <Content Include="Content\Images\background_blue.jpg" />
+    <Content Include="Content\Images\bitsdujour.png" />
+    <Content Include="Content\Images\blue-bg.jpg" />
+    <Content Include="Content\Images\bookmarklets.png" />
+    <Content Include="Content\Images\browserautomation.png" />
+    <Content Include="Content\Images\chrome-dev-mode-warning.png" />
+    <Content Include="Content\Images\chrome-extension-install-dev-mode.png" />
+    <Content Include="Content\Images\chrome32.png" />
+    <Content Include="Content\Images\Chromium32.png" />
+    <Content Include="Content\Images\classicselectbox.jpg" />
+    <Content Include="Content\Images\clickat-example.png" />
+    <Content Include="Content\Images\clickat-recording.png" />
+    <Content Include="Content\Images\colorfish-color-picker-logo128.png" />
+    <Content Include="Content\Images\colorfish-color-picker-logo512.png" />
+    <Content Include="Content\Images\colorfish600.jpg" />
+    <Content Include="Content\Images\copyfish-allow-access-to-file-url.jpg" />
+    <Content Include="Content\Images\copyfish-chinese.jpg" />
+    <Content Include="Content\Images\copyfish-desktop-text-capture.jpg" />
+    <Content Include="Content\Images\copyfish-handwritten-ocr.jpg" />
+    <Content Include="Content\Images\copyfish-quickselect.jpg" />
+    <Content Include="Content\Images\copyfish-receipt-ocr.jpg" />
+    <Content Include="Content\Images\copyfish-translator-popups-smaller.jpg" />
+    <Content Include="Content\Images\copyfish-youtube-ocr.jpg" />
+    <Content Include="Content\Images\copyfishdilbert.jpg" />
+    <Content Include="Content\Images\copyfishpdf.jpg" />
+    <Content Include="Content\Images\createhtmlpage.jpg" />
+    <Content Include="Content\Images\csvglobalvar.png" />
+    <Content Include="Content\Images\csvline.jpg" />
+    <Content Include="Content\Images\csvmanager.png" />
+    <Content Include="Content\Images\Cybermonday-Week.png" />
+    <Content Include="Content\Images\cybermonday2017.jpg" />
+    <Content Include="Content\Images\data-driven-testing.png" />
+    <Content Include="Content\Images\delay10s.png" />
+    <Content Include="Content\Images\delay1s.png" />
+    <Content Include="Content\Images\delay20s.png" />
+    <Content Include="Content\Images\delay30s.png" />
+    <Content Include="Content\Images\delay5s.png" />
+    <Content Include="Content\Images\demomacros.jpg" />
+    <Content Include="Content\Images\deprecated.jpg" />
+    <Content Include="Content\Images\dl-kantu-chrome.png" />
+    <Content Include="Content\Images\dl-kantu-firefox.png" />
+    <Content Include="Content\Images\dl-linux.png" />
+    <Content Include="Content\Images\dl-mac.png" />
+    <Content Include="Content\Images\dl-win.png" />
+    <Content Include="Content\Images\downArrow.png" />
+    <Content Include="Content\Images\dragdrop1.png" />
+    <Content Include="Content\Images\edge-logo.png" />
+    <Content Include="Content\Images\editor-switch.jpg" />
+    <Content Include="Content\Images\editorkantu-replaceimages.png" />
+    <Content Include="Content\Images\extract-ocr.png" />
+    <Content Include="Content\Images\extract.jpg" />
+    <Content Include="Content\Images\fileupload-imgur.gif" />
+    <Content Include="Content\Images\findextractcolors.png" />
+    <Content Include="Content\Images\findimagecommandtimeout.jpg" />
+    <Content Include="Content\Images\firefox-permission-dialog2.jpg" />
+    <Content Include="Content\Images\firefox-rpa-permissions.jpg" />
+    <Content Include="Content\Images\firefox32.png" />
+    <Content Include="Content\Images\firefoxsidebarapi.gif" />
+    <Content Include="Content\Images\flash-games.jpg" />
+    <Content Include="Content\Images\flash-player-chromium.jpg" />
+    <Content Include="Content\Images\folder-as-testsuites.png" />
+    <Content Include="Content\Images\folder-support.png" />
+    <Content Include="Content\Images\folder-support2.png" />
+    <Content Include="Content\Images\form-filling-automation-640-400.png" />
+    <Content Include="Content\Images\free.jpg" />
+    <Content Include="Content\Images\getbtcvalue.png" />
+    <Content Include="Content\Images\getexchangerates.png" />
+    <Content Include="Content\Images\happyholidays2018.jpg" />
+    <Content Include="Content\Images\hello.jpg" />
+    <Content Include="Content\Images\hello70.jpg" />
+    <Content Include="Content\Images\hello80.jpg" />
+    <Content Include="Content\Images\hellobanner.jpg" />
+    <Content Include="Content\Images\hellobanner2.jpg" />
+    <Content Include="Content\Images\home-curve1.jpg" />
+    <Content Include="Content\Images\how-to-extract-text-from-pdf.png" />
+    <Content Include="Content\Images\htmlforcmdline.png" />
+    <Content Include="Content\Images\ide-macrorightclick.jpg" />
+    <Content Include="Content\Images\ide-resize.jpg" />
+    <Content Include="Content\Images\iframe-scroll.png" />
+    <Content Include="Content\Images\import selenium ide 2.9.1.png" />
+    <Content Include="Content\Images\import-selenium-ide-side.png" />
+    <Content Include="Content\Images\importexport.png" />
+    <Content Include="Content\Images\inner-bg1.jpg" />
+    <Content Include="Content\Images\inner-bg10.jpg" />
+    <Content Include="Content\Images\inner-bg2.jpg" />
+    <Content Include="Content\Images\inner-bg3.jpg" />
+    <Content Include="Content\Images\inner-bg4.jpg" />
+    <Content Include="Content\Images\inner-bg5.jpg" />
+    <Content Include="Content\Images\inner-bg6.jpg" />
+    <Content Include="Content\Images\inner-bg7.jpg" />
+    <Content Include="Content\Images\inner-bg8.jpg" />
+    <Content Include="Content\Images\inner-bg9.jpg" />
+    <Content Include="Content\Images\javascriptcommand.jpg" />
+    <Content Include="Content\Images\jenkins-automated-visual-testing.png" />
+    <Content Include="Content\Images\jenkins-powershell.png" />
+    <Content Include="Content\Images\jenkins-windows.png" />
+    <Content Include="Content\Images\joinbeta.jpg" />
+    <Content Include="Content\Images\kantu-api-powershell.png" />
+    <Content Include="Content\Images\kantu-api.png" />
+    <Content Include="Content\Images\kantu-backup-reminder.png" />
+    <Content Include="Content\Images\kantu-chrome-loop.png" />
+    <Content Include="Content\Images\kantu-comment-in-out.gif" />
+    <Content Include="Content\Images\kantu-desktop-automation-1280.png" />
+    <Content Include="Content\Images\kantu-desktop-automation-640.png" />
+    <Content Include="Content\Images\kantu-desktop-automation.jpg" />
+    <Content Include="Content\Images\kantu-formfilling-640-400.png" />
+    <Content Include="Content\Images\kantu-highlight.png" />
+    <Content Include="Content\Images\kantu-rpa.png" />
+    <Content Include="Content\Images\kantu-whitelist.jpg" />
+    <Content Include="Content\Images\kantu-wizard-scroll.png" />
+    <Content Include="Content\Images\kantuapi.png" />
+    <Content Include="Content\Images\kantufolders.jpg" />
+    <Content Include="Content\Images\kantuforchrome-600.png" />
+    <Content Include="Content\Images\kantufree.jpg" />
+    <Content Include="Content\Images\kantugif.gif" />
+    <Content Include="Content\Images\kantuhowto.png" />
+    <Content Include="Content\Images\kantulocalstorage.jpg" />
+    <Content Include="Content\Images\kantulogo.jpg" />
+    <Content Include="Content\Images\Kantulogo.png" />
+    <Content Include="Content\Images\kanturecordingwizard.png" />
+    <Content Include="Content\Images\kantuscript1.jpg" />
+    <Content Include="Content\Images\kantuvideo1.png" />
+    <Content Include="Content\Images\kantuvideo2.png" />
+    <Content Include="Content\Images\kantu_passwordencryption.png" />
+    <Content Include="Content\Images\kantu_passwordencryption_salesforce.png" />
+    <Content Include="Content\Images\laptop.png" />
+    <Content Include="Content\Images\lastcommandok.png" />
+    <Content Include="Content\Images\limitsearcharea.png" />
+    <Content Include="Content\Images\localstorageexport.png" />
+    <Content Include="Content\Images\loop5times.png" />
+    <Content Include="Content\Images\mybg1.jpg" />
+    <Content Include="Content\Images\mybg10.jpg" />
+    <Content Include="Content\Images\mybg2.jpg" />
+    <Content Include="Content\Images\mybg3.jpg" />
+    <Content Include="Content\Images\mybg5.jpg" />
+    <Content Include="Content\Images\mybg6.jpg" />
+    <Content Include="Content\Images\mybg7.jpg" />
+    <Content Include="Content\Images\mybg8.png" />
+    <Content Include="Content\Images\mybg9.jpg" />
+    <Content Include="Content\Images\newupdate.jpg" />
+    <Content Include="Content\Images\rpa-firefox918.jpg" />
+    <Content Include="Content\Images\rpa-hard-drive-first-time-600.jpg" />
+    <Content Include="Content\Images\rpa-hard-drive-first-time-800.jpg" />
+    <Content Include="Content\Images\rpa-hard-drive-storage-mode-800.jpg" />
+    <Content Include="Content\Images\rpa-js-ocr-new.jpg" />
+    <Content Include="Content\Images\rpa-nocloud-small.png" />
+    <Content Include="Content\Images\rpa-nocloud.png" />
+    <Content Include="Content\Images\ocrengine2.jpg" />
+    <Content Include="Content\Images\ocrextract.png" />
+    <Content Include="Content\Images\ocrextractrelative-700.jpg" />
+    <Content Include="Content\Images\ocrlastscreenshot.png" />
+    <Content Include="Content\Images\ocroverlay.jpg" />
+    <Content Include="Content\Images\ocrx.jpg" />
+    <Content Include="Content\Images\okframe1500zoom.png" />
+    <Content Include="Content\Images\oldseleniumidecommands.png" />
+    <Content Include="Content\Images\pause0.png" />
+    <Content Include="Content\Images\pdfscraping.png" />
+    <Content Include="Content\Images\po1.png" />
+    <Content Include="Content\Images\po2.png" />
+    <Content Include="Content\Images\po3-invoice.png" />
+    <Content Include="Content\Images\po3.png" />
+    <Content Include="Content\Images\po4.png" />
+    <Content Include="Content\Images\po5.png" />
+    <Content Include="Content\Images\prompt.png" />
+    <Content Include="Content\Images\regex-capturegroups-400.png" />
+    <Content Include="Content\Images\regex-capturegroups.png" />
+    <Content Include="Content\Images\relativeclick-macro.png" />
+    <Content Include="Content\Images\relativeclick.png" />
+    <Content Include="Content\Images\replaysettings.jpg" />
+    <Content Include="Content\Images\robot-android.png" />
+    <Content Include="Content\Images\robot-asimo.png" />
+    <Content Include="Content\Images\robot-firstmovie.png" />
+    <Content Include="Content\Images\robot-leonardo.png" />
+    <Content Include="Content\Images\robot-pickandplace.png" />
+    <Content Include="Content\Images\robot70.jpg" />
+    <Content Include="Content\Images\rpa-access-file-url.png" />
+    <Content Include="Content\Images\rpa-appimage-install.png" />
+    <Content Include="Content\Images\rpa-bookmark-closerpa.png" />
+    <Content Include="Content\Images\rpa-bookmarklet.jpg" />
+    <Content Include="Content\Images\rpa-cli-url.png" />
+    <Content Include="Content\Images\rpa-cli.png" />
+    <Content Include="Content\Images\rpa-export-zip.png" />
+    <Content Include="Content\Images\rpa-get-pixel-color.png" />
+    <Content Include="Content\Images\rpa-import-zip.png" />
+    <Content Include="Content\Images\rpa-logs-area.png" />
+    <Content Include="Content\Images\rpa-mac-permissions.gif" />
+    <Content Include="Content\Images\rpa-no-cloud-200.png" />
+    <Content Include="Content\Images\rpa-no-cloud.png" />
+    <Content Include="Content\Images\rpa-primary-locator.jpg" />
+    <Content Include="Content\Images\rpa-secondary-locators.jpg" />
+    <Content Include="Content\Images\rpa-setproxy.png" />
+    <Content Include="Content\Images\rpa-software-tutorial-banner.png" />
+    <Content Include="Content\Images\rpa-statusok-small.png" />
+    <Content Include="Content\Images\rpa-statusok.png" />
+    <Content Include="Content\Images\rpa-ui-automation.png" />
+    <Content Include="Content\Images\rpa-xclickrelative-pink-not-inside-green.png" />
+    <Content Include="Content\Images\rpa-xmodule-home.jpg" />
+    <Content Include="Content\Images\rpa-xmodule-sh.jpg" />
+    <Content Include="Content\Images\rpa_ai_demo.jpg" />
+    <Content Include="Content\Images\run-macro-code.jpg" />
+    <Content Include="Content\Images\runbookmarks.jpg" />
+    <Content Include="Content\Images\seeshell-16.png" />
+    <Content Include="Content\Images\seeshell-browser-16.png" />
+    <Content Include="Content\Images\seeshell-desktop-automation-rpa.png" />
+    <Content Include="Content\Images\seeshell-echo.png" />
+    <Content Include="Content\Images\seeshell-editor-16.png" />
+    <Content Include="Content\Images\seeshell-editor-f1.png" />
+    <Content Include="Content\Images\seeshell-getlasterror.png" />
+    <Content Include="Content\Images\seeshell-view-sequence.png" />
+    <Content Include="Content\Images\seeshellapi.png" />
+    <Content Include="Content\Images\seeshellapi1.png" />
+    <Content Include="Content\Images\seeshellbanner1.jpg" />
+    <Content Include="Content\Images\seeshelleditor-replaceimages.png" />
+    <Content Include="Content\Images\seeshellfolders.png" />
+    <Content Include="Content\Images\seeshellhowto.png" />
+    <Content Include="Content\Images\select-selectors.png" />
+    <Content Include="Content\Images\selectfind80.png" />
+    <Content Include="Content\Images\Selenium-IDE-Chrome1.png" />
+    <Content Include="Content\Images\selenium-ide-command-line-gif.gif" />
+    <Content Include="Content\Images\selenium-ide-command-line.jpg" />
+    <Content Include="Content\Images\selenium-ide-increment-variable.png" />
+    <Content Include="Content\Images\Selenium-IDE-Old.jpg" />
+    <Content Include="Content\Images\seleniumide-alloldcommands.jpg" />
+    <Content Include="Content\Images\seleniumide-alloldcommands.png" />
+    <Content Include="Content\Images\seleniumide-longlist.jpg" />
+    <Content Include="Content\Images\seleniumidetestsuites.jpg" />
+    <Content Include="Content\Images\selenium-ide-variables-tab.png" />
+    <Content Include="Content\Images\set-searchall.png" />
+    <Content Include="Content\Images\set-searchall80.png" />
+    <Content Include="Content\Images\side-importer.png" />
+    <Content Include="Content\Images\sidepanel-chrome-small.jpg" />
+    <Content Include="Content\Images\sidepanel-chrome.jpg" />
+    <Content Include="Content\Images\sidepanel-left-small.jpg" />
+    <Content Include="Content\Images\sidepanel-left.jpg" />
+    <Content Include="Content\Images\sidepanel-open-small.jpg" />
+    <Content Include="Content\Images\sidepanel-open.jpg" />
+    <Content Include="Content\Images\sidepanel-settings-default.jpg" />
+    <Content Include="Content\Images\sidepanel-settings-small.jpg" />
+    <Content Include="Content\Images\sidepanel-settings.jpg" />
+    <Content Include="Content\Images\smartscreen.png" />
+    <Content Include="Content\Images\sourcecodetab.jpg" />
+    <Content Include="Content\Images\sourcecodetabline.jpg" />
+    <Content Include="Content\Images\statusok.png" />
+    <Content Include="Content\Images\takescreenshotextract.png" />
+    <Content Include="Content\Images\task-scheduler-action-chrome.jpg" />
+    <Content Include="Content\Images\task-scheduler-action-powershell.jpg" />
+    <Content Include="Content\Images\test2.jpg" />
+    <Content Include="Content\Images\teststatusindicator.png" />
+    <Content Include="Content\Images\seleniumide-testsuite-source.png" />
+    <Content Include="Content\Images\testsuites-old.png" />
+    <Content Include="Content\Images\textfind-ocr.png" />
+    <Content Include="Content\Images\timeout_wait.png" />
+    <Content Include="Content\Images\timeout_wait2.png" />
+    <Content Include="Content\Images\ui vision.ico" />
+    <Content Include="Content\Images\ui.vision.logo.png" />
+    <Content Include="Content\Images\upArrow.png" />
+    <Content Include="Content\Images\verifyelementpresent-if.jpg" />
+    <Content Include="Content\Images\visionfind-tab.png" />
+    <Content Include="Content\Images\visionfind.png" />
+    <Content Include="Content\Images\visual - Copy.jpg" />
+    <Content Include="Content\Images\visual-ui-tab.png" />
+    <Content Include="Content\Images\visual.jpg" />
+    <Content Include="Content\Images\visualsearch.png" />
+    <Content Include="Content\Images\visualwebscraping.png" />
+    <Content Include="Content\Images\visualwebscraping2.png" />
+    <Content Include="Content\Images\visualwebscraping3.png" />
+    <Content Include="Content\Images\webscraping-ocr.png" />
+    <Content Include="Content\Images\webtest - Copy.jpg" />
+    <Content Include="Content\Images\webtest.jpg" />
+    <Content Include="Content\Images\webtesting.gif" />
+    <Content Include="Content\Images\webtestingwithkantu.jpg" />
+    <Content Include="Content\Images\web_scraping_locators.png" />
+    <Content Include="Content\Images\windows-task-scheduler-action - Copy.png" />
+    <Content Include="Content\Images\windows-task-scheduler-action.png" />
+    <Content Include="Content\Images\windows-task-scheduler-debug1 - Copy.png" />
+    <Content Include="Content\Images\windows-task-scheduler-debug1.png" />
+    <Content Include="Content\Images\windows-task-scheduler-debug2 - Copy.png" />
+    <Content Include="Content\Images\windows-task-scheduler-debug2.png" />
+    <Content Include="Content\Images\windows-task-scheduler-security.png" />
+    <Content Include="Content\Images\windows-task-scheduler-settings.png" />
+    <Content Include="Content\Images\windows-task-scheduler-start.png" />
+    <Content Include="Content\Images\windows-task-scheduler-trigger.png" />
+    <Content Include="Content\Images\world-bkup-day.png" />
+    <Content Include="Content\Images\x-screen-capture.png" />
+    <Content Include="Content\Images\xclickrelative-pink-not-inside-green.png" />
+    <Content Include="Content\Images\xdesktop.png" />
+    <Content Include="Content\Images\xfileaccess-copy-between.png" />
+    <Content Include="Content\Images\xfileaccess-linux-install.png" />
+    <Content Include="Content\Images\xfileaccess-linux-stored-on-disk.png" />
+    <Content Include="Content\Images\xfileaccess-mac-install.png" />
+    <Content Include="Content\Images\xfileaccess-path.png" />
+    <Content Include="Content\Images\xfileaccess-shared-folder-repo.jpg" />
+    <Content Include="Content\Images\xpath-text.png" />
+    <Content Include="Content\Images\xrealuser-mojave-accessibility-access.png" />
+    <Content Include="Content\Main\base.css" />
+    <Content Include="Content\Main\elements.css" />
+    <Content Include="Content\Main\grid.css" />
+    <Content Include="Content\Main\layout.css" />
+    <Content Include="Content\Main\style.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\Basic\bootstrap-theme.css" />
+    <Content Include="Content\themes\Basic\bootstrap-theme.min.css" />
+    <Content Include="Content\themes\Basic\bootstrap.css" />
+    <Content Include="Content\themes\Basic\bootstrap.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\themes\Basic\bootstrap.css.map" />
+    <Content Include="Scripts\a9t9scripts.js" />
+    <Content Include="Scripts\Basic\bootstrap.js" />
+    <Content Include="Scripts\Basic\bootstrap.min.js" />
+    <Content Include="Scripts\Basic\npm.js" />
+    <Content Include="Content\Images\invoice.pdf" />
+    <Content Include="Content\Images\30freetrial.webp" />
+    <Content Include="Content\Images\a9t9favicon32.webp" />
+    <Content Include="Content\Images\a9t9icon120.webp" />
+    <Content Include="Content\Images\a9t9logo.webp" />
+    <Content Include="Content\Images\addbookmark.webp" />
+    <Content Include="Content\Images\addtobookmark.webp" />
+    <Content Include="Content\Images\allowaccesstofileurls.webp" />
+    <Content Include="Content\Images\applescript-cmd.webp" />
+    <Content Include="Content\Images\as400-rpa-2.webp" />
+    <Content Include="Content\Images\as400-rpa-3.webp" />
+    <Content Include="Content\Images\as400-rpa.webp" />
+    <Content Include="Content\Images\automate.webp" />
+    <Content Include="Content\Images\background_blue.webp" />
+    <Content Include="Content\Images\bitsdujour.webp" />
+    <Content Include="Content\Images\blue-bg.webp" />
+    <Content Include="Content\Images\bookmarklets.webp" />
+    <Content Include="Content\Images\browserautomation.webp" />
+    <Content Include="Content\Images\chooselocator.webp" />
+    <Content Include="Content\Images\chrome-dev-mode-warning.webp" />
+    <Content Include="Content\Images\chrome-extension-install-dev-mode.webp" />
+    <Content Include="Content\Images\chrome32.webp" />
+    <Content Include="Content\Images\Chromium32.webp" />
+    <Content Include="Content\Images\classicselectbox.webp" />
+    <Content Include="Content\Images\clickat-example.webp" />
+    <Content Include="Content\Images\clickat-recording.webp" />
+    <Content Include="Content\Images\colorfish-color-picker-logo128.webp" />
+    <Content Include="Content\Images\colorfish-color-picker-logo512.webp" />
+    <Content Include="Content\Images\colorfish600.webp" />
+    <Content Include="Content\Images\copyfish-allow-access-to-file-url.webp" />
+    <Content Include="Content\Images\copyfish-chinese.webp" />
+    <Content Include="Content\Images\copyfish-desktop-text-capture.webp" />
+    <Content Include="Content\Images\copyfish-handwritten-ocr.webp" />
+    <Content Include="Content\Images\copyfish-quickselect.webp" />
+    <Content Include="Content\Images\copyfish-receipt-ocr.webp" />
+    <Content Include="Content\Images\copyfish-translator-popups-smaller.webp" />
+    <Content Include="Content\Images\copyfish-youtube-ocr.webp" />
+    <Content Include="Content\Images\copyfishdilbert.webp" />
+    <Content Include="Content\Images\copyfishpdf.webp" />
+    <Content Include="Content\Images\createhtmlpage.webp" />
+    <Content Include="Content\Images\csvglobalvar.webp" />
+    <Content Include="Content\Images\csvline.webp" />
+    <Content Include="Content\Images\csvmanager.webp" />
+    <Content Include="Content\Images\csvreadarray.webp" />
+    <Content Include="Content\Images\Cybermonday-Week.webp" />
+    <Content Include="Content\Images\cybermonday2017.webp" />
+    <Content Include="Content\Images\data-driven-testing.webp" />
+    <Content Include="Content\Images\delay10s.webp" />
+    <Content Include="Content\Images\delay1s.webp" />
+    <Content Include="Content\Images\delay20s.webp" />
+    <Content Include="Content\Images\delay30s.webp" />
+    <Content Include="Content\Images\delay5s.webp" />
+    <Content Include="Content\Images\demomacros.webp" />
+    <Content Include="Content\Images\deprecated.webp" />
+    <Content Include="Content\Images\dl-kantu-chrome.webp" />
+    <Content Include="Content\Images\dl-kantu-firefox.webp" />
+    <Content Include="Content\Images\dl-linux.webp" />
+    <Content Include="Content\Images\dl-mac.webp" />
+    <Content Include="Content\Images\dl-win.webp" />
+    <Content Include="Content\Images\downArrow.webp" />
+    <Content Include="Content\Images\dragdrop1.webp" />
+    <Content Include="Content\Images\editor-switch.webp" />
+    <Content Include="Content\Images\editorkantu-replaceimages.webp" />
+    <Content Include="Content\Images\extract-ocr.webp" />
+    <Content Include="Content\Images\extract.webp" />
+    <Content Include="Content\Images\findextractcolors.webp" />
+    <Content Include="Content\Images\findimagecommandtimeout.webp" />
+    <Content Include="Content\Images\firefox32.webp" />
+    <Content Include="Content\Images\flash-games.webp" />
+    <Content Include="Content\Images\flash-player-chromium.webp" />
+    <Content Include="Content\Images\folder-as-testsuites.webp" />
+    <Content Include="Content\Images\folder-support.webp" />
+    <Content Include="Content\Images\folder-support2.webp" />
+    <Content Include="Content\Images\form-filling-automation-640-400.webp" />
+    <Content Include="Content\Images\free.webp" />
+    <Content Include="Content\Images\getbtcvalue.webp" />
+    <Content Include="Content\Images\getexchangerates.webp" />
+    <Content Include="Content\Images\happyholidays2018.webp" />
+    <Content Include="Content\Images\hello.webp" />
+    <Content Include="Content\Images\hello70.webp" />
+    <Content Include="Content\Images\hello80.webp" />
+    <Content Include="Content\Images\hellobanner.webp" />
+    <Content Include="Content\Images\hellobanner2.webp" />
+    <Content Include="Content\Images\home-curve1.webp" />
+    <Content Include="Content\Images\how-to-extract-text-from-pdf.webp" />
+    <Content Include="Content\Images\htmlforcmdline.webp" />
+    <Content Include="Content\Images\ide-macrorightclick.webp" />
+    <Content Include="Content\Images\ide-resize.webp" />
+    <Content Include="Content\Images\iframe-scroll.webp" />
+    <Content Include="Content\Images\import-selenium-ide-side.webp" />
+    <Content Include="Content\Images\importexport.webp" />
+    <Content Include="Content\Images\inner-bg1.webp" />
+    <Content Include="Content\Images\inner-bg10.webp" />
+    <Content Include="Content\Images\inner-bg2.webp" />
+    <Content Include="Content\Images\inner-bg3.webp" />
+    <Content Include="Content\Images\inner-bg4.webp" />
+    <Content Include="Content\Images\inner-bg5.webp" />
+    <Content Include="Content\Images\inner-bg6.webp" />
+    <Content Include="Content\Images\inner-bg7.webp" />
+    <Content Include="Content\Images\inner-bg8.webp" />
+    <Content Include="Content\Images\inner-bg9.webp" />
+    <Content Include="Content\Images\javascriptcommand.webp" />
+    <Content Include="Content\Images\jenkins-automated-visual-testing.webp" />
+    <Content Include="Content\Images\jenkins-powershell.webp" />
+    <Content Include="Content\Images\jenkins-windows.webp" />
+    <Content Include="Content\Images\joinbeta.webp" />
+    <Content Include="Content\Images\kantu-api-powershell.webp" />
+    <Content Include="Content\Images\kantu-api.webp" />
+    <Content Include="Content\Images\kantu-backup-reminder.webp" />
+    <Content Include="Content\Images\kantu-chrome-loop.webp" />
+    <Content Include="Content\Images\kantu-desktop-automation-1280.webp" />
+    <Content Include="Content\Images\kantu-desktop-automation-640.webp" />
+    <Content Include="Content\Images\kantu-desktop-automation.webp" />
+    <Content Include="Content\Images\kantu-formfilling-640-400.webp" />
+    <Content Include="Content\Images\kantu-highlight.webp" />
+    <Content Include="Content\Images\kantu-rpa.webp" />
+    <Content Include="Content\Images\kantu-whitelist.webp" />
+    <Content Include="Content\Images\kantu-wizard-scroll.webp" />
+    <Content Include="Content\Images\kantuapi.webp" />
+    <Content Include="Content\Images\kantufolders.webp" />
+    <Content Include="Content\Images\kantuforchrome-600.webp" />
+    <Content Include="Content\Images\kantufree.webp" />
+    <Content Include="Content\Images\kantuhowto.webp" />
+    <Content Include="Content\Images\kantulocalstorage.webp" />
+    <Content Include="Content\Images\kantulogo.webp" />
+    <Content Include="Content\Images\kanturecordingwizard.webp" />
+    <Content Include="Content\Images\kantuscript1.webp" />
+    <Content Include="Content\Images\kantuvideo1.webp" />
+    <Content Include="Content\Images\kantuvideo2.webp" />
+    <Content Include="Content\Images\kantu_passwordencryption.webp" />
+    <Content Include="Content\Images\kantu_passwordencryption_salesforce.webp" />
+    <Content Include="Content\Images\laptop.webp" />
+    <Content Include="Content\Images\lastcommandok.webp" />
+    <Content Include="Content\Images\limitsearcharea.webp" />
+    <Content Include="Content\Images\localstorageexport.webp" />
+    <Content Include="Content\Images\loop5times.webp" />
+    <Content Include="Content\Images\mybg1.webp" />
+    <Content Include="Content\Images\mybg10.webp" />
+    <Content Include="Content\Images\mybg2.webp" />
+    <Content Include="Content\Images\mybg3.webp" />
+    <Content Include="Content\Images\mybg5.webp" />
+    <Content Include="Content\Images\mybg6.webp" />
+    <Content Include="Content\Images\mybg7.webp" />
+    <Content Include="Content\Images\mybg8.webp" />
+    <Content Include="Content\Images\mybg9.webp" />
+    <Content Include="Content\Images\newupdate.webp" />
+    <Content Include="Content\Images\ocrengine2.webp" />
+    <Content Include="Content\Images\ocrextract.webp" />
+    <Content Include="Content\Images\ocrextractrelative-700.webp" />
+    <Content Include="Content\Images\ocrlastscreenshot.webp" />
+    <Content Include="Content\Images\ocroverlay.webp" />
+    <Content Include="Content\Images\ocrx.webp" />
+    <Content Include="Content\Images\okframe1500zoom.webp" />
+    <Content Include="Content\Images\oldseleniumidecommands.webp" />
+    <Content Include="Content\Images\pause0.webp" />
+    <Content Include="Content\Images\pdfscraping.webp" />
+    <Content Include="Content\Images\po1.webp" />
+    <Content Include="Content\Images\po2.webp" />
+    <Content Include="Content\Images\po3-invoice.webp" />
+    <Content Include="Content\Images\po3.webp" />
+    <Content Include="Content\Images\po4.webp" />
+    <Content Include="Content\Images\po5.webp" />
+    <Content Include="Content\Images\prompt.webp" />
+    <Content Include="Content\Images\regex-capturegroups-400.webp" />
+    <Content Include="Content\Images\regex-capturegroups.webp" />
+    <Content Include="Content\Images\relativeclick-macro.webp" />
+    <Content Include="Content\Images\relativeclick.webp" />
+    <Content Include="Content\Images\replaysettings.webp" />
+    <Content Include="Content\Images\robot-android.webp" />
+    <Content Include="Content\Images\robot-asimo.webp" />
+    <Content Include="Content\Images\robot-firstmovie.webp" />
+    <Content Include="Content\Images\robot-leonardo.webp" />
+    <Content Include="Content\Images\robot-pickandplace.webp" />
+    <Content Include="Content\Images\robot70.webp" />
+    <Content Include="Content\Images\rpa-access-file-url.webp" />
+    <Content Include="Content\Images\rpa-appimage-install.webp" />
+    <Content Include="Content\Images\rpa-bookmark-closerpa.webp" />
+    <Content Include="Content\Images\rpa-bookmarklet.webp" />
+    <Content Include="Content\Images\rpa-cli-url.webp" />
+    <Content Include="Content\Images\rpa-cli.webp" />
+    <Content Include="Content\Images\rpa-export-zip.webp" />
+    <Content Include="Content\Images\rpa-get-pixel-color.webp" />
+    <Content Include="Content\Images\rpa-import-zip.webp" />
+    <Content Include="Content\Images\rpa-logs-area.webp" />
+    <Content Include="Content\Images\rpa-no-cloud-200.webp" />
+    <Content Include="Content\Images\rpa-no-cloud.webp" />
+    <Content Include="Content\Images\rpa-nocloud-small.webp" />
+    <Content Include="Content\Images\rpa-nocloud.webp" />
+    <Content Include="Content\Images\rpa-primary-locator.webp" />
+    <Content Include="Content\Images\rpa-secondary-locators.webp" />
+    <Content Include="Content\Images\rpa-selenium-ide-view-array.webp" />
+    <Content Include="Content\Images\rpa-setproxy.webp" />
+    <Content Include="Content\Images\rpa-software-tutorial-banner.webp" />
+    <Content Include="Content\Images\rpa-statusok-small.webp" />
+    <Content Include="Content\Images\rpa-statusok.webp" />
+    <Content Include="Content\Images\rpa-ui-automation.webp" />
+    <Content Include="Content\Images\rpa-xclickrelative-pink-not-inside-green.webp" />
+    <Content Include="Content\Images\rpa-xmodule-home.webp" />
+    <Content Include="Content\Images\rpa-xmodule-sh.webp" />
+    <Content Include="Content\Images\run-macro-code.webp" />
+    <Content Include="Content\Images\runbookmarks.webp" />
+    <Content Include="Content\Images\seeshell-16.webp" />
+    <Content Include="Content\Images\seeshell-browser-16.webp" />
+    <Content Include="Content\Images\seeshell-desktop-automation-rpa.webp" />
+    <Content Include="Content\Images\seeshell-echo.webp" />
+    <Content Include="Content\Images\seeshell-editor-16.webp" />
+    <Content Include="Content\Images\seeshell-editor-f1.webp" />
+    <Content Include="Content\Images\seeshell-getlasterror.webp" />
+    <Content Include="Content\Images\seeshell-tab.webp" />
+    <Content Include="Content\Images\seeshell-view-sequence.webp" />
+    <Content Include="Content\Images\seeshellapi.webp" />
+    <Content Include="Content\Images\seeshellapi1.webp" />
+    <Content Include="Content\Images\seeshellbanner1.webp" />
+    <Content Include="Content\Images\seeshelleditor-replaceimages.webp" />
+    <Content Include="Content\Images\seeshellfolders.webp" />
+    <Content Include="Content\Images\seeshellhowto.webp" />
+    <Content Include="Content\Images\select-selectors.webp" />
+    <Content Include="Content\Images\selectfind80.webp" />
+    <Content Include="Content\Images\Selenium-IDE-Chrome1.webp" />
+    <Content Include="Content\Images\selenium-ide-command-line.webp" />
+    <Content Include="Content\Images\selenium-ide-increment-variable.webp" />
+    <Content Include="Content\Images\Selenium-IDE-Old.webp" />
+    <Content Include="Content\Images\selenium-ide-variables-tab.webp" />
+    <Content Include="Content\Images\seleniumide-alloldcommands.webp" />
+    <Content Include="Content\Images\seleniumide-longlist.webp" />
+    <Content Include="Content\Images\seleniumide-testsuite-source.webp" />
+    <Content Include="Content\Images\seleniumidetestsuites.webp" />
+    <Content Include="Content\Images\set-searchall.webp" />
+    <Content Include="Content\Images\set-searchall80.webp" />
+    <Content Include="Content\Images\side-importer.webp" />
+    <Content Include="Content\Images\smartscreen.webp" />
+    <Content Include="Content\Images\sourcecodetab.webp" />
+    <Content Include="Content\Images\sourcecodetabline.webp" />
+    <Content Include="Content\Images\statusok.webp" />
+    <Content Include="Content\Images\takescreenshotextract.webp" />
+    <Content Include="Content\Images\task-scheduler-action-chrome.webp" />
+    <Content Include="Content\Images\task-scheduler-action-powershell.webp" />
+    <Content Include="Content\Images\test2.webp" />
+    <Content Include="Content\Images\teststatusindicator.webp" />
+    <Content Include="Content\Images\testsuites-old.webp" />
+    <Content Include="Content\Images\textfind-ocr.webp" />
+    <Content Include="Content\Images\timeout_wait.webp" />
+    <Content Include="Content\Images\timeout_wait2.webp" />
+    <Content Include="Content\Images\ui.vision.logo.webp" />
+    <Content Include="Content\Images\ui.vision.logo2.webp" />
+    <Content Include="Content\Images\upArrow.webp" />
+    <Content Include="Content\Images\verifyelementpresent-if.webp" />
+    <Content Include="Content\Images\visionfind-tab.webp" />
+    <Content Include="Content\Images\visionfind.webp" />
+    <Content Include="Content\Images\visual-ui-tab.webp" />
+    <Content Include="Content\Images\visual.webp" />
+    <Content Include="Content\Images\visualsearch.webp" />
+    <Content Include="Content\Images\visualwebscraping.webp" />
+    <Content Include="Content\Images\visualwebscraping2.webp" />
+    <Content Include="Content\Images\visualwebscraping3.webp" />
+    <Content Include="Content\Images\webscraping-ocr.webp" />
+    <Content Include="Content\Images\webtest.webp" />
+    <Content Include="Content\Images\webtestingwithkantu.webp" />
+    <Content Include="Content\Images\windows-task-scheduler-action.webp" />
+    <Content Include="Content\Images\windows-task-scheduler-debug1.webp" />
+    <Content Include="Content\Images\windows-task-scheduler-debug2.webp" />
+    <Content Include="Content\Images\windows-task-scheduler-security.webp" />
+    <Content Include="Content\Images\windows-task-scheduler-settings.webp" />
+    <Content Include="Content\Images\windows-task-scheduler-start.webp" />
+    <Content Include="Content\Images\windows-task-scheduler-trigger.webp" />
+    <Content Include="Content\Images\world-bkup-day.webp" />
+    <Content Include="Content\Images\x-screen-capture.webp" />
+    <Content Include="Content\Images\xclickrelative-pink-not-inside-green.webp" />
+    <Content Include="Content\Images\xdesktop.webp" />
+    <Content Include="Content\Images\xfileaccess-copy-between.webp" />
+    <Content Include="Content\Images\xfileaccess-linux-install.webp" />
+    <Content Include="Content\Images\xfileaccess-linux-stored-on-disk.webp" />
+    <Content Include="Content\Images\xfileaccess-mac-install.webp" />
+    <Content Include="Content\Images\xfileaccess-path.webp" />
+    <Content Include="Content\Images\xfileaccess-shared-folder-repo.webp" />
+    <Content Include="Content\Images\xpath-text.webp" />
+    <Content Include="Content\Images\xrealuser-mojave-accessibility-access.webp" />
+    <Content Include="Content\Images\rpa-xclicktextrelative.webp" />
+    <Content Include="Content\Images\rpa-xclicktextrelative-shift.webp" />
+    <Content Include="Content\Images\rpa-jump-to-image.webp" />
+    <Content Include="Content\Images\rpa-anthropic-api-key.webp" />
+    <Content Include="Content\Images\rpa-anthropic-dashboard-key.webp" />
+    <Content Include="Content\Images\rpa-anthropic-cost-benchmark.webp" />
+    <Content Include="Content\Images\computer use in browser.webp" />
+    <Content Include="Content\Images\ui.vision.favicon32.webp" />
+    <None Include="Properties\PublishProfiles\a9t9.com NEW.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\kantu1.pubxml" />
+    <None Include="Properties\PublishProfiles\LIVE kantu.io.pubxml" />
+    <None Include="Properties\PublishProfiles\TEST.a9t9.com.pubxml" />
+    <None Include="Properties\PublishProfiles\TEST.kantu.io.pubxml" />
+    <Content Include="Scripts\bower.json" />
+    <None Include="Properties\PublishProfiles\ui.vision.pubxml" />
+    <None Include="Properties\PublishProfiles\uivision1.pubxml" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\Layout\plugins.js" />
+    <Content Include="Scripts\Layout\script.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\typed.js" />
+    <Content Include="Scripts\typed.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="kantuio-webtodo.txt" />
+    <Content Include="Views\OCR\Index.cshtml" />
+    <Content Include="Views\OCR\newsletter_thankyou.cshtml" />
+    <Content Include="Content\Images\ui.vision.logo2.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\OCR\seeshell_home_welcome alt.cshtml" />
+    <Content Include="Views\OCR\About.cshtml" />
+    <Content Include="Views\OCR\contact.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\OCR\download alt mit seeshell.cshtml" />
+    <Content Include="Views\OCR\privacypolicy.cshtml" />
+    <Content Include="Views\OCR\seeshell_docs.cshtml" />
+    <Content Include="Views\OCR\store.cshtml" />
+    <Content Include="Views\OCR\newsletter.cshtml" />
+    <Content Include="Views\OCR\seeshell_home_uninstallsurvey.cshtml" />
+    <Content Include="Views\OCR\sikuli.cshtml" />
+    <Content Include="Views\OCR\newsletter_almostfinished.cshtml" />
+    <Content Include="Views\OCR\seeshell.cshtml" />
+    <Content Include="Views\OCR\seeshell_browserautomation.cshtml" />
+    <Content Include="Views\OCR\seeshell_flash.cshtml" />
+    <Content Include="Views\OCR\seeshell_docs_scraping.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_extract.cshtml" />
+    <Content Include="Views\OCR\kantu_demo.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_flash.cshtml" />
+    <Content Include="Views\OCR\seeshell_desktop.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_multipageform.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_flightsearch.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_download.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_upload.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_draw.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_scroll.cshtml" />
+    <Content Include="Views\OCR\howto_taskscheduler.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_javascript.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_datadriven.cshtml" />
+    <Content Include="Views\OCR\seeshell_home2.cshtml" />
+    <Content Include="Views\OCR\colorfish_whatsnew.cshtml" />
+    <Content Include="Views\OCR\colorfish.cshtml" />
+    <Content Include="Views\OCR\seeshell_webscraping.cshtml" />
+    <Content Include="Views\OCR\test1.cshtml" />
+    <Content Include="Views\OCR\seeshell_webtesting.cshtml" />
+    <Content Include="Views\OCR\seeshell_api.cshtml" />
+    <Content Include="Views\OCR\colorfish_docs.cshtml" />
+    <Content Include="Views\OCR\seeshell_compare.cshtml" />
+    <Content Include="Views\OCR\seeshell_customers.cshtml" />
+    <Content Include="Views\OCR\howto_getseleniumide.cshtml" />
+    <Content Include="Views\OCR\kantu_home_welcome.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_relativeclick.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_sendKeystype.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_echo.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_open.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_mouseOver.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_pause.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storeEval.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_select.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_selectFrame.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_selectWindow.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_asserttextverifytext.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_asserttitleverifytitle.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_answerOnNextPrompt.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_assertAlertassertConfirmationassertPrompt.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_captureScreenshot.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_click.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_clickAt.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_dragAndDropToObject.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_store.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storeText.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storeTitle.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_waitForPageToLoad.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_waitForElementPresent.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storedVars.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_oldfirefoxide.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_iframes.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_highlight.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_pageloadtimeout.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_storeeval.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_tabs.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_tabs_2.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_tabs_1.cshtml" />
+    <Content Include="Views\OCR\kantu_home_whatsnew.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storeAttribute.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_deleteAllVisibleCookies.cshtml" />
+    <Content Include="Views\OCR\colorfish_welcome.cshtml" />
+    <Content Include="Views\OCR\colorfish_why.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_csvsave.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_deleteAllCookies.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_refresh.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_csvread.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_csvsave.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_assertElementPresentverifyElementPresent.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_gotoIf.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_label.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_gotoLabel.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_while.cshtml" />
+    <Content Include="Views\OCR\howto_installchromeextensionfromfile.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_cleanup.cshtml" />
+    <Content Include="Scripts\package.json" />
+    <Content Include="Views\OCR\download_seeshell.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_assertvalueverifyvalue.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_if.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storeValue.cshtml" />
+    <Content Include="Views\OCR\kantu_docs.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storeChecked.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_assertCheckedverifyChecked.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_filedownload.cshtml" />
+    <Content Include="Views\OCR\seeshell_eula.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_waitForVisible.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_waitforvisible.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_sourceExtractsourceSearch.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_comment.cshtml" />
+    <Content Include="Views\OCR\kantu_archive.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_clickrelative.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storeImage.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_editContent.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_localstorageexport.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_visionfind.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_canvas.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_visualuitesting.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_resize.cshtml" />
+    <Content Include="Views\OCR\download_seeshell_browser.cshtml" />
+    <Content Include="Views\OCR\kantu_home_UninstallSurvey.cshtml" />
+    <Content Include="Views\OCR\seeshell_screenscraping.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_uninstallsurvey.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_welcome alt.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_pro-alt.cshtml" />
+    <Content Include="Views\OCR\seeshell_web.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_kantux.cshtml" />
+    <Content Include="Views\OCR\seeshell_compare_kantu.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_multipageform.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_welcome - Copy.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser.cshtml" />
+    <Content Include="Views\OCR\seeshell_whatsnew.cshtml" />
+    <Content Include="Views\OCR\sikuli_autoit.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_welcome.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_pro.cshtml" />
+    <Content Include="Views\OCR\seeshell_home_welcome.cshtml" />
+    <Content Include="Views\OCR\seeshell_home.cshtml" />
+    <Content Include="Views\OCR\seeshell_home_pro.cshtml" />
+    <Content Include="Views\OCR\seeshell_browser_home_kantuxpro.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_bringbrowsertoforeground.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_tabs.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_tabs_1.cshtml" />
+    <Content Include="Views\OCR\seeshell_demo_tabs_2.cshtml" />
+    <Content Include="Views\OCR\kantu_x_download.cshtml" />
+    <Content Include="Views\OCR\kantu_x.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_xclick.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_draw.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_xtype.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_xtype.cshtml" />
+    <Content Include="Views\OCR\kantu_x_da_screenscraping.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_runhtml.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_runweb.cshtml" />
+    <Content Include="Views\OCR\kantu_x_rpa.cshtml" />
+    <Content Include="Views\OCR\test2.cshtml" />
+    <Content Include="Views\OCR\kantu_x_customers.cshtml" />
+    <Content Include="Views\OCR\kantu_home_x_UninstallSurvey.cshtml" />
+    <Content Include="Views\OCR\kantu_x_desktopautomation.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_webscraping.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_formfilling.cshtml" />
+    <Content Include="Views\OCR\rpa_eula.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_run.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_executescript.cshtml" />
+    <Content Include="Views\OCR\kantu_x_pro.cshtml" />
+    <Content Include="Views\OCR\kantu_x_pricing.cshtml" />
+    <Content Include="Views\OCR\uivision_desktopautomation.cshtml" />
+    <Content Include="Views\OCR\uivision.cshtml" />
+    <Content Include="Views\OCR\kantu_desktopautomation.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_table.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_executescript.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_end.cshtml" />
+    <Content Include="Views\OCR\howto_po.cshtml" />
+    <Content Include="Views\OCR\k_docs_xclick.cshtml" />
+    <Content Include="Views\OCR\x_eula.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_do_repeatif.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_waitForElementVisible.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_addselection_removeselection.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_waitforelementvisible.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_setwindowsize.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_xrun.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_asserteditable.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_checkuncheck.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_commanddeprecated.cshtml" />
+    <Content Include="Views\OCR\rpa.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_setproxy.cshtml" />
+    <Content Include="Views\OCR\kantu_home_x.cshtml" />
+    <Content Include="Views\OCR\rpa_browserautomation.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_times.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_foreach.cshtml" />
+    <Content Include="Views\OCR\kantu_flash - Copy.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_locators.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_executeasyncscript.cshtml" />
+    <Content Include="Views\OCR\kantu_demo_runweb2.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_storexpathcount.cshtml" />
+    <Content Include="Views\OCR\kantu_home_whatsnew2.cshtml" />
+    <Content Include="Views\OCR\kantu_home_getrpa.cshtml" />
+    <Content Include="Views\OCR\kantu_x_pricing2.cshtml" />
+    <Content Include="Views\OCR\rpa_as400.cshtml" />
+    <Content Include="Views\OCR\kantu_x_calibrate.cshtml" />
+    <Content Include="Views\OCR\kantu_archive2.cshtml" />
+    <Content Include="Views\OCR\store2.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_imacros.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_seleniumide_saveitem.cshtml" />
+    <Content Include="Views\OCR\store_order31988.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_sidepanel.cshtml" />
+    <Content Include="Views\OCR\kantu_x_pricing - alt.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_firefox.cshtml" />
+    <Content Include="Views\OCR\kantu_docs_ocr.cshtml" />
+    <Content Include="Views\OCR\ai.cshtml" />
+    <Content Include="Views\OCR\ai_prompt.cshtml" />
+    <Content Include="Views\OCR\ai_computeruse.cshtml" />
+    <Content Include="Views\OCR\ai_screenxy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\copyfish\" />
+    <Folder Include="Views\OCR\kantu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3437</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3437/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

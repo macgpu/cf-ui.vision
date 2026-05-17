@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "WaitForPageToLoad - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>WaitForPageToLoad</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>WaitForPageToLoad (max. time to wait in milliseconds) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                The  <span class="hired">WaitForPageToLoad</span> tells the IDE to wait for a web page to load (page load event fired).
+                It is usually not needed as all "...andWait" commands include it e. g. in ClickandWait.
+                So you will only need it in very special cases, like when a website fires multiple page load events.
+            </p>
+
+
+
+            <h3>Alternative "Wait for Page to Load" method</h3>
+
+            <p>
+                Another option to check that a page is loaded are the <em>visual</em> GUI testing commands <a href="/rpa/docs/visual-ui-testing#visualassert">visualAssert and visualVerify</a>.
+                These commands <a href="https://forum.ocr.space/t/wait-for-button-and-for-second-page-load/7027/2">wait for an image to appear</a>. This can be any image that is unique to the page that we are waiting 
+                for. 
+                Since this visual "wait for page load" solution  does not rely on any HTML internals, it works with even the most complex web apps and can be used when the classic Selenium IDE-style page load detection fails.
+            </p>
+
+
+            <h3>WaitForPageToLoad Example</h3>
+
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
+                            <td><br /></td>
+                        </tr>
+                        <tr class="success">
+                            <td>assertText</td>
+                            <td>link=Free Web Automation</td>
+                            <td>Free Web Automation</td>
+                        </tr>
+                        <tr>
+                            <td>WaitForPageToLoad</td>
+                            <td>3000</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>ClickandWait is part of almost every demo macro-</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/click">clickAndWait</a>,
+
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>

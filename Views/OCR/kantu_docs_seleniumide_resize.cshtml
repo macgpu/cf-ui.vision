@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Reisze Browser with Selenium IDE, - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Resize</span> Browser Window- Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Resize (width@@height) - new Selenium IDE command (deprecated, use <a href="/rpa/docs/selenium-ide/setWindowSize">setWindowSize</a>)</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>The command is now called <a href="/rpa/docs/selenium-ide/setWindowSize">setWindowSize</a>.</p>
+
+            <p>
+                Use <span class="hired">resize</span> to resize the browser window to emulate various screen
+                resolutions.
+
+                Connect to a proxy server to run the current macro. The iMacros Browser then connects to the Internet through a proxy server by using the settings you specify. You can define a specific proxy server for each macro. 
+                Each running instance of the iMacros Browser can have its own proxy server. 
+                The proxy setting remains in effect
+                until you specify a different proxy or restart the browser.
+
+            </p>
+
+            <p>In other words, the command does exactly the same as, for example, the
+                <em>Windows Resizer</em> or <em>Browser Resize</em> browser extensions for Chrome an Firefox do manually.
+            But <em>Ui.Vision RPA</em> does it as part of an automation or test sequence.
+                This is especially useful when doing <a href="/rpa/docs/visual-ui-testing">visual UI testing</a>
+                with responsive web pages.
+
+                <h3>Resize Example</h3>
+
+<p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>resize</td>
+                            <td>1024@@768</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>visualAssert</td>
+                            <td>layout_monitor1.png</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>resize</td>
+                            <td>375@@667</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>visualAssert</td>
+                            <td>layout_iphone8.png</td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+                <p>DemoVisualUITest</p>
+ 
+                <h3>See also</h3>
+                <p><a href="/rpa/docs/selenium-ide/captureScreenshot">captureScreenshot</a>, 
+            <a href="/rpa/docs/selenium-ide/storetext">storeText</a>,
+
+                    <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+    <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+</p>
+
+
+                <h3>Anything wrong or missing on this page? Suggestions?</h3>
+                <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+</div>
+    </div>
+</div>

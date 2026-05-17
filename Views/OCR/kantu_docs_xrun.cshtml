@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "XRun and XRunAndWait - Launch scripts from within the macro";
+}
+
+
+<div id="content download-content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-download">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>XRun</span> and <span>XRunAndWait</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>XRun | Path to App | command line parameters (if any)</span>
+            </h3>
+        </div>
+        <div class="span12">
+
+
+            <p>
+                The <span class="hiblue">XRun and XRunAndWait</span> commands are used to start external scripts from within a Ui.Vision macro.
+                The applications for this are endless. For example, you can start apps and then UI-automate them with XClick and XType. Or you use XRun to call a
+                batch/bash command to extend the  features of Ui.Vision, for example to 
+                <a href="https://forum.ocr.space/t/storing-image-with-consistent-filename/4355/2">delete downloaded files</a>,
+                <a href="https://forum.ocr.space/t/allow-user-to-select-file-name-open-file-name-picker-dialog/5521/2">open a file picker dialog</a>
+                or to <a href="https://forum.ocr.space/t/i-really-need-spacebar-to-work-with-xtype-or-otherwise/4655/2">call Python 
+                and VBS scripts with sendkeys</a>.
+                The screencast below shows a short  XRunAndWait tutorial:
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/g9qycepq_is?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <br />XRunAndWait Tutorial. The PowerShell script used in the video is <a href="https://github.com/A9T9/RPA/blob/master/xrun-scripts/PowerShell/test1.ps1">available on Github</a>.
+            </p>
+
+            <h3 id="xrunandwait">What is the difference between XRun and XRunAndWait?</h3>
+
+            <p>
+                XRun starts the app, and this is all. So the XRun command is very fast. By contrast, XRunAndWait starts the program and
+                waits for the program or script to complete. Programs that close can set an so-called "Exit Code". If the scripts sets such a code, XRunAndWait captures this return
+                code and stores it in the <span class="hiblue">${!xrun_exitcode}</span> variable. So the variable is only set after an XRunAndWait command. In the video tutorial above we use XRunAndWait.
+                The demo macro DemoXRun shows the XRun behavior.
+            </p>
+
+            <p>
+                See also: Instead of starting a script from Ui.Vision RPA with <a href="/rpa/docs/xrun">XRun</a>, you can also
+                start Ui.Vision RPA from a script via the <a href="/rpa/docs#cmd">command line API</a>.
+
+
+                <h3>XRun and XRunAndWait Example</h3>
+
+            <p>
+                We use XRun to start a calculator on macOS. You can start anything with XRun, for example <a href="https://github.com/A9T9/RPA/blob/master/xrun-scripts/PowerShell/test1.ps1">PowerShell</a> or <a href="https://forum.ocr.space/t/how-to-call-python-script-in-uivision/3794/4">Python scripts</a>.
+            </p>
+
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+                        <tr class="success">
+                            <td>XRun</td>
+                            <td>/Applications/Calculator.app/Contents/MacOS/Calculator</td>
+                            <td>(command line parameters for app, if any)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <p>
+                In general we recommend to use XRun or XRunAndWait to start another scripting languages like Batch files, Bash, PowerShell, Python or VBS,
+                and then use <em>these scripting languages</em> to start
+                other application programs like Adobe Photoshop, Skype, Word or Zoom (<a href="https://forum.ocr.space/t/xrunandwait-not-waiting-for-app-to-close/5376/2">related forum post</a>). The reason is that all these programs behave differently at startup, 
+                and the full-grown scripting languages are better suited to manage this. XRun itself is optimized and tested from us "only" to start other scripts. 
+                We can not test with all the 1000s of applications available
+                on the market. So in other words: XRun/XRunAndWait are designed to start scripts in other scripting languages.
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome and  <em>Ui.Vision RPA</em> for Firefox with the <a href="/rpa/xr">XModule</a> installed.
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>Demo-XRun</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/xclick">XClick</a>,
+                <a href="/rpa/docs/x/xmove">XMove</a>,
+                <a href="/rpa/x/">XModules</a> User Manual
+            </p>
+            <p>
+                Important: Do not confuse XRun with the <a href="/rpa/docs/selenium-ide/run">Selenium IDE RUN command</a>.
+
+
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+
+        </div>
+    </div>
+</div>

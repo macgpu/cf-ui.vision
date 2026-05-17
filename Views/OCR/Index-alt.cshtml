@@ -1,0 +1,239 @@
+﻿@{
+    ViewBag.Title = "🤖 Web Browser Automation with Kantu, Desktop Automation, OCR - Fresh 2017 Robotic Process Automation (RPA)";
+
+}
+
+<meta name="description" content="Get Kantu - the visual web browser automation software (freeware version available, even for commercial use). Use screenshots to automate your workflow. We make robotic process automation (RPA) software for form filling, web testing, data extraction, web scraping.">
+<meta name="keywords" content="browser automation, web automation, desktop automation, macro recorder, form filling, web testing, data extraction, web scraping, computer vision, image recognition, Robotic Process Automation, RPA, BPO, OCR, OCR API, OCR Software,optical character recognition, Texterkennung">
+<meta name="author" content="a9t9">
+
+
+@{
+    string xref = Request.Params["ref"];
+    string xshow = Request.Params["show"];
+
+    var xcookie = Request.Cookies["a9t9.com"];
+
+    if (xref != null && xcookie == null) {
+        Response.Cookies["a9t9.com"].Value = Request.Params["ref"];
+        Response.Cookies["a9t9.com"].Expires = DateTime.Now.AddDays(120);
+        //Laden für das Bild weiter unten
+        xcookie = Request.Cookies["a9t9.com"];
+    }
+
+    if (xshow == "ja" )
+    {
+        if (Request.Cookies["a9t9.com"] != null)
+        {
+            Response.Write("<p> TEST kantu.io: --|" + Request.Cookies["a9t9.com"].Value + "|--- <p>");
+        }
+        else
+        {
+            Response.Write("<p> TEST kantu.io: Nooo cookie here--- <p>");
+        }
+
+    }
+
+    }
+
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>Get <span>Kantu</span>: Picture-Driven Web Automation</h1>
+                <div class="process-builder">
+                    <ul class="fixed">
+                        <li class="color-shade-2">
+
+
+
+                            <a href="#visual">
+                                <img src="~/Content/Images/kantufree.jpg">
+                            </a>
+                            <div class="process-description">
+                                <h3><strong><a href="/kantu/web-automation">Visual</a></strong></h3>
+                            </div>
+
+
+
+
+
+
+                        </li>
+                        <li class="color-shade-1">
+                            <a href="/kantu/browser-automation">
+                                <img src="~/Content/Images/visual.jpg">
+                            </a>
+                            <div class="process-description">
+                                <h3><strong><a href="/kantu/browser-automation">Browser Automation</a></strong></h3>
+                            </div>
+                        </li>
+                        <li class="color-shade-1">
+                            <a href="/kantu/web-testing">
+                                <img src="~/Content/Images/automate.jpg">
+                            </a>
+                            <div class="process-description">
+                                <h3><strong><a href="/kantu/web-testing">Web Testing</a></strong></h3>
+                            </div>
+                        </li>
+                        <li class="color-shade-1">
+                            <a href="/kantu/scraping">
+                                <img src="~/Content/Images/extract.jpg">
+                            </a>
+                            <div class="process-description">
+                                <h3><strong><a href="/kantu/scraping">Data Extraction</a></strong></h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <h2>Kantu Web Browser Automation</h2>
+
+
+  <p>
+                            <code>Kantu can automate any website by taking screenshots.</code> It allows you to visually automate your tasks, and makes web automation fun again. It lets you create solutions for web automation,
+                            web scraping or web testing in mere minutes. It's like the ultimate robot stand-in for all of your web browser automation needs!
+                            Whatever you used to do manually,  Kantu can do automatically -- tasks like filling out forms, clicking on links, performing inquiries; you name it,
+                            Kantu can do it. Multiple page forms? Not a problem for Kantu: <a href="/kantu/web-automation">Read more</a> and <a href="/download">download the free Kantu software</a> now.
+</p>
+
+            <p>
+                Browser automation was never easier and <em>faster</em>:
+            </p>
+            <p>
+                <img src="~/Content/Images/kanturecordingwizard.png" alt="Form Filling with Kantu" class="responsive-img">
+            </p>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <h1 id="visual">What makes Kantu unique?</h1>
+            <p>
+                Kantu works on the visual website, just like a human does.  Leave DOM, xpath, css selectors to the web developers.
+                And even if you are a web developer – Kantu's visual approach <code>speeds up web automation projects tenfold</code>.
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2"></th>
+                    <th class="col-md-5">Kantu Visual Automation</th>
+                    <th class="col-md-5">Classical automation software</th>
+
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Typical commands</td>
+                            <td class="col-md-3 success"><img alt="Kantu Script Snippet" src="~/Content/Images/webtesting.gif" /></td>
+                            <td class="col-md-3 warning">
+                                Click "Xpath=*[id='contentText'] /table/ tbody/tr[2] /td/table/
+                                tbody/tr/ td[1]/table/tbody /tr[9]/td/table /tbody/tr/td[1]/strong[2]"
+                                <br /><br />  Click xpath="//div[h3/text()='Credit Card']/descendant::input[id='cardNumber']"
+                                <br /><br />Click "css=ul#recordlist li:nth-of-type(12)"
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Typical time</br>to create a script</td>
+                            <td class="col-md-3 success">~ 5 min</td>
+                            <td class="col-md-3 warning">
+                                ~ 60 min
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="col-md-3 alert" colspan="2"> Notice the difference? <a href="\download\">Download Kantu</a> and try it for yourself. Kantu is <a href="/kantu/web-automation#editions">100% free</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <blockquote>
+            <p>
+                I'm very impressed - in a few hours I was able to fully replicate a web app test setup that had taken a week or so to build
+                in Visual Studio Gui testing.
+                <br /><em>Christian Berndt, Deloitte, France - <a href="/kantu/customers">More user quotes</a></em>
+            </p>
+            </blockquote>
+            <blockquote>
+                <p>
+                    We selected your automation testing framework for its focus on simplicity and easy maintenance.
+                    Your software is perfect for what we need.
+                    <br /><em>Darren Myatt, Sony Europe, UK </em> - <a href="/kantu/customers">More user quotes</a></em>
+                </p>
+            </blockquote>
+
+            <blockquote>
+                <p>
+                    We use Kantu to automate the process of extracting data files from our financial system
+                    and process the data for use by third party reporting software. This used to be a manual process which now takes place automatically over night.
+                    Data is now available at start of business day, whereas previously the manual process took up to two ours from start of business. Kantu
+                    made the automation of the procedure very easy and we are pleased with the functionality it provides.
+
+                    <br /><em>Ian Brown, UK - <a href="/kantu/customers">More user quotes</a></em>
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="row">
+            <div>
+
+                <h1>Join thousands of happy Kantu users:</h1>
+            </div>
+
+            <div class="col-sm-4">
+                <h3> <span>Use the Kantu Browser for...</span>    </h3>
+
+                <ul class="list-group">
+                    <li><i class="fa fa-barcode"></i> Kantu for general <a href="/kantu/web-automation">Web Automation</a>
+                    <li><i class="fa fa-barcode"></i> Kantu for <a href="/kantu/browser-automation">Browser Automation/<br />Robotic Process Automation</a>
+                    <li><i class="fa fa-barcode"></i> Kantu for <a href="/kantu/web-testing">Web Testing</a>
+                    <li><i class="fa fa-barcode"></i> Kantu for <a href="/kantu/scraping">Web Scraping</a> 
+                    <li><i class="fa fa-barcode"></i> Kantu for <a href="/kantu/docs/scraping#pdf">PDF & Screen Scraping (with OCR)</a> 
+<li><i class="fa fa-barcode"></i> Kantu for <a href="/kantu/flash">Flash, Silverlight and Video testing</a>
+</ul>
+            </div>
+
+            <div class="col-sm-4">
+                <h3><span>Kantu in Key Points</span>  </h3>
+                <ul class="list-group">
+
+                    <li><i class="fa fa-forward"></i> 100% Screenshot-Driven <em>Browser</em> Automation
+                    <li><i class="fa fa-forward"></i> No xpath and css selector mess - works like a breeze even on the most complex HTML5/Javascript websites
+                    <li><i class="fa fa-forward"></i> Visual Record & Replay
+                    <li><i class="fa fa-forward"></i> Automate File Downloads/Uploads
+                    <li><i class="fa fa-forward"></i> Data-driven testing with CSV file import
+
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h3>   <span>Kantu Resources</span>        </h3>
+
+                <ul class="list-group">
+                    <li><i class="fa fa-barcode"></i> <a href="/download">Click here to download Kantu</a>
+                    <li><i class="fa fa-barcode"></i> Kantu <a href="/kantu/docs">User Manual</a>
+                    <li><i class="fa fa-barcode"></i> Kantu <a href="/kantu/docs#faq">Frequently Asked Questions (FAQ)</a>
+                    <li><i class="fa fa-barcode"></i> <a href="/kantu/web-automation#api">Browser API</a> for C#, PowerShell, Python, VBS, VB.NET and many more languages
+<li><i class="fa fa-barcode"></i> Kantu on <a href="https://github.com/A9T9/Kantu">GitHub</a>
+                    <li><i class="fa fa-barcode"></i> Kantu <a href="/blog">The Automation Blog</a>
+                    <li><i class="fa fa-barcode"></i> Kantu for Chrome = <a href="/kantu/web-automation/chrome">Selenium IDE for Chrome</a>
+</ul>
+
+            </div>
+
+
+
+                <!-- end div-->
+</div>
+   <code>Get started:</code>     <a href="/download">Download</a> the 🤖 Kantu Community Edition. 
+        It is 100% <a href="/kantu/compare">free</a> for private and <em>commercial use</em>.

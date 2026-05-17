@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "WaitForElementVisible Demo - Selenium IDE";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-kantuweb">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>WaitForElementVisible</span> Test Page</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>WaitForElementVisible</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <h1>In one and ten seconds two elements will appear...</h1>
+
+            <div id="div1" style="visibility: hidden">
+      
+                <h1>Hello, I am visible now!</h1>
+            </div>
+
+            <div id="div2" style="visibility: hidden">
+      
+            
+                <h1>Me, too. Thanks for waiting.</h1>
+            
+            </div>
+
+            <script type="text/javascript">
+                function showIt() {
+                    document.getElementById("div1").style.visibility = "visible";
+                }
+                setTimeout("showIt()", 1000); // after 1 sec
+
+                function showIt2() {
+                    document.getElementById("div2").style.visibility = "visible";
+                }
+                setTimeout("showIt2()", 10000); // after 10 secs
+            </script>
+
+            </div>
+    </div>
+</div>

@@ -1,0 +1,862 @@
+﻿
+using Newtonsoft.Json;
+using OCRReaderMVCWeb.Models;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.Web;
+using System.Web.Mvc;
+
+namespace OCRReaderMVCWeb.Controllers
+{
+    //[RoutePrefix("OCR")]
+    public class OCRController : Controller
+    {
+        //
+
+
+        /// <summary>
+        /// Index page
+        /// </summary>
+        /// <returns>OCR Page</returns>
+        /// 
+
+
+        //*******************************************************************************
+        // BEI Änderunge hier immer auch die DLLn im /BIN foler updaten 
+        //***********************************************************
+
+        /// this is for the main page
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/web-automation/webextensions")]
+        public ActionResult kantu_webautomation_webextensions()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/web-automation/chrome")]
+        public ActionResult kantu_webautomation_chrome()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/web-automation/chrome/welcome")]
+        public ActionResult kantu_webautomation_chrome_welcome()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/web-automation/chrome/whatsnew")]
+        public ActionResult kantu_webautomation_chrome_whatsnew() { return View();}
+
+        //für upcoming test
+        [Route("~/kantu/web-automation/chrome/whatsnew2")]
+        public ActionResult kantu_webautomation_chrome_whatsnew2() { return View(); }
+
+
+        [Route("~/kantu/web-automation/chrome/why")]
+        public ActionResult kantu_webautomation_chrome_why()
+        {
+            return View();
+        }
+
+        [Route("~/download")]
+        public ActionResult download()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/scraping")] //diese aktiv wg SEO
+        [Route("~/kantu/web-scraping")] //wg. SEO diese nicht benützt, erst später wieder, wenn es auch /screen-scraping gibt?
+        public ActionResult kantu_webscraping()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/customers")]
+        public ActionResult kantu_customers()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/desktop-automation")]
+        public ActionResult kantu_desktop() //warum geht - d..automation nicht?
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/compare")]
+        public ActionResult kantu_compare() 
+        {
+            return View();
+        }
+
+        [Route("~/kantu/web-testing")]
+        public ActionResult kantu_webtesting()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/browser-automation")]
+        public ActionResult kantu_browserautomation()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/api")]
+        public ActionResult kantu_api()
+        {
+            return View();
+        }
+
+        //    [Route("~/kantu/")]
+        [Route("~/kantu/web-automation")]
+    //    [Route("~/kantu-web-automation")]
+        public ActionResult kantu_web()
+        {
+            return View();
+        }
+
+
+
+
+
+        [Route("~/kantu/eula")]
+        public ActionResult kantu_eula()
+        {
+            return View();
+        }
+
+        [Route("~/download/kantupro")]
+        public ActionResult download_kantupro()
+        {
+            return View();
+        }
+
+
+        [Route("~/download/kantu")]
+        public ActionResult download_kantu()
+        {
+            return View();
+        }
+
+   
+        [Route("~/a/download/kantu")]
+        public ActionResult a_download_kantu()
+        {
+            return View();
+        }
+
+        [Route("~/a/download/kantupro")]
+        public ActionResult a_download_kantupro()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/")]
+        public ActionResult kantu_demo()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/cleanup")]
+        public ActionResult kantu_demo_cleanup() {return View(); }
+
+        [Route("~/kantu/demo/extract")]
+        public ActionResult kantu_demo_extract()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/csvSave")] public ActionResult kantu_demo_csvSave() {return View();   }
+
+        [Route("~/kantu/demo/datadriven")]
+        public ActionResult kantu_demo_datadriven()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/javascript")]
+        public ActionResult kantu_demo_javascript()
+        {
+            return View();
+        }
+        [Route("~/kantu/demo/pageloadtimeout")]
+        public ActionResult kantu_demo_pageloadtimeout()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/tabs/1")]
+        public ActionResult kantu_demo_tabs_1()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/tabs/2")]
+        public ActionResult kantu_demo_tabs_2()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/tabs")]
+        public ActionResult kantu_demo_tabs()
+        {
+            return View();
+        }
+
+
+
+        [Route("~/kantu/demo/storeeval")]
+        public ActionResult kantu_demo_storeeval()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/flash")]
+        public ActionResult kantu_demo_flash()
+        {
+            return View();
+        }
+        [Route("~/kantu/demo/multipageform")]
+        public ActionResult kantu_demo_multipageform()
+        {
+            return View();
+        }
+        [Route("~/kantu/demo/download")]
+        public ActionResult kantu_demo_download()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/upload")]
+        public ActionResult kantu_demo_upload()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/demo/relativeclick")]
+        public ActionResult kantu_demo_relativeclick()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/demo/scroll")]
+        public ActionResult kantu_demo_scroll()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/demo/draw")]
+        public ActionResult kantu_demo_draw()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/demo/flightsearch")]
+        public ActionResult kantu_demo_flightsearch()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/demo/iframes")]
+        public ActionResult kantu_demo_iframes()
+        {
+            return View();
+        }
+
+
+        [Route("~/store")]
+        public ActionResult store()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/docs")]
+        public ActionResult kantu_docs()
+        {
+            return View();
+        }
+
+        //TMP BIS ALLES RENAMED
+        /*
+        [Route("~/docs")]
+        public ActionResult kantu_docsTMP()
+        {
+            return View();
+        }*/
+
+        [Route("~/kantu/flash")]
+        public ActionResult kantu_flash()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/docs/scraping")]
+        public ActionResult kantu_docs_scraping()
+        {
+            return View();
+        }
+
+        [Route("~/howto/taskscheduler")]
+        public ActionResult howto_taskscheduler()
+        {
+            return View();
+        }
+        [Route("~/howto/getseleniumide")]
+        public ActionResult howto_getseleniumide()
+        {
+            return View();
+        }
+
+        [Route("~/howto/view-local-storage")]
+        public ActionResult howto_viewlocalstorage()
+        {
+            return View();
+        }
+
+        [Route("~/sikuli")]
+        public ActionResult sikuli()
+        {
+            return View();
+        }
+
+
+
+        //*******************************************************************************
+        // BEI Änderunge hier immer auch die DLLn im /BIN foler updaten 
+        //*******************************************************************************
+
+        [Route("~/kantu/uninstallsurvey")]
+        public ActionResult kantu_uninstallsurvey()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/home/welcome")]
+        public ActionResult kantu_home_welcome()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/a/home/welcome")]
+        public ActionResult kantu_a_home_welcome()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/home/")]
+        public ActionResult kantu_home()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/a/home/")]
+        public ActionResult kantu_a_home()
+        {
+            return View();
+        }
+
+
+        [Route("~/kantu/home/protrial")] //in PRO
+        public ActionResult kantu_home_protrial()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/home/pro")] 
+        public ActionResult kantu_home_pro()
+        {
+            return View();
+        }
+
+        [Route("~/kantu/home/community")] 
+        public ActionResult kantu_home_community()
+        {
+            return View();
+        }
+
+        [Route("~/copyfish/welcome")] 
+        public ActionResult copyfish_welcome()  {  return View(); }
+
+        [Route("~/copyfish/whatsnew")]
+        public ActionResult copyfish_whatsnew() { return View(); }
+
+        [Route("~/copyfish/why")]
+        public ActionResult copyfish_why() { return View(); }
+
+        [Route("~/copyfish/")]
+        public ActionResult copyfish()
+        {
+            return View();
+        }
+
+        [Route("~/copyfish/docs")]
+        public ActionResult copyfish_docs()
+        {
+            return View();
+        }
+
+
+        /// <summary>
+        // about
+        /// </summary>
+        /// <returns>View</returns>
+        [Route("~/About")]
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// contact us
+        /// </summary>
+        /// <returns>View</returns>
+        [Route("~/contact")]
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        [Route("~/newsletter")]
+        public ActionResult newsletter()
+        {
+            return View();
+        }
+
+
+        [Route("~/newsletter/thankyou")]
+        public ActionResult newsletter_thankyou()
+        {
+            return View();
+        }
+
+        [Route("~/newsletter/almostfinished")]
+        public ActionResult newsletter_almostfinished()
+        {
+            return View();
+        }
+
+
+        //Selenium XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        [Route("~/kantu/docs/webextensions/")]
+        [Route("~/kantu/docs/webextensions/selenium-ide/")]
+        public ActionResult kantu_docs_webextensions_seleniumide()  { return View();  }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/answerOnNextPrompt")]
+        public ActionResult kantu_docs_webextensions_seleniumide_answerOnNextPrompt() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/assertAlert-assertConfirmation-assertPrompt")]
+        public ActionResult kantu_docs_webextensions_seleniumide_assertAlertassertConfirmationassertPrompt() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/assertElementPresent-verifyElementPresent")]
+        public ActionResult kantu_docs_webextensions_seleniumide_assertElementPresentverifyElementPresent() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/assertText-verifytext")]
+        public ActionResult kantu_docs_webextensions_seleniumide_asserttextverifytext() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/assertTitle-verifyTitle")]
+        public ActionResult kantu_docs_webextensions_seleniumide_asserttitleverifytitle() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/captureScreenshot")]
+        public ActionResult kantu_docs_webextensions_seleniumide_captureScreenshot() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/click")]
+        public ActionResult kantu_docs_webextensions_seleniumide_click() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/highlight")]
+        public ActionResult kantu_docs_webextensions_seleniumide_highlight() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/clickAt")]
+        public ActionResult kantu_docs_webextensions_seleniumide_clickAt() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/csvSave")]
+        public ActionResult kantu_docs_webextensions_seleniumide_csvSave() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/csvread")]
+        public ActionResult kantu_docs_webextensions_seleniumide_csvread() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/deleteAllVisibleCookies")]
+        public ActionResult kantu_docs_webextensions_seleniumide_deleteAllVisibleCookies() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/deleteAllCookies")]
+        public ActionResult kantu_docs_webextensions_seleniumide_deleteAllCookies() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/dragAndDropToObject")]
+        public ActionResult kantu_docs_webextensions_seleniumide_dragAndDropToObject() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/echo")]
+        public ActionResult kantu_docs_webextensions_seleniumide_echo() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/gotoif")]
+        public ActionResult kantu_docs_webextensions_seleniumide_gotoif() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/gotolabel")]
+        public ActionResult kantu_docs_webextensions_seleniumide_gotolabel() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/label")]
+        public ActionResult kantu_docs_webextensions_seleniumide_label() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/mouseOver")]
+        public ActionResult kantu_docs_webextensions_seleniumide_mouseOver() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/open")]
+        public ActionResult kantu_docs_webextensions_seleniumide_open() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/pause")]
+        public ActionResult kantu_docs_webextensions_seleniumide_pause() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/refresh")]
+        public ActionResult kantu_docs_webextensions_seleniumide_refresh() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/select")]
+        public ActionResult kantu_docs_webextensions_seleniumide_select() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/selectFrame")]
+        public ActionResult kantu_docs_webextensions_seleniumide_selectFrame() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/selectWindow")]
+        public ActionResult kantu_docs_webextensions_seleniumide_selectWindow() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/sendKeys-type")]
+        public ActionResult kantu_docs_webextensions_seleniumide_sendKeystype() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/store")]
+        public ActionResult kantu_docs_webextensions_seleniumide_store() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/storedVars")]
+        public ActionResult kantu_docs_webextensions_seleniumide_storedVars() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/storeattribute")]
+        public ActionResult kantu_docs_webextensions_seleniumide_storeattribute() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/storeEval")]
+        public ActionResult kantu_docs_webextensions_seleniumide_storeEval() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/storeText")]
+        public ActionResult kantu_docs_webextensions_seleniumide_storeText() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/storeTitle")]
+        public ActionResult kantu_docs_webextensions_seleniumide_storeTitle() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/WaitForElementPresent")]
+        public ActionResult kantu_docs_webextensions_seleniumide_WaitForElementPresent() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/waitForPageToLoad")]
+        public ActionResult kantu_docs_webextensions_seleniumide_waitForPageToLoad() { return View(); }
+
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/while")]
+        public ActionResult kantu_docs_webextensions_seleniumide_while() { return View(); }
+
+        [Route("~/kantu/docs/webextensions/selenium-ide/oldfirefoxide")]
+        public ActionResult kantu_docs_webextensions_seleniumide_oldfirefoxide() { return View(); }
+
+
+        /// <summary>
+        /// Contact POST page
+        /// </summary>
+        /// <param name="contactViewModel">Contact view model</param>
+        /// <returns>View</returns>
+        [HttpPost]
+        [Route("~/Contact")]
+        public ActionResult Contact(ContactViewModel contactViewModel)
+        {
+            string ipAddress = Request.ServerVariables["REMOTE_ADDR"] + " , ";
+
+            if(ModelState.IsValid)
+            {
+                try
+                {
+                    /*Logger.Info(ipAddress + "Contact Request");
+                    Logger.Info(ipAddress + "Name: " + contactViewModel.ContactName);
+                    Logger.Info(ipAddress + "Mail: " + contactViewModel.Email);
+                    Logger.Info(ipAddress + "Sub: " + contactViewModel.Subject);
+                    Logger.Info(ipAddress + "Message: " + contactViewModel.Message);
+                    */
+
+                    string smtpServer = ConfigurationManager.AppSettings["smtpServer"];
+                    int smtpServerPort = Convert.ToInt32(ConfigurationManager.AppSettings["smtpServerPort"]);
+                    bool enableSSL = Convert.ToBoolean(ConfigurationManager.AppSettings["enableSSL"]);
+                    string fromEmail = ConfigurationManager.AppSettings["fromEmail"];
+                    string fromEmailPassword = ConfigurationManager.AppSettings["fromEmailPassword"];
+                    string toEmail = ConfigurationManager.AppSettings["toEmail"];
+
+                    //If there are no errors, then drop an email to the owner using the SMTP credentials from web.config
+                    var client = new SmtpClient(smtpServer, smtpServerPort)
+                    {
+                        EnableSsl = enableSSL,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(fromEmail, fromEmailPassword),
+                        DeliveryMethod = SmtpDeliveryMethod.Network
+                    };
+
+                    string messageBody = "<html><body>" +
+                        "<p>New Kantu contact form submission:</p>" +
+                        "<p><span><bold>Name:&nbsp;</bold></span>" + contactViewModel.ContactName + "</p>" +
+                        "<p><span><bold>Email:&nbsp;</bold></span>" + contactViewModel.Email + "</p>" +
+                        "<p><span><bold>Message:&nbsp;</bold></span>" + contactViewModel.Message + "</p>" +
+                        "</body></html>";
+
+                    MailMessage message = new MailMessage();
+                    message.IsBodyHtml = true;
+                    message.Body = messageBody;
+                    message.From = new MailAddress(fromEmail);
+                    message.ReplyTo = new MailAddress(contactViewModel.Email);
+                    message.To.Add(new MailAddress(toEmail));
+                    message.Subject = "Contact form: " + contactViewModel.Subject;
+                    client.Send(message);
+
+                    ModelState.Clear();
+
+                    ViewBag.IsSuccessfulMessageDelivery = true;
+
+                    //Logger.Info("Contact mail sent successfully!");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, "Unable to send contact request. Please try again later.");
+                    //Logger.Error(ipAddress + "Error occurred when processing contact us request. Error message: " + ex.Message);
+                    //Logger.Error(ex);
+                }
+            }
+            return View();
+        }
+
+
+        /// <summary>
+        /// faq
+        /// </summary>
+        /// <returns>View</returns>
+        [Route("~/faq")]
+        public ActionResult faq()
+        {
+            return View();
+        }
+
+
+
+     
+        /// <summary>
+        ///PP
+        /// </summary>
+        /// <returns>View</returns>
+        [Route("~/privacypolicy")]
+        public ActionResult privacypolicy()
+        {
+            return View();
+        }
+
+        //*********************************************************************
+
+        [Route("~/x/k")]
+        public ActionResult x_k()
+        {
+
+            //TEST:  https://a9t9.com/x/k?v=2.0.1.0B111CXX
+            //                                                                               "2.0.5.0B111CXX"; //free version, api not used, non-adwords
+            //http://localhost:3437/x/k?kantu=Hello&m1=GettingStarted&m2=CheckingForUpdates&v=2.2.3.0B190RBX
+            var s = "";
+            s = Request.QueryString["v"];
+
+            var homeurl = "https://a9t9.com/";
+
+            string logpath = ConfigurationManager.AppSettings["logfilelocation"];
+
+
+
+            string ip = Request.UserHostAddress;
+            using (StreamWriter w = System.IO.File.AppendText(logpath))
+            {   //ERSTER TEIL HIER; 2ter teil BEI ERFOLG UNTEN
+                w.Write("\r\n{0},{1},{2},{3},", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), ip, s);
+            }
+
+            if (s == null) return View();
+
+            //v=2.04.4B111XYZ
+
+            if (!s.Contains("B")) return Redirect(homeurl);
+
+            var sa = s.Split('B');
+            var sb = sa[1];
+
+            if (sb.Length != 6) return Redirect(homeurl);
+
+            var vinstalled = sa[0];
+
+            string vlatest = "2.2.1.0";
+
+            var vi = new Version(vinstalled);
+            var vl = new Version(vlatest);
+
+            bool UpgradeAvail = false;
+            bool IsApiActive = false;
+            bool IsAdwords = false;
+            bool IsFree = false;
+            bool IsProTrial = false;
+            bool IsPro = false;
+
+            var result = vl.CompareTo(vi);
+            if (result > 0) UpgradeAvail = true;
+
+            s = sb.Substring(3, 1);
+            if (s != "C" && s != "P" && s != "R") return Redirect(homeurl);
+            if (s == "C") IsFree = true;
+            if (s == "P") IsProTrial = true;
+            if (s == "R") IsPro = true;
+            var sType = s; //für log
+
+            s = sb.Substring(4, 1);
+            if (s != "X" && s != "A" && s != "1" && s != "5") return Redirect(homeurl);
+            if (s == "A" || s == "1" || s == "5") IsApiActive = true; //s == "A" ist alt noch nicht benutzt! 
+            var sApi = s; //für log
+
+            s = sb.Substring(5, 1);
+            if (s != "X" && s != "A") return Redirect(homeurl);
+            if (s == "A") IsAdwords = true;
+            var sAdwords = s; //für log
+
+            var days = 0;
+            if (!Int32.TryParse(sb.Substring(0, 3), out days)) days = -1;
+            days -= 110;
+
+
+
+            //date, time, ip, version, free/pro/reg, API, Adwords
+
+            using (StreamWriter w = System.IO.File.AppendText(logpath))
+            {  //ZWEITER TEIL!
+                w.Write("{0},{1},{2},{3},{4}", sType, days, vinstalled, sApi, sAdwords);
+
+            }
+
+            //build url
+            var url = "https://a9t9.com/kantu/home/community";
+
+            if (IsPro) url = "https://a9t9.com/kantu/home/pro";
+            if (IsProTrial) url = "https://a9t9.com/kantu/home/protrial";
+
+            if (UpgradeAvail) url = url + "?info=updateavailable";
+
+
+            return Redirect(url);
+            //         System.IO.File.AppendAllText(@"c:\path\file.txt", "text content" + Environment.NewLine);
+
+
+
+            return View();
+        }
+
+        [Route("~/x/idehelp")]
+        public ActionResult x_idehelp()
+        {
+
+            //TEST:  https://a9t9.com/x/idehelp?cmd=capturescreenshot
+            //TEST:  https://a9t9.com/x/idehelp?cmd=asserttext
+            //TEST:  https://a9t9.com/x/idehelp?cmd=type
+            //TEST:  https://a9t9.com/x/idehelp?cmd=NOTFOUNDxxx
+
+            //http://localhost:3437/x/idehelp?cmd=capturescreenshot
+            var s = "";
+            s = Request.QueryString["cmd"];
+
+            var url1 = "https://a9t9.com/kantu/docs/webextensions/selenium-ide/";
+            var urldocs = "https://a9t9.com/kantu/web-automation/chrome#docs";
+
+            string logpath = ConfigurationManager.AppSettings["logfilelocationidehelp"];
+
+            string ip = Request.UserHostAddress;
+            using (StreamWriter w = System.IO.File.AppendText(logpath))
+            {   //NUR HIER; 
+                w.Write("\r\n{0},{1},{2},{3},", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), ip, s);
+            }
+
+            if (s == null) return Redirect(urldocs);
+
+            //TO lower case?
+
+            if (s.Contains("capturescreenshot")) return Redirect(url1 + s);
+            if (s.Contains("clickat")) return Redirect(url1 + s);
+            if (s.Contains("csvread")) return Redirect(url1 + s);
+            if (s.Contains("csvsave")) return Redirect(url1 + s);
+            if (s.Contains("deleteallcookies")) return Redirect(url1 + s);
+            if (s.Contains("answeronnextprompt")) return Redirect(url1 + s);
+            if (s.Contains("draganddroptoobject")) return Redirect(url1 + s);
+            if (s.Contains("echo")) return Redirect(url1 + s);
+            if (s.Contains("gotoif")) return Redirect(url1 + s);
+            if (s.Contains("gotolabel")) return Redirect(url1 + s);
+            if (s.Contains("label")) return Redirect(url1 + s);
+            if (s.Contains("open")) return Redirect(url1 + s);
+            if (s.Contains("mouseover")) return Redirect(url1 + s);
+            if (s.Contains("pause")) return Redirect(url1 + s);
+            if (s.Contains("refresh")) return Redirect(url1 + s);
+            if (s.Contains("storeeval")) return Redirect(url1 + s);
+            if (s.Contains("selectframe")) return Redirect(url1 + s);
+            if (s.Contains("selectwindow")) return Redirect(url1 + s);
+            if (s.Contains("store")) return Redirect(url1 + s);
+            if (s.Contains("storetext")) return Redirect(url1 + s);
+            if (s.Contains("storetitle")) return Redirect(url1 + s);
+            if (s.Contains("waitforpagetoload")) return Redirect(url1 + s);
+            if (s.Contains("capturescreenshot")) return Redirect(url1 + s);
+
+            if (s.Contains("while")) return Redirect(url1 + s);
+            if (s.Contains("endwhile")) return Redirect(url1 + "while");
+
+            if (s.Contains("assertelementpresent")) return Redirect(url1 + "assertelementpresent-verifyelementpresent");
+            if (s.Contains("verifyelementpresent")) return Redirect(url1 + "assertelementpresent-verifyelementpresent");
+
+            if (s.Contains("asserttext")) return Redirect(url1 + "asserttext-verifytext");
+            if (s.Contains("verifytext")) return Redirect(url1 + "asserttext-verifytext");
+
+            if (s.Contains("asserttitle")) return Redirect(url1 + "asserttitle-verifytitle");
+            if (s.Contains("verifytitle")) return Redirect(url1 + "asserttitle-verifytitle");
+
+            if (s.Contains("assertalert")) return Redirect(url1 + "assertalert-assertconfirmation-assertprompt");
+            if (s.Contains("assertconfirmation")) return Redirect(url1 + "assertalert-assertconfirmation-assertprompt");
+            if (s.Contains("assertprompt")) return Redirect(url1 + "assertalert-assertconfirmation-assertprompt");
+
+            if (s.Contains("click")) return Redirect(url1 + "click");
+            if (s.Contains("clickAndWait")) return Redirect(url1 + "click");
+
+            if (s.Contains("select")) return Redirect(url1 + "select");
+            if (s.Contains("selectAndWait")) return Redirect(url1 + "select");
+
+            if (s.Contains("sendkeys")) return Redirect(url1 + "sendkeys-type");
+            if (s.Contains("type")) return Redirect(url1 + "sendkeys-type");
+
+            //nothing found? show table!
+            return Redirect(url1);
+
+            return View();
+        }
+
+    }
+}

@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "TEST";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-kantuweb">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Test</span> page</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+
+
+            <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script>
+                $(function () {
+                    $('a[data-auto-download]').each(function () {
+                        var $this = $(this);
+                        setTimeout(function () {
+                            window.location = $this.attr('href');
+                        }, 2000);
+                    });
+                });
+            </script>
+
+         
+                    <p>
+                        The download should start shortly. If it doesn't, click
+                        <a data-auto-download href="http://download.a9t9.com/SeeShell/SeeShell-Setup.exe">here</a>.
+                    </p>
+         
+
+                <h3 class="headline">
+                    <span>SeeShell Computer Vision</span>
+                </h3>
+
+                @{
+                    var xversion = Request.Params["v"];
+                    // https://a9t9.com/x/s?SeeShell=Browser&m1=GettingStarted&m2=CheckingForUpdates&v=3.1.0.0B111PXX
+                    //https://a9t9.com/test1?v=3.2.0.9B111PXX
+
+                    if (!xversion.Contains("3.2.0.9"))
+                    {
+
+                        <h3>
+                            New SeeShell Update available!
+                        </h3>
+                        <p>
+                            <span class="hired">SeeShell V3.2.0.9</span> is available for <a href="/download">download</a>.
+                            <br />
+                            For more details see <a href="/seeshell/whatsnew">What's New</a>.
+                        </p>
+                        <p>
+                            <a href="/seeshell/whatsnew">
+                                <img src="~/Content/Images/newupdate.jpg" alt="New SeeShell version available" class="responsive-img">
+                            </a>
+                        </p>
+                    }
+
+                }
+
+
+                <h3>SeeShell Image-Driven Automation explained</h3>
+                <div class="cta_text">USERNAME jetzt kennenlernen!</div>
+                <p>
+
+                    <iframe width="500" height="315" src="https://www.youtube-nocookie.com/embed/fmVhbFqN9gQ?rel=0&&cc_load_policy=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </br>The video explains the SeeShell concept.
+                </p>
+
+                <h1>DemoLoopsInsideTestSuite</h1>
+                <!--- <script>
+        (function() {
+          try {
+            var evt = new CustomEvent('kantuRunTestSuite', { detail: { name: 'DemoLoopsInsideTestSuite', from: 'bookmark' } })
+            window.dispatchEvent(evt);
+          } catch (e) {
+            alert('Kantu Bookmarklet error: ' + e.toString());
+          }
+        })();
+                    </script> -->
+
+
+                <h1>test</h1>
+
+
+                <table cellpadding="1" cellspacing="1" border="1">
+                    <thead>
+                        <tr><td rowspan="1" colspan="3">DemoAutofill</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>store</td>
+                            <td>fast</td>
+                            <td>!replayspeed</td>
+                        </tr>
+
+                        <tr>
+                            <td>open</td>
+                            <td>/forms/d/e/1FAIpQLScPXRMtYI_KYL8J6fivHUV0hQKB7j1RtqTrBBUtEr8VMmyCqw/viewform</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>click</td>
+                            <td>css=span.docssharedWizToggleLabeledLabelText.exportLabel.freebirdFormviewerViewItemsRadioLabel</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>click</td>
+                            <td>css=div.quantumWizTogglePaperradioEl.docssharedWizToggleLabeledControl.freebirdThemedRadio.freebirdThemedRadioDarkerDisabled.freebirdFormviewerViewItemsRadioControl</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>click</td>
+                            <td>css=div.quantumWizTogglePapercheckboxInnerBox.exportInnerBox</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>click</td>
+                            <td>//*[@@id="mG61Hd"]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/label/div/div[1]/div[2]</td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <script>
+                    (function () {
+                        try {
+                            var evt = new CustomEvent('kantuSaveAndRunMacro', { detail: { html: document.documentElement.outerHTML } })
+                            window.dispatchEvent(evt);
+                        } catch (e) {
+                            alert('Kantu Bookmarklet error: ' + e.toString());
+                        }
+                    })();
+                </script>
+
+                aaaaaa
+        </div>
+    </div>
+</div>

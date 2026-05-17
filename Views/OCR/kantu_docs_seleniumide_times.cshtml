@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Times Flow Control - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Times</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Times (number of loops) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                The <span class="hired">times</span> command is used to create a loop that executes the proceeding commands n number of times. The input is
+                the number of attempts a times control flow loop will execute the commands within its block.
+            </p>
+
+
+            <p>
+                The value of the <span class="hired">${!times}</span> internal variable counts the number of the current loop.
+                This is the same concept as the <span class="hired">${!loop}</span> variable
+                that is used to count the loops triggered by the <a href="/rpa/docs#loop">LOOP button</a>.
+                </br>Times can be used in <a href="https://forum.ocr.space/t/times-command-does-not-reset-the-times-variable/5064/2">nested loops (example)</a>, too. In this case
+                the <span class="hired">${!times}</span> value is unique for each times level. The value is always the count of the current times...end level.
+            </p>
+
+            <h3 id="break">Break and Continue</h3>
+            <p>
+                If you are working with loops, you might find it useful at some point to either break the loop
+                when a certain condition is met or you might want to skip over one or more iterations of the loop. This is what the
+                <a href="/rpa/docs/selenium-ide#break">break</a> and
+                <a href="/rpa/docs/selenium-ide#continue">continue</a> statements are used for.
+            </p>
+
+            <h3>Times Example</h3>
+            <p>The example macro loops 5 times and prints the current value.</p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
+                            <td><br /></td>
+                        </tr>
+                        <tr class="success">
+                            <td>times</td>
+                            <td>5</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>This is loop number ${!times}</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>end</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>DemoGotoIf, DemocsvSave</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/while">while</a>,
+                <a href="/rpa/docs/selenium-ide/foreach">forEach</a>,
+                <a href="/rpa/docs/selenium-ide/do-repeatif">do...repeatIf</a>,
+                <a href="/rpa/docs/selenium-ide/gotoIf">gotoIf</a>, <a href="/rpa/docs/selenium-ide/gotolabel">gotoLabel</a>,
+                <a href="/rpa/docs/selenium-ide/label">Label</a>,
+                <a href="/rpa/docs/#!statusok">!statusOK</a>,
+                <a href="/rpa/docs/#!errorignore">!errorIgnore</a>,
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>,
+                <a href="/rpa/docs/selenium-ide#flowcontrol">Selenium IDE Flow Control (SelBlocks)</a>,
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>

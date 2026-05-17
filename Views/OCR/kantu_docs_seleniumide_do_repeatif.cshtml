@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "Do...Repeat If - FlowControl - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Do...Repeat If</span> flow control - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Do...Repeat If (expression) - Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                The part between  <span class="hired">Do</span> and  <span class="hired">Repeat If (expression)</span> is executed as long as the expression is true.
+                RepeatIf uses  <a href="/rpa/docs/selenium-ide/executescript#sandbox">executeScript_Sandbox</a> to evaluate the expression.
+
+
+                If the expression is false, the IDE executes the immediate next command <em>Repeat If</em>.
+            </p>
+
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_nHScuX2QQI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <br /><a href="https://forum.ocr.space/t/if-picture-than-do-this-endif/3374/2">If PICTURE do THIS</a>: This screencast uses <a href="/rpa/docs/selenium-ide/do-repeatif">repeat if</a> to wait for an image, and do something once it appears.
+            </p>
+
+            <p>
+                Another <span class="hired">Do... Repeat If</span>  example, this time we wait for a string:</br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BjxUka4CR2g" title="Do Repeat-If  Selenium IDE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <br /><a href="https://forum.ocr.space/t/stop-macro-execution-command-if-string-is-found-on-website/4728/4">Loop until keyword appears</a>: This screencast uses
+                <a href="/rpa/docs/selenium-ide/do-repeatif">repeat if</a> to stop the macro execution command once a keyword is found on website.
+            </p>
+
+            <p>
+                Ui.Vision reuses the established Selenium IDE <a href="https://ui.vision/docs/selenium-ide#flowcontrol">
+                    flow control
+                </a> syntax
+            </p>
+
+            <h3>What is the difference between While...End and Do...RepeatIf?</h3>
+            <p>
+                The difference is that "<a href="/rpa/docs/selenium-ide/while">while</a>" is a top tested loop (test the condition first then do loop),
+                but "do...repeatIf" is a bottom tested loop (do the loop then test the condition). So in the "worst case" scenario,
+                the loop instructions inside the while loop are not be executed at all, but the loop instructions inside do...repeatIf loop are always executed at least once.
+            </p><p>
+                Note that Ui.Vision and Selenium IDE use <em>RepeatIf</em> and not <em>RepeatUntil</em> as in some other scripting languages.
+
+            </p>
+
+            <h3 id="break">Break and Continue</h3>
+            <p>
+                If you are working with loops, you might find it useful at some point to either break the loop
+                when a certain condition is met or you might want to skip over one or more iterations of the loop. This is what the
+                <a href="/rpa/docs/selenium-ide#break">break</a> and
+                <a href="/rpa/docs/selenium-ide#continue">continue</a> statements are used for.
+            </p>
+
+            <h3>Do/RepeatIf Example</h3>
+
+            <p>
+                For a real live example see
+                this Do...RepeatIf use case in  the forum:
+                <a href="https://forum.ocr.space/t/stop-macro-execution-command-if-string-is-found-on-website/4728/4">Loop until text shows up on the website</a>.
+
+                </br> See also
+                <a href="https://forum.ocr.space/t/how-to-increase-value-of-the-type-per-loop/7179/5">how to increment the Selenium IDE variable</a>.
+            </p>
+            <p>
+                The example below is very basic.
+            </p>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Pattern/Text</th>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
+                            <td><br /></td>
+                        </tr>
+                        <tr class="success">
+                            <td>Do</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td>This command is executed once!</td>
+                            <td></td>
+                        </tr>
+                        <tr class="success">
+                            <td>Repeat If</td>
+                            <td>100 < 5</td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </p>
+
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>DemoIfElse, DemoCsvSave</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/gotolabel">gotoLabel</a>,
+                <a href="/rpa/docs/selenium-ide/label">Label</a>,
+                <a href="/rpa/docs/selenium-ide/while">While</a>,
+                <a href="/rpa/docs/selenium-ide/times">Times</a>,
+
+                <a href="/rpa/docs/selenium-ide/executeScript">executeScript</a>,
+
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>,
+
+                <a href="/rpa/docs/selenium-ide#flowcontrol">Selenium IDE Flow Control (SelBlocks)</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>

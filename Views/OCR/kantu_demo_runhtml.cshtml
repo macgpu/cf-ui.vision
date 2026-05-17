@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Run embedded Ui.Vision RPA HTML Macro";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-kantuweb">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Run embedded HTML macro</span> Test Page</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+        <div class="span12">
+
+            <h1>Below you see the table with the macro. If you allow the macro to run, <em>Ui.Vision RPA</em> will read this table,
+            import it as macro and run it.</h1>
+
+            <p><em>Ui.Vision RPA</em> supports the HTML format mainly for backwards compatibility with the old Selenium IDE for Firefox, and
+            related tools that still use this format. For new projects we recommend that you use the <em>Ui.Vision RPA</em> JSON format - 
+            which you can also <a href="/demo/runweb">embed and run in a website.</a></p>
+
+
+            <!--- the table and the Javascript code is exported from Kantu. 
+             Right-click a macro and select "Export as HTML (plus autorun)" -->
+
+            <table cellpadding="1" cellspacing="1" border="1">
+                <thead>
+                    <tr><td rowspan="1" colspan="3">remotemacro1</td></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>open</td>
+                        <td>https://ui.vision/contact</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>type</td>
+                        <td>id=ContactName</td>
+                        <td>Hello!</td>
+                    </tr>
+
+                    <tr>
+                        <td>type</td>
+                        <td>id=Email</td>
+                        <td>This is a remote macro demo</td>
+                    </tr>
+
+                    <tr>
+                        <td>select</td>
+                        <td>id=WhatSoftware</td>
+                        <td>label=Kantu for Chrome/Firefox</td>
+                    </tr>
+
+                    <tr>
+                        <td>type</td>
+                        <td>id=Subject</td>
+                        <td>Kantu reads the macro from the website, saves it, and runs it.</td>
+                    </tr>
+
+                    <tr>
+                        <td>type</td>
+                        <td>id=Message</td>
+                        <td>Running macros stored in websites is turned off by default. You can enable this feature in the "Replay" settings.\n\nHappy Automating!</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <script>
+                (function () {
+                    try {
+                        var evt = new CustomEvent('kantuSaveAndRunMacro', { detail: { html: document.documentElement.outerHTML, storageMode: 'browser' } })
+                        window.dispatchEvent(evt);
+
+                        if (window.location.protocol === 'file:') {
+                            var onInvokeSuccess = function () {
+                                clearTimeout(timer)
+                                window.removeEventListener('kantuInvokeSuccess', onInvokeSuccess)
+                            }
+                            var timer = setTimeout(function () {
+                                alert("Error: It seems you need to enable File Access for Kantu in the extension settings.")
+                            }, 2000)
+
+                            window.addEventListener('kantuInvokeSuccess', onInvokeSuccess)
+                        }
+                    } catch (e) {
+                        alert('Kantu Bookmarklet error: ' + e.toString());
+                    }
+                })();
+            </script>
+          
+
+            </div>
+    </div>
+</div>

@@ -1,0 +1,1054 @@
+﻿@{
+    ViewBag.Title = "UI Automation Open-Source Selenium IDE plus additional features, iMacros alternative";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><em>Ui.Vision RPA</em> <span>User Manual</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- menu -->
+        <div id="tab-1">
+            <ul class="tabs-menu fixed span3">
+                <li>
+                    <a href="#web">Web Automation</a>
+                </li>
+                <li>
+                    <a href="/rpa/x/desktop-automation#docs">Desktop Automation</a>
+                </li>
+                <li>
+                    <a href="#selenium">Selenium IDE</a>
+                </li>
+
+                <li>
+                    <a href="#ref">Command Reference</a>
+                </li>
+
+                <li>
+                    <a href="#if">Flow Control (if/while)</a>
+                </li>
+                <li>
+                    <a href="#loop">Looping Macros</a>
+                </li>
+                <li>
+                    <a href="#csv">Read/Write CSV Files</a>
+                </li>
+                <li>
+                    <a href="#fileupload">Automating File Uploads</a>
+                </li>
+
+                <li>
+                    <a href="#internalvar">Internal Variables</a>
+                </li>
+
+                <li>
+                    <a href="#performance">Performance Monitoring</a>
+                </li>
+                <li>
+                    <a href="#replayspeed">Replay Speed</a>
+                </li>
+                <li>
+                    <a href="#pos">Position</a>
+                </li>
+                <li>
+                    <a href="#cmd">Command Line API</a>
+                </li>
+                <li>
+                    <a href="/rpa/docs/selenium-ide/web-scraping">Web Scraping</a>
+                </li>
+                <li>
+                    <a href="/rpa/x/desktop-automation/screen-scraping#docs">Screen Scraping (OCR)</a>
+                </li>
+                <li>
+                    <a href="/ai">AI Computer Use</a>
+                </li>
+
+            </ul>
+
+
+            <div class="tabs span9 nomargin">
+
+                <div id="start" class="tab-content">
+
+                    <h2 id="web">AI-powered Visual Web Automation</h2>
+                    <p>
+                        <em>Ui.Vision RPA</em>'s image and text recognition  allow you to write automated visual tests with <em>Ui.Vision RPA</em>
+                        - this makes <em>Ui.Vision RPA</em> the first and only Chrome and
+                        Firefox extension (and Selenium IDE) that has "👁👁 eyes". For more information please see
+                        <a href="/rpa/docs/visual-ui-testing/">visual UI Testing</a> and the <a href="/rpa/docs/xclick">XClick</a> command.
+                    </p>
+
+                    <h2 id="desktopautomation">AI-powered Visual Desktop Automation</h2>
+                    <p>
+                        <em>Ui.Vision RPA</em> can not only see and automate everything inside the web browser.
+                        The same image and text recognition technology can automate your desktop as well (Robotic Process Automation, RPA).
+                        For more information please see
+                        <a href="/rpa/x/desktop-automation#docs">Desktop Automation</a> and the <a href="/rpa/docs/xclick">XClick</a> command.
+                    </p>
+
+
+                    <h2>Automation by Example</h2>
+                    <p>
+                        Often it is best to learn from examples. <em>Ui.Vision RPA</em> installs many ready-to-run demo macros that showcase its features and all important commands.
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/demomacros.webp" alt="<em>Ui.Vision RPA</em> Demo Macros" class="responsive-img">
+
+                    </p>
+
+                    <h2>RPA Software Screencasts</h2>
+
+                    <p>
+                        The <a href="https://www.youtube.com/c/UIVisionVideos">RPA Software Youtube channel</a> has Ui.Vision videos that highlight
+                        and demo the RPA features. For example:
+                        <ul>
+                            <li><a href="https://www.youtube.com/watch?v=wH0MLIUdD-Q">Web and Desktop Automation with Ui.Vision</a></li>
+
+                            <li><a href="https://www.youtube.com/watch?v=irTkchEz4ww">Codeless UI Automation for Desktop apps</a></li>
+
+
+                            <li><a href="https://www.youtube.com/watch?v=kF7Fdiz-Dkg">Testing Discord App Chat with XClick and XType ${KEY_ENTER}</a></li>
+
+
+                            <li><a href="https://www.youtube.com/watch?v=4_q92KsMalE">Automating Drag & Drop with Image Recognition</a></li>
+
+
+                            <li><a href="https://www.youtube.com/watch?v=kAYxDvMiwQg">Set Date Control</a></li>
+
+                            <li><a href="https://www.youtube.com/watch?v=P-yo8aroD-g">Run one macro after another with the Ui.Vision command line API</a></li>
+                        </ul>
+                    </p>
+
+                    <h2 id="ref">Command Reference</h2>
+
+
+                    <p>
+                        <a href="/rpa/docs/xclick#vision">Image-driven Commands</a> (AI powered Web <em>and</em> Desktop Automation)
+                    </p>
+                    <p>
+
+                        <a href="/rpa/x/desktop-automation#docs">Desktop Automation Commands</a>
+                    </p>
+                    <p>
+                        <a href="/rpa/x/desktop-automation/screen-scraping#docs">Screen Scraping Commands</a>
+                    </p>
+                    <p>
+                        <a href="/rpa/docs/selenium-ide/">Selenium IDE Commands</a> (see also <a href="/rpa/docs/selenium-ide#side">How is <em>Ui.Vision RPA</em> related to Selenium IDE?</a>)
+                    </p>
+                    <p>
+                        <a href="/rpa/docs/selenium-ide/web-scraping">Web Scraping with Selenium IDE</a>
+                    </p>
+                    <p>
+
+                        <a href="#cmd-api">Command Line API Commands</a> - control <em>Ui.Vision RPA</em> from any program or script
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+
+                    <h2 id="if">Flow Control</h2>
+                    <p>
+                        <em>Ui.Vision RPA</em> was the first web macro recorder with built-in <a href="/rpa/docs/selenium-ide#flowcontrol">flow control</a>
+                        commands like <a href="/rpa/docs/selenium-ide/if">if/else/endif</a>, while/endWhile or GotoIf. Follow the links for more details and examples.
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h3 id="loop">Loop button</h3>
+                    <p>
+                        The dropdown next to the Play button contains the loop feature - run macros as a loop.
+                        Looping a macro is useful for doing basic load testing with the Selenium IDE, for performance monitoring or to simply
+                        test the stability for the test case (macro) itself. The <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a> command
+                        to read a CSV file line by line makes also use of the LOOP button.
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/kantu-chrome-loop.webp" alt="<em>Ui.Vision RPA</em> for Chrome looping..." class="responsive-img">
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h3 id="csv">Read and write CSV files</h3>
+                    <p>
+                        Comma-separated values (CSV) files are useful as data input for data-driven testing/automation or as data output for web scraping.
+                        In <em>Ui.Vision RPA</em> for Chrome the <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a> and
+                        <a href="/rpa/docs/selenium-ide/csvRead#array">csvReadArray</a>
+
+                        commands give you access the data inside CSV files, and the
+                        <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> and <a href="/rpa/docs/selenium-ide/csvSave#array">csvSaveArray</a>
+                        commands allow you to write test results or extracted values to a CSV file.
+
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/csvmanager.webp" alt="CSV Manager: Import (load) and export (save) CSV files from the <em>Ui.Vision RPA</em> extension" class="responsive-img">
+                    </p>
+                    <p>
+                        The CSV manager tab (shown in the screenshot) allows you to import, export,  view and delete CSV files to the
+                        <a href="/howto/view-local-storage">local storage</a> of the extension.
+                        So the CSV files are not directly accessed from the hard drive,
+                        but they are stored inside the web browser. The reason for this is that modern browser extension have no access to your hard drive.
+                        Just like with the macros, all CSV files are stored locally inside your browser (technically called <a href="/howto/view-local-storage">local storage</a>), nothing is uploaded to any kind
+                        of cloud service.
+
+                    </p>
+                    <p>
+                        If you have the <a href="/rpa/x#fileaccess"><em>Ui.Vision RPA</em> FileAccess XModule</a> installed,
+                        you can switch the macro storage mode to  <a href="/rpa/x#harddrive">Hard-Drive Storage</a>.
+                        This will also redirect all CSV read and write operation directly to the hard drive. By default, CSV files are then stored in the
+                        "UIVision/datasources" folder.
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h3 id="fileupload">Automating File Upload</h3>
+
+                    <p>
+                        Content moved: The file upload tutorial has now its own page:</br>
+                        <a href="/rpa/docs/selenium-ide/form-filling#fileupload">File uploads with Selenium IDE</a> and
+                        <a href="/rpa/docs/selenium-ide/form-filling#fileuploadfx">File uploads in Firefox</a>.
+                    </p>
+
+                    <h3 id="filedownload">Automating File Download</h3>
+
+                    <p>
+                        If you all need is a simple download, there is nothing special to do. If a click command triggers a download, <em>Ui.Vision RPA</em> handles it automatically. By default, <em>Ui.Vision RPA</em> does
+                        not stop and wait for the download to complete, the macro continues with the next command(s).
+                    </p>
+
+                    <p id="ondownload"><span class="hired">OnDownload | new file name | (wait for download to complete:) true/false</span></p>
+
+                    <p>
+                        For more control over the download there is the OnDownload command. It allows you to overwrite the default file name with a custom name. And with "true" in the 3rd column
+                        you tell <em>Ui.Vision RPA</em> to wait for a download to complete before continuing with the next command.
+                        <em>Ui.Vision RPA</em> waits for max. <a href="#!timeout_download">timeout_download</a> seconds. This option is great for checking the
+                        performance (download speed) of a file download. If you need to measure the exact download time, you can do that with the value of the
+                        <a href="#!runtime">!RUNTIME</a> internal variable.
+                        The max. wait time between a mouse click on the link and the actual download start is limited by <a href="#!timeout_wait">timeout_wait</a>. OnDownload can be at any place in the macro as long as it is reached before the download
+                        is triggered.
+
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+
+                    <h3 id="internalvar">Internal variables</h3>
+
+                    <p>
+                        Some parameters can be controlled via Internal variables.
+                        All internal variables are valid only <em>per macro run</em> and they do not change the global
+                        default values. In other words, internal variables overwrite global default values inside
+                        the macro they are used.
+
+                    </p>
+                    <p>
+                        <ul>
+                            <li id="!clipboard">
+                                <span class="hired">!clipboard</span> (read/write) - write to or read from the computer's clipboard (<a href="/rpa/docs/xtype#copypaste">copy and paste</a>).
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!cmd_var1">
+                                <span class="hired">${!cmd_var1}</span>, <span class="hired">${!cmd_var2}</span>,
+                                <span class="hired">${!cmd_var2}</span>
+                                (read) - the value of these three variables can be set via the <a href="#cmd-macro">command line</a> with the cmd_var1/2/3 switches.
+                                <br />
+                                <br />
+                            </li>
+
+
+                            <li id="!COL1">
+                                <span class="hired">!col1</span>,  <span class="hired">!COL2</span>,...  (read only) -
+                                Values read from CSV file with <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a>
+                                <br />
+                                <br />
+                            </li>
+                            <li id="!csvline">
+                                <span class="hired">!csvLine</span> (read/write) - storing values to this variable <em>appends</em> them to the line used
+                                by <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a>.  Use store | NULL | !csvLine to overwrite (not append) the current values.
+                                <br />
+                                <br />
+                            </li>
+
+                            <li>
+                                <span id="!csvreadmaxrow" class="hired">!csvReadMaxRow</span> (read) -
+                                In some cases you may need to now how many lines are in a CSV file, or you want to read the last (most recently added)
+                                line of a CSV file.   In both cases the internal variable !csvReadMaxRow can help. After the first <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a>,
+                                this value is set the number of lines in the CSV
+                                (<a href="/rpa/docs/selenium-ide/csvRead#!csvreadmaxrow">example here</a>)
+                                <br />
+                                <br />
+                            </li>
+
+                            <li>
+                                <span id="!csvreadstatus" class="hired">!csvReadStatus</span> (read) - <em>true</em> if the last <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a> command was successful.
+                                Typically <em>false</em> if there are no more lines in the CSV file. So together with the <a href="/rpa/docs/selenium-ide/csvRead">while</a>
+                                command, this can be used to read CSV files where  the number of rows is unknown. Please see the DemoReadCSVwithWhile macro for a code example.
+                                <br />
+                                <br />
+                            </li>
+
+                            <li>
+                                <span id="!csvreadlinenumber" class="hired">!csvReadLineNumber</span> (read/write) - <em>true</em> sets the line number for the
+                                <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a> command to read. If not used, the value of !LOOP is used for the line number and
+                                !csvReadLineNumber is set to the same value.
+                                <br />
+                                <br />
+                            </li>
+
+
+
+
+                            <li id="!errorignore">
+                                <span class="hired">!ErrorIgnore</span> (read/write) - This is a <span class="hired">very useful</span> internal variable.
+                                If set to true with <em>store | true | !errorIgnore</em> the macro execution continues after an error.
+                                It is often used with <a href="/rpa/docs/selenium-ide#flowcontrol">flow control</a> or to test/click links that sometimes exist and sometimes not.
+                                You can change back to the normal behavior at any point
+                                in the macro with <em>store | false | !errorIgnore</em>. Related forum post: <a href="https://forum.ocr.space/t/how-to-handle-errors-exception/1275/2">RPA Error handling options</a>
+
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!lastcommandok">
+                                <span class="hired">!LastCommandOK</span> (read only) [DEPRECATED, use <a href="#!statusok">!statusok</a> instead] - contains the status of the last executed command (true of successful,
+                                or false if the command encountered an error. Use with !ErrorIgnore set to true so the macro execution continues after an error.
+                                The ECHO command that does not influence the status, so it can be used for logging the value of !LastCommandOK without changing its value.
+                                <br />
+                                <br />
+                            </li>
+                            <li id="!last_downloaded_file_name">
+                                <span class="hired">!Last_Downloaded_File_Name</span> (read only) Get the name of the downloaded file. This requires ONDOWNLOAD to be inside the macro.
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!statusok">
+                                <span class="hired">!statusOK</span> (read/write) - contains the status of the macro execution. Once an error happens
+                                !statusOK is set to FALSE. <br /><br />Typically this variable is used to get the result of the  VERIFY... commands and
+                                the storeText / storeValue / storeChecked / storeAttribute
+                                <a href="/rpa/docs/selenium-ide/web-scraping">web scraping commands</a>, which do not stop at an error. If you want to use it with other commands
+                                then remember to <a href="#!errorignore">set !ErrorIgnore  to true</a> so the macro execution continues after an error.
+
+                                Only then  will !statusOK be useful, as  otherwise the macro stops at an error anyway.
+
+                                <br /><br />!statusOK does <em>not</em> get reset by a successful command.  Once !statusOK is set to "false" by an error, it remains "false", even if the next commands succeed. But you can use <em>store | true | !StatusOK</em> to manually reset it.
+                                Related forum post <a href="https://forum.ocr.space/t/could-you-please-add-the-try-except-continue-key-words/4864/3">Simulate Try/Catch in Selenium IDE</a>
+                                <br /><br />
+                            </li>
+
+
+                            <li id="!stringescape">
+                                <span class="hired">!StringEscape</span> (read/write) –
+                                If true \n \r are interpreted as escape sequence (default). If false they are interpreted literally
+                                (<a href="https://forum.ocr.space/t/how-to-create-line-breaks-in-a-variable/5165/2">more details</a>). This applies to TYPE and SENDKEYS, but not XTYPE.
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!loop">
+                                <span class="hired">!LOOP</span> (read only) – current value of the loop counter (1,2,3… etc).
+                                Great for use with <a href="/kantu#pos">@@POS=${!LOOP}</a> to cycle through a list of links.
+                                <br />
+                                <br />
+                            </li>
+
+                            <li>
+                                <span class="hired">!MACRONAME</span> (read) - Name of the macro this command is in
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!ocrlanguage">
+                                - <span class="hired">!OCRLanguage=ENG/...</span>, <span class="hired">!OCREngine=1/2/99</span> => Please see
+                                <a href="/rpa/x/desktop-automation/screen-scraping#ocrparameters">OCR screen scraping</a> for details on how to control the text recognition.
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!replayspeed">
+                                <span class="hired">!REPLAYSPEED</span> (read/write) - Set the <a href="#replayspeed">replay speed</a> to FAST (no delay between each step), MEDIUM (short, "human like" delay)
+                                or "SLOW" (2 seconds delay). Another option is <a href="https://forum.ocr.space/t/increase-ui-speed/7100/6">NODISPLAY</a>. It stops  IDE GUI updates for the fastest possible replay speed.
+                                <br />
+                                <br />
+                            </li>
+                            <li id="!runtime">
+                                <span class="hired">!RUNTIME</span> (read) - Time elapsed since macro start.
+                                This value is very useful for performance testing and performance monitoring
+                                <br />
+                                <br />
+                            </li>
+
+
+                            <li id="!runtime">
+                                <span class="hired">!RUNTIME</span> (read) - Time elapsed since macro start.
+                                This value is very useful for performance testing and performance monitoring
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!global_testsuite_stop_on_error">
+                                <span class="hired">!GLOBAL_TESTSUITE_STOP_ON_ERROR</span> (read/write)  tells
+                                Ui.Vision to stop the <a href="#testsuites">test suite execution</a> after an error.
+                                The default settings is "false", so by default the RPA software continues to run all tests.
+                                Note that this is a <a href="#globalvar">global variable</a>, so you only need to set it in one of the macros of your test suite!
+                                Typically, of course, you would use it in the first macro.
+                                <br />
+                                <br />
+                            </li>
+
+
+                            <li id="!timeout_download">
+                                <span class="hired">!TIMEOUT_DOWNLOAD</span> (read/write) - Time limit for file downloads if <em>Ui.Vision RPA</em> is told to wait for a
+                                download to complete via <a href="#ondownload">OnDownload | file name | true</a>
+                                <br />
+                                <br />
+                            </li>
+
+                            <li id="!timeout_macro">
+                                <span class="hired">!TIMEOUT_MACRO</span> (read/write) - Limit for the overall macro runtime.
+                                The default value is 300s (5 minutes).
+                                <br />
+                                <br />
+                            </li>
+                            <li id="!timeout_pageload">
+                                <span class="hired">!TIMEOUT_PAGELOAD</span> (read/write) - How long to wait for page load
+                                <br />
+                                <br />
+                            </li>
+                            <li id="!timeout_wait">
+                                <span class="hired">!TIMEOUT_WAIT</span> (read/write) - How long to wait for an element to appear before reporting an element not found error
+                                (<a href="/rpa/docs/selenium-ide#implicitwaiting">implicit waiting</a>)</br>
+                                <img src="~/Content/Images/timeout_wait2.webp" alt="Implicit waiting with timeout_wait in action" class="responsive-img">
+                                <br />
+                                <br />
+                            </li>
+                            <li id="!times">
+                                <span class="hired">!TIMES</span> (read) - Loop counter for the <a href="/rpa/docs/selenium-ide/times">times</a> loop. In <a href="https://forum.ocr.space/t/times-command-does-not-reset-the-times-variable/5064>nested times loops</a>, !times has the value of the currently active loop.
+                                <br />
+                                <br />
+                            </li>
+
+
+                            Now we ensured that the value of is the value of the loop that it is currently in.
+
+                            <li id="!url">
+                                <span class="hired">!URL</span> (read only) - contains current browser URL that you see in the address bar. Previously,
+                                the <a href="/rpa/docs/selenium-ide/storeTitle">storeLocation</a> command was needed for this.
+
+                                <br />
+                                <br />
+                            </li>
+                            <li id="!waitforvisible">
+                                <span class="hired">!WaitForVisible</span> - by default the <a href="/rpa/docs/selenium-ide#implicitwaiting">implicit waiting</a>
+                                waits for an element to appear <em>and</em> become
+                                visible. If you do not want to wait for the element be visible (typically because it never becomes visible) use
+                                <span class="hired">store | false | !WaitForVisible</span>. Then waiting
+                                for visible is turned off for all following commands until you set it again to true.
+                                <br />
+                                <br />
+                            </li>
+
+                        </ul>
+
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h2 id="sourcecodetab">Source Code Tab</h2>
+
+                    <p>
+                        The source code tab is the useful to view, search, edit and copy & paste source code snippets:
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/sourcecodetab.webp" alt="Source Code Tab" class="responsive-img">
+                        </br>You can use the source code tab to copy and paste code snippets to/from the <a href="https://forum.ocr.space/"><em>Ui.Vision RPA</em> forum</a>.
+                        If you paste code in the forum <a href="https://forum.ocr.space/t/storetext-does-not-work-with-newline-and-multi-levels/993/2">please remember use the code tag in the forum editor</a>.
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/sourcecodetabline.webp" alt="Jump to Source Code" class="responsive-img">
+                        </br>In the table view you can use the "Jump to source code" context menu item to
+                        jump directly to the JSON code of the <em>currently selected command</em>. In other words, this feature opens the source code view tab and automatically scrolls down to the right position.
+                    </p>
+
+                    <h2 id="performance">Performance Monitoring/Testing</h2>
+
+                    <p>
+                        The  <span class="hired">!RUNTIME</span> internal variable contains the macro runtime and makes performance testing easy. In the example below we first click
+                        on the "Start OCR button " (<a href="https://ocr.space">OCR.space</a>) and store the current run time in a variable.
+                        Then <em>Ui.Vision RPA</em> waits for the result (= web element) to appear. Once the element is found and the macro execution
+                        continues we measure the time again by reading the
+                        current value of !RUNTIME. The difference is the runtime performance of this step. In a next step you can, for example, write the value of
+                        "TimeForThisStep" to a CSV file with the <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> feature.
+                    </p>
+
+                    <h2 id="performance">Performance Monitoring/Testing</h2>
+
+                    <p>
+                        The  <span class="hired">!RUNTIME</span> internal variable contains the macro runtime and makes performance testing easy. In the example below we first click
+                        on the "Start OCR button " (<a href="https://ocr.space">OCR.space</a>) and store the current run time in a variable.
+                        Then <em>Ui.Vision RPA</em> waits for the result (= web element) to appear. Once the element is found and the macro execution
+                        continues we measure the time again by reading the
+                        current value of !RUNTIME. The difference is the runtime performance of this step. In a next step you can, for example, write the value of
+                        "TimeForThisStep" to a CSV file with the <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> feature.
+                    </p>
+                    <table class="table table-bordered" cellpadding="1" cellspacing="1" border="1">
+                        <tbody>
+                            <tr>
+                                <td>click</td>
+                                <td>link=Start OCR!</td>
+                                <td></td>
+                                <td>Start the process to measure (in this case an OCR conversion)</td>
+                            </tr>
+                            <tr class="success">
+                                <td>store</td>
+                                <td>${!RUNTIME}</td>
+                                <td>StartTime</td>
+                                <td>Store the start time</td>
+                            </tr>
+
+                            <tr class="warning">
+                                <td>click</td>
+                                <td>//*[@@id="sucOrErrMessage"]/strong</td>
+                                <td></td>
+                                <td>Wait for the "Completed" message to appear...</td>
+                            </tr>
+                            <tr class="success">
+                                <td>store</td>
+                                <td>${!RUNTIME}</td>
+                                <td>EndTime</td>
+                                <td>Log the current macro runtime</td>
+                            </tr>
+                            <tr class="info">
+                                <td>storeEval</td>
+                                <td>${!EndTime}-${!StartTime}</td>
+                                <td>TimeforThisStep</td>
+                                <td>Calculate the runtime of the "yellow" step,</br>which is the difference between start and end time.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="#start" style="float:right">Top</a>
+
+
+                    <h3 id="status">Test status reporting</h3>
+                    <p>
+                        The background of each macro indicates its test status: White = not yet run, Green = last run was ok and red = last run
+                        had an error.
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/teststatusindicator.webp" alt="Test status indicator..." class="responsive-img">
+                    </p>
+
+
+
+                    <h3 id="replayspeed">Setting the right macro replay speed</h3>
+
+                    <p>
+                        In (gear icon) > Replay Settings you can select the replay speed. FAST (no delay), MEDIUM (0.3s, default) and SLOW (2s). With FAST, <em>Ui.Vision RPA</em> replays the
+                        macro as fast as it can. This is faster than any human could type, so on some websites that can cause problems, as they have not been tested for such a speed
+                        and sometimes Javascript code can not respond quickly enough.  Typically MEDIUM is a good compromise between speed and being website-friendly.
+                        SLOW can be useful for testing and debugging.
+                    </p>
+
+                    <p>
+                        You can change the default replay speed in the settings menu (see screenshot above) or inside a macro  with  <span class="hired">store | SLOW/MEDIUM/FAST | !replayspeed</span>.
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h3 id="pos">Position support in link text locator</h3>
+
+                    <p>
+                        With  <span class="hired">CLICK  link=Download@POS=3</span> you instruct the IDE to use the n-th (here n=3) occurrence of a locator.
+                        This is useful, for example, if a have a website with many download links, and you want to click the n-th once.
+                        POS is only supported with the  “normal text” locator link=... but not with XPATH and CSS selectors.
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+
+                    <h2 id="macros">More Example Macros (Test cases)</h2>
+                    <p>
+                        The <em>Ui.Vision RPA</em> <a href="https://github.com/A9T9/RPA/tree/master/test">Selenium IDE github</a> page contains the  <span class="hired">/test</span> folder with plenty of test macros. You can download and import all macros/selenium IDE scripts at once.
+                        For this, use the "Gear icon => Import HTML" feature and then select all the macros/scripts that you want to import (we call the test cases often <em>macros</em> - this is the same. We use the word macros as some users  use the extension not for web testing, but for web automation. There the word macro and macro recorder is very common.)
+                    </p>
+
+                    <p>
+                        <img src="~/Content/Images/importexport.webp" alt="Import many macros at once! - and do not forget to BACKUP (export) your macros once in while" class="responsive-img">
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h2 id="bkup">Tip: Backup your macros</h2>
+
+                    <p>
+                        In the <a href="/rpa/x#storage_mode">default storage mode</a> macros, test suites and all <em>Ui.Vision RPA</em> settings are stored inside
+                        your web browser in what is called technically <a href="/howto/view-local-storage">HTML5 local storage</a>.
+                        <em>Nothing</em> is copied or moved to the cloud.
+                        This means that  <span class="hired">once you uninstall the <em>Ui.Vision RPA</em> extension, your macros are gone!</span>
+                        You can use the "Export" feature to create backups of your important test cases, CSV data and images. The fastest way to export
+                        everything is to use the "Run backup now" button on the backup settings panel. It exports all data at once.
+                    </p>
+
+                    <p id="bkup_import">If you need to recover information from a backup, see this forum post on <a href="https://forum.ocr.space/t/how-to-restore-a-backup-kantu-chr-ff/289/2">how to restore macros from a backup</a>.</p>
+                    <p>
+                        <img src="~/Content/Images/kantu-backup-reminder.webp" alt="<em>Ui.Vision RPA</em> Backup Reminder. Do not forget to BACKUP (export) your macros once in while" class="responsive-img">
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+
+                    <h1 id="cmd">Command Line API</h1>
+                    <p>
+                        The command line API allows you to control all RPA features from any scripting or programming language.
+                        To start the RPA software via the command line you start the <em>browser</em> (e. g. Chrome) via the command line and
+                        load the special RPA startup page. You can generate the page on the "API" settings tab. It is always the same page, so
+                        you only need to generate it once:
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/rpa-cli.webp" alt="RPA Command line interface (CLI)" class="responsive-img">
+                    </p>
+                    <p>
+                        Then load the ui.vision.html website in the web browser and add <span class="hired">&amp;macro=YourMacro</span> - and the macro runs automatically! To skip the "Do you want to run this macro?" question, add the "?direct=1" switch
+                        to your local file URL (<span class="hired">file:///...</span>).
+                    </p>
+                    <p>
+                        Important: Even so we mention the browser here, the command line feature works exactly the same in
+                        <a href="/rpa/x/desktop-automation">GUI desktop automation</a> mode. The browser and the local website are just needed because the <em>Ui.Vision RPA</em> core is technically implemented as browser extension.
+                        In other words, <em>Ui.Vision RPA</em> can be used as part of a  CI pipeline for web automation <em>and</em> for desktop automation.
+                    </p>
+
+                    <p>
+                        <img src="~/Content/Images/rpa-cli-url.webp" alt="Run RPA Selenium IDE from the command line" class="responsive-img">
+                    </p>
+                    <p id="fileurl">
+                        Allow <em>Ui.Vision RPA</em> access to file URLs. This is only required in the Chrome and Edge browsers, since Firefox allows access
+                        to file URLs by default:
+                        <img src="~/Content/Images/rpa-access-file-url.webp" alt="Allow access to file URLs" class="responsive-img">
+                    </p>
+                    <p>
+                        Example: A Windows batch file to run the RPA software from the command line on looks like this:
+                        </br><span class="hired">
+                            "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+                            "file:///D:/test/ui.vision.html?direct=1&amp;macro=MyLogin&amp;savelog=c:/test/log1.txt"
+                        </span>
+                    <p>
+                        The macro specified with <a href="#cmd-macro">macro=MyLogin</a> is run. Note that you must use <span class="hired">file:///</span> for the file path. If you would just start with "C:\..." you will get
+                        a "file not found" error for the HTML file due to the appended "?direct=1&macro=MyLogin&closeRPA=1&savelog=log1.txt" GET parameters.
+                        Windows is used as an example here, the command line feature also works on Mac and Linux as well. "ui.vision.html" is the exported launch page.
+                        IMPORTANT: Macro and Folder names are CASE-SENSITIVE.
+                    </p>
+                    <p>
+                        A longer command line, this time with Firefox:</br><span class="hired">
+                            "C:\Program Files\Mozilla Firefox\firefox.exe"
+                            "file:///D:/test/ui.vision.html?macro=demoframes&cmd_var1=hello%21world&amp;cmd_var2=123&amp;cmd_var3=ABC&amp;closeRPA=1&amp;closeBrowser=1&amp;direct=1&amp;savelog=logfirefox.txt"
+                        </span></br>
+                        In this example we use the command line send some values to the macro and we close the RPA software and browser after the macro is done.
+                    </p>
+
+                    <h2>Command Line Demo Videos</h2>
+
+                    <p>
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/P-yo8aroD-g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </br>CLI: Run one macro after another with <a href="https://github.com/A9T9/RPA/tree/master/command-line/powershell">Powershell</a>.
+                    </p>
+
+                    <p>
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KAd4d0waPQg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </br>Using the command line API from <a href="https://github.com/A9T9/RPA/tree/master/command-line/node.js">Node.js</a>
+                    </p>
+
+                    <p>
+
+                        <h2 id="cmd-src">Command Line API Source Code</h2>
+                    <p>You find <a href="https://github.com/A9T9/RPA/tree/master/command-line">all source code on Github</a>:</p>
+                    <p>
+                        <ul>
+                            <li>- <a href="https://github.com/A9T9/RPA/tree/master/command-line/windows%20batch%20file">Batch file</a></li>
+                            <li>- <a href="https://github.com/A9T9/RPA/tree/master/command-line/node.js">Node.js</a></li>
+                            <li>- <a href="https://github.com/A9T9/RPA/tree/master/command-line/powershell">Powershell</a></li>
+                            <li>- <a href="https://github.com/A9T9/RPA/tree/master/command-line/python">Python file</a></li>
+                            <li>- <a href="https://github.com/A9T9/RPA/tree/master/command-line/vbs">VBS</a></li>
+                        </ul>
+                    </p>
+
+
+                    <h2 id="cmd-mac"><em>Ui.Vision RPA</em> as Automator alternative on Mac</h2>
+                    <p>
+                        <img src="~/Content/Images/applescript-cmd.webp" alt="Start <em>Ui.Vision RPA</em> macros on Mac with AppleScript" class="responsive-img">
+                    </p>
+
+                    <p>
+                        On <span class="hired">MacOS</span> you need to use AppleScript to start Chrome/Firefox with the file url.
+                        If you would only use the OPEN command, then the GET parameters behind the ? are lost.  You can get AppleScript executed from a bash script or function,
+                        or from a Terminal by just prefixing it with "osascript". So the correct command line syntax for Mac is
+                        </br><span class="hired">
+                            osascript -e 'tell application "Google Chrome" to
+                            open location "file:///Users/t/ui.vision.html?macro=TEST&direct=1&closeRPA=1&savelog=/user/desktop/demotestlog.txt"'
+                        </span></br>
+                        Thanks to user Shunt/Timo for the forum post
+                        <a href="https://forum.ocr.space/t/launching-kantu-from-command-line-on-a-mac/610/4">Launching <em>Ui.Vision RPA</em> from Command Line on a Mac</a>.
+                        We used their feedback to update this section.
+                    </p>
+
+
+                    <h2 id="cmd-api">Command Line Parameters</h2>
+                    <p>
+                        Note that in a strict technical sense these are not command line parameters, but "GET" parameters
+                        that are appended to the file URL of the "ui.vision.html" autorun HTML page that you are loading in the browser.
+                        But their purpose is just like that of real command line parameters, so we call them this way.
+                    </p>
+                    <p>
+                        <ul>
+                            <li id="cmd-direct" direct>
+                                - <span class="hired">direct=1</span> - Skip the "Do you want to run this macro?" question.
+                            </li>
+                            <li id="cmd-closebrowser">
+                                - <span class="hired">closeBrowser=1</span> - Closes the Chrome browser when the macro is completed. The default is "0", the browser remains open.
+                                <a href="https://youtu.be/P-yo8aroD-g?t=61">Screencast of a PowerShell script that uses CloseBrowser=0</a>.
+
+                            </li>
+                            <li id="cmd-closerpa">
+                                - <span class="hired">closeRPA=0</span> - Close <em>Ui.Vision RPA</em> when the macro is completed. The default is "1", so <em>Ui.Vision RPA</em>
+                                closes after the macro is done.
+                            </li>
+
+                            <li id="cmd-folder">
+                                - <span class="hired">folder=foldername</span> -  exactly the same as the <span class="hired">macro</span> switch, but it runs all macros inside a folder. This means every folder can
+                                be used test suite. IMPORTANT: Folder names are CASE-SENSITIVE.
+                            </li>
+                            <li id="cmd-savelog">
+                                - <span class="hired">savelog=filename.txt</span> -  This saves the log (content of the Log tab)
+                                plus a header status header as a text file once the macro has completed. The log is saved whether the run was successful
+                                or not. The calling script (e. g.
+
+                                <a href="https://github.com/A9T9/RPA/tree/master/command-line/windows%20batch%20file">Batch file</a>,
+                                <a href="https://github.com/A9T9/RPA/tree/master/command-line/node.js">Node.JS</a>,
+                                <a href="https://github.com/A9T9/RPA/tree/master/command-line/python">Python</a>,
+
+                                or <a href="https://github.com/A9T9/RPA/tree/master/command-line/powershell">PowerShell</a>)
+                                can check for the existence of this file to make sure the
+                                macro run completed). The first line of the log file is always the status of the macro run (error or success, and the error message, if any).
+                                </br>A second way to save the log file is to use the command <a href="/rpa/docs/selenium-ide/localstorageexport">localStorageExport | log</a>. But unlike the command
+                                line option, this method does not add a header with status information to the top of the log.
+                                </br>New with V8.1.3: The <a href="https://ui.vision/rpa/docs#cmd-savelog">&savelog=</a> parameter supports full paths now, e.g. <span class="hired">savelog=c:/test/log.txt</span>. If a full path is detected the
+                                log is saved directly (instead of triggering a download). This is faster and more reliable.
+                                We recommend to update your automation scripts to use this new feature. It requires the XModules to be installed.
+                            </li>
+                            <li id="cmd-storage">
+                                - <span class="hired">storage=browser/xfile</span> - This parameter tells <em>Ui.Vision RPA</em> if the macro or testsuite folder to run can be found
+                                in the HTML5 browser storage or <a href="/rpa/x#harddrive">on the hard drive</a>.
+
+                            </li>
+                            <li id="cmd-macro">
+                                - <span class="hired">macro=folder1/subfolder1/macroname</span> - Run the specified macro. IMPORTANT: Macro and folder names are CASE-SENSITIVE.
+                            </li>
+                            <li id="cmd-nodisplay">
+                                - <span class="hired">nodisplay=1</span> - Runs all macros in <a href="https://forum.ocr.space/t/increase-ui-speed/7100/6">nodisplay</a> mode.
+                                A macro-internal !replayspeed setting overwrites this global value.
+                            </li>
+
+
+                            <li id="cmd-cmdvar1">
+                                - <span class="hired">cmd_var1=hello%21world</span>, <span class="hired">cmd_var2</span>, <span class="hired">cmd_var3</span> -
+                                Send values to a <em>Ui.Vision RPA</em> macro from the command line. Inside the macro you can access the value with the
+                                <a href="#!cmd_var1">internal variables</a>.
+                                <span class="hired">${!cmd_var1}</span>, <span class="hired">${!cmd_var2}</span> and
+                                <span class="hired">${!cmd_var3}</span>.
+                            </li>
+                            <li>
+                                - <span class="hiblue">Examples:</span> All the above switches are used in the
+                                <a href="#cmd-src">Command Line Source Code Snippets</a>.
+
+                            </li>
+
+                        </ul>
+                    </p>
+
+                    <p>
+                        See also: You can not only start Ui.Vision RPA from a script via the command line, you can also start a script from within Ui.Vision RPA with
+                        <a href="/rpa/docs/xrun">XRun</a>.
+                    </p>
+
+                    <p>
+                        Rarely used and deprecated command line options:
+                        <li id="cmd-closekantu">
+                            - <span class="hired">closeKantu=0</span> - (deprecated) It is now called <em>closeRPA</em>
+                        </li>
+                        <li id="cmd-continueinlastusedtab">
+                            - <span class="hired">continueInLastUsedTab=0/1</span> - Default is "1". So by default the macro of each new command line call continues
+                            in the tab where the last macro stopped (the active tab). An example use case would be that macro1 does the login, macro2
+                            runs a test and macro3 does the log off.
+                            If you prefer that <em>Ui.Vision RPA</em> opens a new tab for each new command line call use "continueInLastUsedTab=0".
+
+                        </li>
+                        <li id="cmd-loadmacrotree">
+                            - <span class="hired">loadmacrotree=0</span> - (A rarely needed setting) If 1, all macro files are loaded at startup into the side bar treeview. This
+                            increases startup time, thus the default is "0".
+                            Note that when using loadmacrotree=0 Ui.Vision RPA looks directly in the  file system for the macro,
+                            and thus the folder and macro names are case-sensitive on all operating system if the internal HTML5-storage mode is used (= browser file system).
+                            In hard-drive mode only Linux is case-sensitive.
+                        </li>
+                        <li id="cmd-testsuite">
+                            - <span class="hired">testsuite=testsuitename (deprecated)</span> - please use the new <a href="#cmd-folder">folder</a> command.
+                        </li>
+                    </p>
+
+
+                    <h2 id="247">How to run <em>Ui.Vision RPA</em> macros 24/7</h2>
+                    <p>
+                        Many applications of <em>Ui.Vision RPA</em> require continuous operation of the software.
+                        Examples are the use of <em>Ui.Vision RPA</em> as part of robotic process automation (RPA),
+                        extracting large volumes of information or web testing applications in general.
+                    </p>
+                    <p>
+                        Problem: By design web browsers are not intended for 24x7 operations and running them repeatedly for several days can lead to undesirable effects,
+                        such as increased memory consumption ("memory leaks").
+                    </p>
+                    <p>
+                        Solution: The <em>Ui.Vision RPA</em> command line allows you to control the <em>Ui.Vision RPA</em> operation. With the <a href="#cmd-savelog">-savelog switch</a>
+                        a calling script can easily check on the success of each macro run. The <a href="#cmd-closebrowser">-closebrowser</a> and <a href="#cmd-closerpa">-closeRPA</a> switches
+                        allow you close Chrome and Firefox periodically to avoid memory leaks. And you can add code to terminate the Chrome or Firefox instances if they hang (e. g. using <a href="https://github.com/A9T9/RPA/blob/0b007c4df73ff09dd317a1ea45279c06468a2481/command-line/python/run-and-check-result.py#L39">proc.kill() in Python</a> or
+                        <a href="https://github.com/A9T9/RPA/blob/0b007c4df73ff09dd317a1ea45279c06468a2481/command-line/powershell/run%20two%20macros.ps1#L16">#taskkill /F /IM chrome.exe /T</a> in Powershell).
+                    </p>
+
+                    <p>
+                        <span class="hiblue">Examples:</span> Demo scripts for running <em>Ui.Vision RPA</em> 24/7 are available in Github, see the
+                        <a href="#cmd-src">Command Line Source Code Snippets</a> paragraph.
+                    </p>
+
+                    <p><span class="hiblue">Important:</span> <a href="https://forum.ocr.space/t/kantu-browser-automation-stable-version-downloadable-plugin/1764/2">How to avoid extension auto-updates</a> during unattended operation.</p>
+
+
+                    <p>Related: <a href="/howto/taskscheduler">How to run <em>Ui.Vision RPA</em> with the Windows Task Scheduler</a></p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h2>Running Concurrent Instances</h2>
+
+                    <p>
+                        You can easily run concurrent instances of <em>Ui.Vision RPA</em> with Chrome and Firefox via the command line.
+                        To do so, you need to start each browser instance with its own profile.
+                        For Chrome the command line switch is <em>-profile-directory="Profile 2"</em>
+                        and for Firefox it is <em>-p PROFILE_NAME</em>.
+                    </p>
+
+                    <h2 id="embed">Embed and run <em>Ui.Vision RPA</em> macros in websites</h2>
+                    <p>
+                        You can embed macros directly into a website! This is a good option
+                        if you need to distribute your macros to a larger numbers of users.
+                        Since <em>Ui.Vision RPA</em> macros are in standard JSON format, it is very easy to
+                        create them dynamically e. g. from info inside a database.
+                    </p>
+                    <p>DEMO: <a href="/demo/runweb">This web page</a> contains some embedded macros.</p>
+                    <p>
+                        <span class="hired">
+                            In order to run macros that are embedded in a website you have to first allow it
+                        </span>.
+                        You do this by checking the "Run embedded macros from public websites" box.
+                        This is step 1 in the screenshot below. The default
+                        setting is OFF (do not run embedded macros). Once you allow such macros in general, you will see a dialog box
+                        asking for permission to run such macros. If you want to avoid this warning dialog for certain websites (for example your own internal website), then you can add
+                        this website to the website whitelist (step 2 in the screenshot below):
+                    </p>
+
+                    <p>
+                        <img src="~/Content/Images/kantu-whitelist.webp" alt="<em>Ui.Vision RPA</em> URL Whitelist" class="responsive-img">
+                    </p>
+                    <p>
+                        The URLs in the white list are the websites that can <em>contain</em> embedded macros, and that you want
+                        to run without warning dialog.
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h2 id="bookmarks">Run from bookmarks</h2>
+                    <p>
+                        In the macro context menu (right-click menu) select "Create bookmark". This adds a shortcut to the macro
+                        to your bookmarks. From now on you can just select the bookmark to run the macro. <em>Ui.Vision RPA</em> will open to
+                        run the macro and then close again. But if the macro encounters an error, <em>Ui.Vision RPA</em> stays open so you can see what went wrong.
+
+                        <img src="~/Content/Images/addbookmark.webp" alt="Add web macro shortcut to bookmarks bar" class="responsive-img">
+
+                    </p>
+                    <p>
+                        Technically <em>Ui.Vision RPA</em> bookmarks are little Javascript snippets (bookmarklets) that start the <em>Ui.Vision RPA</em> engine. And thus, like with all
+                        bookmarklets, they do not work on the Google Chrome and Firefox "New Tab" start page. For security reasons, the browser do not run any Javascript on this page. But whenever a "normal" web page is loaded,
+                        the kantu web imacro bookmarks work great.
+
+                        <img src="~/Content/Images/bookmarklets.webp" alt="Bookmarklets need a normal web page loaded to work (= do not work on new tab page)" class="responsive-img">
+
+                    </p>
+                    <p>
+                        If you want to make sure Chrome and Firefox are in the foreground while the bookmark macro runs, add the
+
+                        <a href="/rpa/docs/selenium-ide/BringBrowsertoForeground">BringBrowsertoForeground</a> command
+
+                        to your macro.
+                    </p>
+                    <p>
+                        If you want to trigger your macros with keyboard shortcuts you can <a href="https://forum.ocr.space/t/activating-bookmarks/1602/2">
+                            combine <em>Ui.Vision RPA</em>'s bookmarklets
+                            with the ShortKeys extensions
+                        </a>.
+                    </p>
+
+                    <p>
+                        <img src="~/Content/Images/rpa-bookmark-closerpa.webp" alt="How to keep Ui.Vision RPA software open after start from bookmark" class="responsive-img"></br>
+                        You can change the "close <em>Ui.Vision RPA</em> when macro is done" behavior to "keep <em>Ui.Vision RPA</em> open when macro is done". To do so, edit the bookmark
+                        and change the flag <span class="hired">closeRPA: 1</span> to <span class="hired">closeRPA: 0</span>
+                        in the bookmarklet's Javascript code. Regardless of this flag, the <em>Ui.Vision RPA</em> window stays open
+                        <em>if you manually press STOP</em> during the macro run or if the macro stops with an error.
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h2 id="encryption">Password Encryption</h2>
+
+
+                    <p>
+                        <em>Ui.Vision RPA</em> can store passwords encrypted.   You can enable this feature and set a master password in the settings.
+
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/kantu_passwordencryption.webp" alt="Enable password encryption" class="responsive-img">
+                    </p>
+                    <p>
+                        With the master password enabled, every website password that you enter during macro recording is not stored in plain text,
+                        but instead as an encrypted string. So instead of having a command like</br>
+                        "TYPE | id=password | your-password-here"
+                        </br>the recorded command is
+                        </br>"TYPE | id=password | __KANTU_ENCRYPTED__f8b53105ebb186d...".
+
+                    </p>
+                    <p>
+                        <img src="~/Content/Images/kantu_passwordencryption_salesforce.webp" alt="Record encrypted passwords" class="responsive-img">
+
+                    </p>
+                    <p>
+                        <em>Ui.Vision RPA</em> uses 256-bit AES encryption which is considered unbreakable by security experts. Note that if you change the master password later,
+                        you need to re-record the password field, so that a new "__KANTU_ENCRYPTED__..." string is created.
+                    </p>
+
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h2 id="testsuites">Test Suites V2.0 (Folders as Testsuites)</h2>
+
+                    <p>
+                        Since <em>Ui.Vision RPA</em> V5.0 test suites are created on the macros tab, and <em>not</em> the test suites tab. The new concept is straightforward:
+
+
+                        <span class="hiblue">Every folder is a test suite.</span>
+                        To play a test suite, right-click on a folder and select "Test suite: Play all macros in folder". To start the replay
+                        at a certain macro, right-click on the macro and select "Replay from here".
+
+                    </p>
+                    <p>
+                        You can add or remove macros from a testsuite simply by adding or removing it from a folder. Macros in subfolders are ignored. The replay
+                        order is alphabetical, just like the display order.
+
+                    </p>
+                    <p>
+                        To start a testsuite from the command line use the <a href="#cmd-folder">folder</a> switch. This runs all macros in the folder.
+                    </p>
+                    <p>
+                        You can use <a href="#!global_testsuite_stop_on_error">!GLOBAL_TESTSUITE_STOP_ON_ERROR</a>   to tell Ui.Vision to stop the test suite execution after an error.
+                        The default settings is "false", so by default the RPA software continues to run all macros inside a test suite.
+                        After a test suite is done, a test report is displayed. It shows the pass/no pass status of each test (macro) and the detailed
+                        error messages.
+                    </p>
+                    <p>
+
+                        <img src="~/Content/Images/folder-as-testsuites.webp" alt="New test suites" class="responsive-img">
+
+                        </br>Every folder is now also a test suite. Just drag and drop macros in a folder to build a test suite.
+
+                    </p>
+                    <p>Tip: Another way to combine several macro (tests) into one is the <a href="/rpa/docs/selenium-ide/run">RUN command</a>.</p>
+
+
+
+                    <h2 id="testsuites_old">Test Suites (Old-Style, Deprecated)</h2>
+
+                    <p>
+                        The old-style Test suites are created on the test suites tab (deprecated) by selecting the test cases (macros) from
+                        the drop-down. Click the "+Macro" button to add a new macro to the list.
+                        You can also specify how often each macro runs (loops). Test suites itself do not contain macro code,
+                        they contain the names of existing macros.
+                    </p>
+                    <p>
+                        Starting with Ui.Vision RPA Version 5.3.x, the old style test suites tab will be hidden by default, when Ui.Vision is fresh installed. But the test suites are not lost, just the tab is
+                        not displayed by default. You can turn on the old-style test suites tab in the Settings > Selenium > Checkbox (at the bottom).
+                    </p>
+                    <p>
+
+                        <img src="~/Content/Images/testsuites-old.webp" alt="Old-style test suites" class="responsive-img">
+
+                        </br>Old-style testsuites are still available for backward compatibility.
+
+                    </p>
+
+                    <p>
+                        Once the test suite is completed, a test report summary is written to the log area.
+                        The success of each test case is also indicated visually.
+                    </p>
+                    <p>
+                        To rearrange the order of the macros in the test suite and for other larger changes,
+                        we recommend to edit the JSON source directly. To edit it, either click the "hamburger icon" ☰ displayed to the right of the test suite name,
+                        or right-click the test suite name and then select "Edit source". <br />
+                        <img src="~/Content/Images/seleniumide-testsuite-source.webp" alt="Edit the test suite JSON source" class="responsive-img">
+                        <br />(DEPRECATED OLD-STYLE TESTSUITE) Once you save the edited source code, <em>Ui.Vision RPA</em> runs a checks against all available macros to make sure there
+                        are no missing macros or typos.
+
+                    </p>
+
+
+                    <h2 id="globalvar">Global Variables</h2>
+                    <span class="hired">Global variables:</span> By default, each macro runs independent, no variables are shared.
+                    But you can create global variables that are available to every macro and test suite simply
+                    by prefixing them with "Global..." (e. g. "globalMyCounter" or "GLOBAL_username"). In other words, variables whose name starts with
+                    "Global..." are shared . Global variables keep their value even after the macro has been stopped. Their content is only lost once <em>Ui.Vision RPA</em> is closed.
+                    </p><p>
+                        If you want your data to  survive a closing of Kantu, then store ("persist") it in a CSV file with
+                        <a href="/rpa/docs/selenium-ide/csvSave">csvSave</a> and
+                        <a href="/rpa/docs/selenium-ide/csvRead">csvRead</a>:<br>
+
+                        <img src="~/Content/Images/csvglobalvar.webp" alt="Use global variables or CSV files to persist data" class="responsive-img">
+                    </p>
+
+
+                    <a href="#start" style="float:right">Top</a>
+
+                    <h2>Security and Privacy</h2>
+                    <p>
+                        The <em>Ui.Vision RPA core</em> is open-source and guarantees <a href="/rpa/#security">Enterprise-Grade Security</a>. Your data never leaves your machine.
+
+                    </p>
+
+                    <h2>For developers</h2>
+                    <p>
+                        The <em>Ui.Vision RPA core</em> source code is available on <a href="https://github.com/A9T9/RPA">GitHub Open-Source RPA</a> (License: GNU).
+
+                    </p>
+
+                    <h2 id="selenium">Migrating to UIV from Selenium IDE or iMacros</h2>
+                    <p>
+                        <em>Ui.Vision RPA</em> is a  <a href="/rpa/migrate/imacros">open-source alternative to iMacros</a> and Selenium IDE, and supports all important
+                        <a href="/rpa/docs/selenium-ide">Selenium IDE commands</a>.
+                        When you invest the time to learn <em>Ui.Vision RPA</em>, you learn Selenium IDE at the same time. You can even <a href="/rpa/docs/selenium-ide#import">import Selenium IDE test cases</a>.
+                    </p>
+
+                    <a href="#start" style="float:right">Top</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

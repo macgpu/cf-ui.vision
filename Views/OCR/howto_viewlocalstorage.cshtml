@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "How-to: View Local Storage in Chrome and Firefox";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>View <span>Local Browser Storage</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>How to view data in Local Storage</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+            <p>Many browser extensions store their data in the browser's so-called Local Storage, which is nothing else than a storage location managed
+            by the web browser. And as the same suggests, all is saved locally on the machine where the browser is installed. Local storage is not in the cloud.</> 
+
+            <p>Here is how to view the data: First, go the extension page of Chrome. For the extension that you want to examine, 
+            open its <strong>background page</strong>. Each extension has a "Inspect views: background page" link for this.
+            
+            </p>
+            <p>With the extension's background page open, just go to the <strong>developer tools</strong> by pressing F12, then go to the <strong>Application tab</strong>.
+                In the Storage section expand Local Storage. After that, you'll see all your browser's local storage there.
+            </p>
+
+            <p>
+                <img src="~/Content/Images/kantulocalstorage.jpg"  alt="How to view data in local storage" class="responsive-img">
+            </p>
+<p>The screenshot shows the local storage as used by our <a href="/rpa">open-source RPA software</a> extension in version 3
+            (<a href="https://chrome.google.com/webstore/detail/uivision-rpa/gcbalfbdmfieckjlnblleoemohcganoc">install link</a>, <a href="https://github.com/A9T9/">source code link</a>). In the screenshot, the "Demo-Storeval" test case is shown.
+</p>
+<p>
+    Note that another place where extensions can store their data is the <em>chrome.fileSystem API</em>. And indeed, our very own
+    <a href="/rpa">open-source RPA software</a> extension uses the <em>chrome.fileSystem API</em> since version 4 (We made this change to add folder support).
+    The way to <a href="https://forum.ui.vision/t/demo-files-not-visible-in-local-storage-google-chrome/4240/2">view data stored by the <em>chrome.fileSystem API</em></a> is similar, as explained in the linked forum post.
+
+
+</p>
+
+<p>
+    Questions? Suggestions? <a href="/contact">UI Vision tech support</a> can help.
+
+</p>
+
+       
+
+            <a href="#page-header" style="float:right">Top</a>
+        </div>
+    </div>
+</div>

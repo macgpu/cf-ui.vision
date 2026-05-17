@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Deprecated Commands - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>Deprecated Commands</span> - Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Deprecated Commands</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                If a command name ends with <span class="hired">_Deprecated</span> we highly recommend <em>not</em> to use it
+                for new projects. For all commands marked with "_deprecated" there is a newer and better version of the command
+                available. 
+            </p>
+            <h3>Deprecated commands and their replacements</h3>
+         
+                    <ul>
+
+                    <li>
+                        - endif => <span class="hired">end</span>
+                    </li>
+                    <li>
+                        - endWhile => <span class="hired">end</span>
+                    </li>
+                    <li>
+                        - resize => <span class="hired">setWindowsSize</span>
+                    </li>
+                    <li>
+                        - storeEval => <span class="hired">executeScript</span>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <img src="~/Content/Images/deprecated.webp" alt="Deprecated Selenium IDE commands" class="responsive-img">
+
+
+            </p>
+
+
+            <p>
+                Deprecated command are (only) still available for backward compatibility of existing macros. We recommend that
+                whenever you modify such an old macro/test case anyway, that you replace the deprecated commands with its new version.
+                Deprecated commands might be removed with future updates to keep the software lean and fast.
+            </p>
+
+            <p>
+                If you want to learn more about the history of a specific command,
+                please see the <a href="/rpa/home/whatsnew">Ui.Vision Change log</a>.
+            </p>
+
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>

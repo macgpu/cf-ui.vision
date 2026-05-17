@@ -1,0 +1,161 @@
+﻿@{
+    ViewBag.Title = "Search and Extract page source code - Selenium IDE Commands Tutorial";
+}
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>sourceExtract, sourceSearch</span> - <em>Ui.Vision RPA</em> Selenium IDE</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Search and extract page source code with Selenium IDE command</span>
+            </h3>
+        </div> 
+
+        <div class="span12">
+
+            <p>
+                The <span class="hired">sourceSearch</span> and <span class="hired">sourceExtract</span> commands work with the page source code
+                instead of looking at the web page object model (DOM) that all other "classic" Selenium IDE command use.
+                Thus sourceSearch/sourceExtract can verify e. g. comments in the page source code and can check/extract Javascript code parts (like the Google Analytics ID)
+                that are invisible to a command like <a href="/rpa/docs/selenium-ide/storeText">storeText</a>.
+            </p>
+            <p>Both commands can be used in a plain text mode. Then "*" wildcard indicates the changing part.</p>
+
+            <p>For experts, both commands support standard Regular Expressions (often called regex or regexp). </p>
+            <p>In sourceExtract, if no match is found, the variable is set to "#nomatchfound" - and <em>no</em> error is triggered.</p>
+            <p>
+                You find examples of both commands in DemoExtract (sourceExtract) and DemoStoreEval (sourceSearch). Both macros get installed with Ui.Vision RPA.
+            </p>
+            <p>
+                sourceSearch supports the  <span class="hired">regex=/your pattern/i</span> syntax.
+                This can be used, for example, for <a href="https://forum.ocr.space/t/how-to-sourcesearch-and-sourceextract-with-case-insensitve-text/3343"><em>case-insensitive</em> text search</a>.
+            </p>
+
+            <h3>Regex Capture Groups</h3>
+            <p>
+                The notation to extract regex capture groups is  <span class="hired">regex=…@@MATCH,GROUP</span>.
+                See also: <a href="https://forum.ocr.space/t/how-do-you-use-regex-capture-groups/4654/2">How do you use Regex capture groups</a>
+                and <a href="https://forum.ocr.space/t/quick-guidance-on-regex-please/4923/2">Quick guidance on regex please</a>.
+            </p>
+            <p>
+                <img src="~/Content/Images/regex-capturegroups-400.webp" alt="Regex Capture Groups" class="responsive-img">
+                </br>Regex capture groups explained. The screenshot is from the <a href="https://forum.ocr.space/t/how-do-you-use-regex-capture-groups/4654/2">regex forum post</a>.
+
+            </p>
+
+
+            <h3>sourceExtract Example</h3>
+
+            <p>Some text here first. The following examples will operate on it.</p>
+            <p>
+                <ul>
+                    <li>Coffee $2.95</li>
+                    <li>Tea $1.95</li>
+                    <li>Milk $2.10</li>
+                </ul>
+            </p>
+
+            <p>
+                Another test string: <em>width: 11, width: 22, width: 33</em>
+            </p>
+
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                    <th class="col-md-2">Command</th>
+                    <th class="col-md-5">Target</th>
+                    <th class="col-md-5">Result (stored in the variable)</th>
+                    </thead>
+                    <tbody>
+
+                        <tr class="success">
+                            <td>sourceSearch</td>
+                            <td>$*&lt;/li&gt;</td>
+                            <td>3 (= 3 matches found)</td>
+                        </tr>
+                        <tr>
+                            <td>sourceSearch</td>
+                            <td>regex=[\$\£\€](\d+(?:\.\d{1,2})?)</td>
+                            <td>3 (= 3 matches found, same as before, but now with regular expressions)</td>
+                        </tr>
+                    <td>sourceSearch</td>
+                    <td>Tea $*&lt;/li&gt;</td>
+                    <td>1 (= 1 match found)</td>
+                    </tr>
+                    <tr>
+                        <td>sourceSearch</td>
+                        <td>Beer $*&lt;/li&gt;</td>
+                        <td>0 (no match found)</td>
+                    </tr>
+                    <tr class="success">
+                        <td>sourceExtract</td>
+                        <td>$*&lt;/li&gt;</td>
+                        <td>$2.95&lt;/li&gt; (the coffee, without @@ the first match (@@1) is assumed)</td>
+                    </tr>
+                    <tr>
+                        <td>sourceExtract</td>
+                        <td>$*&lt;/li&gt;@@2</td>
+                        <td>$1.95&lt;/li&gt; (the tea)</td>
+                    </tr>
+                    <tr>
+                        <td>sourceExtract</td>
+                        <td>$*&lt;/li&gt;@@5</td>
+                        <td>#nomatchfound</td>
+                    </tr>
+                    <tr>
+                        <td>sourceExtract</td>
+                        <td>regex=[\$\£\€](\d+(?:\.\d{1,2})?)@@2</td>
+                        <td>1.95 (the tea)</td>
+                    </tr>
+                    <tr>
+                        <td>sourceExtract</td>
+                        <td>regex=width: (\d+)@@2</td>
+                        <td>width: 22</td>
+                    </tr>
+                    <tr>
+                        <td>sourceExtract</td>
+                        <td>regex=width: (\d+)@@2,1</td>
+                        <td>22 (the 2,1 means the first capture group of the second match)</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </p>
+
+
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>
+            </p>
+
+            <h3>Related Demo Macros</h3>
+            <p>ClickandWait is part of almost every demo macro-</p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/selenium-ide/click">clickAndWait</a>,
+
+                <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
+
+                <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
+            </p>
+
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+            <a href="/">
+                <img src="~/Content/Images/Selenium-IDE-Chrome1.webp" alt="<em>Ui.Vision RPA</em> Selenium IDE for Chrome and Firefox - Web Test Automation" class="responsive-img">
+            </a>
+        </div>
+    </div>
+</div>
