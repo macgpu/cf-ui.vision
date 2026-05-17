@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,14 +6,14 @@
     <meta name="description" content="How-to: Windows Task Scheduler, Automate RPA tasks">
     <title>How-to: Windows Task Scheduler, Automate RPA tasks</title>
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
-    <link href="/Content/themes/basic/bootstrap.css" rel="stylesheet" />
-    <link href="/Content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
-    <link href="/Content/Main/base.css" rel="stylesheet" />
-    <link href="/Content/Main/elements.css" rel="stylesheet" />
-    <link href="/Content/Main/grid.css" rel="stylesheet" />
-    <link href="/Content/Main/layout.css" rel="stylesheet" />
-    <link href="/Content/Main/style.css" rel="stylesheet" />
+    <link href="/content/main/base.css" rel="stylesheet" />
+    <link href="/content/main/elements.css" rel="stylesheet" />
+    <link href="/content/main/grid.css" rel="stylesheet" />
+    <link href="/content/main/layout.css" rel="stylesheet" />
+    <link href="/content/main/style.css" rel="stylesheet" />
     <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
     <script>
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="span2">
                 <a href="/" id="logo">
-                    <img src="/Content/Images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                    <img src="/content/images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
                 </a>
             </div>
             <div class="span10">
@@ -97,7 +97,7 @@
 
             </p>
             <p>
-                <img src="/Content/Images/windows-task-scheduler-start.webp" alt="Windows Task Scheduler:" class="responsive-img">
+                <img src="/content/images/windows-task-scheduler-start.webp" alt="Windows Task Scheduler:" class="responsive-img">
             </p>
             <p>
                 Next, select “Create Task” and the task scheduler wizard opens. It starts with the security tab:
@@ -130,7 +130,7 @@
                 </ul>
             </p>
             <p>
-                <img src="/Content/Images/windows-task-scheduler-security.webp" alt="Windows Task Scheduler: Run Options (Security Settings)" class="responsive-img">
+                <img src="/content/images/windows-task-scheduler-security.webp" alt="Windows Task Scheduler: Run Options (Security Settings)" class="responsive-img">
 
             </p>
 
@@ -258,7 +258,7 @@
 
             </p>
             <p>
-                <img src="/Content/Images/windows-task-scheduler-trigger.webp" alt="Windows Task Scheduler: Run when (Trigger Settings)" class="responsive-img">
+                <img src="/content/images/windows-task-scheduler-trigger.webp" alt="Windows Task Scheduler: Run when (Trigger Settings)" class="responsive-img">
             </p>
             <p>Insider tip: Note that when you set a start time, e. g. 9:00 am and want to test it a bit later, maybe at 9:30am, nothing will happen for the next 23 hours. So the 9:00am start is not trigged until the next time it is actually 9am. </p>
 
@@ -271,7 +271,7 @@
                 script starts the browser with the Ui.Vision RPA Core extension.
             </p>
             <p>
-                <img src="/Content/Images/task-scheduler-action-chrome.webp" alt="Windows Task Scheduler with Chrome" class="responsive-img">
+                <img src="/content/images/task-scheduler-action-chrome.webp" alt="Windows Task Scheduler with Chrome" class="responsive-img">
             </p>
             <p>
                 We recommend the "Start <em>Ui.Vision RPA</em> indirectly via a script" option (see the screenshot below), as this gives you more control
@@ -279,7 +279,7 @@
                 You find example scripts for both languages in the <a href="https://github.com/A9T9/RPA/tree/master/command-line/"><em>Ui.Vision RPA</em> github repo</a>.
             </p>
             <p>
-                <img src="/Content/Images/task-scheduler-action-powershell.webp" alt="Windows Task Scheduler with PowerShell" class="responsive-img">
+                <img src="/content/images/task-scheduler-action-powershell.webp" alt="Windows Task Scheduler with PowerShell" class="responsive-img">
             </p>
 
 
@@ -295,7 +295,7 @@
 
             </p>
             <p>
-                <img src="/Content/Images/windows-task-scheduler-settings.webp" alt="Windows Task Scheduler: Enter password (Setting Settings :-)" class="responsive-img">
+                <img src="/content/images/windows-task-scheduler-settings.webp" alt="Windows Task Scheduler: Enter password (Setting Settings :-)" class="responsive-img">
             </p>
 
             <a href="#page-header" style="float:right">Top</a>
@@ -308,12 +308,12 @@
                 <h2 id="test">Check return code</h2>
             <p>
                 If a task ran successfully, the return code is "0x0":<br /><br />
-                <img src="/Content/Images/windows-task-scheduler-debug1.webp" alt="Windows Task Scheduler: Check return value" class="responsive-img">
+                <img src="/content/images/windows-task-scheduler-debug1.webp" alt="Windows Task Scheduler: Check return value" class="responsive-img">
             </p>
             <h2 id="taskmanager">Check background process</h2>
             Moderate CPU usage, some file usage and some internet activity are the sign of a healthy instance of <em>Ui.Vision RPA</em> or the  SeeShell browser:<br /><br />
             <p>
-                <img src="/Content/Images/windows-task-scheduler-debug2.webp" alt="Windows Task Scheduler: Find background process" class="responsive-img">
+                <img src="/content/images/windows-task-scheduler-debug2.webp" alt="Windows Task Scheduler: Find background process" class="responsive-img">
             </p>
             <p>The screenshot shows a SeeShell Browser instance. For Ui.Vision RPA, you can check the Chrome and Firefox processes, as <em>Ui.Vision RPA</em> "lives" inside these web browsers.</p>
 

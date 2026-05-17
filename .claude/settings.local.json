@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv *)",
+      "Bash(cd \"C:\\\\3github_onmac\\\\cf-ui.vision\\\\.clone\\\\worktrees\\\\eloquent-chatterjee-2c3659\" 2>/dev/null; grep -i \"/Content/\" \"C:\\\\3github_onmac\\\\cf-ui.vision\\\\.claude\\\\worktrees\\\\eloquent-chatterjee-2c3659\\\\index.html\" | head -5)",
+      "Bash(powershell -Command ' *)",
+      "Bash(git add *)"
+    ]
+  }
+}
