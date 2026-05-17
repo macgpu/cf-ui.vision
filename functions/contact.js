@@ -33,7 +33,7 @@ export async function onRequestPost({ request, env }) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Ui.Vision Contact <onboarding@resend.dev>",
+      from: "Ui.Vision Contact <contact@send.ui.vision>",
       to: env.CONTACT_TO_EMAIL ?? "team@ui.vision",
       reply_to: email,
       subject: `Contact form: ${subject}`,
