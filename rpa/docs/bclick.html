@@ -245,7 +245,7 @@
                         <tr>
                             <td>Firefox support</td>
                             <td>✅ Yes</td>
-                            <td>❌ No (clear error message)</td>
+                            <td>❌ No (not supported by FX yet)</td>
                             <td>✅ Yes</td>
                         </tr>
                         <tr>
@@ -264,13 +264,13 @@
                             <td>Image &amp; OCR text targets</td>
                             <td>❌ No</td>
                             <td>✅ Yes (built-in image search + OCR)</td>
-                            <td>✅ Yes (XModule image search)</td>
+                            <td>✅ Yes (XModule image search + OCR)</td>
                         </tr>
                         <tr>
                             <td>Works on full page (below the fold)</td>
                             <td>✅ Yes - DOM-based, element visibility does not matter</td>
-                            <td>Locators: ✅ Yes &middot; Image/OCR: viewport by default, full page via <span class="hired">visionLimitSearchArea</span></td>
-                            <td>Locators: ✅ Yes &middot; Image/OCR: visible part of the screen only</td>
+                            <td>❌ No - image/OCR search the visible viewport by default (full page via <span class="hired">visionLimitSearchArea</span> with <span class="hired">full</span>)</td>
+                            <td>❌ No - image/OCR search the visible part of the screen only</td>
                         </tr>
                         <tr>
                             <td>Scrolls element into view</td>
@@ -291,7 +291,13 @@
                             <td>✅ Yes</td>
                         </tr>
                         <tr>
-                            <td>Clicks outside the web page (dialogs, desktop apps)</td>
+                            <td>Undetectable by the website (no automation traces)</td>
+                            <td>❌ No</td>
+                            <td>❌ No - websites can detect the attached debugger</td>
+                            <td>✅ Yes - OS-level input, indistinguishable from a human</td>
+                        </tr>
+                        <tr>
+                            <td>Can click outside the web page (dialogs, desktop apps)</td>
                             <td>❌ No</td>
                             <td>❌ No</td>
                             <td>✅ Yes</td>
