@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="AI RPA Commands. Anthropic Computer Use @ Work">
-    <title>AI RPA Commands. Anthropic Computer Use @ Work</title>
+    <meta name="description" content="Ui.Vision V10 AI: an AI macro assistant that builds and fixes RPA macros for you, plus a free built-in AI tier - no API key needed. Or bring your own: Anthropic, OpenRouter or a local model.">
+    <title>Ui.Vision AI - AI Macro Assistant, Free AI Tier and Computer Use</title>
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -14,7 +14,9 @@
     <link href="/content/main/grid.css" rel="stylesheet" />
     <link href="/content/main/layout.css" rel="stylesheet" />
     <link href="/content/main/style.css" rel="stylesheet" />
-    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }
+        ul.bullets { list-style: disc outside none; padding-left: 1.6em; margin: 0 0 1em; }
+        ul.bullets li { margin-bottom: .5em; }</style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -88,63 +90,157 @@
 
 
             <p>
-                Ui.Vision integrates the power of large language models (LLM). The result is a hybrid approach to automation. This builds upon our existing foundation that combines traditional web automation with local (fast & free) computer vision/OCR.
-                Now the toolbox also includes cloud-based computer vision and the "intelligence" that Large Language Models (LLM) offer.
-                AI support is new and beta. Based on your feedback, we will improve and expand the integration with the next updates. Support for local LLM like Llama and Mistral is planed, too.
+                Ui.Vision has always combined classic web automation with local, fast and free computer vision and OCR. On top of that
+                foundation sit large language models — and <strong>Version 10 turns that AI from a set of commands into an assistant</strong>:
+                the AI tab in the side panel now builds and fixes complete macros for you. Thanks to the new free Ui.Vision AI tier it works
+                right after installation, with no API key and no signup.
             </p>
             <p>
                 <video src="/content/videos/ai-beta.mp4" controls preload="metadata" playsinline width="1280" height="720" class="responsive-img"></video>
                 </br>Ui.Vision AI in action
             </p>
+
+            <h3 id="assistant">The AI macro assistant: it writes and fixes your macros</h3>
             <p>
-                We started in version 9.3.6 with two AI commands: <a href="/ai/prompt">aiPrompt</a> and <a href="/ai/screenxy">aiScreenXY</a>.
-                With V9.3.8 we added the powerful <a href="/ai/computeruse">Computer Use</a> command. All use the Anthropic Claude API.
-                So to use them, you need to <a href="#key">generate your own API key (see below)</a>
-                and then enter the API key on the new "AI tab" in the Ui.Vision settings page.
+                Open the <span class="hiblue">AI Chat</span> tab in the Ui.Vision side panel and describe what you want in plain language —
+                <em>"create a macro that fills out this form"</em> — or press <span class="hiblue">Fix with AI</span> on a macro that just
+                failed. The assistant then works like a colleague sitting at your browser:
             </p>
             <p>
-                The AI tab in the side panel is the <em>AI macro assistant</em>: it builds and fixes macros from plain-language requests.
-                Its complete system prompt is public — see <a href="/ai/ai-system-prompt">The Ui.Vision AI System Prompt</a>. The page
-                doubles as a compact best-practices handbook for web automation and documents how to customize the prompt in
-                Settings &gt; AI. For AI crawlers, our docs are also indexed in <a href="/llms.txt">llms.txt</a> and
-                <a href="/llms-full.txt">llms-full.txt</a>.
+                <ul class="bullets">
+                    <li>It <strong>inspects the live page</strong> (the DOM) to find locators that still work on the next run.</li>
+                    <li>It <strong>writes the macro</strong> straight into the Macro tab, so you watch every command appear.</li>
+                    <li>It <strong>runs the macro</strong>, reads the log and <strong>iterates on failures</strong> until the macro works —
+                        with a cap on fix loops, so it never spins forever.</li>
+                    <li>It can <strong>capture element images itself</strong> and build image-based <a href="/rpa/docs/bclick">BClick</a>,
+                        <a href="/rpa/docs/visual-ui-testing#visualassert">visualAssert</a> and *Relative targets. The crop preview is shown
+                        right in the chat.</li>
+                    <li>It explains each action in plain language, so you can follow — and learn from — what it does.</li>
+                </ul>
             </p>
             <p>
-                <img src="/content/images/rpa-anthropic-api-key.webp" alt="How to get a (free) Anthropi API key and enter it into the RPA software" class="responsive-img">
-                </br>New AI settings tab
+                <strong>Your own macros are safe.</strong> Everything the AI creates lands in its own <span class="hired">AI_Chat</span> folder.
+                The assistant never overwrites the macros you wrote yourself.
+            </p>
+            <p>
+                Curious how it knows every Ui.Vision command and all the real-world automation tricks? We publish the assistant's complete,
+                unedited instructions: <a href="/ai/ai-system-prompt">The Ui.Vision AI System Prompt</a>. That page doubles as a compact
+                best-practices handbook for web automation — cookie-consent banners, shadow DOM, OCR text targeting, error recovery — and it
+                shows how to replace the prompt with your own in <span class="hiblue">Settings &gt; AI &gt; System Prompt</span>.
+            </p>
+
+            <h3 id="free">Free Ui.Vision AI — no API key, no signup</h3>
+            <p>
+                <img src="/content/images/rpa-free-ai-setup.webp" alt="One-time setup: choose your AI. Use the free Ui.Vision AI service, or bring your own API key." class="responsive-img">
+                </br>The one-time setup dialog in the AI Chat tab: pick the free Ui.Vision AI, or use your own AI.
+            </p>
+            <p>
+                The first time you open the AI tab, Ui.Vision asks you once which AI you want to use. Both answers are good answers:
+            </p>
+            <p>
+                <ul class="bullets">
+                    <li>
+                        <strong>"Use Ui.Vision AI — free, no setup needed"</strong> — we run the model for you. It is free during the V10 beta,
+                        and there is no signup and no API key to manage. Because it is a hosted service, your chat content (including the
+                        screenshots the assistant takes) is sent to our server for one purpose only: computing the AI answer.
+                        <strong>It is not stored.</strong>
+                    </li>
+                    <li>
+                        <strong>"I use my own AI — open settings"</strong> — bring your own API key, or point Ui.Vision at a model running on
+                        your own machine so that nothing leaves your computer at all. See <a href="#providers">the providers below</a>.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Either way, <strong>the macros themselves keep running 100% locally</strong> inside your browser extension. That is the point of
+                the local-first design: the AI helps you write and repair the automation, but replaying it — the clicking, typing, image search
+                and OCR — happens on your machine, exactly as before. You can change your choice at any time in
+                <span class="hiblue">Settings &gt; AI</span>.
+            </p>
+
+            <h3 id="providers">Bring your own AI: Anthropic, OpenRouter or a local model</h3>
+            <p>
+                Prefer to use your own account or your own hardware? Ui.Vision V10 supports three kinds of providers, both for the AI chat and
+                for the <a href="/ai/computeruse">aiComputerUse</a> command:
+            </p>
+            <p>
+                <ul class="bullets">
+                    <li><strong>Anthropic</strong> — Claude models, with your own API key. <a href="#key">Getting a key takes two steps</a>.</li>
+                    <li><strong>OpenRouter</strong> — one key, many models, including open-weight ones such as Qwen3 VL.</li>
+                    <li><strong>Local, OpenAI-compatible endpoints</strong> — run an open-weight model (again, Qwen3 VL is a good vision-capable
+                        choice) on your own machine and point Ui.Vision at it. Nothing ever leaves your computer.</li>
+                </ul>
+            </p>
+            <p>
+                <img src="/content/images/rpa-anthropic-api-key.webp" alt="How to enter your own AI API key into the Ui.Vision RPA software" class="responsive-img">
+                </br>The AI settings tab
             </p>
 
             <h3 id="key">How to get an Anthropic API key in two steps</h3>
-
-            <h4 id="">Step 1: Create an Anthropic Console Account</h4>
+            <p>
+                You only need this if you chose "I use my own AI" and want to use Anthropic Claude. With the free Ui.Vision AI tier, you can
+                skip this section entirely.
+            </p>
+            <h4>Step 1: Create an Anthropic Console Account</h4>
             <p>
                 Visit the <a href="https://console.anthropic.com/dashboard">Anthropic Console</a> and sign up for an account.
             </p>
-            <h4 id="">Step 2: Go to Console Dashboard</h4>
+            <h4>Step 2: Go to Console Dashboard</h4>
             <p>
-                The "Get API keys" button is directly on the dashboard. Here, you can generate a new API key by clicking on the 'Create API Key' button. Now enter the key into  Ui.Vision.
+                The "Get API keys" button is directly on the dashboard. Here, you can generate a new API key by clicking on the 'Create API Key'
+                button. Now enter the key into Ui.Vision.
             </p>
             <p>
                 <img src="/content/images/rpa-anthropic-dashboard-key.webp" alt="How to get an Anthropic API key and enter it into the RPA software" class="responsive-img">
                 </br>Anthropic Dashboard
             </p>
-
-            <p>
-                Note: There used to be a free $5 API credit after signing up & verifying your phone number. But it seems this offer is gone.
-                As a cost benchmark, the Anthropic API cost of running the below four demo macros is 0.02 US$:
-            </p>
-            <p>
-                <img src="/content/images/rpa-anthropic-cost-benchmark.webp" alt="As a cost benchmark, the Anthropic API cost of running these four demo macros is 0.02 US$." class="responsive-img">
-                </br>Anthropic API cost benchmark for aiPrompt and aiScreenXY. See also <a href="/ai/computeruse#vs">aiScreenXY vs aiComputerUse</a>        
-            </p>
             <p>
                 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4Tzs4qunYJY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <br />There are many good video tutorials that show how to sign up for a Anthropic API key. This is one of them.
             </p>
-
             <p>
-                <img src="/content/images/rpa_ai_demo.jpg" alt="Anthropic Claude and Computer Use Demo macros" class="responsive-img">
-                </br>Test <a href="/ai/computeruse">Computer Use</a> and <a href="/ai">other AI commands</a> with the demo macros.
+                What does it cost? As a benchmark, the Anthropic API cost of running the four AI demo macros is 0.02 US$. (There used to be a
+                free $5 API credit after signing up and verifying your phone number, but that offer seems to be gone — which is one more reason
+                we added the <a href="#free">free Ui.Vision AI tier</a>.)
+            </p>
+            <p>
+                <img src="/content/images/rpa-anthropic-cost-benchmark.webp" alt="As a cost benchmark, the Anthropic API cost of running these four demo macros is 0.02 US$." class="responsive-img">
+                </br>API cost benchmark for aiPrompt and aiScreenXY. See also <a href="/ai/computeruse#vs">aiScreenXY vs aiComputerUse</a>
+            </p>
+
+            <h3 id="commands">The AI commands for your macros</h3>
+            <p>
+                Next to the chat assistant, Ui.Vision has AI commands that you can use <em>inside</em> a macro, so AI becomes one step of a
+                larger automation:
+            </p>
+            <p>
+                <ul class="bullets">
+                    <li><a href="/ai/prompt">aiPrompt</a> — send any text prompt to the LLM and store the answer in a variable. Added in V9.3.6.</li>
+                    <li><a href="/ai/screenxy">aiScreenXY</a> — describe an element in words and get its X/Y screen coordinates back. Added in V9.3.6.</li>
+                    <li><a href="/ai/computeruse">aiComputerUse</a> — hand a whole task to the AI agent and let it drive browser and desktop.
+                        Added in V9.3.8.</li>
+                </ul>
+            </p>
+            <p>
+                <img src="/content/images/rpa_ai_demo.jpg" alt="AI chat, Claude and Computer Use demo macros in Ui.Vision RPA" class="responsive-img">
+                </br>Test <a href="/ai/computeruse">Computer Use</a> and the other AI commands with the preinstalled demo macros.
+            </p>
+
+            <h3 id="docs">More documentation — for humans and for AI</h3>
+            <p>
+                <ul class="bullets">
+                    <li><a href="/ai/ai-system-prompt">The Ui.Vision AI System Prompt</a> — the complete system prompt of the macro assistant,
+                        and a best-practices handbook for web automation.</li>
+                    <li><a href="/rpa/home/whatsnew#10">What's new in Version 10</a> — the full V10 release notes.</li>
+                    <li><a href="/rpa/docs">RPA docs</a> and the <a href="/rpa/docs/selenium-ide">command reference</a>.</li>
+                    <li>Writing about Ui.Vision with an AI, or building an agent on top of it? Our documentation is available in the
+                        <a href="https://llmstxt.org/">llms.txt</a> format: <a href="/llms.txt">llms.txt</a> for the index and
+                        <a href="/llms-full.txt">llms-full.txt</a> for the full text.</li>
+                </ul>
+            </p>
+            <p>
+                AI support keeps evolving, and V10 is a beta. Based on your feedback in the <a href="https://forum.ui.vision/">user forum</a>,
+                we will improve and expand the integration with the next updates.
             </p>
 
             <h3>Anything wrong or missing on this page? Suggestions?</h3>
