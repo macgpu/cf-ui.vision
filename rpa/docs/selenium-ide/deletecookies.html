@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="deleteallvisiblecookies, deleteallcookies, deleteCookie, CLEAR (iMacros)   - Selenium IDE Commands Tutorial">
-    <title>deleteallvisiblecookies, deleteallcookies, deleteCookie, CLEAR (iMacros)   - Selenium IDE Commands Tutorial</title>
+    <meta name="description" content="deleteCookies (formerly deleteAllCookies) deletes all cookies of the current website - Selenium IDE Commands Tutorial">
+    <title>deleteCookies (formerly deleteAllCookies) - Selenium IDE Commands Tutorial</title>
+    <link rel="canonical" href="https://ui.vision/rpa/docs/selenium-ide/deletecookies" />
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -70,14 +71,14 @@
             </div>
         </div>
     </div>
-﻿
+
 
 <div id="content">
     <!--  CONTENT   -->
     <div id="page-header" class="page-extension">
         <div class="row">
             <div class="span12 whitebg">
-                <h1><span>deleteallvisiblecookies</span> - Classic Firefox Selenium IDE</h1>
+                <h1><span>deleteCookies</span> - Selenium IDE</h1>
             </div>
         </div>
     </div>
@@ -85,18 +86,50 @@
     <div class="row">
         <div class="span12">
             <h3 class="headline">
-                <span>deleteallvisiblecookies (current domain) - Selenium IDE command</span>
+                <span>deleteCookies (formerly deleteAllCookies) - Selenium IDE command</span>
             </h3>
-        </div> 
+        </div>
 
         <div class="span12">
 
-            <p> <span class="hired">deleteallvisiblecookies</span> is a deleteCookie on all cookies visible to the current page.</p>
+            <p>The <span class="hired">deleteCookies</span> command deletes all cookies of the <strong>current website</strong> - the site loaded in the macro's browser tab. It does <em>not</em> touch the cookies of any other website, and it does not clear the cache or local storage.</p>
 
-            <p>IMPORTANT: This command is called <a href="/rpa/docs/selenium-ide/deletecookies">deleteCookies</a> in the <em>Ui.Vision RPA</em> for Chrome Selenium IDE.</p>
+            <p>The command was previously called <span class="hired">deleteAllCookies</span>. It was renamed because the old name suggested it deletes every cookie in the browser, which it never did. Existing macros that use the old <em>deleteAllCookies</em> name continue to work - the old spelling is accepted silently, no change needed.</p>
 
+            <p>
+                <strong>Command:</strong> deleteCookies<br />
+                <strong>Target:</strong> (empty)<br />
+                <strong>Value:</strong> (empty)
+            </p>
 
-           <h3>Firefox Selenium IDE deleteallvisiblecookies Example</h3>
+            <h3>When to use it</h3>
+
+            <p><span class="hired">deleteCookies</span> is the standard "clean up" command at the start of a test or macro:</p>
+
+            <p><strong>Reproducible macros:</strong> Many websites (travel search, shops, configurators) restore your previous search or form entries from cookies. A macro can then <em>look</em> correct while actually doing nothing - the values were restored by the site, not entered by the macro. Placing <em>deleteCookies</em> at the start of the macro guarantees every run starts from the same clean state.</p>
+
+            <p><strong>Testing login flows:</strong> Deleting the site's cookies logs you out of that site, so a login macro can be tested repeatedly.</p>
+
+            <p><strong>Consent banners:</strong> After <em>deleteCookies</em>, the website treats you as a first-time visitor - cookie/consent banners will appear again. Make sure the macro handles the banner (for example with <a href="/rpa/docs/bclick">BClickText</a> on the accept button's text, wrapped so it is optional).</p>
+
+            <p><strong>Note:</strong> Since the command logs you out of the current website and brings back consent banners, use it deliberately - for example, only in test macros, not in macros that rely on an existing login session.</p>
+
+            <p>A useful combination is <span class="hired">deleteCookies</span> together with <a href="/rpa/docs/selenium-ide/selectwindow#CLOSEALLOTHER">selectWindow | tab=closeallother</a> to reset the whole test environment.</p>
+
+            <h3>What it does not delete</h3>
+
+            <p>
+                - Cookies of other websites (only the current site's cookies are removed)<br />
+                - Cache, browsing history, local storage and session storage
+            </p>
+
+            <p>If you need a more thorough reset, two alternatives:</p>
+
+            <p>1. Run the macro in the browser's <strong>incognito/private mode</strong> - this also isolates cache and storage. Just remember to <span class="hired">check the "Allow in incognito" box</span> for your <em>Ui.Vision RPA</em> addon on the Chrome extension page.</p>
+
+            <p>2. Simulate the <strong>"Clear Browsing Data"</strong> keyboard shortcut (with <a href="/rpa/docs/xtype">XType</a>, RealUser Simulation XModule required) to delete cookies, browsing history and cache in one step - see <a href="https://forum.ui.vision/t/how-to-clear-cache-of-chrome-while-using-itunes/4404/3">this forum post</a> for details.</p>
+
+           <h3>deleteCookies Example</h3>
 
             <p>
                 <table class="table table-bordered">
@@ -107,10 +140,15 @@
                     </thead>
                     <tbody>
 
+                        <tr class="success">
+                            <td>deleteCookies</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
 
                         <tr class="success">
-                            <td>deleteallvisiblecookies</td>
-                            <td></td>
+                            <td>open</td>
+                            <td>https://ui.vision/</td>
                             <td></td>
                         </tr>
 
@@ -118,9 +156,11 @@
                 </table>
             </p>
 
+            <p>A good page for testing cookie behavior is <a href="http://www.html-kit.com/tools/cookietester/">http://www.html-kit.com/tools/cookietester/</a>.</p>
+
             <h3>Works in</h3>
             <p>
-                <em>Ui.Vision RPA</em> for Chrome <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a>
+                <em>Ui.Vision RPA</em> for Chrome and Edge <a href="/">Selenium IDE</a>,  <em>Ui.Vision RPA</em> for Firefox <a href="/">Selenium IDE</a>,   <a href="/howto/getseleniumide/">Firefox IDE Classic</a> (there historically called <a href="/rpa/docs/selenium-ide/deleteallvisiblecookies">deleteallvisiblecookies</a>).
             </p>
 
             <h3>Related Demo Macros</h3>
@@ -128,8 +168,8 @@
                 <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
 
                 <h3>See also</h3>
-                <p><a href="/rpa/docs/selenium-ide/storeeval">storeeval</a>,
-
+                <p><a href="/rpa/docs/selenium-ide/selectwindow">selectWindow</a>,
+                    <a href="/rpa/docs/selenium-ide/executescript">executeScript_Sandbox</a>,
                     <a href="/rpa/docs/">Web Automation Extension</a> User Manual,
     <a href="/rpa/docs/selenium-ide/">Selenium IDE commands</a>, <a href="/rpa/docs/selenium-ide/oldfirefoxide">Classic Firefox Selenium IDE</a>.
 </p>
@@ -181,6 +221,6 @@
     <script src="/scripts/a9t9scripts.js"></script>
     <script src="/scripts/layout/plugins.js"></script>
     <script src="/scripts/layout/script.js"></script>
-    
+
 </body>
 </html>
