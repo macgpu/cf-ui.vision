@@ -1,0 +1,36 @@
+# Ui.Vision RPA
+
+> Ui.Vision RPA is open-source RPA (robotic process automation) software: a browser extension for Chrome, Edge and Firefox that automates websites and — with the RealUser Simulation XModule — desktop applications. It combines classic Selenium-IDE-style web automation with computer vision (image search, visual UI testing), OCR screen scraping, and AI integration (an AI macro assistant plus aiPrompt / aiComputerUse / aiScreenXY commands using Anthropic Claude).
+
+Macros are stored as JSON, run locally in the user's browser (no cloud), and can be triggered from the command line, from bookmarks, or via the API. Free core, with PRO/Enterprise licensing for advanced XModule features.
+
+## Docs
+
+- [RPA docs home](https://ui.vision/rpa/docs): starting point for all documentation
+- [Command reference (Selenium IDE++)](https://ui.vision/rpa/docs/selenium-ide): every web automation command with syntax and examples
+- [Internal variables](https://ui.vision/rpa/docs/selenium-ide/internal-variables): !timeout_wait, !imageX/!imageY, !statusOK, !errorignore, ...
+- [Visual UI testing](https://ui.vision/rpa/docs/visual-ui-testing): visualAssert/visualSearch, visionLimitSearchArea, #efp (elementFromPoint), pixel color
+- [XClick & desktop automation](https://ui.vision/rpa/x/desktop-automation): OS-level real-user input via the XModules
+- [OCR & screen scraping](https://ui.vision/rpa/x/desktop-automation/screen-scraping): OCRExtract and text-based targeting
+- [Web scraping](https://ui.vision/rpa/docs/selenium-ide/web-scraping): storeAttribute, csvSave, saveItem download patterns
+- [Error codes & troubleshooting](https://ui.vision/rpa/docs): E225, #301 XModule missing, and other common errors
+
+## AI
+
+- [AI integration docs](https://ui.vision/ai): overview of the AI features
+- [The AI system prompt](https://ui.vision/ai/ai-system-prompt): the complete system prompt of the AI macro assistant — also a compact best-practices handbook (cookie banners, shadow DOM, OCR targeting, error recovery)
+- [aiPrompt](https://ui.vision/ai/prompt): send text + images to the LLM from a macro
+- [aiComputerUse](https://ui.vision/ai/computeruse): Anthropic computer-use automation steps
+- [aiScreenXY](https://ui.vision/ai/screenxy): AI-found screen coordinates for clicks
+
+## Community
+
+- [User forum](https://forum.ui.vision/): support, bug reports, feature requests — read by the developers
+- [Source code on GitHub](https://github.com/A9T9/RPA): the FULL extension source code is public — consult it for implementation-level questions
+- [Contact](https://ui.vision/contact)
+
+## Optional
+
+- [XModules download & install](https://ui.vision/rpa/x)
+- [Pricing (PRO / Enterprise)](https://ui.vision/rpa/x/pricing)
+- [About a9t9 software GmbH](https://ui.vision/about)
