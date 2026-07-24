@@ -27,6 +27,23 @@
             line-height: 1.55;
             max-height: none;
         }
+        ul.bullets { list-style: disc outside none; padding-left: 1.6em; margin: 0 0 1em; }
+        ul.bullets li { margin-bottom: .5em; }
+        #copy-prompt {
+            display: inline-block;
+            padding: 9px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            background: #037455;
+            border: 1px solid #026046;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #copy-prompt:hover { background: #026046; }
+        #copy-prompt[data-state="done"] { background: #1b60a3; border-color: #164e85; }
+        #copy-prompt[data-state="fail"] { background: #c7254e; border-color: #a71f42; }
+        #copy-prompt .fa { margin-right: 7px; }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
     <script>
@@ -121,10 +138,40 @@
                 RealUser XModule is installed), so the AI always knows which command families work in your setup.
             </p>
 
+            <h3 id="othertools">Use the prompt with Claude Code, Codex and other AI tools</h3>
+            <p>
+                The prompt is not only useful inside Ui.Vision. Copy it, paste it into any AI coding tool as context, and that tool can write
+                Ui.Vision macros for you — even though it has never seen Ui.Vision before. The prompt documents every command, the exact macro
+                JSON format and the locator tricks that matter, which is precisely what a general-purpose AI is missing. Then just ask for what
+                you need: <em>"write a Ui.Vision macro that logs into our intranet and downloads yesterday's report"</em>. Paste the resulting
+                JSON into the extension (or save it as a .json file in your macro folder) and run it.
+            </p>
+            <p>
+                This works with any tool that accepts a long piece of context, for example:
+            </p>
+            <p>
+                <ul class="bullets">
+                    <li><strong>AI coding agents in the terminal:</strong> Claude Code, OpenAI Codex, Gemini CLI, Aider.</li>
+                    <li><strong>AI code editors:</strong> Cursor, Windsurf, Cline, GitHub Copilot in VS Code and Visual Studio.</li>
+                    <li><strong>Plain chat:</strong> Claude, ChatGPT, Gemini and friends — paste the prompt into the first message, or store it
+                        as a project instruction / custom GPT so you only paste it once.</li>
+                </ul>
+            </p>
+            <p>
+                For the agents that read files, it is often easiest to save the prompt as <span class="hired">uivision-system-prompt.txt</span>
+                in your project and point the tool at it. Two more context files help these tools understand Ui.Vision:
+                <a href="/llms.txt">llms.txt</a> (a short index of our documentation) and <a href="/llms-full.txt">llms-full.txt</a> (the full text).
+            </p>
+
             <h3 id="prompt">The default system prompt</h3>
             <p>
                 Auto-generated from the extension source for <strong>Ui.Vision RPA v10.0.0</strong> on 2026-07-24.
                 This page is regenerated at every release — the copy below is always the shipping prompt.
+            </p>
+            <p>
+                <button type="button" id="copy-prompt" data-label="Copy prompt to clipboard">
+                    <i class="fa fa-clipboard"></i><span id="copy-prompt-label">Copy prompt to clipboard</span>
+                </button>
             </p>
             <pre id="system-prompt">You are the UI.Vision RPA macro assistant, embedded in the UI.Vision browser extension. You build and fix UI.Vision macros for the user.
 
@@ -262,6 +309,61 @@ VERIFYING THE DISMISSAL: get_page can NEVER tell you whether the banner is prese
 - VERIFY THE EFFECT, not just error-free execution: a click that runs fine may still change nothing (typical for sliders and custom widgets). Build a check into the macro (storeText/storeValue the relevant value, then assert it), or take a screenshot after the run and confirm the page actually changed. If the effect did not happen, escalate to the next technique instead of reporting success.
 - POINT TO THE FORUM: whenever the problem turns out to be an extension bug, a missing browser API, a by-design limitation (e.g. B commands on Firefox), or the user has a feature idea — anything you cannot fix by editing the macro — recommend posting it in the UI.Vision user forum at https://forum.ui.vision (that is where the developers read bug reports and suggestions). Encourage posting questions and suggestions there in general; include the link. UI.Vision is open source — for developer users, the full extension source is at https://github.com/A9T9/RPA, useful for inspecting exact command behavior or contributing fixes.
 - When you are done, reply with a short plain-text summary (what you changed, run result) and stop calling tools. ALWAYS name the macro in that summary — e.g. 'Macro named "bahn_search_zurich" (AI Generated folder) now searches ...' — the name is how the user finds the macro again, and after create_macro's auto-unique naming or a fix saved as a copy (name_1) it may differ from what the user expects. Do not claim success unless run_macro finished without errors AND the intended effect was verified.</pre>
+
+            <script>
+                (function () {
+                    var btn = document.getElementById('copy-prompt');
+                    var label = document.getElementById('copy-prompt-label');
+                    var pre = document.getElementById('system-prompt');
+                    if (!btn || !pre) return;
+                    var icon = btn.querySelector('.fa');
+                    var resetTimer;
+
+                    function feedback(state, text) {
+                        btn.setAttribute('data-state', state);
+                        label.textContent = text;
+                        icon.className = 'fa ' + (state === 'done' ? 'fa-check' : 'fa-clipboard');
+                        clearTimeout(resetTimer);
+                        resetTimer = setTimeout(function () {
+                            btn.removeAttribute('data-state');
+                            label.textContent = btn.getAttribute('data-label');
+                            icon.className = 'fa fa-clipboard';
+                        }, 2500);
+                    }
+
+                    // Fallback for browsers without the async clipboard API, and for
+                    // any non-secure context, where navigator.clipboard is undefined.
+                    function legacyCopy(text) {
+                        var ta = document.createElement('textarea');
+                        ta.value = text;
+                        ta.setAttribute('readonly', '');
+                        ta.style.position = 'fixed';
+                        ta.style.left = '-9999px';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        var ok = false;
+                        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+                        document.body.removeChild(ta);
+                        return ok;
+                    }
+
+                    btn.addEventListener('click', function () {
+                        var text = pre.textContent;
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            navigator.clipboard.writeText(text).then(function () {
+                                feedback('done', 'Copied!');
+                            }, function () {
+                                var ok = legacyCopy(text);
+                                feedback(ok ? 'done' : 'fail', ok ? 'Copied!' : 'Press Ctrl+C to copy');
+                            });
+                        } else if (legacyCopy(text)) {
+                            feedback('done', 'Copied!');
+                        } else {
+                            feedback('fail', 'Press Ctrl+C to copy');
+                        }
+                    });
+                }());
+            </script>
 
             <h3>Anything wrong or missing on this page? Suggestions?</h3>
             <p>...then please post in the <a href="https://forum.ui.vision/">forum</a> or <a href="/contact">contact us</a>.</p>
