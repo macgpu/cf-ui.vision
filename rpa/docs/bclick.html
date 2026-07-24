@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="BClick, BType and Co - Browser Vision Commands (Beta). Real, trusted mouse and keyboard input for browser automation without installing the XModules. Robotic Process Automation (RPA)">
+    <title>BClick, BType &amp; Co - Browser Vision Commands (Beta), Robotic Process Automation (RPA)</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/content/main/base.css" rel="stylesheet" />
+    <link href="/content/main/elements.css" rel="stylesheet" />
+    <link href="/content/main/grid.css" rel="stylesheet" />
+    <link href="/content/main/layout.css" rel="stylesheet" />
+    <link href="/content/main/style.css" rel="stylesheet" />
+    <style>ul { list-style: none outside none; padding-left: 0; margin: 0; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/content/images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ui.vision/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ui.vision">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+<div id="content download-content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-download">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>BClick</span>, <span>BType</span> &amp; Co - Browser Vision Commands (Beta)</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>BClick (target, click type)</span>, <span>BMove (target, mouse event)</span>, <span>BType (text)</span>
+            </h3>
+        </div>
+        <div class="span12">
+
+            <p><em>New in Ui.Vision Version 10</em></p>
+
+            <p>
+                The new <span class="hiblue">B command family</span> brings real, trusted mouse and keyboard input to browser automation -
+                <em>without installing the Ui.Vision <a href="/rpa/x">XModules</a></em>. B commands send input events through the browser's own
+                debugging interface (Chrome DevTools Protocol), so from the website's point of view they are indistinguishable from a real user.
+            </p>
+            <p>
+                They sit exactly between the classic Selenium-style <a href="/rpa/docs/selenium-ide/click">Click</a> (fast, but "synthetic" DOM
+                events that some websites ignore) and <a href="/rpa/docs/xclick">XClick</a> (true OS-level input, but requires the XModule and a
+                visible browser window).
+            </p>
+
+            <h3 id="commands">The command family</h3>
+            <p>
+                <table class="table table-bordered" id="code">
+                    <thead>
+                    <th class="col-md-3">Command</th>
+                    <th class="col-md-8">What it does</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="hired">BClick</span></td>
+                            <td>Click on an image, OCR text, locator, or x,y coordinate</td>
+                        </tr>
+                        <tr>
+                            <td><span class="hired">BClickText</span></td>
+                            <td>Click on a text found via OCR</td>
+                        </tr>
+                        <tr>
+                            <td><span class="hired">BClickTextRelative</span></td>
+                            <td>Click relative to an OCR text anchor (<span class="hired">word#R10,20</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="hired">BClickRelative</span></td>
+                            <td>Click relative to a <a href="/rpa/docs/xclick#relative">green/pink anchor image</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="hired">BMove</span></td>
+                            <td>Move the mouse (supports <span class="hired">#down</span>, <span class="hired">#up</span> for drag &amp; drop)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="hired">BMoveText</span> / <span class="hired">BMoveTextRelative</span> / <span class="hired">BMoveRelative</span></td>
+                            <td>Mouse move variants of the above</td>
+                        </tr>
+                        <tr>
+                            <td><span class="hired">BType</span></td>
+                            <td>Type text with real keyboard events, including <span class="hired">${KEY_...}</span> tokens and key combos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <p>
+                Target syntax is <span class="hiblue">fully XClick-compatible</span>: you can take an existing macro and replace
+                <span class="hired">XClick</span> with <span class="hired">BClick</span> - images (<span class="hired">button.png@0.8</span>),
+                OCR text (<span class="hired">ocr=Submit</span>), Selenium locators (<span class="hired">id=</span>, <span class="hired">css=</span>,
+                <span class="hired">xpath=</span>), and viewport coordinates all work the same way.
+            </p>
+
+            <h3 id="advantages">Advantages</h3>
+            <p>
+                <ul style="list-style: disc outside none; padding-left: 20px;">
+                    <li>
+                        <span class="hiblue">No XModule needed.</span> Everything runs inside the browser extension, including image search
+                        (built-in SIMD-accelerated WASM engine) and OCR (Javascript or Cloud OCR engine). Works on any OS the browser runs on -
+                        including systems where you cannot install native apps.
+                    </li>
+                    <li>
+                        <span class="hiblue">100% local processing.</span> Image recognition and the default Javascript OCR run entirely on your
+                        machine - no screenshots or page data leave the browser.
+                    </li>
+                    <li>
+                        <span class="hiblue">Trusted, real input events.</span> Unlike <span class="hired">Click</span>, which fires JavaScript DOM
+                        events, B commands dispatch input at the browser level. Websites that ignore synthetic events (canvas apps, React/Vue
+                        widgets with strict event checking, drag &amp; drop) respond as if a human clicked.
+                    </li>
+                    <li>
+                        <span class="hiblue">Browser window can stay in the background.</span> <span class="hired">XClick</span> moves the real
+                        OS mouse cursor, so the browser window must be visible and in front. B commands target the tab directly - you can keep
+                        working in another window while the macro runs.
+                    </li>
+                    <li>
+                        <span class="hiblue">Visual + OCR targeting out of the box.</span> Find click targets by image or by text on the screen,
+                        no locators required - great for sites with unstable DOM structures.
+                    </li>
+                    <li>
+                        <span class="hiblue">Drag &amp; drop and key combos.</span> <span class="hired">BMove</span> with
+                        <span class="hired">#down</span>/<span class="hired">#up</span> holds mouse buttons across steps;
+                        <span class="hired">BType</span> supports modifier keys and <span class="hired">${KEY_*}</span> tokens.
+                    </li>
+                    <li>
+                        <span class="hiblue">Animated cursor.</span> During replay an animated cursor shows where the B command clicks, making
+                        debugging easy.
+                    </li>
+                </ul>
+            </p>
+
+            <h3 id="limitations">Limitations</h3>
+            <p>
+                <ul style="list-style: disc outside none; padding-left: 20px;">
+                    <li>
+                        <span class="hiblue">Chromium only.</span> B commands work in <em>Chrome and Edge</em>. Firefox does not expose the
+                        required debugger API - in Firefox, B commands stop with a clear error message telling you to use
+                        <span class="hired">Click</span> or <span class="hired">XClick</span> instead.
+                    </li>
+                    <li>
+                        <span class="hiblue">Browser content only.</span> B commands cannot click outside the web page - no browser dialogs,
+                        file pickers, other apps, or the desktop. Desktop coordinates (<span class="hired">Dx,y</span>) and desktop vision scope
+                        are rejected with an error; use <a href="/rpa/docs/xclick">XClick</a>/<a href="/rpa/docs/xtype">XType</a> (XModule) for
+                        <a href="/rpa/x/desktop-automation">desktop automation</a>.
+                    </li>
+                    <li>
+                        <span class="hiblue">Debugger banner.</span> While a B command runs, Chrome shows its standard
+                        "UI.Vision is debugging this browser" info bar on the automated tab.
+                    </li>
+                    <li>
+                        <span class="hiblue">Visual search area.</span> Image and OCR targets are searched in the <em>visible viewport by default</em>.
+                        Use <a href="/rpa/docs/visual-ui-testing#visionlimitsearcharea">visionLimitSearchArea</a> with <span class="hired">full</span>
+                        to search the whole page (Ui.Vision scroll-captures it automatically), or <span class="hired">element:...</span> to restrict
+                        the search area.
+                    </li>
+                    <li>
+                        <span class="hiblue">OCR engines.</span> All <a href="/rpa/docs/ocr">OCR engines</a> work with B commands. The "Local" OCR
+                        engine (engine 99) requires the XModule to be installed - without it, use the built-in Javascript OCR (Tesseract) or the
+                        Cloud OCR engines.
+                    </li>
+                </ul>
+            </p>
+
+            <h3 id="comparison">Click vs. BClick vs. XClick</h3>
+            <p>
+                <table class="table table-bordered" id="code">
+                    <thead>
+                    <th class="col-md-3">Aspect</th>
+                    <th class="col-md-3">Click</th>
+                    <th class="col-md-3">BClick (new)</th>
+                    <th class="col-md-3">XClick</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Input method</td>
+                            <td>Synthetic DOM/JavaScript event</td>
+                            <td>Real browser input via debugger API (CDP)</td>
+                            <td>Native OS-level input</td>
+                        </tr>
+                        <tr>
+                            <td>Browsers</td>
+                            <td>Chrome, Edge, Firefox</td>
+                            <td>Chrome, Edge</td>
+                            <td>Chrome, Edge, Firefox</td>
+                        </tr>
+                        <tr>
+                            <td>Firefox support</td>
+                            <td>✅ Yes</td>
+                            <td>❌ No (not supported by FX yet)</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>XModule required</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>Yes (free <a href="/rpa/x">Ui.Vision XModules</a>)</td>
+                        </tr>
+                        <tr>
+                            <td>Selenium locators (<span class="hired">id=</span>, <span class="hired">css=</span>, <span class="hired">xpath=</span>)</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Image &amp; OCR text targets</td>
+                            <td>❌ No</td>
+                            <td>✅ Yes (built-in image search + OCR)</td>
+                            <td>✅ Yes (XModule image search + OCR)</td>
+                        </tr>
+                        <tr>
+                            <td>Works on full page (below the fold)</td>
+                            <td>✅ Yes - DOM-based, element visibility does not matter</td>
+                            <td>❌ No - image/OCR search the visible viewport by default (full page via <span class="hired">visionLimitSearchArea</span> with <span class="hired">full</span>)</td>
+                            <td>❌ No - image/OCR search the visible part of the screen only</td>
+                        </tr>
+                        <tr>
+                            <td>Scrolls element into view</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes (locator targets)</td>
+                            <td>✅ Yes (locator targets)</td>
+                        </tr>
+                        <tr>
+                            <td>Browser window can be in background</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>❌ No - window must be visible and in front</td>
+                        </tr>
+                        <tr>
+                            <td>Seen by website as real user input</td>
+                            <td>❌ No - some sites ignore it</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Undetectable by the website (no automation traces)</td>
+                            <td>❌ No</td>
+                            <td>❌ No - websites can detect the attached debugger</td>
+                            <td>✅ Yes - OS-level input, indistinguishable from a human</td>
+                        </tr>
+                        <tr>
+                            <td>Can click outside the web page (dialogs, desktop apps)</td>
+                            <td>❌ No</td>
+                            <td>❌ No</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                            <td>Fastest</td>
+                            <td>Fast</td>
+                            <td>Depends on screen/vision search</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+            <h3 id="which">Which one should I use?</h3>
+            <p>
+                <ul style="list-style: disc outside none; padding-left: 20px;">
+                    <li>
+                        <span class="hired">Click</span> - your default for standard web forms and links. Fastest, works in every browser.
+                    </li>
+                    <li>
+                        <span class="hired">BClick</span> - when a site ignores <span class="hired">Click</span> (canvas, drag &amp; drop,
+                        "protected" widgets), when you want image/OCR targeting without installing anything, or when the macro must run while
+                        the browser is in the background.
+                    </li>
+                    <li>
+                        <span class="hired">XClick</span> - when you need Firefox with real input, need to click browser dialogs or native apps,
+                        or already use the XModule for <a href="/rpa/x/desktop-automation">desktop automation</a>.
+                    </li>
+                </ul>
+            </p>
+
+            <h3 id="demomacros">Demo macros</h3>
+            <p>
+                The <span class="hiblue">"Browser Vision (Beta)"</span> folder (preinstalled with Version 10) contains four demo macros showing
+                image targets, OCR text targets, relative clicks, and drag &amp; drop with the B commands.
+            </p>
+            <p>The ready-to-import-and-run source code of all demo macros can be found in the <a href="https://github.com/A9T9/RPA/tree/master/macros">Open-Source RPA software</a> Github repository.</p>
+
+            <h3>Works in</h3>
+            <p>
+                <em>Ui.Vision RPA</em> for Chrome and Edge. No XModule installation required. In Firefox, B commands stop with an error message -
+                use <a href="/rpa/docs/selenium-ide/click">Click</a> or <a href="/rpa/docs/xclick">XClick</a> there instead.
+            </p>
+
+            <h3>See also</h3>
+            <p>
+                <a href="/rpa/docs/xclick">XClick</a>,
+                <a href="/rpa/docs/xclick#xmove">XMove</a>,
+                <a href="/rpa/docs/xtype">XType</a>,
+                <a href="/rpa/docs/visual-ui-testing">Visual UI Testing</a>,
+                <a href="/rpa/docs/ocr">OCR</a>,
+                <a href="/rpa/x/">XModules</a> User Manual
+            </p>
+
+            <h3>Feedback</h3>
+            <p>
+                Feedback on the beta is very welcome in the <a href="https://forum.ui.vision/">Ui.Vision forum</a>.
+            </p>
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ui.vision/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ui.vision/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ui.vision/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ui.vision">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>. Website Version: <span id="site-version">V5.17</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/jquery-2.1.3.min.js"></script>
+    <script src="/scripts/modernizr-2.6.2.js"></script>
+    <script src="/scripts/basic/bootstrap.min.js"></script>
+    <script src="/scripts/a9t9scripts.js"></script>
+    <script src="/scripts/layout/plugins.js"></script>
+    <script src="/scripts/layout/script.js"></script>
+
+</body>
+</html>

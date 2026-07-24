@@ -12,7 +12,9 @@
       "Bash(git grep *)",
       "Bash(xargs -0 sed -i 's/forum\\\\.ocr\\\\.space/forum.ui.vision/g')",
       "Bash(git commit -m 'Replace forum.ocr.space links with forum.ui.vision *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "PowerShell(git add rpa/docs/bclick.html rpa/docs/xclick.html rpa/home/whatsnew.html)",
+      "PowerShell(git push)"
     ]
   }
 }

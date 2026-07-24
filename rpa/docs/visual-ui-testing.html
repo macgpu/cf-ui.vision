@@ -185,7 +185,7 @@
             <h3 id="visionlimitsearcharea">visionLimitSearchArea (viewport/full/area=x1,y1,x2,y2)</h3>
 
             <p>
-                The visionLimitSearchArea allows you to switcg the search area from viewport
+                The visionLimitSearchArea allows you to switch the search area from viewport
                 (the part of the website that is currently visible in the browser)
                 to full page. 
             </p>
@@ -200,11 +200,17 @@
             <p>To change a limited search area, just use the command again with the new area.</p>
             <p>
                 The screenshot that is used as input for the image search commands is available
-                as "_lastscreenshot" in the screenshot tab. This can be useful for debugging,
+                as "__lastscreenshot" in the screenshot tab. This can be useful for debugging,
                 so you can see on what image the image search was done.
             </p>
             <p>The visual restrictions apply to all visual commands: visualAssert, visualVerify, visualSearch, XClick (image), <a href="/rpa/docs/xclick#ocr">XClick (ocr=text)</a> and XMove.</p>
 
+            <p>
+                In web UI testing mode the command also accepts <span class="hired">element:&lt;locator&gt;</span> as target (e. g. element:xpath=ion-list[3]),
+                which limits the search area to the rectangle of that DOM element. However, this variant is rarely used and can be unstable —
+                the other methods to limit the search area (area=, <a href="#visionlimitsearcharearelative">visionLimitSearchAreaRelative</a>
+                and <a href="#visionlimitsearchareabytextrelative">visionLimitSearchAreaBYTEXTRelative</a>) are the better choice.
+            </p>
             <p>
                 Related forum posts: <a href="https://forum.ui.vision/t/anyone-know-how-can-dynamic-content-be-ignored-if-if-i-am-doing-visual-assert/5758/2">How to ignore some parts of the website/desktop</a>
                 and
@@ -271,7 +277,15 @@ R                </iframe>
                 Together with the elementFromPoint (x,y) function of the web browser, you can find out which element (locator) is at the image, and then use this locator
                 as input for all commands that take a locator as input. For the most common use of
                 elementFromPoint with the !imageX/Y we introduced a shortcut notation of just using <em>#efp</em>,
-                which of course e-f-p stands for e_lement_f_rom_p_oint. This short video shows how to use #efp to click on an instagram like button:
+                which of course e-f-p stands for e_lement_f_rom_p_oint. The pattern: find the target visually
+                (e. g. <span class="hired">visualSearch | image.png | n</span>), then act on the DOM element under the match.
+                #efp is especially useful for <em>extracting data</em> at a visually found spot — for example
+                <span class="hired">storeAttribute | #efp@href</span> reads the link URL under the found image, and
+                <span class="hired">storeText | #efp</span> reads its exact DOM text where OCR might misread.
+                For plain <em>clicking</em>, <a href="/rpa/docs/selenium-ide/bclick">BClick</a> with an image target does the same in a
+                single command with a trusted click event — it replaces the deprecated
+                <a href="/rpa/docs/selenium-ide/clickat">ClickAt</a> command.
+                This short video shows how to use #efp to click on an instagram like button:
             </p>
             <p>
 
@@ -284,12 +298,11 @@ R                </iframe>
 
             <h3 id="canvas">Testing Canvas Elements</h3>
             <p>
-                For UI testing and automating <em>canvas</em> elements you need to use
-                <a href="/rpa/docs/selenium-ide/clickat">ClickAt</a>
-                with elementFromPoint instead of Click. Only ClickAt can click on specific coordinates <em>inside</em> a canvas element.
-                By contrast, <em>Click #efp</em> always clicks in the middle of the DOM element, and with a canvas element that means, it would always just click in the
-                middle of it.
-
+                <em>Click #efp</em> always clicks in the middle of the DOM element — with a canvas element that means it would always just click in the
+                middle of the canvas. To click on specific coordinates <em>inside</em> a canvas element, use
+                <a href="/rpa/docs/selenium-ide/bclick">BClick</a> (or <a href="/rpa/x/xclick">XClick</a>) with the match coordinates directly:
+                <span class="hired">BClick | ${!imageX},${!imageY}</span> clicks exactly on the found spot.
+                (In older macros you may still see the now deprecated <a href="/rpa/docs/selenium-ide/clickat">ClickAt</a> command used for this.)
             </p>
             <p>
                 <table class="table table-bordered">
@@ -306,12 +319,12 @@ R                </iframe>
                             <td>This sets !imageX and !imageY if image is found</td>
                         </tr>
                         <tr>
-                            <td>ClickAt</td>
+                            <td>Click</td>
                             <td class="success">#elementFromPoint (<em>${!imageX}</em>, <em>${!imageY}</em>)</td>
                             <td>comment: same as using #efp, see below:</td>
                         </tr>
                         <tr>
-                            <td>ClickAt</td>
+                            <td>Click</td>
                             <td class="success">#efp</td>
                             <td>shorthand notation</td>
                         </tr>
@@ -321,9 +334,9 @@ R                </iframe>
                             <td>elementFromPoint can be used with any command that takes a locator as input</td>
                         </tr>
                         <tr>
-                            <td>ClickAt</td>
+                            <td>Click</td>
                             <td class="success">#elementFromPoint (<em>${anyOtherVariable}</em>, <em>${var2}</em>)</td>
-                            <td>Here we need to full command as we use different variables as input.</td>
+                            <td>Here we need the full command as we use different variables as input.</td>
                         </tr>
 
                     </tbody>

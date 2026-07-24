@@ -86,6 +86,88 @@
     <div class="row">
         <div id="start" class="span12">
 
+            <h2 id="10">What's new with Version 10 (BETA)</h2>
+
+            <h3>🖱️ Browser Vision (Beta) — new B command family</h3>
+            <p>
+                <ul>
+                    <li>
+                        - Added: New <a href="/rpa/docs/bclick">BClick</a>, <a href="/rpa/docs/bclick">BClickText</a>,
+                        <a href="/rpa/docs/bclick">BClickTextRelative</a>, <a href="/rpa/docs/bclick">BClickRelative</a>,
+                        <a href="/rpa/docs/bclick">BMove</a>, <a href="/rpa/docs/bclick">BMoveText</a>,
+                        <a href="/rpa/docs/bclick">BMoveTextRelative</a>, <a href="/rpa/docs/bclick">BMoveRelative</a> and
+                        <a href="/rpa/docs/bclick">BType</a> commands: real mouse/keyboard input at browser scope — no <a href="/rpa/x">XModule</a> installation needed.
+                    </li>
+                    <li>
+                        - Added: Fully <a href="/rpa/docs/xclick">XClick</a>-compatible target resolution: images, OCR text, locators, and coordinates all work.
+                    </li>
+                    <li>
+                        - Added: Works even when the browser window is in the background (Chrome and Edge; Firefox shows a clear "not supported" message).
+                    </li>
+                    <li>
+                        - Added: New demo macros in a new "Browser Vision (Beta)" preinstall folder.
+                    </li>
+                </ul>
+            </p>
+
+            <h3>📌 Sidebar-first UI</h3>
+            <p>
+                <ul>
+                    <li>
+                        - Added: The <a href="/rpa/docs/sidepanel">side panel</a> is now the main entry point: fresh design with tabs, live status line during runs, recording,
+                        and a docked command editor. New installs default to the sidebar; the classic IDE window remains as pop-out editor.
+                    </li>
+                    <li>
+                        - Added: New Data tab with Shots / CSV / Visual sub-tabs (replaces the Logs tab).
+                    </li>
+                    <li>
+                        - Added: Automation tab marking: the automated page gets a colored tab group and glow border while recording/replaying,
+                        plus a green marker on the active tab while the side panel is open.
+                    </li>
+                    <li>
+                        - Improved: Settings reorganized: General + Advanced tabs, storage mode switch, editable AI system prompt.
+                    </li>
+                </ul>
+            </p>
+
+            <h3>🤖 AI chat as macro build/fix agent</h3>
+            <p>
+                <ul>
+                    <li>
+                        - Added: The AI chat builds and fixes macros directly: "create a macro to fill out this form" or "fix the current macro"
+                        work against the real editor, player, and page.
+                    </li>
+                    <li>
+                        - Added: The agent inspects the page DOM for reliable locators, edits the macro live in the Macro tab, runs it, reads the log,
+                        and iterates on failures — with a cap on fix loops.
+                    </li>
+                    <li>
+                        - Added: New "Fix with AI" button, chat starter prompts, and plain-language explanations of each action the agent takes.
+                    </li>
+                    <li>
+                        - Added: The agent can capture element images itself (save_relative_image) to create image-based
+                        <a href="/rpa/docs/bclick">BClick</a> / <a href="/rpa/docs/visual-ui-testing#visualassert">visualAssert</a> / *Relative targets,
+                        with crop preview shown in chat.
+                    </li>
+                    <li>
+                        - Added: Safety: AI-created macros are saved to a dedicated AI_Chat folder and never overwrite your macros.
+                    </li>
+                </ul>
+            </p>
+
+            <h3>🔌 AI provider choice + free tier</h3>
+            <p>
+                <ul>
+                    <li>
+                        - Added: New free UI.Vision AI tier (built-in, one-time consent) — works with no API key.
+                    </li>
+                    <li>
+                        - Added: OpenRouter and local (OpenAI-compatible) providers supported alongside Anthropic, for both AI chat and
+                        <a href="/ai/computeruse">computer use</a> — use for example the open-weight Qwen3 VL models.
+                    </li>
+                </ul>
+            </p>
+
             <h2 id="9.6.1">What's new with V9.6.1 released June 28, 2026</h2>
             <p>
                 <ul>
