@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>New Tesla Roadster on display at CVPR</title>
+    <title>Kantu Update V2.20 adds table extraction, CSV import, Javascript support and more</title>
     <meta name="description" content="News and tutorials on AI, Computer Vision, OCR, Anthropic Computer Use, LLM, and its applications in automating daily office tasks. In short: Robotic process automationation (RPA).">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/blog/rpa.favicon32.png">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
     <link rel="stylesheet" href="/blog/css/main.css" />
-    <link rel="canonical" href="https://ui.vision/blog/tesla-roadster-CVPR/">
+    <link rel="canonical" href="https://ui.vision/blog/kantu-web-automation-v2.20-released/">
     <link rel="alternate" type="application/rss+xml" title="Our Open-Source RPA Blog Feed" href="https://ui.vision/blog/feed.xml">
 </head>
 <body>
@@ -49,43 +49,50 @@
                     <div class="entry-header-wrap">
                         
                         <div class="post-thumbnail">
-                            <img src="/blog/images/posts/new-tesla-roadster.png" alt="New Tesla Roadster on display at CVPR">
+                            <img src="/blog/images/posts/kantu-launch.jpg" alt="Kantu Update V2.20 adds table extraction, CSV import, Javascript support and more">
                         </div><!-- .post-thumbnail -->
                         
-                        <h1 class="entry-title">New Tesla Roadster on display at CVPR</h1>
+                        <h1 class="entry-title">Kantu Update V2.20 adds table extraction, CSV import, Javascript support and more</h1>
                     </div><!-- .entry-header-wrap -->
                     <div class="entry-meta">
-                      <time class="published" datetime="2019-06-20">June 20, 2019</time>
+                      <time class="published" datetime="2017-05-24">May 24, 2017</time>
                     </div><!-- .entry-meta -->
                 </header><!-- .entry-header -->
                 <div class="entry-content">
-                    <p>Nice surprise for the attendants of the the 2019 Computer Vision and Pattern Recognition (CVPR) conference taking place in Long Beach, California. Tesla brought out its next-geneation Roadster for display:</p>
+                    <p>The latest Kantu <a href="https://ui.vision/download">upgrade</a> brings <em>many</em> new features - check them out:</p>
 
-<!--more-->
+<ul>
+  <li>Added: Visual <a href="https://ui.vision/docs#click">Right-Click</a> - Trigger and automate context menus</li>
+  <li>Added: <a href="https://ui.vision/docs#js">Javascript command</a> - Run content scripts inside the macro</li>
+  <li>Added: <a href="https://ui.vision/docs#set">ReadCSV</a> - Import data from CSV files and use with , ,… inside your macro</li>
+  <li>Added: <a href="https://ui.vision/scraping#table">Table Extraction</a> - Save complete tables as CSV</li>
+  <li>Added: <a href="https://ui.vision/scraping#image">Image Extraction</a> - Save every area as image</li>
+  <li>Added: <a href="https://ui.vision/docs#internalvars">Internal variables</a> - Macros can do more by having access to system and web internals</li>
+  <li>Added: <a href="https://ui.vision/docs#fileupload">Upload all files inside a folder</a> 
+<!--more--></li>
+  <li>Added: Auto-close for all Javascript dialogs (Alert, Confirm, Prompt)</li>
+  <li>Added: <a href="https://ui.vision/docs#set">ExtractAdd</a> - combine extracted data with custom values</li>
+  <li>Added: All extraction data now saved to /Download folder, in addition to the option to return it via <a href="https://ui.vision/scraping#api">API</a></li>
+  <li>Modified: <a href="https://ui.vision/scraping#api">GetExtractImageData</a> simplified. Uses now only one separator word</li>
+  <li>Fixed: Recording on http://localhost websites caused a crash</li>
+  <li>Fixed: Several issues reported by users (thank you)</li>
+</ul>
 
-<figure class="full-width caption">
-    <img src="/blog/images/posts/roadster-computer-conference.jpg" alt="" />
-    
-</figure>
+<p>To demo the new features we expanded the Demo-Extract macro and added two new macros: Demo-Javascript and Demo-ReadCSV.</p>
 
-<p>CVPR is an annual event put on by the Institute of Electrical and Electronics Engineers (IEEE) and the Computer Vision Foundation (CVF) for pattern recognition, computer vision, machine learning, robotics, and artificial intelligence researchers to present advances made in their fields. Various presentations, tutorials, workshops, demos, exhibitions, and social events promoting relevant topics are made available to attendees. This was the 32nd year for CVPR. It took place June 16-20 at the Long Beach Convention Center.</p>
-
-<h2 id="why-was-the-tesla-roadster-on-display">Why was the Tesla Roadster on display?</h2>
-
-<p>We don’t know. Of course, Tesla is a known leader when it comes to the latest technology, including computer vision, self-driving systems, robotics and the future potential for augmented reality in cars. But no new features were announced. My personal assumption is that it was on display as a recruitment tool. Tesla has many openings in its
-Computer Vision and AI team as it builds out the Autopilot from driver-assistance to full self-driving (FSD).</p>
+<p>As always, you can download the latest Kantu version from <a href="https://ui.vision/download">https://ui.vision/download</a>.</p>
 
                 </div><!-- .entry-content -->
                 <footer class="entry-footer">
                     <div class="share-post">
                         <span>Share</span>
-                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=New%20Tesla%20Roadster%20on%20display%20at%20CVPR&amp;url=https://ui.vision/tesla-roadster-CVPR/"><span class="screen-reader-text">Twitter</span></a>
-                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/tesla-roadster-CVPR/&amp;t=New%20Tesla%20Roadster%20on%20display%20at%20CVPR"><span class="screen-reader-text">Facebook</span></a>
-                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/tesla-roadster-CVPR/"><span class="screen-reader-text">Google+</span></a>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Kantu%20Update%20V2.20%20adds%20table%20extraction,%20CSV%20import,%20Javascript%20support%20and%20more&amp;url=https://ui.vision/Kantu-Web-Automation-V2.20-released/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ui.vision/Kantu-Web-Automation-V2.20-released/&amp;t=Kantu%20Update%20V2.20%20adds%20table%20extraction,%20CSV%20import,%20Javascript%20support%20and%20more"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=https://ui.vision/Kantu-Web-Automation-V2.20-released/"><span class="screen-reader-text">Google+</span></a>
                     </div><!-- .share-post -->
                     
                     <div class="tag-links">
-                        Tags: <a href="/blog/tags/index.html#Tesla" title="Pages tagged Tesla" rel="tag">Tesla</a><a href="/blog/tags/index.html#CVPR" title="Pages tagged CVPR" rel="tag">CVPR</a><a href="/blog/tags/index.html#Computer+Vision" title="Pages tagged Computer Vision" rel="tag">Computer Vision</a><a href="/blog/tags/index.html#Conference" title="Pages tagged Conference" rel="tag">Conference</a>
+                        Tags: <a href="/blog/tags/index.html#Kantu" title="Pages tagged Kantu" rel="tag">Kantu</a><a href="/blog/tags/index.html#Chromium" title="Pages tagged Chromium" rel="tag">Chromium</a><a href="/blog/tags/index.html#What%27s+new" title="Pages tagged What's new" rel="tag">What's new</a>
                     </div>
                     
                 </footer><!-- .entry-footer -->
@@ -96,11 +103,11 @@ Computer Vision and AI team as it builds out the Autopilot from driver-assistanc
                 <div class="nav-previous">
                     <div class="nav-inside">
                         
-                        <a href="/blog/uipath-pricing/" class="nav-thumb" style="background-image: url(/images/posts/uipath-vs-automation-anywhere.jpg)"></a>
+                        <a href="/blog/kantu-v2.05-released.html" class="nav-thumb" style="background-image: url(/images/posts/kantu-launch.jpg)"></a>
                         
                         <div class="nav-before">Previous</div>
-                        <div class="nav-title"><a href="/blog/uipath-pricing/">RPA 2019: Hidden UIPath RPA Pricing</a></div>
-                        <div class="nav-date">May 10, 2019</div>
+                        <div class="nav-title"><a href="/blog/kantu-v2.05-released.html">Kantu V2.0.5 released.</a></div>
+                        <div class="nav-date">May 5, 2017</div>
                     </div><!-- .nav-inside -->
                 </div><!-- .nav-previous -->
                 
@@ -108,11 +115,11 @@ Computer Vision and AI team as it builds out the Autopilot from driver-assistanc
                 <div class="nav-next">
                     <div class="nav-inside">
                         
-                        <a href="/blog/rpa-microsoft-ignite-2019/" class="nav-thumb" style="background-image: url(/images/posts/uipath-vs-automation-anywhere.jpg)"></a>
+                        <a href="/blog/social-bots-law-identify-automated-social-media-postings/" class="nav-thumb" style="background-image: url(/images/posts/socialbots.jpg)"></a>
                         
                         <div class="nav-before">Next</div>
-                        <div class="nav-title"><a href="/blog/rpa-microsoft-ignite-2019/">RPA At Microsoft Ignite 2019</a></div>
-                        <div class="nav-date">November 4, 2019</div>
+                        <div class="nav-title"><a href="/blog/social-bots-law-identify-automated-social-media-postings/">Social bots: Germany plans to introduce labeling requirement for automated social media postings</a></div>
+                        <div class="nav-date">June 19, 2017</div>
                     </div><!-- .nav-inside -->
                 </div><!-- .nav-next -->
                 
