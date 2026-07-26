@@ -60,7 +60,7 @@ a {
     }
 
         .nav > li > .parent {
-            background-image: url("../Images/downArrow.webp");
+            background-image: url("../Images/downarrow.webp");
             background-repeat: no-repeat;
             background-position: right;
         }
@@ -120,7 +120,7 @@ a {
         }
 
     .nav li li .parent {
-        background-image: url("../Images/downArrow.webp");
+        background-image: url("../Images/downarrow.webp");
         background-repeat: no-repeat;
         background-position: 95% 50%;
     }

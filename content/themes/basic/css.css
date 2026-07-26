@@ -1611,7 +1611,7 @@ a {text-decoration: none;}
     float: left;
 }
 .nav > li > .parent {
-    background-image: url("../Images/downArrow.png");
+    background-image: url("../Images/downarrow.png");
     background-repeat: no-repeat;
     background-position: right;
 }
@@ -1662,7 +1662,7 @@ a {text-decoration: none;}
         background-position: 95% 50%;
     }
     .nav li li .parent {
-        background-image: url("../Images/downArrow.png");
+        background-image: url("../Images/downarrow.png");
         background-repeat: no-repeat;
         background-position: 95% 50%;
     }
