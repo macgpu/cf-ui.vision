@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Connect Claude Code (or any MCP client) to Ui.Vision RPA: install the uivision-mcp-bridge, pair it with the browser extension, and let the AI build, run and debug macros in your browser.">
+    <title>MCP Bridge: Use Ui.Vision RPA from Claude Code - AI Docs</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/content/main/base.css" rel="stylesheet" />
+    <link href="/content/main/elements.css" rel="stylesheet" />
+    <link href="/content/main/grid.css" rel="stylesheet" />
+    <link href="/content/main/layout.css" rel="stylesheet" />
+    <link href="/content/main/style.css" rel="stylesheet" />
+    <style>
+        ul { list-style: none outside none; padding-left: 0; margin: 0; }
+        ul.bullets { list-style: disc outside none; padding-left: 1.6em; margin: 0 0 1em; }
+        ul.bullets li { margin-bottom: .5em; }
+        ol.steps { list-style: decimal outside none; padding-left: 1.6em; margin: 0 0 1em; }
+        ol.steps li { margin-bottom: .8em; }
+        pre.cmd {
+            background: #f7f8fa;
+            border: 1px solid #d9dde3;
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-size: 13px;
+            line-height: 1.55;
+            overflow-x: auto;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/content/images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ui.vision/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ui.vision">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div id="content download-content">
+    <div id="page-header" class="page-download">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>MCP Bridge</span> Use Ui.Vision from Claude Code</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+
+            <p>
+                The Ui.Vision <strong>MCP bridge</strong> connects <a href="https://claude.com/claude-code">Claude Code</a> — or any
+                <a href="https://modelcontextprotocol.io/">MCP</a> client — to the Ui.Vision browser extension. Once paired, the AI agent
+                can list, create, edit and <em>run</em> macros in your real browser: it inspects the live page, writes the macro, runs it,
+                reads the logs and iterates until the macro works. It is the same toolset the built-in
+                <a href="/ai">AI chat assistant</a> uses, driven from the outside.
+            </p>
+            <p>
+                Everything runs locally: the bridge is a small Node.js process listening on <code>127.0.0.1</code> only, the extension
+                connects out to it from the side panel, and a shared token authenticates the pairing. No macro data goes anywhere except
+                to the AI you are chatting with.
+            </p>
+
+            <h3 id="install">Install in 4 steps</h3>
+            <ol class="steps">
+                <li>
+                    <strong>Install the Ui.Vision extension</strong> (<a href="/rpa">Chrome, Edge or Firefox</a>) — version 10.0.21 or newer.
+                </li>
+                <li>
+                    <strong>Register the bridge with Claude Code</strong> — run this once in a terminal:
+                    <pre class="cmd">claude mcp add uivision -- npx -y uivision-mcp-bridge</pre>
+                    This uses the <a href="https://www.npmjs.com/package/uivision-mcp-bridge">uivision-mcp-bridge</a> npm package;
+                    Node.js 18+ is required. (The same command is shown with a Copy button in the extension under
+                    <span class="hiblue">Settings &gt; AI &gt; MCP bridge</span>.)
+                </li>
+                <li>
+                    <strong>Get the pairing token.</strong> Start a Claude Code session — it launches the bridge automatically. On its first
+                    run the bridge generates a token file <code>.uivision_mcp_token</code> in your home directory
+                    (e.g. <code>C:\Users\you\.uivision_mcp_token</code> or <code>~/.uivision_mcp_token</code>). Open it and copy the value.
+                </li>
+                <li>
+                    <strong>Pair the extension.</strong> Open the Ui.Vision side panel, go to
+                    <span class="hiblue">Settings &gt; AI &gt; MCP bridge (Claude Code)</span>, switch it on, paste the token and click
+                    <span class="hiblue">Test</span>. The Test button tells you exactly where you stand: bridge reachable and token correct,
+                    wrong token, or bridge not running. When everything is green, the panel connects within seconds and shows
+                    <em>"Connected to the Claude Code MCP bridge"</em>.
+                </li>
+            </ol>
+            <p>
+                That is the whole setup. Now, in any Claude Code chat: <em>"Build a Ui.Vision macro that logs into our intranet and
+                downloads yesterday's report — then run it."</em> The agent builds the macro from the live page, runs it in your browser
+                and fixes it until it passes.
+            </p>
+
+            <h3 id="notes">Good to know</h3>
+            <p>
+                <ul class="bullets">
+                    <li><strong>Keep the side panel open.</strong> The bridge client runs inside the side panel — by design, so you can
+                        watch what the AI does. If the panel is closed, the connection pauses and resumes when you reopen it. A banner in
+                        the panel shows when an external agent is controlling Ui.Vision.</li>
+                    <li><strong>One browser at a time.</strong> The bridge holds one extension connection ("newest wins"). If you enable it
+                        in Chrome <em>and</em> Firefox, the two browsers steal the connection from each other — enable it in only one.</li>
+                    <li><strong>One Claude Code session at a time.</strong> Each session starts its own bridge on port 47831; a second
+                        concurrent session cannot bind the port and its Ui.Vision tools fail until the first session ends. The port can be
+                        changed with <code>--port</code> (and in Settings &gt; AI) if it collides with something else.</li>
+                    <li><strong>Macros the AI creates</strong> are saved in the <em>"AI Generated"</em> folder and opened in the editor.
+                        The AI can only delete macros in that folder — everything else is yours alone.</li>
+                    <li><strong>Security:</strong> the WebSocket server binds to <code>127.0.0.1</code> only, connections must present the
+                        token within 5 seconds, and the token file is created with owner-only permissions. Treat the token like a password
+                        for your browser automation.</li>
+                    <li><strong>Works with any MCP client</strong>, not just Claude Code — the bridge speaks standard MCP on stdio. With
+                        other clients, register <code>npx -y uivision-mcp-bridge</code> the way that client configures MCP servers.</li>
+                </ul>
+            </p>
+
+            <h3 id="tools">What the AI can do over the bridge</h3>
+            <p>
+                The bridge exposes the extension's macro tools to the agent: list/open/create/edit/delete (AI folder only) macros, run the
+                macro in the editor and get the full execution log back, inspect the current page structure with ready-to-use locators,
+                take screenshots, capture element images for visual automation, and read the authoring guide (the same
+                <a href="/ai/ai-system-prompt">system prompt</a> that powers the built-in assistant). JavaScript macros are the preferred
+                format — the agent gets the full <code>uiv.*</code> scripting API documentation on request.
+            </p>
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please post in the <a href="https://forum.ui.vision/">forum</a> or <a href="/contact">contact us</a>.</p>
+
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ui.vision/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ui.vision/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ui.vision/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            &#8592; Meet the Ui.Vision team and users in our <a href="https://forum.ui.vision">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>. Website Version: <span id="site-version">V5.17</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/jquery-2.1.3.min.js"></script>
+    <script src="/scripts/modernizr-2.6.2.js"></script>
+    <script src="/scripts/basic/bootstrap.min.js"></script>
+    <script src="/scripts/a9t9scripts.js"></script>
+    <script src="/scripts/layout/plugins.js"></script>
+    <script src="/scripts/layout/script.js"></script>
+
+</body>
+</html>
