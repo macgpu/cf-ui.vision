@@ -18,11 +18,11 @@ Macros are stored as JSON, run locally in the user's browser (no cloud), and can
 ## AI
 
 - [AI integration docs](https://ui.vision/ai): overview of the AI features
-- [The AI system prompt](https://ui.vision/ai/ai-system-prompt): the complete system prompt of the AI macro assistant — also a compact best-practices handbook (cookie banners, shadow DOM, OCR targeting, error recovery)
+- [The AI system prompt](https://ui.vision/ai/ai-system-prompt): the complete system prompt of the AI macro assistant, including the full uiv.* JavaScript API for JS script macros — identical to what the MCP bridge's get_authoring_guide tool returns, so agents can write correct macros even without a bridge connection. Also a compact best-practices handbook (cookie banners, shadow DOM, OCR targeting, error recovery)
 - [aiPrompt](https://ui.vision/ai/prompt): send text + images to the LLM from a macro
 - [aiComputerUse](https://ui.vision/ai/computeruse): Anthropic computer-use automation steps
 - [aiScreenXY](https://ui.vision/ai/screenxy): AI-found screen coordinates for clicks
-- [MCP bridge](https://ui.vision/ai/mcp-bridge): connect Claude Code or any MCP client to Ui.Vision via the uivision-mcp-bridge npm package — the AI builds, runs and debugs macros in the user's browser
+- [MCP bridge](https://ui.vision/ai/mcp-bridge): connect Claude Code or any MCP client to Ui.Vision via the uivision-mcp-bridge npm package — the AI builds, runs and debugs macros in the user's browser. Setup gotchas: MCP clients load servers only at startup (restart after `claude mcp add`), and the pairing token lives in ~/.uivision_mcp_token — agents should read it and show it to the user. Agent checklist: https://ui.vision/ai/mcp-bridge#agents
 
 ## Community
 

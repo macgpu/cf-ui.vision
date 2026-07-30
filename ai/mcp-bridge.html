@@ -122,11 +122,16 @@
                     This uses the <a href="https://www.npmjs.com/package/uivision-mcp-bridge">uivision-mcp-bridge</a> npm package;
                     Node.js 18+ is required. (The same command is shown with a Copy button in the extension under
                     <span class="hiblue">Settings &gt; AI &gt; MCP bridge</span>.)
+                    <br /><strong>Then restart Claude Code.</strong> MCP clients load their servers at startup, so a session that is
+                    already open does not see the new tools — restart it (or start a new session) and type <code>/mcp</code> to confirm
+                    that <code>uivision</code> is listed.
                 </li>
                 <li>
                     <strong>Get the pairing token.</strong> Start a Claude Code session — it launches the bridge automatically. On its first
-                    run the bridge generates a token file <code>.uivision_mcp_token</code> in your home directory
-                    (e.g. <code>C:\Users\you\.uivision_mcp_token</code> or <code>~/.uivision_mcp_token</code>). Open it and copy the value.
+                    run the bridge generates a token file <code>.uivision_mcp_token</code> in your home directory. Display it with
+                    <pre class="cmd">type "%USERPROFILE%\.uivision_mcp_token"</pre>
+                    on Windows, or <code>cat ~/.uivision_mcp_token</code> on macOS/Linux — or simply ask the AI to show you the token:
+                    when the extension is not paired yet, the bridge tells the agent to read the token file and display the value in chat.
                 </li>
                 <li>
                     <strong>Pair the extension.</strong> Open the Ui.Vision side panel, go to
@@ -150,7 +155,7 @@
                         the panel shows when an external agent is controlling Ui.Vision.</li>
                     <li><strong>One browser at a time.</strong> The bridge holds one extension connection ("newest wins"). If you enable it
                         in Chrome <em>and</em> Firefox, the two browsers steal the connection from each other — enable it in only one.</li>
-                    <li><strong>One Claude Code session at a time.</strong> Each session starts its own bridge on port 47831; a second
+                    <li><strong>One Claude Code session at a time.</strong> Each session starts its own bridge on port 50888; a second
                         concurrent session cannot bind the port and its Ui.Vision tools fail until the first session ends. The port can be
                         changed with <code>--port</code> (and in Settings &gt; AI) if it collides with something else.</li>
                     <li><strong>Macros the AI creates</strong> are saved in the <em>"AI Generated"</em> folder and opened in the editor.
@@ -169,8 +174,28 @@
                 macro in the editor and get the full execution log back, inspect the current page structure with ready-to-use locators,
                 take screenshots, capture element images for visual automation, and read the authoring guide (the same
                 <a href="/ai/ai-system-prompt">system prompt</a> that powers the built-in assistant). JavaScript macros are the preferred
-                format — the agent gets the full <code>uiv.*</code> scripting API documentation on request.
+                format — the agent gets the full <code>uiv.*</code> scripting API documentation via the bridge's
+                <code>get_authoring_guide</code> tool, and the same text is published at
+                <a href="/ai/ai-system-prompt">ui.vision/ai/ai-system-prompt</a>.
             </p>
+
+            <h3 id="agents">For AI agents reading this page</h3>
+            <p>
+                If you are an AI agent setting up or driving the bridge, follow these rules instead of improvising:
+            </p>
+            <ul class="bullets">
+                <li><strong>No <code>uivision</code> tools in your session?</strong> The bridge is not registered, or the MCP client was not
+                    restarted after registration — servers load only at startup. Register it (step 2 above), then tell the user a restart
+                    is required and stop. Do <em>not</em> silently fall back to writing macro files to disk in another format.</li>
+                <li><strong><code>bridge_status</code> says the extension is not connected?</strong> Read the pairing token file
+                    <code>~/.uivision_mcp_token</code> and show the user the token value in chat — it is displayed nowhere else — then walk
+                    them through pairing (step 4 above) and confirm the port shown by <code>bridge_status</code> matches the one in the
+                    extension settings.</li>
+                <li><strong>Before writing your first macro,</strong> call <code>get_authoring_guide</code>. If the bridge is not reachable,
+                    the identical content — including the complete <code>uiv.*</code> JavaScript API — is at
+                    <a href="/ai/ai-system-prompt">ui.vision/ai/ai-system-prompt</a>. Prefer <code>uiv.*</code> JS script macros over the
+                    classic command table.</li>
+            </ul>
 
             <h3>Anything wrong or missing on this page? Suggestions?</h3>
             <p>...then please post in the <a href="https://forum.ui.vision/">forum</a> or <a href="/contact">contact us</a>.</p>
