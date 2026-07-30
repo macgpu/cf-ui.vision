@@ -110,7 +110,7 @@
 
             <p><strong>Testing login flows:</strong> Deleting the site's cookies logs you out of that site, so a login macro can be tested repeatedly.</p>
 
-            <p><strong>Consent banners:</strong> After <em>deleteCookies</em>, the website treats you as a first-time visitor - cookie/consent banners will appear again. Make sure the macro handles the banner (for example with <a href="/rpa/docs/bclick">BClickText</a> on the accept button's text, wrapped so it is optional).</p>
+            <p><strong>Consent banners:</strong> After <em>deleteCookies</em>, the website treats you as a first-time visitor - cookie/consent banners will appear again. Make sure the macro handles the banner (for example with a visual text click on the accept button's text — <a href="/rpa/docs/uiv">uiv.browser.click(uiv.ocr.findText(...))</a> in a JS script macro, wrapped so it is optional).</p>
 
             <p><strong>Note:</strong> Since the command logs you out of the current website and brings back consent banners, use it deliberately - for example, only in test macros, not in macros that rely on an existing login session.</p>
 

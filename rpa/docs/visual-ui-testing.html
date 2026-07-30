@@ -282,8 +282,9 @@ R                </iframe>
                 #efp is especially useful for <em>extracting data</em> at a visually found spot — for example
                 <span class="hired">storeAttribute | #efp@href</span> reads the link URL under the found image, and
                 <span class="hired">storeText | #efp</span> reads its exact DOM text where OCR might misread.
-                For plain <em>clicking</em>, <a href="/rpa/docs/selenium-ide/bclick">BClick</a> with an image target does the same in a
-                single command with a trusted click event — it replaces the deprecated
+                For plain <em>clicking</em>, <span class="hired">uiv.browser.click(uiv.findImage('image.png'))</span> in a
+                <a href="/rpa/docs/uiv">JS script macro</a> does the same in one line with a trusted click event — this
+                (like click #efp) replaces the deprecated
                 <a href="/rpa/docs/selenium-ide/clickat">ClickAt</a> command.
                 This short video shows how to use #efp to click on an instagram like button:
             </p>
@@ -299,9 +300,9 @@ R                </iframe>
             <h3 id="canvas">Testing Canvas Elements</h3>
             <p>
                 <em>Click #efp</em> always clicks in the middle of the DOM element — with a canvas element that means it would always just click in the
-                middle of the canvas. To click on specific coordinates <em>inside</em> a canvas element, use
-                <a href="/rpa/docs/selenium-ide/bclick">BClick</a> (or <a href="/rpa/x/xclick">XClick</a>) with the match coordinates directly:
-                <span class="hired">BClick | ${!imageX},${!imageY}</span> clicks exactly on the found spot.
+                middle of the canvas. To click on specific coordinates <em>inside</em> a canvas element, click the visual match directly:
+                in a <a href="/rpa/docs/uiv">JS script macro</a>, <span class="hired">uiv.browser.click(uiv.findImage('spot.png'))</span>
+                clicks exactly on the found spot — or use <a href="/rpa/x/xclick">XClick</a> | ${!imageX},${!imageY} with the XModule.
                 (In older macros you may still see the now deprecated <a href="/rpa/docs/selenium-ide/clickat">ClickAt</a> command used for this.)
             </p>
             <p>

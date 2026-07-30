@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="The uiv.* API: modern JavaScript macros in Ui.Vision RPA - finders, input tiers, OCR, AI, CSV, downloads and screenshots">
+    <title>The uiv.* API: JS Script Macros Overview | Ui.Vision RPA</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/content/main/base.css" rel="stylesheet" />
+    <link href="/content/main/elements.css" rel="stylesheet" />
+    <link href="/content/main/grid.css" rel="stylesheet" />
+    <link href="/content/main/layout.css" rel="stylesheet" />
+    <link href="/content/main/style.css" rel="stylesheet" />
+    <style>
+        ul { list-style: none outside none; padding-left: 0; margin: 0; }
+        td code { white-space: pre-wrap; word-break: break-word; }
+        pre.jsdemo { background: #f7f7f9; border: 1px solid #e1e1e8; padding: 10px; overflow-x: auto; }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/content/images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ui.vision/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ui.vision">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-extension">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1><span>The uiv.* API:</span> JS Script Macros</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h3 class="headline">
+                <span>Modern JavaScript Macros — API Overview</span>
+            </h3>
+        </div>
+
+        <div class="span12">
+
+            <p>
+                A Ui.Vision macro can be a <span class="hired">modern JavaScript program</span>: instead of a table of commands,
+                you write real code against the <span class="hired">uiv.*</span> API. Everything JavaScript offers — loops, conditions,
+                functions, try/catch, template literals — combines with everything Ui.Vision offers: DOM automation, computer vision,
+                OCR, AI, desktop input. This page is the API overview. Coming from classic table macros? See the
+                <a href="/rpa/docs/selenium-vs-uiv">Selenium-derived commands vs uiv.* conversion table</a>.
+            </p>
+
+<pre class="jsdemo">uiv.open('https://en.wikipedia.org');
+uiv.page.type('id=searchInput', 'Solar cell');
+uiv.browser.type('${KEY_ENTER}', {nav: true});
+const h1 = uiv.$('css=#firstHeading');   // auto-waits, throws if it never appears
+uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
+
+            <p>
+                Two ideas carry the whole API: <span class="hired">finders</span> answer "where is it?" and return a match
+                <code>{x, y, rect, text, value, ...}</code>; <span class="hired">input tiers</span> act on a match (or locator) and differ
+                in <em>how</em> the input reaches the page. Every finder auto-waits up to !TIMEOUT_WAIT and then throws — finding an element IS the wait.
+            </p>
+
+            <h3>Finders — Where Is It?</h3>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Method
+                        <th class="col-md-5">What it does
+                        <th class="col-md-4">Example
+
+                <tbody>
+                    <tr class="success">
+                        <td><code>uiv.$(locator)</code></td>
+                        <td>First DOM match. Finds in ALL frames (even cross-origin) and open shadow roots — no selectFrame needed. Locators: css= id= name= link= xpath=</td>
+                        <td><code>uiv.$('css=#buy')</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.$$(locator)</code></td>
+                        <td>All DOM matches, as an array</td>
+                        <td><code>uiv.$$('css=tr').length</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.findImage(png, opts)</code></td>
+                        <td>First computer-vision match of an image on the visible page. Options: {minScore, area, scope}</td>
+                        <td><code>uiv.findImage('buy.png', {minScore: 0.8})</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.ocr.findText(text)</code></td>
+                        <td>First OCR match of rendered text — works on canvas, PDFs, images. ? and * wildcards per word</td>
+                        <td><code>uiv.ocr.findText('Check*ut')</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.ai.find(question)</code></td>
+                        <td>The configured AI locates the element from a screenshot and returns a match</td>
+                        <td><code>uiv.ai.find('the blue Buy button')</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.offset(match, dx, dy)</code></td>
+                        <td>A new match at a fixed offset from another — the composed form of the classic relative targets</td>
+                        <td><code>uiv.offset(uiv.ocr.findText('Email:'), 120, 0)</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.findElements / uiv.findImages / uiv.ocr.findTexts</code></td>
+                        <td>Long forms returning every match, with options like {required: false, timeout: 2} for optional elements (null/[] instead of throwing)</td>
+                        <td><code>uiv.findImages('row.png', {area: uiv.$('css=#list')})</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 id="comparison">Acting — Three Input Tiers</h3>
+            <p>
+                Every input call names its tier, because how the input reaches the page decides whether it works.
+                A visual click is always explicit: <code>uiv.browser.click(uiv.findImage('buy.png'))</code>.
+            </p>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">&nbsp;
+                        <th class="col-md-3">uiv.page.*
+                        <th class="col-md-3">uiv.browser.*
+                        <th class="col-md-3">uiv.desktop.*
+
+                <tbody>
+                    <tr class="success">
+                        <td>Methods</td>
+                        <td><code>click, type(locator, text), select</code></td>
+                        <td><code>click, type(text), move, down, up</code></td>
+                        <td><code>click, type(text), move</code></td>
+                    </tr>
+                    <tr>
+                        <td>Event type</td>
+                        <td>Synthetic DOM events (like Selenium)</td>
+                        <td>Trusted browser input via the debugger API (CDP)</td>
+                        <td>Real OS input (<a href="/rpa/x">XModule</a>)</td>
+                    </tr>
+                    <tr class="success">
+                        <td>XModule needed</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Coordinates</td>
+                        <td>Viewport CSS pixels</td>
+                        <td>Viewport CSS pixels</td>
+                        <td>Screen pixels ({scope: 'desktop'} finders)</td>
+                    </tr>
+                    <tr class="success">
+                        <td>Browser in background OK</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>No — real mouse moves</td>
+                    </tr>
+                    <tr>
+                        <td>Best for</td>
+                        <td>Form filling, fast bulk work</td>
+                        <td>Canvas apps, drag &amp; drop, sites that ignore synthetic clicks</td>
+                        <td>OS dialogs, other applications, desktop automation</td>
+                    </tr>
+                    <tr class="success">
+                        <td>Browsers</td>
+                        <td>All</td>
+                        <td>Chrome, Edge (not Firefox)</td>
+                        <td>All (XModule: Windows, Mac, Linux)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <span class="hired">Dragging</span> is press, move, release: <code>uiv.browser.down(start)</code> holds the button,
+                every <code>uiv.browser.move</code> while it is held drags, <code>uiv.browser.up(end)</code> releases —
+                sliders, drag handles and canvas drawing all work this way.
+                <span class="hired">Keystrokes</span> go to the focused element and support the ${KEY_...} codes:
+                <code>uiv.browser.type('${KEY_ENTER}', {nav: true})</code> submits and waits for the navigation it causes.
+            </p>
+
+            <h3>Page, Reading &amp; OCR</h3>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Method
+                        <th class="col-md-5">What it does
+                        <th class="col-md-4">Example
+
+                <tbody>
+                    <tr class="success">
+                        <td><code>uiv.open(url)</code></td>
+                        <td>Navigate and wait for the page load</td>
+                        <td><code>uiv.open('https://ui.vision')</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.eval(code)</code></td>
+                        <td>Run JavaScript inside the website and return the result (the code must use return)</td>
+                        <td><code>uiv.eval('return document.title')</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>match.text / match.value</code></td>
+                        <td>Every DOM match carries its text and value — no separate store commands</td>
+                        <td><code>uiv.$('css=h1').text</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.ocr.read(opts)</code></td>
+                        <td>OCR the viewport, a region ({area}), a saved screenshot ({image}) or the desktop ({scope})</td>
+                        <td><code>uiv.ocr.read({area: myMatch})</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>AI, Tabs, Data &amp; Files</h3>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Method
+                        <th class="col-md-5">What it does
+                        <th class="col-md-4">Example
+
+                <tbody>
+                    <tr class="success">
+                        <td><code>uiv.ai.ask(prompt, opts)</code></td>
+                        <td>One round trip to the configured LLM; {images: [...]} attaches screenshots, {json: true} returns parsed JSON</td>
+                        <td><code>uiv.ai.ask('total?', {images: [uiv.shot.viewport()], json: true})</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.ai.computerUse(task)</code></td>
+                        <td>Hands the whole task to the AI computer-use agent; returns its report</td>
+                        <td><code>uiv.ai.computerUse('fill in this form')</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.tabs.select / open / close / list</code></td>
+                        <td>Tab control with absolute indexes (1..N); every call returns {index, title, url}</td>
+                        <td><code>uiv.tabs.select(2)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.csv.read / write / append / list / exists</code></td>
+                        <td>CSV files as plain 2D arrays — no !csvLine, no line-number bookkeeping</td>
+                        <td><code>uiv.csv.append('log.csv', [ts, value])</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.download(source, opts)</code></td>
+                        <td>Download via link locator, URL or trigger function; renames ({as}), waits for completion, returns the on-disk name</td>
+                        <td><code>uiv.download('css=a.pdf', {as: 'report.pdf'})</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.shot.viewport / page / element / desktop / area</code></td>
+                        <td>Screenshots (page = whole page, scroll-stitched); each returns the file name, so shots pipe into OCR or AI</td>
+                        <td><code>uiv.ocr.read({image: uiv.shot.page()})</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.exportToDownloads(name)</code></td>
+                        <td>Copy a .png, .csv or 'log' from Ui.Vision storage to the browser's Downloads folder</td>
+                        <td><code>uiv.exportToDownloads('report.csv')</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Variables, Logging &amp; Utilities</h3>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Method
+                        <th class="col-md-5">What it does
+                        <th class="col-md-4">Example
+
+                <tbody>
+                    <tr class="success">
+                        <td><code>uiv.getVar / uiv.setVar</code></td>
+                        <td>Read/write the same variable pool the classic commands use — internal !-variables included</td>
+                        <td><code>uiv.setVar('!TIMEOUT_WAIT', 20)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.log(text, color)</code></td>
+                        <td>Write to the log (green/red/blue/..., '#shownotification' shows a browser notification)</td>
+                        <td><code>uiv.log('done', 'green')</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.banner(html, opts)</code></td>
+                        <td>On-page overlay message for the person watching — survives navigation, click-through, great for attended runs and human hand-offs</td>
+                        <td><code>uiv.banner('Your turn: solve the captcha')</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>uiv.sleep(ms)</code></td>
+                        <td>Fixed wait — last resort; finders auto-wait, so most macros need none</td>
+                        <td><code>uiv.sleep('2s')</code></td>
+                    </tr>
+                    <tr class="success">
+                        <td><code>uiv.run(command, target, value)</code></td>
+                        <td>The legacy bridge: run any <a href="/rpa/docs/selenium-ide">classic command</a> from inside a script</td>
+                        <td><code>uiv.run('setProxy', ...)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>// @include</code> + <code>uiv.main</code></td>
+                        <td>Include another script file as a library; uiv.main is true only in the file that was started</td>
+                        <td><code>// @include Core/Sub/MyLib.js</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Error Handling Is Just JavaScript</h3>
+            <p>
+                A failed uiv call throws a real exception. <code>try/catch</code> handles retries and fallbacks,
+                <code>throw new Error('...')</code> fails the macro deliberately, and optional elements are a
+                <code>{required: false}</code> option away — no !errorignore, no !statusOK bookkeeping.
+                A script should <em>prove its own success</em>: end it with a finder on something unique to the goal state,
+                or compare a read value and throw on mismatch.
+            </p>
+
+            <h3>Where To Go Next</h3>
+            <p>
+                <a href="/rpa/docs/selenium-vs-uiv">Selenium-derived commands vs uiv.* — the conversion table</a> for everyone
+                coming from classic table macros. Or just try it: the AI sidebar writes uiv.* scripts for you — and converts
+                your existing classic macros on request. The preinstalled <span class="hired">"Draw a cat🐱"</span> macro is a
+                fun working example of finders, trusted input and self-verification.
+            </p>
+
+            <h3>Anything wrong or missing on this page? Suggestions?</h3>
+            <p>...then please <a href="/contact">contact us</a>.</p>
+
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ui.vision/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ui.vision/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ui.vision/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="/ai/computeruse"><i class="fa fa-gear"></i> AI Claude Computer Use</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Ui.Vision Source Code</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            &larr; Meet the Ui.Vision team and users in our <a href="https://forum.ui.vision">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>. Website Version: <span id="site-version">V5.17</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/jquery-2.1.3.min.js"></script>
+    <script src="/scripts/modernizr-2.6.2.js"></script>
+    <script src="/scripts/basic/bootstrap.min.js"></script>
+    <script src="/scripts/a9t9scripts.js"></script>
+    <script src="/scripts/layout/plugins.js"></script>
+    <script src="/scripts/layout/script.js"></script>
+
+</body>
+</html>
