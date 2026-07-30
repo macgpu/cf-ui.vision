@@ -88,24 +88,25 @@
 
             <h2 id="10">What's new with Version 10 (BETA)</h2>
 
-            <h3>🖱️ Browser Vision (Beta) — new B command family</h3>
+            <h3>📜 JS script macros (Beta) — the modern uiv.* automation API</h3>
             <p>
                 <ul>
                     <li>
-                        - Added: New <a href="/rpa/docs/bclick">BClick</a>, <a href="/rpa/docs/bclick">BClickText</a>,
-                        <a href="/rpa/docs/bclick">BClickTextRelative</a>, <a href="/rpa/docs/bclick">BClickRelative</a>,
-                        <a href="/rpa/docs/bclick">BMove</a>, <a href="/rpa/docs/bclick">BMoveText</a>,
-                        <a href="/rpa/docs/bclick">BMoveTextRelative</a>, <a href="/rpa/docs/bclick">BMoveRelative</a> and
-                        <a href="/rpa/docs/bclick">BType</a> commands: real mouse/keyboard input at browser scope — no <a href="/rpa/x">XModule</a> installation needed.
+                        - Added: A macro can now be a modern <em>JavaScript program</em> built on the new uiv.* API — the primary format for new macros.
+                        Loops, conditions and error handling are plain JavaScript; finders auto-wait and pierce all frames.
+                        See <a href="/rpa/docs/selenium-vs-uiv">Selenium-derived commands vs the modern uiv.* API</a> for the full conversion table.
                     </li>
                     <li>
-                        - Added: Fully <a href="/rpa/docs/xclick">XClick</a>-compatible target resolution: images, OCR text, locators, and coordinates all work.
+                        - Added: Browser Vision (Beta): trusted browser-scope mouse/keyboard input — uiv.browser.click/type/move/down/up —
+                        via the browser debugger API, no <a href="/rpa/x">XModule</a> installation needed. Targets come from the finders:
+                        DOM locators, images (uiv.findImage), OCR text (uiv.ocr.findText) and coordinates all work.
                     </li>
                     <li>
                         - Added: Works even when the browser window is in the background (Chrome and Edge; Firefox shows a clear "not supported" message).
                     </li>
                     <li>
-                        - Added: New demo macros in a new "Browser Vision (Beta)" preinstall folder.
+                        - Added: New JS demo macros in the "Browser Vision (Chrome, Edge)" preinstall folder — plus the "Draw a cat🐱" drawing demo
+                        preinstalled on fresh installs.
                     </li>
                 </ul>
             </p>
@@ -145,8 +146,8 @@
                         - Added: New "Fix with AI" button, chat starter prompts, and plain-language explanations of each action the agent takes.
                     </li>
                     <li>
-                        - Added: The agent can capture element images itself (save_relative_image) to create image-based
-                        <a href="/rpa/docs/bclick">BClick</a> / <a href="/rpa/docs/visual-ui-testing#visualassert">visualAssert</a> / *Relative targets,
+                        - Added: The agent can capture element images itself (save_element_image / save_relative_image) to create image-based
+                        targets for uiv.findImage / <a href="/rpa/docs/visual-ui-testing#visualassert">visualAssert</a>,
                         with crop preview shown in chat.
                     </li>
                     <li>
