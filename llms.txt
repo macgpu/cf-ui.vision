@@ -18,6 +18,7 @@ Macros are stored as JSON, run locally in the user's browser (no cloud), and can
 ## AI
 
 - [AI integration docs](https://ui.vision/ai): overview of the AI features
+- [Ui.Vision AI PRO](https://ui.vision/ai/pro): paid tier of the built-in Ui.Vision AI service — 10x the AI processing limits of the free plan, same AI macro assistant. Monthly subscription at a discounted beta price, cancel anytime, no uptime guarantee while in beta
 - [The AI system prompt](https://ui.vision/ai/ai-system-prompt): the complete system prompt of the AI macro assistant, including the full uiv.* JavaScript API for JS script macros — identical to what the MCP bridge's get_authoring_guide tool returns, so agents can write correct macros even without a bridge connection. Also a compact best-practices handbook (cookie banners, shadow DOM, OCR targeting, error recovery)
 - [aiPrompt](https://ui.vision/ai/prompt): send text + images to the LLM from a macro
 - [aiComputerUse](https://ui.vision/ai/computeruse): Anthropic computer-use automation steps
