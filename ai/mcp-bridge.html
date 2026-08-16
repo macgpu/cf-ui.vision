@@ -136,6 +136,15 @@
                 </li>
             </ol>
             <p>
+                <strong>Developer and test browsers skip the token.</strong> If you run Ui.Vision as an unpacked
+                extension or in Firefox Developer Edition, just switch the bridge on and keep the panel open &mdash;
+                leave the token field empty. The bridge accepts a developer/test browser without one, and
+                <span class="hiblue">Settings &gt; AI</span> shows a green <em>"no pairing token needed"</em> note when
+                this applies. Regular, store-installed browsers still require the token from step&nbsp;2 &mdash; it is
+                what stops another local app from hijacking an end user's bridge, which a hands-on developer setup does
+                not need.
+            </p>
+            <p>
                 That is the whole setup. Now, in any Claude Code chat: <em>"Build a Ui.Vision macro that logs into our intranet and
                 downloads yesterday's report — then run it."</em> The agent builds the macro from the live page, runs it in your browser
                 and fixes it until it passes.
@@ -200,9 +209,11 @@
                         changed with <code>--port</code> (and in Settings &gt; AI) if it collides with something else.</li>
                     <li><strong>Macros the AI creates</strong> are saved in the <em>"AI Generated"</em> folder and opened in the editor.
                         The AI can only delete macros in that folder — everything else is yours alone.</li>
-                    <li><strong>Security:</strong> the WebSocket server binds to <code>127.0.0.1</code> only, connections must present the
-                        token within 5 seconds, and the token file is created with owner-only permissions. Treat the token like a password
-                        for your browser automation.</li>
+                    <li><strong>Security:</strong> the WebSocket server binds to <code>127.0.0.1</code> only, connections from a
+                        store-installed browser must present the token within 5 seconds, and the token file is created with owner-only
+                        permissions. Treat the token like a password for your browser automation. (Developer/test browsers &mdash; unpacked
+                        extensions, Firefox Developer Edition &mdash; connect without a token: that is already a hands-on developer setup, and
+                        the token exists only to keep another local app from hijacking an end user's bridge.)</li>
                     <li><strong>Works with any MCP client</strong>, not just Claude Code — the bridge speaks standard MCP on stdio. The
                         installer covers Claude Code, Claude Desktop, Cursor, Windsurf and VS Code; for anything else, paste the
                         <a href="#install">JSON entry above</a> into that client's MCP config.</li>
