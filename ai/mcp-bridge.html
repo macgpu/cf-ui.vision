@@ -202,8 +202,13 @@
                     <li><strong>Keep the side panel open.</strong> The bridge client runs inside the side panel — by design, so you can
                         watch what the AI does. If the panel is closed, the connection pauses and resumes when you reopen it. A banner in
                         the panel shows when an external agent is controlling Ui.Vision.</li>
-                    <li><strong>One browser at a time.</strong> The bridge holds one extension connection ("newest wins"). If you enable it
-                        in Chrome <em>and</em> Firefox, the two browsers steal the connection from each other — enable it in only one.</li>
+                    <li><strong>Several browsers at once</strong> (bridge 1.4+). Every browser — and every instance or profile of one —
+                        keeps its own connection, labelled in connect order: <code>chrome#1</code>, <code>chrome#2</code>,
+                        <code>firefox#1</code>, &hellip; The label shows in the extension's panel footer (<code>MCP: chrome#1</code>) and in
+                        <span class="hiblue">Settings &gt; AI</span>, so you always know which browser is which. The AI's tool calls go to
+                        the most recently connected browser; the <code>select_browser</code> tool switches — <em>"run this in Firefox
+                        too"</em> is all it takes. <code>bridge_status</code> lists every connected browser and marks the active one.
+                        (Bridges before 1.4 hold a single connection — there, enable the bridge in only one browser.)</li>
                     <li><strong>One Claude Code session at a time.</strong> Each session starts its own bridge on port 50888; a second
                         concurrent session cannot bind the port and its Ui.Vision tools fail until the first session ends. The port can be
                         changed with <code>--port</code> (and in Settings &gt; AI) if it collides with something else.</li>
