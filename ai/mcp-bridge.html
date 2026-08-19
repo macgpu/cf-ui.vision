@@ -202,12 +202,16 @@
                     <li><strong>Keep the side panel open.</strong> The bridge client runs inside the side panel — by design, so you can
                         watch what the AI does. If the panel is closed, the connection pauses and resumes when you reopen it. A banner in
                         the panel shows when an external agent is controlling Ui.Vision.</li>
-                    <li><strong>The connection heals itself after reloads</strong> (extension 10.0.168+). An extension update/reload or a
-                        browser restart closes the panel and would leave the AI waiting on a dead connection. The extension notices this on
-                        its next start: it probes the bridge port once, and only if the bridge is running <em>and</em> this browser is not
-                        connected does it reopen the Ui.Vision app as a regular tab — the connection then resumes by itself, no click
-                        needed. If no bridge is running, nothing opens. Only closing the panel by hand pauses the connection until you
-                        reopen it — that is deliberate, so closing the panel remains a way to pause the AI's access.</li>
+                    <li><strong>The connection heals itself after reloads and restarts</strong> (extension 10.0.169+). An extension
+                        update/reload, a browser restart, or simply closing the last browser window (on Windows, Chrome often keeps running
+                        in the tray — no restart ever happens, yet the panel died with the window) would leave the AI waiting on a dead
+                        connection. The extension notices each of these moments — reload, startup, first window reopening — and probes the
+                        bridge port once: only if the bridge is running <em>and</em> this browser is not connected does it reopen the
+                        Ui.Vision app as a regular tab, and the connection resumes by itself, no click needed. If no bridge is running,
+                        nothing opens. Only closing the panel by hand (while the browser keeps its windows) pauses the connection until you
+                        reopen it — that is deliberate, so closing the panel remains a way to pause the AI's access; opening a second
+                        window never triggers a reopen. The panel's Logs tab records every decision as
+                        <em>"[Claude bridge] startup reopen checks"</em>.</li>
                     <li><strong>Several browsers at once</strong> (bridge 1.4+). Every browser — and every instance or profile of one —
                         keeps its own connection, labelled in connect order: <code>chrome#1</code>, <code>chrome#2</code>,
                         <code>firefox#1</code>, &hellip; The label shows in the extension's panel footer (<code>MCP: chrome#1</code>) and in
