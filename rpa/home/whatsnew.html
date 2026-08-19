@@ -82,8 +82,18 @@
         </div>
     </div>
 
-    <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:4px; margin:15px 10px; padding:14px 18px; text-align:center; font-size:16px; color:#333;">
-        Using <a href="/rpa/x/desktop-automation">desktop automation</a>? Version 10.0<strong style="font-size:1.25em;">.153</strong> and higher need the new
+    <style>
+        @keyframes xmodules-banner-slide {
+            from { transform: translateY(-60px); opacity: 0; }
+            to   { transform: translateY(0); opacity: 1; }
+        }
+        #xmodules-banner { animation: xmodules-banner-slide 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.2s both; }
+        @media (prefers-reduced-motion: reduce) {
+            #xmodules-banner { animation: none; }
+        }
+    </style>
+    <div id="xmodules-banner" style="background:#fff3cd; border:1px solid #ffc107; border-radius:4px; margin:15px 10px; padding:14px 18px; text-align:center; font-size:16px; color:#333;">
+        Using <a href="/rpa/x/desktop-automation">desktop automation</a> and/or <a href="/rpa/x#storage_mode">hard-drive file store</a>? Version 10.0<strong style="font-size:1.25em;">.153</strong> and higher need the new
         <a href="https://forum.ui.vision/t/download-the-desktop-automation-module-xmodules-version-2/29893"><strong>Desktop Automation app (XModules Version 2)</strong></a>.
     </div>
 
