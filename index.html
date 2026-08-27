@@ -113,7 +113,17 @@
             </div>
         </div>
 
-        <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:4px; margin:15px 10px; padding:14px 18px; text-align:center; font-size:16px; color:#333;">
+        <style>
+            @keyframes xmodules-banner-slide {
+                from { transform: translateY(-60px); opacity: 0; }
+                to   { transform: translateY(0); opacity: 1; }
+            }
+            #xmodules-banner { animation: xmodules-banner-slide 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.2s both; }
+            @media (prefers-reduced-motion: reduce) {
+                #xmodules-banner { animation: none; }
+            }
+        </style>
+        <div id="xmodules-banner" style="background:#fff3cd; border:1px solid #ffc107; border-radius:4px; margin:15px 10px; padding:14px 18px; text-align:center; font-size:16px; color:#333;">
             Have Ui.Vision <strong>Version 10</strong>? &rarr; Download the new
             <a href="https://forum.ui.vision/t/download-the-desktop-automation-module-xmodules-version-2/29893">Desktop Automation app (XModules Version 2)</a>
         </div>
