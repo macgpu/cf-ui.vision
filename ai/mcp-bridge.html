@@ -107,7 +107,8 @@
             </p>
             <p>
                 Everything runs locally: the bridge is a small Node.js process listening on <code>127.0.0.1</code> only, the extension
-                connects out to it from the side panel, and a shared token authenticates the pairing. No macro data goes anywhere except
+                connects out to it from the side panel, and the browser's own origin authenticates the pairing &mdash; on current
+                Chrome, Edge and Firefox <strong>no pairing token is needed</strong> (bridge 1.7+). No macro data goes anywhere except
                 to the AI you are chatting with.
             </p>
 
@@ -120,7 +121,8 @@
                     <strong>Run the installer</strong> once in a terminal (Node.js 18+ required):
                     <pre class="cmd">npx uivision-mcp-bridge --setup</pre>
                     It registers Ui.Vision with every MCP client it finds on the machine — Claude Code, Claude Desktop, Cursor, Windsurf,
-                    VS Code — and then prints <strong>your pairing token</strong>. Copy that token; you need it in step 3.
+                    VS Code. It also prints a <strong>fallback pairing token</strong> — you normally won't need it (see step 3), so you can
+                    ignore it for now.
                     <br /><br />
                     <strong>Then quit and reopen Claude Code</strong> — or whichever of those apps you use. MCP servers are loaded only at
                     startup, so an app that was already running never starts the bridge. Quit it completely: opening a new chat, session or
@@ -128,21 +130,20 @@
                     listed.
                 </li>
                 <li>
-                    <strong>Paste the token into the browser.</strong> Open the Ui.Vision side panel, go to
-                    <span class="hiblue">Settings &gt; AI &gt; MCP bridge (Claude Code)</span>, switch it on, paste the token from step 2 and
-                    click <span class="hiblue">Test</span>. The Test button tells you exactly where you stand: bridge reachable and token
-                    correct, wrong token, or bridge not running. When everything is green the panel shows
+                    <strong>Enable the bridge in the browser.</strong> Open the Ui.Vision side panel, go to
+                    <span class="hiblue">Settings &gt; AI &gt; MCP bridge (Claude Code)</span>, switch it on and click
+                    <span class="hiblue">Test</span>. On current Chrome, Edge and Firefox that is all &mdash; the bridge recognises the
+                    Ui.Vision extension by its origin, so the token field can stay empty. The Test button tells you exactly where you
+                    stand: bridge reachable, bridge not running, or (rarely) a token required. When everything is green the panel shows
                     <em>"Connected to the Claude Code MCP bridge"</em>.
                 </li>
             </ol>
             <p>
-                <strong>Developer and test browsers skip the token.</strong> If you run Ui.Vision as an unpacked
-                extension or in Firefox Developer Edition, just switch the bridge on and keep the panel open &mdash;
-                leave the token field empty. The bridge accepts a developer/test browser without one, and
-                <span class="hiblue">Settings &gt; AI</span> shows a green <em>"no pairing token needed"</em> note when
-                this applies. Regular, store-installed browsers still require the token from step&nbsp;2 &mdash; it is
-                what stops another local app from hijacking an end user's bridge, which a hands-on developer setup does
-                not need.
+                <strong>Why no token?</strong> The browser stamps every WebSocket connection with the extension's origin, and web pages
+                cannot forge it &mdash; so the bridge can tell the real Ui.Vision extension apart from anything else on your machine
+                without a shared secret. You only need the fallback token from step&nbsp;2 in the rare case that
+                <span class="hiblue">Test</span> asks for it: an older bridge, or a connection that arrives without an origin. Paste it
+                into the token field under <span class="hiblue">Settings &gt; AI</span> and click Test again.
             </p>
             <p>
                 That is the whole setup. Now, in any Claude Code chat: <em>"Build a Ui.Vision macro that logs into our intranet and
@@ -150,12 +151,12 @@
                 and fixes it until it passes.
             </p>
 
-            <h4>Lost the token?</h4>
+            <h4>Need the fallback token?</h4>
             <p>
-                It is stored in <code>.uivision_mcp_token</code> in your home directory — <code>type "%USERPROFILE%\.uivision_mcp_token"</code>
-                on Windows, <code>cat ~/.uivision_mcp_token</code> on macOS/Linux. Re-running <code>npx uivision-mcp-bridge --setup</code>
-                prints it again. Or simply ask the AI: while the extension is unpaired, every bridge tool call returns the token value, so the
-                agent can show it to you in chat.
+                Only if <span class="hiblue">Test</span> asks for one. It is stored in <code>.uivision_mcp_token</code> in your home
+                directory — <code>type "%USERPROFILE%\.uivision_mcp_token"</code> on Windows, <code>cat ~/.uivision_mcp_token</code> on
+                macOS/Linux. Re-running <code>npx uivision-mcp-bridge --setup</code> prints it again. Or simply ask the AI: while the
+                extension is unpaired, every bridge tool call returns the token value, so the agent can show it to you in chat.
             </p>
 
             <h4>Other MCP clients, or registering by hand</h4>
@@ -187,9 +188,10 @@
                     the VS Code extension, Cursor or Windsurf, and MCP config files are often sandboxed against edits. Do <em>not</em> try to
                     hand-edit <code>~/.claude.json</code> or any other client config. Give the user the one-line installer above, tell them a
                     full restart is required, and stop there.</li>
-                <li><strong><code>bridge_status</code> says the extension is not connected?</strong> The tool result already contains the
-                    pairing token value — show it to the user verbatim in chat and walk them through step 3 above. You do <em>not</em> need to
-                    read <code>~/.uivision_mcp_token</code>; the value in the tool result is authoritative.</li>
+                <li><strong><code>bridge_status</code> says the extension is not connected?</strong> Walk the user through step 3 above:
+                    open the side panel, enable <span class="hiblue">Settings &gt; AI &gt; MCP bridge</span>, click Test — no token needed on
+                    current browsers. Only if Test reports a token is required, show them the fallback token value: it is included verbatim in
+                    the tool result, so you do <em>not</em> need to read <code>~/.uivision_mcp_token</code>.</li>
                 <li><strong>Before writing your first macro,</strong> call <code>get_authoring_guide</code>. If the bridge is not reachable,
                     the identical content — including the complete <code>uiv.*</code> JavaScript API — is at
                     <a href="/ai/ai-system-prompt">ui.vision/ai/ai-system-prompt</a>. Prefer <code>uiv.*</code> JS script macros over the
@@ -222,11 +224,13 @@
                         changed with <code>--port</code> (and in Settings &gt; AI) if it collides with something else.</li>
                     <li><strong>Macros the AI creates</strong> are saved in the <em>"AI Generated"</em> folder and opened in the editor.
                         The AI can only delete macros in that folder — everything else is yours alone.</li>
-                    <li><strong>Security:</strong> the WebSocket server binds to <code>127.0.0.1</code> only, connections from a
-                        store-installed browser must present the token within 5 seconds, and the token file is created with owner-only
-                        permissions. Treat the token like a password for your browser automation. (Developer/test browsers &mdash; unpacked
-                        extensions, Firefox Developer Edition &mdash; connect without a token: that is already a hands-on developer setup, and
-                        the token exists only to keep another local app from hijacking an end user's bridge.)</li>
+                    <li><strong>Security:</strong> the WebSocket server binds to <code>127.0.0.1</code> only &mdash; nothing is reachable
+                        from the network. Connections authenticate by <em>origin</em>: the browser stamps the handshake with the extension's
+                        origin and web content cannot forge it, so the bridge admits the real Ui.Vision extension and <em>rejects any web
+                        page</em> that tries to reach <code>127.0.0.1</code> outright. (A connected client can only receive the AI's tool
+                        calls, never issue them, so a page could do nothing useful even if it got in.) Connections that arrive without an
+                        origin &mdash; a non-browser local client &mdash; still authenticate with the shared token within 5 seconds, and the
+                        token file is created with owner-only permissions.</li>
                     <li><strong>Works with any MCP client</strong>, not just Claude Code — the bridge speaks standard MCP on stdio. The
                         installer covers Claude Code, Claude Desktop, Cursor, Windsurf and VS Code; for anything else, paste the
                         <a href="#install">JSON entry above</a> into that client's MCP config.</li>
