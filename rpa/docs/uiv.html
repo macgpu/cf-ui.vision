@@ -103,8 +103,8 @@
                 <a href="/rpa/docs/selenium-vs-uiv">Selenium-derived commands vs uiv.* conversion table</a>.
             </p>
 
-<pre class="jsdemo">uiv.open('https://en.wikipedia.org');
-uiv.page.type('id=searchInput', 'Solar cell');
+<pre class="jsdemo">uiv.goto('https://en.wikipedia.org');
+uiv.page.fill('id=searchInput', 'Solar cell');
 uiv.browser.type('${KEY_ENTER}', {nav: true});
 const h1 = uiv.$('css=#firstHeading');   // auto-waits, throws if it never appears
 uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
@@ -136,6 +136,16 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                         <td><code>uiv.$$('css=tr').length</code></td>
                     </tr>
                     <tr class="success">
+                        <td><code>uiv.getByRole(role, {name})</code><br><code>uiv.getByLabel(text)</code><br><code>uiv.getByText(text)</code><br><code>uiv.getByPlaceholder / getByTitle / getByAltText / getByTestId</code></td>
+                        <td>Finders by <b>accessible name</b>, with <a href="https://playwright.dev/docs/locators">Playwright's names and semantics</a>: what the AI's page tree (and a screen reader) calls the element is the locator — no css/xpath to invent, and it survives re-renders. Default match is a case-insensitive substring; <code>{exact: true}</code> is the whole string; <code>{all: true}</code> returns every match. A match is a locator for every action tier.</td>
+                        <td><code>uiv.page.click(uiv.getByRole('button', {name: 'Rechnung erstellen'}))</code><br><code>uiv.page.fill(uiv.getByLabel('PLZ'), '69190')</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>match.innerText()</code> <code>.inputValue()</code> <code>.isVisible()</code> <code>.isChecked()</code> <code>.isEnabled()</code> <code>.getAttribute(name)</code></td>
+                        <td>Playwright's questions, answered by a DOM match from find time (like the universal fields <code>.text</code>, <code>.value</code>, <code>.rect</code>, <code>.x/.y</code> that every match has). An OCR or image match — browser or desktop — has no DOM and says so when asked.</td>
+                        <td><code>if (uiv.getByLabel('AGB').isChecked()) ...</code></td>
+                    </tr>
+                    <tr class="success">
                         <td><code>uiv.findImage(png, opts)</code></td>
                         <td>First computer-vision match of an image on the visible page. Options: {minScore, area, scope}</td>
                         <td><code>uiv.findImage('buy.png', {minScore: 0.8})</code></td>
@@ -162,6 +172,8 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                     </tr>
                 </tbody>
             </table>
+
+            <p><b>Naming rule:</b> a feature that <a href="https://playwright.dev/docs/api/class-locator">Playwright</a> also has carries Playwright's name in uiv — <code>uiv.goto</code>, <code>uiv.evaluate</code>, <code>uiv.page.fill</code>, <code>uiv.page.selectOption</code>, <code>uiv.browser.hover</code>, <code>uiv.browser.press('Control+S')</code> and the <code>getBy*</code> finders above. Features that also exist on the desktop (<code>uiv.screenshot</code>, <code>.text</code>, <code>.rect</code>, the desktop tier itself) keep their scope-neutral names, because Playwright is browser-only. The older spellings <code>uiv.open</code>, <code>uiv.eval</code>, <code>uiv.page.type</code>, <code>uiv.page.select</code> and <code>uiv.browser.move</code> still run.</p>
 
             <h3 id="comparison">Acting — Three Input Tiers</h3>
             <p>
@@ -225,7 +237,7 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
 
             <p>
                 <span class="hired">Dragging</span> is press, move, release: <code>uiv.browser.down(start)</code> holds the button,
-                every <code>uiv.browser.move</code> while it is held drags, <code>uiv.browser.up(end)</code> releases —
+                every <code>uiv.browser.hover</code> while it is held drags, <code>uiv.browser.up(end)</code> releases —
                 sliders, drag handles and canvas drawing all work this way.
                 <span class="hired">Keystrokes</span> go to the focused element and support the ${KEY_...} codes:
                 <code>uiv.browser.type('${KEY_ENTER}', {nav: true})</code> submits and waits for the navigation it causes.
@@ -242,14 +254,14 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
 
                 <tbody>
                     <tr class="success">
-                        <td><code>uiv.open(url)</code></td>
+                        <td><code>uiv.goto(url)</code></td>
                         <td>Navigate and wait for the page load</td>
-                        <td><code>uiv.open('https://ui.vision')</code></td>
+                        <td><code>uiv.goto('https://ui.vision')</code></td>
                     </tr>
                     <tr>
-                        <td><code>uiv.eval(code)</code></td>
+                        <td><code>uiv.evaluate(code)</code></td>
                         <td>Run JavaScript inside the website and return the result (the code must use return)</td>
-                        <td><code>uiv.eval('return document.title')</code></td>
+                        <td><code>uiv.evaluate('return document.title')</code></td>
                     </tr>
                     <tr class="success">
                         <td><code>match.text / match.value</code></td>

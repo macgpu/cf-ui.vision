@@ -142,7 +142,7 @@
                     <tr>
                         <td>Waiting: <code>waitForElementVisible</code>, pause commands</td>
                         <td><span class="hired">Finders auto-wait</span>: <code>uiv.$('css=.results')</code> waits up to !TIMEOUT_WAIT, then throws</td>
-                        <td>Finding an element IS the wait. uiv.open() waits for the page load, a click that navigates is waited for automatically.</td>
+                        <td>Finding an element IS the wait. uiv.goto() waits for the page load, a click that navigates is waited for automatically.</td>
                     </tr>
                     <tr class="success">
                         <td>Frames: <code>selectFrame | index=2</code> before every access</td>
@@ -171,8 +171,8 @@ storeText  | id=firstHeading | myresult
 echo       | Landed on: ${myresult}</pre>
                         </td>
                         <td>
-<pre class="jsdemo">uiv.open('https://en.wikipedia.org');
-uiv.page.type('id=searchInput', 'Solar cell');
+<pre class="jsdemo">uiv.goto('https://en.wikipedia.org');
+uiv.page.fill('id=searchInput', 'Solar cell');
 uiv.browser.type('${KEY_ENTER}', {nav: true});
 const h1 = uiv.$('css=#firstHeading'); // auto-waits
 uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
@@ -204,7 +204,7 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                     </tr>
                     <tr>
                         <td>type | id=email | a@b.com</td>
-                        <td><code>uiv.page.type('id=email', 'a@b.com')</code></td>
+                        <td><code>uiv.page.fill('id=email', 'a@b.com')</code></td>
                         <td>Fills the field in one call, no click-to-focus needed.</td>
                     </tr>
                     <tr class="success">
@@ -214,23 +214,23 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                     </tr>
                     <tr>
                         <td>select | id=cars | label=Volvo</td>
-                        <td><code>uiv.page.select('id=cars', 'Volvo')</code></td>
+                        <td><code>uiv.page.selectOption('id=cars', 'Volvo')</code></td>
                         <td>Also 'value=...' / 'index=N'. Works even when the select is hidden behind a styled skin.</td>
                     </tr>
                     <tr class="success">
                         <td>check / uncheck | id=box</td>
-                        <td><code>uiv.page.click('id=box')</code> plus a read-back of the checked state via <code>uiv.eval</code></td>
+                        <td><code>uiv.page.click('id=box')</code> plus a read-back of the checked state via <code>uiv.evaluate</code></td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td>mouseOver | css=.menu</td>
-                        <td><code>uiv.browser.move('css=.menu')</code></td>
+                        <td><code>uiv.browser.hover('css=.menu')</code></td>
                         <td>A real hover, so CSS hover menus open.</td>
                     </tr>
                     <tr class="success">
                         <td>dragAndDropToObject</td>
                         <td><code>uiv.browser.down(start); uiv.browser.up(end)</code></td>
-                        <td>Press, move, release. Every <code>uiv.browser.move</code> between down and up drags. Works on canvas apps and sliders that ignore synthetic drag events.</td>
+                        <td>Press, move, release. Every <code>uiv.browser.hover</code> between down and up drags. Works on canvas apps and sliders that ignore synthetic drag events.</td>
                     </tr>
                     <tr>
                         <td>clickAt (deprecated)</td>
@@ -325,12 +325,12 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                     </tr>
                     <tr class="success">
                         <td>storeAttribute | id=link@href | myvar</td>
-                        <td><code>uiv.eval("return document.querySelector('#link').href")</code></td>
-                        <td>uiv.eval runs JavaScript inside the website and returns the result.</td>
+                        <td><code>uiv.evaluate("return document.querySelector('#link').href")</code></td>
+                        <td>uiv.evaluate runs JavaScript inside the website and returns the result.</td>
                     </tr>
                     <tr>
                         <td>storeTitle</td>
-                        <td><code>uiv.eval('return document.title')</code></td>
+                        <td><code>uiv.evaluate('return document.title')</code></td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr class="success">
@@ -340,17 +340,17 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                     </tr>
                     <tr>
                         <td>storeChecked</td>
-                        <td><code>uiv.eval("return document.querySelector('#box').checked")</code></td>
+                        <td><code>uiv.evaluate("return document.querySelector('#box').checked")</code></td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr class="success">
                         <td>sourceSearch / sourceExtract</td>
-                        <td><code>uiv.eval('return document.documentElement.outerHTML')</code> + a JS regex</td>
+                        <td><code>uiv.evaluate('return document.documentElement.outerHTML')</code> + a JS regex</td>
                         <td>One fetch of the source, then normal String/RegExp methods.</td>
                     </tr>
                     <tr>
                         <td>executeScript / executeScript_Sandbox / storeEval</td>
-                        <td>Plain JavaScript — or <code>uiv.eval(code)</code> when the code must run inside the page</td>
+                        <td>Plain JavaScript — or <code>uiv.evaluate(code)</code> when the code must run inside the page</td>
                         <td>Most executeScript_Sandbox commands simply disappear: the script IS JavaScript.</td>
                     </tr>
                     <tr class="success">
