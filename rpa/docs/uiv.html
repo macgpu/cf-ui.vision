@@ -194,7 +194,7 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                         <td>Methods</td>
                         <td><code>click, type(locator, text), select</code></td>
                         <td><code>click, type(text), move, down, up</code></td>
-                        <td><code>click, type(text), move</code></td>
+                        <td><code>click, type(text), insertText(text), press, move, down, up</code></td>
                     </tr>
                     <tr>
                         <td>Event type</td>
@@ -241,6 +241,14 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                 sliders, drag handles and canvas drawing all work this way.
                 <span class="hired">Keystrokes</span> go to the focused element and support the ${KEY_...} codes:
                 <code>uiv.browser.type('${KEY_ENTER}', {nav: true})</code> submits and waits for the navigation it causes.
+                <span class="hired">Text without keystrokes:</span> <code>uiv.desktop.insertText(text, {chord, settle, focus})</code>
+                (alias <code>uiv.desktop.paste</code>, Playwright's <code>keyboard.insertText</code>) puts the text on the OS clipboard and presses one paste
+                chord (Control+V; Meta+V on macOS; pass <code>chord: 'Control+Shift+V'</code> for a Linux terminal), so no keyboard layout, dead key or
+                AltGr is involved. Use it for text that keystrokes mangle: a window on the far side of a remote-control viewer (AnyDesk, TeamViewer relay
+                keystrokes through the far side's layout and drop characters like <code>|</code> that the local layout cannot encode for it), a foreign-layout
+                guest, a field that rejects synthetic keys. <code>settle</code> (ms, default 1000) gives the clipboard sync time; <code>focus</code> is a point or
+                finder match clicked after the write and before the paste (a VM pulls the host clipboard when its window is clicked, so the order matters).
+                Key names are not interpreted in pasted text; press Enter with <code>uiv.desktop.press('Enter')</code> afterwards.
             </p>
 
             <h3>Page, Reading &amp; OCR</h3>
