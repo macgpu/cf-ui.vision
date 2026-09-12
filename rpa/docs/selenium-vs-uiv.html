@@ -243,9 +243,14 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                         <td>Rich text editors (contenteditable) want real keystrokes.</td>
                     </tr>
                     <tr>
-                        <td>XClick / XType / XMove / XMouseWheel</td>
-                        <td><code>uiv.desktop.click(...) / .type(...) / .move(...)</code></td>
-                        <td>Real OS input in screen pixels, via the <a href="/rpa/x">XModule</a>. For OS dialogs and desktop apps. Visual targets: <code>uiv.desktop.click(uiv.findImage('ok.png', {scope: 'desktop'}))</code>.</td>
+                        <td>XClick / XType / XMove</td>
+                        <td><code>uiv.desktop.mouse.click(...) / uiv.desktop.keyboard.type(...) / uiv.desktop.mouse.move(...)</code></td>
+                        <td>Real OS input in screen pixels, via the <a href="/rpa/x">XModule</a>. For OS dialogs and desktop apps. Visual targets: <code>uiv.desktop.mouse.click(uiv.findImage('ok.png', {scope: 'desktop'}))</code>.</td>
+                    </tr>
+                    <tr>
+                        <td>XMouseWheel</td>
+                        <td><code>uiv.desktop.mouse.wheel(deltaX, deltaY)</code></td>
+                        <td>Pixel input deltas with Desktop Automation 2.1.11+: positive X right, positive Y down. Existing notch-based values can keep <code>uiv.run('XMouseWheel', delta)</code>. For Chromium page input without an XModule, use <code>uiv.browser.mouse.wheel(deltaX, deltaY)</code>. See <a href="/rpa/docs/uiv#scrolling-and-held-keys">scrolling and held keys</a>.</td>
                     </tr>
                 </tbody>
             </table>
