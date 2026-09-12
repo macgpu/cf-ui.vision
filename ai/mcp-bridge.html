@@ -142,9 +142,21 @@
                     <span class="hiblue">Test</span>. On current Chrome, Edge and Firefox that is all &mdash; the bridge recognises the
                     Ui.Vision extension by its origin, so the token field can stay empty. The Test button tells you exactly where you
                     stand: bridge reachable, bridge not running, or (rarely) a token required. When everything is green the panel shows
-                    <em>"Connected to the Claude Code MCP bridge"</em>.
+                    <em>"Bridge connected"</em> (extension 10.0.233+). After a client calls a tool, the header names that client,
+                    for example <em>"Codex connected"</em> or <em>"Codex: run_macro"</em> while a macro runs. Hover over the header
+                    for the bridge version, PID, owner and browser connection. The process hosting a shared bridge may belong to
+                    a different client from the one controlling this browser.
                 </li>
             </ol>
+            <h3 id="codex">Codex setup and long-running macros</h3>
+            <p>Add or update the Ui.Vision server entry in <code>~/.codex/config.toml</code>:</p>
+            <pre class="cmd">[mcp_servers.uivision]
+command = "npx"
+args = ["-y", "uivision-mcp-bridge"]
+tool_timeout_sec = 900</pre>
+            <p>The 900-second timeout allows long demos, including five minutes of Flappy Bird plus setup and verification.
+                The bridge already allows 15 minutes for <code>run_macro</code>; the MCP client's timeout must also cover the run.
+                Reload the MCP connection after changing the setting: an existing connection keeps its previous timeout.</p>
             <p>
                 <strong>Why no token?</strong> The browser stamps every WebSocket connection with the extension's origin, and web pages
                 cannot forge it &mdash; so the bridge can tell the real Ui.Vision extension apart from anything else on your machine
