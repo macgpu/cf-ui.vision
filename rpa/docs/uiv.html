@@ -251,6 +251,57 @@ uiv.log(`Landed on: ${h1.text}`, 'green');</pre>
                 Key names are not interpreted in pasted text; press Enter with <code>uiv.desktop.press('Enter')</code> afterwards.
             </p>
 
+            <h3 id="scrolling-and-held-keys">Scrolling and holding keys</h3>
+            <p>
+                Available in extension <b>10.0.230+</b>. These operations use Playwright's names and argument syntax.
+                Ui.Vision macro calls wait automatically, so omit <code>async</code> and <code>await</code>.
+            </p>
+            <table class="table table-bordered">
+                <thead><tr><th>Method</th><th>Behavior</th><th>Requirements</th></tr></thead>
+                <tbody>
+                    <tr><td><code>uiv.browser.mouse.wheel(deltaX, deltaY)</code></td>
+                        <td>Trusted scrolling at the current pointer in viewport CSS pixels. Positive X goes right; positive Y goes down. Move the pointer over a nested panel first with <code>uiv.browser.mouse.move(x, y)</code>. Returns after dispatch; wait for the intended content change afterwards.</td>
+                        <td>Chrome, Brave, Edge or another Chromium browser with the debugger API.</td></tr>
+                    <tr><td><code>uiv.desktop.mouse.wheel(deltaX, deltaY)</code></td>
+                        <td>Native scrolling at the OS pointer. Positive X goes right; positive Y goes down. macOS sends pixel events, Wayland continuous deltas, Windows converts 100 nominal pixels per notch, and X11 accumulates whole notches. The app and OS determine the resulting distance.</td>
+                        <td>Desktop Automation 2.1.11+. Works from the extension or standalone desktop app.</td></tr>
+                    <tr><td><code>match.scrollIntoViewIfNeeded({timeout})</code></td>
+                        <td>Reveals an attached, visible, stable DOM target, including inside nested scroll containers. A fully visible target stays in place. Also available as <code>uiv.page.scrollIntoViewIfNeeded(locator, options)</code>. Find the target again for fresh coordinates afterwards.</td>
+                        <td>DOM target; all supported browsers, including Firefox.</td></tr>
+                    <tr><td><code>uiv.browser.keyboard.down(key)</code><br><code>uiv.browser.keyboard.up(key)</code></td>
+                        <td>Hold or release one key. Consecutive down calls hold multiple keys; repeated down sends repeat events. Names include <code>a</code>, <code>KeyW</code>, <code>ArrowDown</code>, <code>Shift</code>, and <code>ControlOrMeta</code> (Meta on Mac, Control elsewhere). Hold modifiers separately; these methods take one key per call.</td>
+                        <td>Chromium debugger API. The desktop equivalent is <code>uiv.desktop.keyboard.down/up(key)</code>.</td></tr>
+                </tbody>
+            </table>
+            <p>
+                <code>scrollIntoViewIfNeeded</code> takes a timeout in <b>milliseconds</b>, matching Playwright;
+                existing finder timeouts such as <code>uiv.$(locator, {timeout: 3})</code> use seconds.
+                An omitted scroll timeout uses <code>!TIMEOUT_WAIT</code> converted to milliseconds;
+                <code>0</code> disables it. Oversized targets are centered as far as their containers allow.
+                The standalone desktop app has no DOM or browser tier. Legacy <code>XMouseWheel</code>
+                retains its existing notch units and axis mapping.
+            </p>
+            <pre>const panel = uiv.$('#panel');
+uiv.browser.mouse.move(panel.x, panel.y);
+uiv.browser.mouse.wheel(0, 300);
+uiv.$('#target', {scroll: false}).scrollIntoViewIfNeeded({timeout: 3000});
+
+const keyboard = uiv.browser.keyboard;
+try {
+  keyboard.down('a');
+  keyboard.down('w');
+  uiv.sleep(1000);
+} finally {
+  keyboard.up('w');
+  keyboard.up('a');
+}</pre>
+            <p>
+                Pair key presses with releases in <code>try/finally</code>. The runner also releases held CDP keys
+                on completion, failure, or Stop. Held modifiers accompany browser mouse and wheel events.
+                Restore JavaScript demos in Settings for <code>Core/DemoScrolling.js</code> and
+                <code>Core/DemoHeldKeys.js</code>. Set <code>NATIVE=true</code> in DemoScrolling to test the native wheel.
+            </p>
+
             <h3>Page, Reading &amp; OCR</h3>
 
             <table class="table table-bordered">

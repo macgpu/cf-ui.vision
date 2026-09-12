@@ -36,3 +36,5 @@ Macros are stored as JSON, run locally in the user's browser (no cloud), and can
 - [XModules download & install](https://ui.vision/rpa/x)
 - [Pricing (PRO / Enterprise)](https://ui.vision/rpa/x/pricing)
 - [About a9t9 software GmbH](https://ui.vision/about)
+
+- [Scrolling and held keys](https://ui.vision/rpa/docs/uiv#scrolling-and-held-keys): Playwright-style mouse.wheel(deltaX, deltaY), scrollIntoViewIfNeeded({timeout}) in milliseconds, and browser.keyboard.down/up(key), with sequential examples, Chromium requirements and Desktop Automation 2.1.11 native wheel support.
