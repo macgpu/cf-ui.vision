@@ -28,10 +28,9 @@
     var deathSound = new Audio(ASSETS + 'sound/gameover.mp3');
     var swooshSound = new Audio(ASSETS + 'sound/swoosh.mp3');
 
-    // Frame-rate independent timing: speeds are per 60 fps frame, scaled by dt.
-    var FRAME_MS = 1000 / 60, PIPE_EVERY_MS = 1500;
-    var lastFrame = 0, lastPipe = 0;
-    var gameEl, messageImg, scoreEl, bestEl, soundEl;
+    var pipeInterval;
+    var gameEl, messageImg, scoreEl, bestEl, soundEl, visualOnlyEl;
+    var state = 'menu';
 
     function play(sound) {
         if (soundEl && !soundEl.checked) return;
@@ -42,13 +41,38 @@
         } catch (e) { /* ignore */ }
     }
 
-    function setState(state) {
-        gameEl.setAttribute('data-state', state);
+    function visualOnly() {
+        return !!(visualOnlyEl && visualOnlyEl.checked);
+    }
+
+    // Mirror game state into the DOM (#game[data-state], #score, #best-score) - unless
+    // "visual game play only" is checked, then the DOM tells nothing and bots must use vision.
+    function syncDom() {
+        if (visualOnly()) {
+            gameEl.removeAttribute('data-state');
+            scoreEl.textContent = '?';
+            bestEl.textContent = '?';
+        } else {
+            gameEl.setAttribute('data-state', state);
+            scoreEl.textContent = Math.floor(score);
+            bestEl.textContent = best;
+        }
+    }
+
+    function setState(value) {
+        state = value;
+        syncDom();
     }
 
     function setScore(value) {
         score = value;
-        scoreEl.textContent = Math.floor(score);
+        if (!visualOnly()) scoreEl.textContent = Math.floor(score);
+    }
+
+    // In "visual game play only" mode, synthetic events (dispatched by scripts, e.g. a DOM
+    // click from an automation tool) are ignored - only real mouse/keyboard input counts.
+    function trusted(e) {
+        return !visualOnly() || !e || e.isTrusted !== false;
     }
 
     function init() {
@@ -71,16 +95,18 @@
         scoreEl = document.getElementById('score');
         bestEl = document.getElementById('best-score');
         soundEl = document.getElementById('sound');
+        visualOnlyEl = document.getElementById('visual-only');
+        if (visualOnlyEl) visualOnlyEl.addEventListener('change', syncDom);
 
-        document.getElementById('start-button').addEventListener('click', loadGame);
-        document.getElementById('restart-button').addEventListener('click', restartGame);
+        document.getElementById('start-button').addEventListener('click', function (e) { if (trusted(e)) loadGame(); });
+        document.getElementById('restart-button').addEventListener('click', function (e) { if (trusted(e)) restartGame(); });
 
         // Mouse click on the canvas = flap
-        board.addEventListener('click', jump);
+        board.addEventListener('click', function (e) { if (trusted(e)) jump(); });
         // Spacebar = flap (only once the game has been loaded, so the page scrolls normally before that)
         document.addEventListener('keydown', function (e) {
             var isSpace = e.code === 'Space' || e.key === ' ' || e.key === 'Spacebar' || e.keyCode === 32;
-            if (!isSpace || !loaded) return;
+            if (!isSpace || !loaded || !trusted(e)) return;
             var t = e.target;
             if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.tagName === 'BUTTON')) return;
             e.preventDefault();
@@ -102,7 +128,6 @@
 
         messageImg.style.display = 'block';
         setState('ready');
-        lastFrame = 0;
 
         ctx.clearRect(0, 0, board.width, board.height);
         ctx.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
@@ -114,40 +139,33 @@
             isGameStarted = true;
             velocityY = -6;
             play(flapSound);
-            lastPipe = 0; // first pipe pair spawns on the next frame
+            pipeInterval = setInterval(addPipes, 1500);
 
             messageImg.style.display = 'none';
             setState('playing');
         }
     }
 
-    function update(ts) {
+    function update() {
         if (gameOver) return;
-        // dt = 1 at 60 fps, ~0.5 at 120 fps; capped so a paused/hidden tab does not teleport the bird
-        var dt = lastFrame ? Math.min((ts - lastFrame) / FRAME_MS, 3) : 1;
-        lastFrame = ts;
         ctx.clearRect(0, 0, board.width, board.height);
 
         if (isGameStarted) {
-            if (ts - lastPipe >= PIPE_EVERY_MS) {
-                addPipes();
-                lastPipe = ts;
-            }
-            velocityY += gravity * dt;
-            bird.y = Math.max(bird.y + velocityY * dt, 0);
+            velocityY += gravity;
+            bird.y = Math.max(bird.y + velocityY, 0);
         }
         ctx.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
 
         if (bird.y > board.height) endGame();
 
         pipes.forEach(function (pipe) {
-            pipe.x += velocityX * dt;
+            pipe.x += velocityX;
             ctx.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
 
             if (!pipe.passed && bird.x > pipe.x + pipe.width) {
                 setScore(score + 0.5); // two pipes per gap -> +1 per gap
                 pipe.passed = true;
-                if (score === Math.floor(score)) play(passPipeSound);
+                play(passPipeSound);
             }
 
             if (isCollision(bird, pipe)) endGame();
@@ -159,7 +177,7 @@
         ctx.font = '45px sans-serif';
         ctx.fillText(Math.floor(score), 5, 45);
 
-        if (!gameOver) requestAnimationFrame(update);
+        requestAnimationFrame(update);
     }
 
     function addPipes() {
@@ -193,11 +211,12 @@
     function endGame() {
         if (gameOver) return;
         gameOver = true;
+        clearInterval(pipeInterval);
         play(deathSound);
         var finalScore = Math.floor(score);
         if (finalScore > best) {
             best = finalScore;
-            bestEl.textContent = best;
+            if (!visualOnly()) bestEl.textContent = best;
         }
         document.getElementById('final-score').textContent = finalScore;
         document.getElementById('gameover-menu').style.display = 'flex';
