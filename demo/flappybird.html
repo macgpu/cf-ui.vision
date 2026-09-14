@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Free ad-free Flappy Bird game - demo page for high-speed browser and desktop automation with Ui.Vision for Desktop. Stable element IDs and live game state for RPA and AI agents.">
+    <title>Flappy Bird Game - High-Speed Browser and Desktop Automation Demo with Ui.Vision for Desktop</title>
+    <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
+    <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
+    <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="/content/main/base.css" rel="stylesheet" />
+    <link href="/content/main/elements.css" rel="stylesheet" />
+    <link href="/content/main/grid.css" rel="stylesheet" />
+    <link href="/content/main/layout.css" rel="stylesheet" />
+    <link href="/content/main/style.css" rel="stylesheet" />
+    <style>
+        ul { list-style: none outside none; padding-left: 0; margin: 0; }
+        /* site style.css makes code a 23px block element - keep it inline here */
+        #content code {
+            display: inline;
+            font-size: inherit;
+            font-family: Consolas, Menlo, monospace;
+            line-height: inherit;
+            margin: 0;
+            padding: 1px 5px;
+            background: #f5f5f5;
+            border-radius: 3px;
+        }
+        #page-header h1 span a { color: inherit; text-decoration: underline; }
+        #game-wrap {
+            max-width: 430px;
+            margin: 0 auto 30px;
+            padding: 22px 24px 18px;
+            background: #fff;
+            border: 1px solid #e3e8ee;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(30, 60, 100, 0.10);
+            text-align: center;
+        }
+        #game {
+            position: relative;
+            width: 360px;
+            height: 640px;
+            margin: 0 auto 14px;
+            border: 4px solid #333;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #70c5ce;
+            user-select: none;
+        }
+        #board {
+            display: block;
+            width: 360px;
+            height: 640px;
+            background-image: url('/demo/flappybird/assets/images/bg.png');
+            background-size: cover;
+            cursor: pointer;
+        }
+        #main-menu, #gameover-menu {
+            position: absolute;
+            top: 0; left: 0;
+            width: 360px;
+            height: 640px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #main-menu #logo-image { width: 80%; margin-bottom: 90px; }
+        #main-menu #start-button { width: 40%; cursor: pointer; }
+        #gameover-menu { display: none; }
+        #gameover-image { width: 55%; margin-bottom: 10px; }
+        #gameover-menu p {
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 0 #333;
+            margin: 0 0 30px;
+        }
+        #gameover-menu #restart-button { width: 40%; cursor: pointer; }
+        #message-image {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            max-width: 200px;
+            pointer-events: none;
+            display: none;
+        }
+        #game-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            font-size: 14px;
+            color: #7a8694;
+        }
+        #game-status span { font-weight: 700; color: #333; }
+        #game-status label { margin: 0; font-size: 14px; color: #7a8694; cursor: pointer; }
+        #game-status input { margin: 0 4px 0 0; vertical-align: middle; }
+        .bird-sprite { vertical-align: middle; image-rendering: pixelated; }
+        @media (max-width: 480px) {
+            #game-wrap { padding: 12px 6px 10px; }
+            #game { width: 300px; height: 533px; }
+            #board { width: 300px; height: 533px; }
+            #main-menu, #gameover-menu { width: 300px; height: 533px; }
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJNCDYRXBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VJNCDYRXBP');
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="row">
+            <div class="span2">
+                <a href="/" id="logo">
+                    <img src="/content/images/ui.vision.logo2.webp" alt="Ui.Vision RPA" class="responsive-img">
+                </a>
+            </div>
+            <div class="span10">
+                <a class="toggleMenu" id="mobile-menu-trigger" href="#"><i class="fa fa-bars"></i></a>
+                <ul class="nav" style="display:block;">
+                    <li>
+                        <a href="/#get"><span class="highlight">1. Get Ui.Vision (free)</span></a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa">Open-Source RPA</a></li>
+                            <li><a href="/rpa/x">Ui.Vision XModules</a></li>
+                            <li><a href="/rpa/docs/selenium-ide">Classic Browser Automation</a></li>
+                            <li><a href="/rpa/x/desktop-automation">Desktop Automation</a></li>
+                            <li><a href="/ai/computeruse">AI Computer Use</a></li>
+                            <li><a href="/rpa/x/pricing">Buy RPA PRO and Enterprise</a></li>
+                            <li><a href="https://forum.ui.vision/">Visit Our User Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rpa/x"><span class="highlight">2. Install XModules</span></a></li>
+                    <li>
+                        <a href="https://ocr.space">OCR</a>
+                        <ul class="children-menu">
+                            <li><a href="https://ocr.space/ocrapi">Free PDF OCR API</a></li>
+                            <li><a href="https://ocr.space">Free Online OCR</a></li>
+                            <li><a href="https://ocr.space/searchablepdf">Create Searchable PDF</a></li>
+                            <li><a href="https://ocr.space/copyfish">Copyfish OCR</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">Support</a>
+                        <ul class="children-menu">
+                            <li><a href="/rpa/docs">RPA Docs</a></li>
+                            <li><a href="/ai">AI Integration Docs</a></li>
+                            <li><a href="https://forum.ui.vision">RPA, OCR, AI Forum</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div id="content">
+    <!--  CONTENT   -->
+    <div id="page-header" class="page-demo">
+        <div class="row">
+            <div class="span12 whitebg">
+                <h1>Flappy Bird Game <span>&ndash; High-Speed browser and desktop automation with <a href="https://forum.ui.vision/t/ui-vision-for-desktop/30005">Ui.Vision for Desktop</a></span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <div id="game-wrap">
+                <div id="game" data-state="menu">
+                    <canvas id="board" width="360" height="640"></canvas>
+
+                    <div id="main-menu">
+                        <img id="logo-image" src="/demo/flappybird/assets/images/logo.png" alt="Flappy Bird" />
+                        <img id="start-button" src="/demo/flappybird/assets/images/start.png" alt="Start Game" />
+                    </div>
+
+                    <div id="gameover-menu">
+                        <img id="gameover-image" src="/demo/flappybird/assets/images/gameover.png" alt="Game Over" />
+                        <p>Score: <span id="final-score">0</span></p>
+                        <img id="restart-button" src="/demo/flappybird/assets/images/restart.png" alt="Restart Game" />
+                    </div>
+
+                    <img id="message-image" src="/demo/flappybird/assets/images/message.png" alt="Click or press space to flap" />
+                </div>
+
+                <div id="game-status">
+                    <div>Score: <span id="score">0</span></div>
+                    <div>Best: <span id="best-score">0</span></div>
+                    <label><input type="checkbox" id="sound" checked> Sound</label>
+                </div>
+            </div>
+
+            <p>
+                A free, ad-free Flappy Bird clone. Click <strong>Start</strong>, then click the game or press <strong>space</strong>
+                to flap. Every pipe you pass scores one point. The bird
+                <img class="bird-sprite" src="/demo/flappybird/assets/images/flappybird.png" alt="bird sprite" width="34" height="24">
+                falls fast, so a player (human or bot) has to react within a fraction of a second. That makes this page a fun
+                <strong>speed benchmark for automation</strong>: a macro has to take a screenshot, find the bird and the next pipe gap,
+                decide, and click &mdash; many times per second.
+            </p>
+
+            <p>
+                This is exactly the kind of task the new
+                <a href="https://forum.ui.vision/t/ui-vision-for-desktop/30005">Ui.Vision for Desktop</a> app is made for.
+                It runs JavaScript desktop macros (<code>*.d.js</code>) natively, without a browser in the loop,
+                and is therefore much faster than running the same macro inside the browser extension. Image search
+                (<code>uiv.findImage('bird.png')</code>), OCR (<code>uiv.ocr.findText('Game Over')</code>) and native mouse and
+                keyboard input (<code>uiv.desktop.click(...)</code>, <code>uiv.desktop.press('Space')</code>) all use the same
+                <a href="/rpa/docs/uiv">uiv.* API</a> as in the extension.
+            </p>
+
+            <p>
+                Automation tips: the game state is mirrored into the DOM for easy testing. Start the game with
+                <code>uiv.page.click('id=start-button')</code>, restart with <code>uiv.page.click('id=restart-button')</code>,
+                flap with <code>uiv.page.click('id=board')</code> or <code>uiv.browser.press('Space')</code>.
+                Read the live score with <code>uiv.$('id=score').text</code> (or <code>id=final-score</code> on the game over screen).
+                The <code>data-state</code> attribute of <code>#game</code> is <code>menu</code>, <code>ready</code>,
+                <code>playing</code> or <code>gameover</code> &mdash; read it with
+                <code>uiv.evaluate("return document.getElementById('game').dataset.state")</code>.
+            </p>
+
+            <p>
+                The bird and the pipes are drawn on a <code>&lt;canvas&gt;</code>, so their positions are <em>not</em> in the DOM.
+                To play the game, a bot must use <em>visual</em> automation: find the bird with
+                <code>uiv.findImage('bird.png')</code> (download the sprite
+                <a href="/demo/flappybird/assets/images/flappybird.png">here</a>), locate the pipes with
+                <code>uiv.findImages('pipe.png')</code>, and flap with <code>uiv.browser.click(...)</code>
+                or, from the desktop app, <code>uiv.desktop.click(...)</code>. Turn the sound off with the checkbox if the
+                flap sounds get annoying during long test runs.
+            </p>
+
+            <p>
+                More demo pages: <a href="/demo/tictactoe">Tic-Tac-Toe</a>, <a href="/demo/draw">Canvas drawing</a>,
+                <a href="/demo/">all demos</a>.
+            </p>
+        </div>
+    </div>
+</div>
+    <div class="bigborder"></div>
+    <div class="row">
+        <script src="https://forum.ui.vision/javascripts/embed-topics.js"></script>
+        <style>d-topics-list iframe { width: 80% !important; }</style>
+        <div>
+            <h2>Fresh from the Ui.Vision Forum: The Latest 3 Topics.</h2>
+            <d-topics-list discourse-url="https://forum.ui.vision/" allow-create=true template="complete" per-page="3"></d-topics-list>
+        </div>
+        <div class="span3 foot-links">
+            <a href="https://forum.ui.vision/"><i class="fa fa-gear"></i> RPA, OCR, AI Forums</a><br />
+            <a href="/rpa/x/desktop-automation"><i class="fa fa-download"></i> Desktop Automation</a><br />
+            <a href="/rpa/#selenium-ide"><i class="fa fa-gear"></i> Selenium IDE</a><br />
+            <a href="https://ocr.space/ocrapi"><i class="fa fa-gear"></i> Free OCR API</a><br />
+            <a href="https://github.com/A9T9/RPA"><i class="fa fa-gear"></i> Open-Source RPA</a>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="span9 nomargin">
+            ← Meet the Ui.Vision team and users in our <a href="https://forum.ui.vision">forums</a>.
+        </div>
+    </div>
+    <div class="bigborder2"></div>
+    <div id="footer">
+        <div id="footer-bottom">
+            <div class="row">
+                <div class="span12">
+                    <p>Flappy Bird game made by Nolan &ndash; <a href="https://github.com/nolanjp/flappybird-web"><i class="fa fa-github"></i> source code on GitHub</a>. Sprites and sounds from <a href="https://github.com/samuelcust/flappy-bird-assets">flappy-bird-assets</a>.</p>
+                    <p class="last">Copyright &#169; 2016-2026 by a9t9 software GmbH. <a href="/privacypolicy">Our Privacy Policy</a>. Website Version: <span id="site-version">V5.17</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/jquery-2.1.3.min.js"></script>
+    <script src="/scripts/modernizr-2.6.2.js"></script>
+    <script src="/scripts/basic/bootstrap.min.js"></script>
+    <script src="/scripts/a9t9scripts.js"></script>
+    <script src="/scripts/layout/plugins.js"></script>
+    <script src="/scripts/layout/script.js"></script>
+    <script src="/demo/flappybird/game.js"></script>
+</body>
+</html>
