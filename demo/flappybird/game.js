@@ -29,6 +29,9 @@
     var swooshSound = new Audio(ASSETS + 'sound/swoosh.mp3');
 
     var pipeInterval;
+    // Frame-rate independent movement: the original moves a fixed amount per animation frame,
+    // which runs 2-3x too fast on 120/144 Hz displays. dt = 1 at 60 fps, ~0.42 at 144 fps.
+    var FRAME_MS = 1000 / 60, lastFrame = 0;
     var gameEl, messageImg, scoreEl, bestEl, soundEl, visualOnlyEl;
     var state = 'menu';
 
@@ -131,6 +134,7 @@
 
         messageImg.style.display = 'block';
         setState('ready');
+        lastFrame = 0;
 
         ctx.clearRect(0, 0, board.width, board.height);
         ctx.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
@@ -149,20 +153,23 @@
         }
     }
 
-    function update() {
+    function update(ts) {
         if (gameOver) return;
+        // capped at 3 frames so a hidden/paused tab does not teleport the bird on return
+        var dt = lastFrame ? Math.min((ts - lastFrame) / FRAME_MS, 3) : 1;
+        lastFrame = ts;
         ctx.clearRect(0, 0, board.width, board.height);
 
         if (isGameStarted) {
-            velocityY += gravity;
-            bird.y = Math.max(bird.y + velocityY, 0);
+            velocityY += gravity * dt;
+            bird.y = Math.max(bird.y + velocityY * dt, 0);
         }
         ctx.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
 
         if (bird.y > board.height) endGame();
 
         pipes.forEach(function (pipe) {
-            pipe.x += velocityX;
+            pipe.x += velocityX * dt;
             ctx.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
 
             if (!pipe.passed && bird.x > pipe.x + pipe.width) {
