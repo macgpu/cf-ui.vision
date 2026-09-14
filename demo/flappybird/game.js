@@ -48,10 +48,13 @@
     // Mirror game state into the DOM (#game[data-state], #score, #best-score) - unless
     // "visual game play only" is checked, then the DOM tells nothing and bots must use vision.
     function syncDom() {
-        if (visualOnly()) {
+        var off = visualOnly();
+        var infos = document.querySelectorAll('#game-status .dom-info');
+        for (var i = 0; i < infos.length; i++) infos[i].classList.toggle('off', off);
+        if (off) {
             gameEl.removeAttribute('data-state');
-            scoreEl.textContent = '?';
-            bestEl.textContent = '?';
+            scoreEl.textContent = '–';
+            bestEl.textContent = '–';
         } else {
             gameEl.setAttribute('data-state', state);
             scoreEl.textContent = Math.floor(score);

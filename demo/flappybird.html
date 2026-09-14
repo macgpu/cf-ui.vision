@@ -105,11 +105,13 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 18px;
+            gap: 14px;
             font-size: 14px;
             color: #7a8694;
         }
-        #game-status span { font-weight: 700; color: #333; }
+        /* fixed-width values so toggling the checkbox does not reflow the row */
+        #game-status span { font-weight: 700; color: #333; display: inline-block; min-width: 1.6em; text-align: left; font-variant-numeric: tabular-nums; }
+        #game-status .dom-info.off { opacity: 0.35; }
         #game-status label { margin: 0; font-size: 14px; color: #7a8694; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; }
         #game-status input { margin: 0 4px 0 0; vertical-align: middle; }
         #game-credit { font-size: 12px; color: #7a8694; margin-top: 4px; }
@@ -169,10 +171,10 @@
                 </div>
 
                 <div id="game-status">
-                    <div>Score: <span id="score">0</span></div>
-                    <div>Best: <span id="best-score">0</span></div>
+                    <div class="dom-info" title="DOM score - greyed out while 'Visual game play only' is on">Score: <span id="score">0</span></div>
+                    <div class="dom-info" title="DOM best score - greyed out while 'Visual game play only' is on">Best: <span id="best-score">0</span></div>
                     <label><input type="checkbox" id="sound" checked> Sound</label>
-                    <label title="Hides the score and game state from the DOM and ignores script-dispatched clicks/keys - a bot must play by vision and real input only"><input type="checkbox" id="visual-only"> Visual game play only</label>
+                    <label title="Hides the score and game state from the DOM and ignores script-dispatched clicks/keys - a bot must play by vision and real input only"><input type="checkbox" id="visual-only" checked> Visual game play only</label>
                 </div>
                 <div id="game-credit">Game by Nolan &ndash; <a href="https://github.com/nolanjp/flappybird-web"><i class="fa fa-github"></i> source code on GitHub</a></div>
             </div>
@@ -204,9 +206,10 @@
                 The <code>data-state</code> attribute of <code>#game</code> is <code>menu</code>, <code>ready</code>,
                 <code>playing</code> or <code>gameover</code> &mdash; read it with
                 <code>uiv.evaluate("return document.getElementById('game').dataset.state")</code>.
-                Tick <strong>Visual game play only</strong> to switch these helpers off: the score and state are then no
-                longer mirrored into the DOM, and clicks or key presses dispatched by scripts (DOM automation) are ignored.
-                Only real mouse and keyboard input counts, so the bot has to play by vision alone.
+                <strong>Visual game play only</strong> (on by default) switches these helpers off: the score and state are then
+                not mirrored into the DOM (the score display below the game is greyed out), and clicks or key presses
+                dispatched by scripts (DOM automation) are ignored. Only real mouse and keyboard input counts, so the bot
+                has to play by vision alone. Untick the box to enable the DOM helpers.
             </p>
 
             <p>
