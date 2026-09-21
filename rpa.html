@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Free, Open-Source RPA Software 2025 for macOS, Linux and Windows. Anthropic Computer Use Integration">
-    <title>Free, Open-Source RPA Software 2025 for macOS, Linux and Windows. Anthropic Computer Use Integration</title>
+    <meta name="description" content="Automate forms, CSV tasks, scraping and downloads. Use AI-created macros, MCP assistants or classic recording with open-source Ui.Vision for browser and desktop.">
+    <title>Ui.Vision V10 - AI, MCP &amp; Classic Browser Automation</title>
+    <link rel="canonical" href="https://ui.vision/rpa">
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -91,11 +92,18 @@
     <div class="row">
         <div class="span12">
             <h3 class="headline">
-              <span>Free, Cross-platform, Open-Source Robotic Process Automation (RPA)</span>
+              <span>Ui.Vision V10: AI, MCP and classic browser macros</span>
             </h3>
         </div>
         <div class="span12">
 
+
+            <h2 id="automation-workflows">Choose how you build your automation</h2>
+            <p><strong>Build with AI:</strong> describe a task such as filling a form or extracting a table. The <a href="/ai#assistant">AI macro assistant</a> inspects the page, creates a reusable macro, runs it and helps repair failures. Review the result and keep the macro for the next run.</p>
+            <p><strong>Connect your assistant through MCP:</strong> use the <a href="/mcp">Ui.Vision MCP server</a> to let an external AI assistant inspect your browser, create and run macros, and read execution logs. For example, ask it to build a workflow that opens a reporting page and downloads a report.</p>
+            <p><strong>Record classic browser tasks:</strong> record and replay actions, fill forms from CSV data, extract tables and automate downloads. If you are looking for an <a href="/blog/imacros-alternatives/">iMacros alternative</a>, these familiar workflows are supported. Existing iMacros scripts need adaptation rather than direct import. Use <a href="/rpa/docs/selenium-ide">classic commands</a> or the <a href="/rpa/docs/uiv">uiv.* JavaScript API</a>.</p>
+            <p><strong>Add desktop steps:</strong> install the <a href="/rpa/x">Desktop App / XModules</a> for native mouse and keyboard input and local file access. Combine browser tasks with desktop applications on Windows, macOS and Linux.</p>
+            <p>The extension supports Chrome, Edge and Firefox. Browser Vision input requires Chrome or Edge; desktop automation requires XModules Version 2 for Ui.Vision V10. Macros execute locally. Hosted AI processes the information sent to your selected provider; a local model keeps AI processing on your machine. See <a href="/ai#providers">AI provider choices</a>, <a href="/rpa/x/pricing">XModule plans</a> and <a href="/ai/pro">AI PRO</a>.</p>
 
             <p>Automate tasks on Windows, Mac and Linux:
 
@@ -109,7 +117,7 @@
 
                 </br></br>
                 Ui.Vision is <em>open-source</em> with <a href="#security">enterprise security</a>. The browser extension can be extended
-                with a local app (called <a href="/rpa/x/download">XModules</a>) for <a href="/rpa/x/desktop-automation">real user simulation and desktop automation</a>.
+                with the <a href="/rpa/x">Desktop App / XModules</a> for <a href="/rpa/x/desktop-automation">real user simulation and desktop automation</a>.
                 </p>
 
             <div class="row">
@@ -200,23 +208,20 @@
 
 
                     <h2 id="security">
-                        <em>Ui.Vision RPA software</em> has Enterprise-Grade Security. Your data never leaves your machine.
+                        Local automation and your choice of AI processing
                     </h2>
                     <p>
-                        With its strict open-source security approach,
-                        <em>Ui.Vision</em> is more secure than any other Robotic Process Automation (RPA) solution in the market:
-                        <em>Ui.Vision</em> and its XModules are designed to fit the highest security
-                        and data protection standards for Enterprise use.
+                        Ui.Vision stores and runs macros on your machine. You choose whether AI processing uses a hosted
+                        provider or a local model, and whether OCR uses a local or online engine.
 
                     </p>
                     <table>
                         <tr>
-                            <th><img src="/content/images/rpa-nocloud.webp" alt="No cloud. All processing runs locally on your machine." class="responsive-img"></th>
+                            <th><img src="/content/images/rpa-nocloud.webp" alt="Local automation with local AI and OCR options" class="responsive-img"></th>
                             <th>
 
-                                <span class="hiblue">Ui.Vision does NOT send any data back to us</span> or any other place. All image recognition and OCR processing is done locally on the machine.
-                                You can easily verify this statement because
-                                all internet communication - like loading websites in your browser - is done inside the
+                                <span class="hiblue">Macro execution and image matching run locally.</span> Local OCR engines and a local AI model
+                                keep those processing steps on your machine too. Review the implementation in the
                                 <a href="https://github.com/A9T9/RPA">open-source RPA</a> core.
                             </th>
 
@@ -227,13 +232,13 @@
                         <span class="hiblue">Ui.Vision is open-source</span> under an official Open-Source license and
                             guarantees you the freedom to run, study, share and modify the software.
 
-                            All processing is done locally on your machine. The XModules native apps <em>only</em> communicate with the open-source <em>Ui.Vision RPA</em> browser extension,
-                            and never contact the Internet in any way. No other RPA tools vendor offers this level of transparency.
+                            The Desktop App / XModules adds native input and local file access to your automation.
+                            Websites and other services used by a macro still make their normal network requests.
                     </p>
                     <p>
-                        The only exception to the "all data is processed locally" rule is if you select an optional online OCR engine
-                        for <a href="/rpa/x/desktop-automation/screen-scraping">OCR screen scraping</a> or the <a href="/ai">AI commands</a>. These options are all <em>disabled by default</em>.
-                        Only when you explicitly enable them in the settings does Ui.Vision send screenshots to cloud services.
+                        Hosted AI processes the chat content and any included page data, macro code, logs or screenshots sent to it.
+                        Online OCR sends images to its service for <a href="/rpa/x/desktop-automation/screen-scraping">OCR processing</a>.
+                        See <a href="/ai#providers">AI provider options</a> before choosing where to process your data.
                         The default OCR options are Javascript OCR or the <a href="/rpa/x/desktop-automation/screen-scraping#xmodule-ocr">built-in XModule OCR</a>, which both run 100% locally on the machine.
                     </p>
 

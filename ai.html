@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Ui.Vision V10 AI: an AI macro assistant that builds and fixes RPA macros for you, plus a free built-in AI tier - no API key needed. Or bring your own: Anthropic, OpenRouter or a local model.">
-    <title>Ui.Vision AI - AI Macro Assistant, Free AI Tier and Computer Use</title>
+    <meta name="description" content="Describe a browser task and let Ui.Vision AI build and help repair a reusable macro. Choose built-in AI, your own provider or a local model.">
+    <title>Ui.Vision AI - Create and Repair Browser Automation Macros</title>
+    <link rel="canonical" href="https://ui.vision/ai">
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
     <link href="/content/fontawesome/css/font-awesome.css" rel="stylesheet" />
@@ -104,6 +105,12 @@
                 <video src="/content/videos/ai-beta.mp4" controls preload="metadata" playsinline width="1280" height="720" class="responsive-img"></video>
                 </br>Ui.Vision AI in action
             </p>
+
+            <h2 id="use-cases">Turn an instruction into a reusable workflow</h2>
+            <p><strong>Create a macro:</strong> ask "Extract this table and save the rows as CSV." The assistant can inspect the page and build a macro using the <a href="/rpa/docs/uiv">uiv.* JavaScript API</a>. Review and run it, then reuse it when the source data changes.</p>
+            <p><strong>Repair a workflow:</strong> when a form or page changes, use Fix with AI to inspect the failure and help update the macro. Check the resulting behavior before using it for repeated work.</p>
+            <p><strong>Keep classic automation:</strong> recorded actions, CSV-driven form filling and repeatable downloads remain useful. AI helps build the macro; you can still inspect and edit the automation in Ui.Vision.</p>
+            <p><strong>Use an external assistant:</strong> connect through the <a href="/mcp">MCP bridge</a> to create, run and debug macros from your chosen MCP client. The bridge requires a local installation and connection to the extension. For native desktop steps or local file access, add the <a href="/rpa/x">Desktop App / XModules</a>.</p>
 
             <h3 id="assistant">The AI macro assistant: it writes and fixes your macros</h3>
             <p>

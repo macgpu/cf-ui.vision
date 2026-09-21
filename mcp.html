@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Connect AI assistants to your browser with the Ui.Vision MCP server. Build, run and debug reusable macros with DOM, vision and OCR. Explore use cases, requirements and setup.">
-    <title>Ui.Vision MCP Server — Browser Automation for AI Assistants</title>
+    <meta name="description" content="Connect an MCP-compatible AI assistant to Ui.Vision. Inspect pages, create reusable macros, run browser workflows and read logs to help fix failures.">
+    <title>Ui.Vision MCP Server - Browser Automation for AI Assistants</title>
     <link rel="canonical" href="https://ui.vision/mcp">
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
@@ -126,6 +126,12 @@
                 <li><strong>Browser and desktop tasks:</strong> extend workflows to desktop applications with the separately installed <a href="/rpa/x">Desktop Automation app (XModules)</a>.</li>
                 <li><strong>Your choice of assistant:</strong> use an MCP-compatible client such as Claude Code, Claude Desktop, Cursor or VS Code; see the setup instructions below.</li>
             </ul>
+            <h2 id="workflow-examples">Example workflows for your AI assistant</h2>
+            <p><strong>Build a report-download macro:</strong> ask your assistant to inspect a reporting page, set the date filters and save a macro that downloads the report. The assistant can run it and inspect the execution log; you keep the workflow for reuse.</p>
+            <p><strong>Extract and verify data:</strong> ask it to read a table, create a macro for the extraction and check the result. Use DOM locators, images or OCR text as the page requires. Local file access needs the <a href="/rpa/x">Desktop App / XModules</a>.</p>
+            <p><strong>Maintain existing automation:</strong> ask it to inspect a failed macro and its log, then help update the page targets. Classic form-filling and CSV workflows can be adapted into <a href="/rpa/docs/uiv">JavaScript macros</a> that you can review and run again.</p>
+            <p>The MCP bridge is a local tool connection, not a hosted browser. You choose the AI client and provider. For the assistant built directly into the extension, see <a href="/ai">Ui.Vision AI</a>.</p>
+
             <h3 id="requirements">Requirements and limits</h3>
             <p>Install the Ui.Vision extension, Node.js 18+ and the MCP bridge, then connect your MCP client. The features described here are part of <a href="/rpa/home/whatsnew#10">Ui.Vision V10</a>. New macros use the <a href="/rpa/docs/uiv">uiv.* JavaScript API</a>; classic command tables remain supported.</p>
             <p>Browser Vision works on Chrome and Edge without XModules, including when the browser window is in the background. This browser input mode is not supported in Firefox. Desktop automation and local file access require XModules; v10 requires Version 2. Check <a href="/rpa/x/pricing">XModule pricing and features</a> for your workflow.</p>
