@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="The Ui.Vision MCP server connects Claude Code (or any MCP client) to Ui.Vision RPA: install the uivision-mcp-bridge, pair it with the browser extension, and let the AI build, run and debug macros in your browser.">
-    <title>Ui.Vision MCP Server: Use Ui.Vision RPA from Claude Code - AI Docs</title>
+    <meta name="description" content="Connect AI assistants to your browser with the Ui.Vision MCP server. Build, run and debug reusable macros with DOM, vision and OCR. Explore use cases, requirements and setup.">
+    <title>Ui.Vision MCP Server — Browser Automation for AI Assistants</title>
     <link rel="canonical" href="https://ui.vision/mcp">
     <link rel="icon" href="/content/images/ui.vision.favicon32.webp" />
     <link href="/content/themes/basic/bootstrap.css" rel="stylesheet" />
@@ -91,7 +91,7 @@
     <div id="page-header" class="page-download">
         <div class="row">
             <div class="span12 whitebg">
-                <h1><span>Ui.Vision MCP Server</span> Use Ui.Vision from Claude Code</h1>
+                <h1><span>Ui.Vision MCP Server</span> Browser automation for AI assistants</h1>
             </div>
         </div>
     </div>
@@ -100,18 +100,31 @@
         <div class="span12">
 
             <p>
-                The Ui.Vision <strong>MCP server</strong> (the <strong>MCP bridge</strong>) connects <a href="https://claude.com/claude-code">Claude Code</a> — or any
-                <a href="https://modelcontextprotocol.io/">MCP</a> client — to the Ui.Vision browser extension. Once paired, the AI agent
+                The Ui.Vision <strong>MCP server</strong> (the <strong>MCP bridge</strong>) connects
+                <a href="https://modelcontextprotocol.io/">MCP</a>-compatible AI assistants to the Ui.Vision browser extension.
+                Once connected, the AI agent
                 can list, create, edit and <em>run</em> macros in your real browser: it inspects the live page, writes the macro, runs it,
-                reads the logs and iterates until the macro works. It is the same toolset the built-in
+                reads the logs and helps fix failures. You keep a macro to inspect, edit and run again. It is the same toolset the built-in
                 <a href="/ai">AI chat assistant</a> uses, driven from the outside.
             </p>
             <p>
-                Everything runs locally: the bridge is a small Node.js process listening on <code>127.0.0.1</code> only, the extension
-                connects out to it from the side panel, and the browser's own origin authenticates the pairing &mdash; on current
-                Chrome, Edge and Firefox <strong>no pairing token is needed</strong> (bridge 1.7+). No macro data goes anywhere except
-                to the AI you are chatting with.
+                <strong>The bridge and macro execution run locally.</strong> The bridge is a small Node.js process listening on
+                <code>127.0.0.1</code>. Your AI assistant uses the provider you choose: hosted AI processes the chat content and any
+                included page data, macro code, logs or screenshots sent to it. A local model keeps that AI processing on your machine;
+                websites and other network services used by a macro still make their normal network requests.
             </p>
+
+            <h2 id="best-for">When to choose Ui.Vision</h2>
+            <ul class="bullets">
+                <li><strong>Reusable browser workflows:</strong> fill forms, extract tables, download reports and test interfaces, then save the automation for the next run.</li>
+                <li><strong>DOM, vision and OCR together:</strong> combine page locators with image or text targets in the same macro.</li>
+                <li><strong>Browser and desktop tasks:</strong> extend workflows to desktop applications with the separately installed <a href="/rpa/x">Desktop Automation app (XModules)</a>.</li>
+                <li><strong>Your choice of assistant:</strong> use an MCP-compatible client such as Claude Code, Claude Desktop, Cursor or VS Code; see the setup instructions below.</li>
+            </ul>
+            <h3 id="requirements">Requirements and limits</h3>
+            <p>Install the Ui.Vision extension, Node.js 18+ and the MCP bridge, then connect your MCP client. The features described here are part of <a href="/rpa/home/whatsnew#10">v10 beta</a>. New macros use the <a href="/rpa/docs/uiv">uiv.* JavaScript API</a>; classic command tables remain supported.</p>
+            <p>Browser Vision works on Chrome and Edge without XModules, including when the browser window is in the background. This browser input mode is not supported in Firefox. Desktop automation and local file access require XModules; v10 requires Version 2. Check <a href="/rpa/x/pricing">XModule pricing and features</a> for your workflow.</p>
+            <p>Ui.Vision works with an installed browser and, for desktop tasks, your desktop session. If your task is served directly by an API or a headless browser test runner, assess those options too. Finding this page does not connect an assistant to your browser: complete the setup below first.</p>
 
             <p>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/K8EBt8TEnyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

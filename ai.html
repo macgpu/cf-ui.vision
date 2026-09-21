@@ -149,14 +149,15 @@
                     </li>
                     <li>
                         <strong>"I use my own AI — open settings"</strong> — bring your own API key, or point Ui.Vision at a model running on
-                        your own machine so that nothing leaves your computer at all. See <a href="#providers">the providers below</a>.
+                        your own machine to keep AI processing local. See <a href="#providers">the providers below</a>.
                     </li>
                 </ul>
             </p>
             <p>
-                Either way, <strong>the macros themselves keep running 100% locally</strong> inside your browser extension. That is the point of
-                the local-first design: the AI helps you write and repair the automation, but replaying it — the clicking, typing, image search
-                and OCR — happens on your machine, exactly as before. You can change your choice at any time in
+                <strong>Your macros are stored and executed locally.</strong> AI generation and AI commands use your selected provider.
+                Hosted AI sends chat content and any included page data or screenshots to that service for processing.
+                A local model keeps that AI processing on your machine; websites, cloud OCR and other network services used by a macro
+                still make their normal network requests. You can change your AI provider at any time in
                 <span class="hiblue">Settings &gt; AI</span>.
             </p>
 
@@ -172,7 +173,7 @@
                     <li><strong>OpenRouter</strong> — one key, many models, including open-weight ones such as Qwen3 VL. Create your API key at
                         <a href="https://openrouter.ai/">openrouter.ai</a>.</li>
                     <li><strong>Local, OpenAI-compatible endpoints</strong> — run an open-weight model (again, Qwen3 VL is a good vision-capable
-                        choice) on your own machine and point Ui.Vision at it. Nothing ever leaves your computer.</li>
+                        choice) on your own machine and point Ui.Vision at it to keep AI processing local.</li>
                 </ul>
             </p>
             <p>
