@@ -149,11 +149,11 @@
                 </li>
                 <li>
                     <strong>Run the installer</strong> once in a terminal (Node.js 18+ required):
-                    <pre class="cmd">npx uivision-mcp-bridge --setup</pre>
+                    <pre class="cmd">npx uivision-mcp-bridge@latest --setup</pre>
                     <small>Package: <a href="https://www.npmjs.com/package/uivision-mcp-bridge">uivision-mcp-bridge on npm</a></small>
                     <br /><br />
-                    It registers Ui.Vision with every MCP client it finds on the machine — Claude Code, Claude Desktop, Cursor, Windsurf,
-                    VS Code. It also prints a <strong>fallback pairing token</strong> — you normally won't need it (see step 3), so you can
+                    It registers Ui.Vision with every supported MCP client it finds on the machine - Claude Code, Claude Desktop, OpenAI Codex (bridge 1.7.19+), Cursor, Windsurf,
+                    VS Code. It also prints a <strong>fallback pairing token</strong> - you normally won't need it (see step 3), so you can
                     ignore it for now.
                     <br /><br />
                     <strong>Then quit and reopen Claude Code</strong> — or whichever of those apps you use. MCP servers are loaded only at
@@ -178,7 +178,12 @@
             <pre class="cmd">[mcp_servers.uivision]
 command = "npx"
 args = ["-y", "uivision-mcp-bridge"]
+startup_timeout_sec = 120
 tool_timeout_sec = 900</pre>
+            <p>Bridge 1.7.19 and later add this entry automatically during setup. A custom <code>CODEX_HOME</code> is supported;
+                existing settings and Ui.Vision connections are preserved. Reload the connection in <strong>Codex Settings &gt; MCP servers</strong>,
+                or fully quit and reopen Codex, then check <code>/mcp</code>. Switching on MCP in Ui.Vision enables the browser side;
+                Codex must also load the server before its tools appear.</p>
             <p>The 900-second timeout allows long demos, including five minutes of Flappy Bird plus setup and verification.
                 The bridge already allows 15 minutes for <code>run_macro</code>; the MCP client's timeout must also cover the run.
                 Reload the MCP connection after changing the setting: an existing connection keeps its previous timeout.</p>
